@@ -90,10 +90,22 @@
   .also{margin-top:.7rem;font-size:.86rem;color:var(--soft)}
 
   details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:.7rem;overflow:hidden}
-  summary{cursor:pointer;padding:.8rem 1rem;font-weight:600;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;gap:.6rem;align-items:center}
+  /* Grid, not flex: with three items (title, pill, +) and space-between, the
+     pill floated to wherever the leftover space put it, so it sat at a
+     different position on every row. Explicit placement gives the pills one
+     shared right edge. Below 600px the pill drops to its own line rather than
+     squeezing the title, matching how the menu rows behave. */
+  summary{cursor:pointer;padding:.8rem 1rem;font-weight:600;font-size:.95rem;list-style:none;display:grid;grid-template-columns:1fr auto;column-gap:.6rem;row-gap:.4rem;align-items:center}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";font-family:ui-monospace,monospace;color:var(--soft)}
+  summary .stitle{grid-area:1/1}
+  summary .mini{grid-area:2/1;justify-self:start}
+  summary::after{content:"+";grid-area:1/2;font-family:ui-monospace,monospace;color:var(--soft)}
   details[open] summary::after{content:"\2212"}
+  @media(min-width:600px){
+    summary{grid-template-columns:1fr auto auto;row-gap:0}
+    summary .mini{grid-area:1/2;justify-self:end}
+    summary::after{grid-area:1/3}
+  }
   .inner{padding:0 1rem 1rem;font-size:.94rem;color:#3A423C}
   .inner ol{padding-left:1.15rem}
   .inner ol li{margin-top:.4rem}
@@ -188,7 +200,7 @@
   <p class="roastline">These never change. Ingredients are already in every basket.</p>
 
   <details>
-    <summary>Friday pizza night <span class="mini">15 min</span></summary>
+    <summary><span class="stitle">Friday pizza night</span> <span class="mini">15 min</span></summary>
     <div class="inner">
       <h4>Boys' margherita</h4>
       <div class="ing">2 thawed dough balls (~250g each) &middot; 200g passata &middot; pinch salt &middot; 1 tsp dried oregano &middot; 2 balls mozzarella (125g each), torn and drained on kitchen roll &middot; 1 tbsp olive oil</div>
@@ -212,7 +224,7 @@
   </details>
 
   <details>
-    <summary>Shake bags &times;7 <span class="mini">Saturday, 10 min</span></summary>
+    <summary><span class="stitle">Shake bags &times;7</span> <span class="mini">Saturday, 10 min</span></summary>
     <div class="inner">
       <div class="ing">Per bag: 2 handfuls frozen spinach (~100g) &middot; 100g frozen berries or half a banana &middot; 30g oats &middot; 1 tbsp seeds or peanut butter</div>
           <div class="macro">~510 kcal &middot; 43g protein &middot; 45g carbs &middot; 14g fat &middot; 10g fibre <em>(per shake, bag blended with 30g protein powder and 300ml semi-skimmed milk)</em></div>
@@ -224,7 +236,7 @@
   </details>
 
   <details>
-    <summary>Lunch jars &times;5 <span class="mini">Saturday, 15 min</span></summary>
+    <summary><span class="stitle">Lunch jars &times;5</span> <span class="mini">Saturday, 15 min</span></summary>
     <div class="inner">
       <div class="ing">Layer order, bottom to top: 2 tbsp dressing &middot; half a grain pouch (125g) + 50g beans &middot; 80g of this week's protein + 100g roast veg &middot; pickled onions &middot; a handful of leaves</div>
           <div class="macro">~660 kcal &middot; 32g protein &middot; 48g carbs &middot; 34g fat &middot; 9g fibre <em>(per jar, vinaigrette weeks; week 2's yoghurt-dressed jar is nearer 500 kcal and 14g fat, since 2 tbsp of vinaigrette is 190 kcal on its own)</em></div>
@@ -236,7 +248,7 @@
   </details>
 
   <details>
-    <summary>A dozen boiled eggs <span class="mini">Saturday, hands-off</span></summary>
+    <summary><span class="stitle">A dozen boiled eggs</span> <span class="mini">Saturday, hands-off</span></summary>
     <div class="inner">
       <div class="ing">12 eggs</div>
           <div class="macro">~78 kcal &middot; 7g protein &middot; 0.4g carbs &middot; 5g fat &middot; 0g fibre <em>(per large egg)</em></div>
@@ -248,7 +260,7 @@
   </details>
 
   <details>
-    <summary>Quick-pickled red onions <span class="mini">Saturday, 10 min</span></summary>
+    <summary><span class="stitle">Quick-pickled red onions</span> <span class="mini">Saturday, 10 min</span></summary>
     <div class="inner">
       <div class="ing">2 red onions, finely sliced &middot; 150ml white or cider vinegar &middot; 150ml water &middot; 1 tbsp sugar &middot; 1 tsp salt</div>
           <div class="macro">~10 kcal &middot; negligible protein/fat &middot; 2g carbs <em>(per tbsp)</em></div>
@@ -260,7 +272,7 @@
   </details>
 
   <details>
-    <summary>Two dressings <span class="mini">Saturday, 5 min</span></summary>
+    <summary><span class="stitle">Two dressings</span> <span class="mini">Saturday, 5 min</span></summary>
     <div class="inner">
       <h4>House vinaigrette</h4>
       <div class="ing">6 tbsp olive oil &middot; 2 tbsp vinegar &middot; 1 tsp mustard &middot; 1 tsp honey &middot; salt</div>
@@ -273,7 +285,7 @@
   </details>
 
   <details>
-    <summary>Protein flapjacks <span class="mini">Saturday, in the hot oven</span></summary>
+    <summary><span class="stitle">Protein flapjacks</span> <span class="mini">Saturday, in the hot oven</span></summary>
     <div class="inner">
       <div class="ing">250g oats &middot; 60g protein powder &middot; 150g peanut butter &middot; 100g honey &middot; 75g butter &middot; 50g seeds &middot; 1 mashed banana &middot; pinch salt</div>
           <div class="macro">~280 kcal &middot; 10g protein &middot; 24g carbs &middot; 15g fat &middot; 3g fibre <em>(per bar, 1/12; whole tin ~3,330 kcal and 124g protein)</em></div>
