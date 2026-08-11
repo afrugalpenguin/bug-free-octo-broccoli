@@ -51,10 +51,26 @@
   .row:first-child{border-top:none}
   .when{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,var(--green));flex:0 0 5rem;font-weight:600}
   .row p{flex:1 1 13rem}
-  .menu-row{cursor:pointer;transition:background .12s}
+  /* Menu rows are a fixed grid, not flex: the chips vary in width ("TOGETHER" vs
+     "SLOW COOKER") and under flex that ragged edge pushed the figures to a
+     different position on every row. Fixed columns make it a real column. */
+  .menu-row{cursor:pointer;transition:background .12s;display:grid;grid-template-columns:4.5rem 1fr auto;grid-template-areas:"day dish arrow" ". macro chip";column-gap:.75rem;row-gap:.35rem;align-items:center}
   .menu-row:hover,.menu-row:active{background:var(--paper)}
-  .menu-row::after{content:"\2192";color:var(--soft);font-family:ui-monospace,Menlo,monospace;flex:none;align-self:center;opacity:.6}
+  .menu-row .when{grid-area:day}
+  .menu-row p{grid-area:dish}
+  .menu-row .macro-cell{grid-area:macro;text-align:left}
+  .menu-row .chip{grid-area:chip;justify-self:end}
+  .menu-row::after{content:"\2192";grid-area:arrow;color:var(--soft);font-family:ui-monospace,Menlo,monospace;opacity:.6}
+  /* Below 600px the five columns can't fit beside the dish name, so the figures
+     and chip drop to a second line rather than crushing the dish. */
+  @media(min-width:600px){
+    .menu-row{grid-template-columns:4.5rem 1fr 4.8rem 6.4rem .9rem;grid-template-areas:"day dish macro chip arrow";row-gap:0}
+    .menu-row .macro-cell{text-align:right}
+  }
   .chip{flex:none;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:.12rem .55rem;color:var(--soft);align-self:center}
+  .macro-cell{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;line-height:1.35;letter-spacing:.02em}
+  .macro-cell b{display:block;font-weight:600;color:var(--accent,var(--green))}
+  .macro-cell span{display:block;color:var(--soft)}
 
   .note{background:var(--card);border-left:3px solid var(--accent,var(--green));border-radius:0 10px 10px 0;padding:.7rem .9rem;font-size:.92rem;color:#3A423C;margin-top:.9rem}
   .spice{border-left-color:var(--m1)}
@@ -934,6 +950,38 @@
     }
   }
   labelToday();
+
+  // Menu rows carry the plate's kcal and protein, read out of that day's recipe
+  // pane so the recipe's own macro line stays the single source of truth and the
+  // two can't drift apart. Every day pane holds one .macro except Friday, which
+  // holds the adults' pizza and the salad, so summing the panes gives the adults'
+  // whole plate on Friday and the single figure on every other day. The boys'
+  // margherita lives on the Every week tab, outside the day panes, so it is
+  // correctly left out. First match only on each regex: the tails carry batch
+  // totals ("whole pot ~2,780 kcal and 292g protein") that must not be picked up.
+  function readMacro(el){
+    const kcal=el.textContent.match(/~?\s*([\d,]+)\s*kcal/);
+    const protein=el.textContent.match(/([\d.]+)\s*g protein/);
+    if(!kcal||!protein) return null;
+    return {kcal:parseFloat(kcal[1].replace(/,/g,'')), protein:parseFloat(protein[1])};
+  }
+
+  function fillMenuMacros(){
+    document.querySelectorAll('.menu-row[data-week][data-day]').forEach(row=>{
+      const day=row.dataset.week+'-r-'+row.dataset.day;
+      const pane=document.getElementById(day);
+      if(!pane){ console.warn('Menu macros: no recipe pane for '+day); return; }
+      const macros=Array.from(pane.querySelectorAll('.macro'),readMacro);
+      // Fail quiet rather than printing NaN: a missing figure is better than a wrong one.
+      if(!macros.length||macros.includes(null)){ console.warn('Menu macros: unreadable macro line in '+day); return; }
+      const cell=document.createElement('span');
+      cell.className='macro-cell';
+      cell.innerHTML='<b>'+Math.round(macros.reduce((t,m)=>t+m.kcal,0))+' kcal</b>'+
+                     '<span>'+Math.round(macros.reduce((t,m)=>t+m.protein,0))+'g P</span>';
+      row.insertBefore(cell,row.querySelector('.chip'));
+    });
+  }
+  fillMenuMacros();
 
   document.querySelectorAll('.basket li').forEach(li=>{
     li.addEventListener('click', ()=> li.classList.toggle('checked'));
