@@ -38,10 +38,10 @@
     "items":{"olive_oil":21,"vinegar":7.5,"mustard":1.2,"honey":1.7,"grain_pouch":125,"cannellini_drained":50,"beef_mince_12":67,"oats":5,"pepper":70,"red_onion":45,"salad_leaves":15},
     "finishers":{"mon":{"mozzarella_pearls":30},"tue":{"parmesan":15,"balsamic":5},"wed":{"pepperoni":20},"thu":{"egg":58,"seeds_nuts":10},"fri":{"passata":35,"parmesan":10}}},
 
-  "w1_mon": {"portions":4,"items":{"chicken_roast_meat":350,"olive_oil":14,"lime_juice":30,"pepper":300,"grain_pouch":500,"slaw_mix":200,"red_onion":30,"greek_yoghurt":200}},
+  "w1_mon": {"portions":4,"items":{"chicken_roast_meat":350,"olive_oil":14,"lime_juice":30,"pepper":300,"grain_pouch":500,"white_cabbage":150,"carrot":50,"red_onion":30,"greek_yoghurt":200}},
   "w1_tue": {"portions":1,"from":[["_w1_chilli_pot",1]],"items":{"grain_pouch":125,"greek_yoghurt":30}},
   "w1_wed": {"portions":4,"from":[["_w1_chilli_pot",4]],"items":{"sweet_potato":1000,"cheddar":80,"greek_yoghurt":160}},
-  "w1_thu": {"portions":1,"from":[["_w1_pulled_bag",1]],"items":{"tortilla_wrap":120,"slaw_mix":50,"greek_yoghurt":50,"red_onion":10}},
+  "w1_thu": {"portions":1,"from":[["_w1_pulled_bag",1]],"items":{"tortilla_wrap":120,"white_cabbage":37,"carrot":13,"greek_yoghurt":50,"red_onion":10}},
   "w1_fri_pizza": {"portions":2,"items":{"pizza_dough":250,"passata":80,"chorizo_cooking":100,"pepper":75,"mozzarella":60}},
   "w1_fri_salad": {"portions":4,"items":{"salad_leaves":100,"tomatoes":150,"sweetcorn_drained":260,"cucumber":150,"egg":232,"cheddar":50,"red_onion":30,"seeds_nuts":20,"tortilla_chips":30,"olive_oil":42,"vinegar":15,"mustard":2.5,"honey":3.5,"lime_juice":15}},
   "w1_sat": {"portions":4,"items":{"chicken_thigh_bonein":880,"pepper":300,"red_onion":100,"sweet_potato":600,"olive_oil":28,"lemon_juice":30}},
