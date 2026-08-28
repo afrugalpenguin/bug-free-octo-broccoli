@@ -45,7 +45,7 @@
   "w1_fri_pizza": {"portions":2,"items":{"pizza_dough":250,"passata":80,"chorizo_cooking":100,"pepper":75,"mozzarella":60}},
   "w1_fri_salad": {"portions":4,"items":{"salad_leaves":100,"tomatoes":150,"sweetcorn_drained":260,"cucumber":150,"egg":232,"cheddar":50,"red_onion":30,"seeds_nuts":20,"tortilla_chips":30,"olive_oil":42,"vinegar":15,"mustard":2.5,"honey":3.5,"lime_juice":15}},
   "w1_sat": {"portions":4,"items":{"chicken_thigh_bonein":880,"pepper":300,"red_onion":100,"sweet_potato":600,"olive_oil":28,"lemon_juice":30}},
-  "w1_sun": {"portions":4,"items":{"chicken_roast_meat":750,"olive_oil":14,"roasting_veg":1000,"gravy_made":400}},
+  "w1_sun": {"portions":4,"items":{"chicken_roast_meat":750,"olive_oil":14,"carrot":1000,"gravy_made":400}},
 
   "w2_mon": {"portions":4,"items":{"chicken_thigh_boneless":600,"greek_yoghurt":125,"spice_mix":8,"grain_pouch":500,"cucumber":300,"salad_leaves":100,"mango_chutney":60,"lemon_juice":10}},
   "w2_tue": {"portions":1,"from":[["_w2_dal_pot",1]],"items":{"grain_pouch":125,"greek_yoghurt":25}},
@@ -54,7 +54,7 @@
   "w2_fri_pizza": {"portions":2,"items":{"pizza_dough":250,"chicken_thigh_boneless":200,"spice_mix":3,"olive_oil":7,"passata":80,"mozzarella":60,"mango_chutney":20}},
   "w2_fri_salad": {"portions":4,"items":{"salad_leaves":100,"cucumber":300,"tomatoes":150,"red_onion":30,"egg":232,"seeds_nuts":20,"greek_yoghurt":45,"mango_chutney":7,"lemon_juice":10}},
   "w2_sat": {"portions":4,"items":{"salmon_fillet":520,"baby_potato":500,"broccoli":350,"olive_oil":28,"lemon_juice":30}},
-  "w2_sun": {"portions":4,"items":{"pork_shoulder_roast":800,"olive_oil":14,"roasting_veg":1000,"apple_sauce":100,"gravy_made":400}},
+  "w2_sun": {"portions":4,"items":{"pork_shoulder_roast":800,"olive_oil":14,"carrot":1000,"apple_sauce":100,"gravy_made":400}},
 
   "w3_mon": {"portions":4,"items":{"halloumi":450,"pitta_wholemeal":300,"roasting_veg":400,"hummus":100,"red_onion":30,"salad_leaves":100,"olive_oil":42,"lemon_juice":22,"honey":3.5}},
   "w3_tue": {"portions":1,"from":[["_w3_stew_pot",1]],"items":{"couscous_dry":50}},
@@ -63,7 +63,7 @@
   "w3_fri_pizza": {"portions":2,"items":{"pizza_dough":250,"passata":80,"chorizo_cooking":80,"feta":40,"olives_drained":40,"mozzarella":60}},
   "w3_fri_salad": {"portions":4,"items":{"tomatoes":400,"cucumber":300,"feta":100,"olives_drained":60,"red_onion":30,"seeds_nuts":20,"olive_oil":42,"vinegar":15,"mustard":2.5,"honey":3.5,"lemon_juice":15}},
   "w3_sat": {"portions":4,"items":{"chicken_thigh_bonein":880,"pepper":300,"courgette":200,"red_onion":100,"olives_drained":100,"lemon_juice":45,"olive_oil":28}},
-  "w3_sun": {"portions":4,"items":{"gammon_cooked":650,"roasting_veg":1000,"honey":21}},
+  "w3_sun": {"portions":4,"items":{"gammon_cooked":650,"carrot":1000,"honey":21}},
 
   "w4_mon": {"portions":4,"from":[["_w4_ragu_pot",4]],"items":{"pasta_dry":200,"creme_fraiche":300,"cheddar":100,"milk_semi":30,"mozzarella":125,"salad_leaves":100,"cucumber":300,"tomatoes":150,"olive_oil":42,"vinegar":15,"mustard":2.5,"honey":3.5}},
   "w4_tue": {"portions":1,"from":[["_w4_ragu_pot",1]],"items":{"fresh_pasta":125,"parmesan":15}},
@@ -72,5 +72,5 @@
   "w4_fri_pizza": {"portions":2,"items":{"pizza_dough":250,"passata":80,"pepperoni":40,"mozzarella":60}},
   "w4_fri_salad": {"portions":4,"items":{"salad_leaves":100,"tomatoes":150,"mozzarella_pearls":150,"cannellini_drained":240,"red_onion":30,"seeds_nuts":20,"olive_oil":42,"balsamic":15,"mustard":2.5,"honey":3.5}},
   "w4_sat": {"portions":4,"items":{"beef_mince_12":400,"oats":30,"egg":29,"garlic":5,"courgette":400,"red_onion":200,"passata":300,"bread_fresh":240}},
-  "w4_sun": {"portions":4,"items":{"beef_topside_roast":650,"olive_oil":14,"roasting_veg":1000,"yorkshire_pudding":160,"gravy_made":400}}
+  "w4_sun": {"portions":4,"items":{"beef_topside_roast":650,"olive_oil":14,"carrot":1000,"yorkshire_pudding":160,"gravy_made":400}}
 }
