@@ -52,16 +52,39 @@ function perPortion(id, seen) {
 const kcal = v => Math.round(v / 5) * 5;
 const g = v => (v < 1 ? Math.round(v * 10) / 10 : Math.round(v));
 
+// A lunch box is a fixed base plus one of five daily finishers, so it has a
+// range rather than a figure. Everything else has the same low and high.
+function finisherRange(id, base) {
+  const days = recipes[id].finishers;
+  if (!days) return { lo: base, hi: base };
+  const lo = { ...base }, hi = { ...base };
+  for (const items of Object.values(days)) {
+    const add = zero();
+    for (const [food, grams] of Object.entries(items)) {
+      const row = foods[food];
+      if (!row) throw new Error(`${id}: no food called ${food} in foods.json`);
+      KEYS.forEach((k, i) => { add[k] += (row[i] * grams) / 100; });
+    }
+    KEYS.forEach(k => {
+      lo[k] = Math.min(lo[k], base[k] + add[k]);
+      hi[k] = Math.max(hi[k], base[k] + add[k]);
+    });
+  }
+  return { lo, hi };
+}
+
 const ids = Object.keys(recipes).filter(k => !k.startsWith('_'));
 const results = new Map();
 for (const id of ids) {
-  const p = perPortion(id, new Set());
+  const { lo, hi } = finisherRange(id, perPortion(id, new Set()));
+  const span = (v, w, round) =>
+    round(v) === round(w) ? `${round(v)}` : `${round(v)}-${round(w)}`;
   results.set(id, {
-    kcal: kcal(p.kcal),
-    protein: g(p.protein),
-    carbs: g(p.carbs),
-    fat: g(p.fat),
-    fibre: g(p.fibre),
+    kcal: span(lo.kcal, hi.kcal, kcal),
+    protein: span(lo.protein, hi.protein, g),
+    carbs: span(lo.carbs, hi.carbs, g),
+    fat: span(lo.fat, hi.fat, g),
+    fibre: span(lo.fibre, hi.fibre, g),
   });
 }
 
