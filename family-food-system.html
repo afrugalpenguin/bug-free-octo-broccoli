@@ -181,6 +181,8 @@
     </div>
   </div>
 
+  <div class="note"><strong>About the numbers, and where the recipes came from.</strong> None of these are family recipes or anything out of a book. They were written to fit the shape of the week (one cook session, oven timers, shift dinners) rather than copied from anywhere, and none of them have been through a proper kitchen test yet. Treat the first run of each as the test. The figures on each card are worked out from that card's own ingredient list using standard UK composition values, so they follow the recipe rather than sitting beside it, but they are still an arithmetic estimate off raw weights and not a lab measurement. Change a recipe and the figures need redoing: the sums live in <code>tools/macros</code>.</div>
+
   <div class="note spice"><strong>Everything is cooked mild.</strong> Chilli flakes stay on the table, harissa or chipotle goes into our two bowls at the end, and the hotter curry paste only into the adults' portions. The boys can have more heat when they ask for it.</div>
 
   <h2 style="margin-top:2rem">Getting it started</h2>
@@ -203,7 +205,7 @@
     <div class="inner">
       <h4>Boys' margherita</h4>
       <div class="ing">2 thawed dough balls (~250g each) &middot; 200g passata &middot; pinch salt &middot; 1 tsp dried oregano &middot; 2 balls mozzarella (125g each), torn and drained on kitchen roll &middot; 1 tbsp olive oil</div>
-          <div class="macro">~1000 kcal &middot; 43g protein &middot; 126g carbs &middot; 33g fat &middot; 7g fibre <em>(per whole pizza, one 250g dough ball; the boys rarely finish a whole one, so a realistic child's share is nearer 600)</em></div>
+          <div class="macro" data-macro="pizza_boys">~1075 kcal &middot; 45g protein &middot; 132g carbs &middot; 38g fat &middot; 7g fibre <em>(per whole pizza, one 250g dough ball; the boys rarely finish a whole one, so a realistic child's share is nearer 650)</em></div>
       <ol>
         <li>Oven as hot as it goes (250C+), a flat baking tray in there heating for 15 minutes.</li>
         <li>Stretch dough on floured baking paper. Thin middle, fat edge.</li>
@@ -226,7 +228,7 @@
     <summary><span class="stitle">Shake bags &times;7</span> <span class="mini">Saturday, 10 min</span></summary>
     <div class="inner">
       <div class="ing">Per bag: 2 handfuls frozen spinach (~100g) &middot; 100g frozen berries or half a banana &middot; 30g oats &middot; 1 tbsp seeds or peanut butter</div>
-          <div class="macro">~510 kcal &middot; 43g protein &middot; 45g carbs &middot; 14g fat &middot; 10g fibre <em>(per shake, bag blended with 30g protein powder and 300ml semi-skimmed milk)</em></div>
+          <div class="macro" data-macro="shake_bag">~540 kcal &middot; 45g protein &middot; 46g carbs &middot; 18g fat &middot; 9g fibre <em>(per shake, bag blended with 30g protein powder and 300ml semi-skimmed milk)</em></div>
       <ol>
         <li>Line up all 7 bags and fill them one ingredient at a time. Back in the freezer, standing in a tub.</li>
         <li>In the morning: bag into the blender with 30g protein powder and about 300ml milk. Thirty seconds.</li>
@@ -251,7 +253,7 @@
     <summary><span class="stitle">Lunch boxes &times;5</span> <span class="mini">Saturday, 15 min</span></summary>
     <div class="inner">
       <div class="ing">Layer order, bottom to top: 2 tbsp dressing &middot; half a grain pouch (125g) + 50g beans, drained and rinsed (a 400g tin does all five) &middot; 80g of this week's protein + 100g roast veg off the Saturday tray &middot; pickled onions &middot; a handful of leaves (~15g)</div>
-          <div class="macro">~660 kcal &middot; 32g protein &middot; 48g carbs &middot; 34g fat &middot; 9g fibre <em>(per box, vinaigrette weeks; week 2's yoghurt-dressed box is nearer 500 kcal and 14g fat, since 2 tbsp of vinaigrette is 190 kcal on its own)</em></div>
+          <div class="macro" data-macro="lunch_box">~650 kcal &middot; 31g protein &middot; 54g carbs &middot; 33g fat &middot; 9g fibre <em>(per box, vinaigrette weeks; week 2's yoghurt-dressed box works out at ~430 kcal, since 2 tbsp of vinaigrette is 190 kcal on its own)</em></div>
       <ol>
         <li>Five of them, built in that order so the leaves stay out of the dressing. Which protein depends on the week, see its Menu tab.</li>
         <li>Fridge. They keep 4 or 5 days. Tip into a bowl to eat.</li>
@@ -264,7 +266,7 @@
     <summary><span class="stitle">Saturday lunch sandwiches</span> <span class="mini">Saturday, no cooking</span></summary>
     <div class="inner">
       <div class="ing">1 large wholemeal loaf &middot; 250g sliced ham &middot; 150g cheddar &middot; half a cucumber, 250g tomatoes, a bag of leaves &middot; pickled onions &middot; butter</div>
-          <div class="macro">~445 kcal &middot; 34g protein &middot; 35g carbs &middot; 18g fat &middot; 5g fibre <em>(adults' round, double filling; the boys' single-filling round is ~320 kcal and 21g protein)</em></div>
+          <div class="macro" data-macro="sandwiches">~470 kcal &middot; 27g protein &middot; 34g carbs &middot; 23g fat &middot; 6g fibre <em>(adults' round, double filling; the boys' single-filling round is ~305 kcal and 14g protein)</em></div>
       <ol>
         <li>Nothing to cook. Saturday lunch falls at the end of the week and right before the cook session, so it runs on things that keep: bread, ham, cheese, pickles.</li>
         <li>Boys build their own with one filling. Ours get ham and cheddar both, salad in, pickled onions on.</li>
@@ -278,7 +280,7 @@
     <summary><span class="stitle">Sunday tuna pasta salad</span> <span class="mini">Saturday session, 15 min</span></summary>
     <div class="inner">
       <div class="ing">250g pasta shapes &middot; 2 tins tuna in spring water, drained &middot; 2 boiled eggs, quartered &middot; half a cucumber, diced small &middot; 100g tomatoes, halved &middot; 100g frozen peas, thawed under the hot tap &middot; 2 tbsp toasted seeds &middot; 2 tbsp Greek yoghurt &middot; juice of half a lemon &middot; salt, pepper</div>
-          <div class="macro">~405 kcal &middot; 33g protein &middot; 49g carbs &middot; 7g fat &middot; 4g fibre <em>(per portion, 1/4; Sunday lunch for four)</em></div>
+          <div class="macro" data-macro="pasta_salad">~390 kcal &middot; 28g protein &middot; 50g carbs &middot; 8g fat &middot; 4g fibre <em>(per portion, 1/4; Sunday lunch for four)</em></div>
       <ol>
         <li>During the session, while something else is in the oven: pasta on, cooked, rinsed cold, drained well. If it goes in warm or wet it turns claggy overnight.</li>
         <li>Tuna, eggs, cucumber, tomatoes and peas through the cold pasta, then lemon, salt and pepper. Tub it and fridge it.</li>
@@ -293,7 +295,7 @@
     <summary><span class="stitle">A dozen boiled eggs</span> <span class="mini">Saturday, hands-off</span></summary>
     <div class="inner">
       <div class="ing">12 eggs</div>
-          <div class="macro">~78 kcal &middot; 7g protein &middot; 0.4g carbs &middot; 5g fat &middot; 0g fibre <em>(per large egg)</em></div>
+          <div class="macro" data-macro="boiled_egg">~85 kcal &middot; 7g protein &middot; 0.4g carbs &middot; 6g fat &middot; 0g fibre <em>(per large egg)</em></div>
       <ol>
         <li>Big pan, boiling water, 8 minutes, then straight into cold water. Keep them in their shells in the fridge and they'll last the week.</li>
         <li>Where they end up: 4 quartered into Friday's salad, 2 into Sunday's pasta salad, a few sliced into the lunch boxes, and the rest sit next to the flapjacks for whoever wants one.</li>
@@ -305,7 +307,7 @@
     <summary><span class="stitle">Quick-pickled red onions</span> <span class="mini">Saturday, 10 min</span></summary>
     <div class="inner">
       <div class="ing">2 red onions, finely sliced &middot; 150ml white or cider vinegar &middot; 150ml water &middot; 1 tbsp sugar &middot; 1 tsp salt</div>
-          <div class="macro">~10 kcal &middot; negligible protein/fat &middot; 2g carbs <em>(per tbsp)</em></div>
+          <div class="macro" data-macro="pickled_onions">~5 kcal &middot; 0.1g protein &middot; 0.9g carbs &middot; 0g fat &middot; 0.1g fibre <em>(per tbsp)</em></div>
       <ol>
         <li>Warm vinegar, water, sugar and salt until dissolved.</li>
         <li>Pour over the onions in a jar and put it in the fridge. Ready in an hour and keeps about 3 weeks.</li>
@@ -318,13 +320,13 @@
     <div class="inner">
       <h4>House vinaigrette</h4>
       <div class="ing">6 tbsp olive oil &middot; 2 tbsp vinegar &middot; 1 tsp mustard &middot; 1 tsp honey &middot; salt</div>
-          <div class="macro">~90 kcal &middot; 0g protein &middot; 0.6g carbs &middot; 10g fat <em>(per tbsp, jar makes about 8)</em></div>
+          <div class="macro" data-macro="vinaigrette">~95 kcal &middot; 0g protein &middot; 0.8g carbs &middot; 11g fat &middot; 0g fibre <em>(per tbsp, jar makes about 8)</em></div>
       <h4>Yoghurt dressing</h4>
       <div class="ing">150g Greek yoghurt &middot; juice of half a lemon &middot; 1 garlic cube (or mint in curry week) &middot; salt</div>
-          <div class="macro">~15 kcal &middot; 1.2g protein &middot; 0.5g carbs &middot; 0.7g fat <em>(per tbsp, jar makes about 11)</em></div>
+          <div class="macro" data-macro="yoghurt_dressing">~15 kcal &middot; 0.8g protein &middot; 0.9g carbs &middot; 1g fat &middot; 0g fibre <em>(per tbsp, jar makes about 11)</em></div>
       <h4>Lemon dressing <span class="mini">week 3 only</span></h4>
       <div class="ing">6 tbsp olive oil &middot; juice of 1 lemon &middot; 1 tsp oregano &middot; 1 tsp honey &middot; salt</div>
-          <div class="macro">~90 kcal &middot; 0g protein &middot; 0.7g carbs &middot; 10g fat <em>(per tbsp, jar makes about 8)</em></div>
+          <div class="macro" data-macro="lemon_dressing">~95 kcal &middot; 0g protein &middot; 1g carbs &middot; 11g fat &middot; 0g fibre <em>(per tbsp, jar makes about 8)</em></div>
       <p>All three the same: everything in a jar, lid on, shake it. They'll sit in the fridge all week. The lemon one is just the vinaigrette with lemon juice in place of the vinegar, and it is what dresses week 3's lunch boxes.</p>
     </div>
   </details>
@@ -333,7 +335,7 @@
     <summary><span class="stitle">Protein flapjacks</span> <span class="mini">Saturday, in the hot oven</span></summary>
     <div class="inner">
       <div class="ing">250g oats &middot; 60g protein powder &middot; 150g peanut butter &middot; 100g honey &middot; 75g butter &middot; 50g seeds &middot; 1 mashed banana &middot; pinch salt</div>
-          <div class="macro">~280 kcal &middot; 10g protein &middot; 24g carbs &middot; 15g fat &middot; 3g fibre <em>(per bar, 1/12; whole tin ~3,330 kcal and 124g protein)</em></div>
+          <div class="macro" data-macro="flapjack">~275 kcal &middot; 10g protein &middot; 24g carbs &middot; 15g fat &middot; 3g fibre <em>(per bar, 1/12; whole tin ~3,315 kcal and 125g protein)</em></div>
       <ol>
         <li>Melt the butter, peanut butter and honey in a big saucepan on a low heat.</li>
         <li>Take it off the heat and stir everything else in. A splash of milk if it looks dry.</li>
@@ -398,7 +400,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Fajita bowls</h3><span class="mini">All four eating &middot; 15 min</span></div>
           <div class="ing">Monday's tub of roast chicken, about 350g stripped on Sunday &middot; 1 tbsp oil &middot; 1 tsp smoked paprika &middot; juice of 1 lime &middot; 2 peppers, in strips &middot; 2 grain pouches &middot; 200g slaw &middot; pickled onions &middot; 200g yoghurt &middot; wraps for the boys if they'd rather, spares from the Thursday pack</div>
-          <div class="macro">~490 kcal &middot; 33g protein &middot; 41g carbs &middot; 19g fat &middot; 4g fibre <em>(per portion, 1/4; a wrap adds ~175 kcal)</em></div>
+          <div class="macro" data-macro="w1_mon">~490 kcal &middot; 32g protein &middot; 44g carbs &middot; 20g fat &middot; 5g fibre <em>(per portion, 1/4; a wrap adds ~175 kcal)</em></div>
           <ol>
             <li>Chicken, paprika and lime into a hot pan for 5 min. Peppers in for the last 3.</li>
             <li>Grain pouches as per the packet. Everything on the table and everyone helps themselves.</li>
@@ -409,7 +411,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Mild chilli, double batch</h3><span class="mini">Cooked Saturday &middot; 12 portions</span></div>
           <div class="ing">1kg mince &middot; 300g frozen diced onion &middot; 4 garlic cubes &middot; 2 tsp smoked paprika &middot; 2 tsp cumin &middot; 1 tsp oregano &middot; 2 tbsp tomato puree &middot; 2 tins chopped tomatoes &middot; 2 tins kidney beans &middot; 150g red lentils &middot; 600ml stock</div>
-          <div class="macro">~460 kcal &middot; 32g protein &middot; 49g carbs &middot; 13g fat &middot; 6g fibre <em>(Tuesday plate: 1/12 of the pot + half a rice pouch + 2 tbsp yoghurt. Whole pot ~2,780 kcal and 292g protein, so a bare portion of chilli is ~230 kcal and 24g protein)</em></div>
+          <div class="macro" data-macro="w1_tue">~465 kcal &middot; 31g protein &middot; 52g carbs &middot; 13g fat &middot; 7g fibre <em>(Tuesday plate: 1/12 of the pot + half a rice pouch + 2 tbsp yoghurt. Whole pot ~2,885 kcal and 296g protein, so a bare portion of chilli is ~240 kcal and 25g protein)</em></div>
           <ol>
             <li>Saturday: brown the mince in the biggest pot. Onion and garlic in for 3 min.</li>
             <li>Spices and puree for a minute, then everything else. Simmer 40 min with the lid half on. Nothing spicy goes in the pot.</li>
@@ -422,7 +424,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Chilli-loaded sweet potatoes</h3><span class="mini">On the oven timer &middot; 5 min of work</span></div>
           <div class="ing">4 sweet potatoes (~250g each) &middot; Wednesday's chilli tub (4 portions) &middot; 80g cheddar &middot; 160g yoghurt</div>
-          <div class="macro">~580 kcal &middot; 37g protein &middot; 68g carbs &middot; 16g fat &middot; 12g fibre <em>(per portion, 1/4)</em></div>
+          <div class="macro" data-macro="w1_wed">~585 kcal &middot; 36g protein &middot; 70g carbs &middot; 17g fat &middot; 13g fibre <em>(per portion, 1/4)</em></div>
           <ol>
             <li>Sweet potatoes in at 200C on a 45 min timer, set to finish around pickup.</li>
             <li>Reheat the chilli. Split the potatoes open, spoon it in, cheese and yoghurt over. <span class="adult">Flakes on ours.</span></li>
@@ -433,7 +435,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Smoky pulled chicken wraps</h3><span class="mini">Slow cooker &middot; 2 bags, one for the freezer</span></div>
           <div class="ing">Per bag: 6 boneless thighs &middot; 150g frozen onion &middot; 2 garlic cubes &middot; 2 tsp smoked paprika &middot; 1 tbsp honey &middot; 1 tbsp tomato puree &middot; 200ml passata &middot; 1 stock cube, crumbled</div>
-          <div class="macro">~690 kcal &middot; 43g protein &middot; 76g carbs &middot; 15g fat &middot; 6g fibre <em>(per portion, 1/4 of one bag, with 2 wraps, slaw and yoghurt; the second bag goes in the freezer)</em></div>
+          <div class="macro" data-macro="w1_thu">~680 kcal &middot; 43g protein &middot; 76g carbs &middot; 19g fat &middot; 7g fibre <em>(per portion, 1/4 of one bag, with 2 wraps, slaw and yoghurt; the second bag goes in the freezer)</em></div>
           <ol>
             <li>Saturday: everything into two bags, frozen flat. Wednesday at bedtime, one bag into the fridge.</li>
             <li>Thursday morning: bag into the slow cooker on low, then over to warm until the last one's home.</li>
@@ -445,7 +447,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Chorizo and pepper pizza, ours</h3><span class="mini">Method on the Every week tab</span></div>
           <div class="ing">1 thawed dough ball &middot; 80g passata &middot; 100g cooking chorizo, thinly sliced &middot; half a pepper, thin strips &middot; mozzarella, light layer (~60g) &middot; chilli flakes to finish</div>
-          <div class="macro">~590 kcal &middot; 26g protein &middot; 65g carbs &middot; 24g fat &middot; 4g fibre <em>(per half pizza, one adult's share)</em></div>
+          <div class="macro" data-macro="w1_fri_pizza">~620 kcal &middot; 29g protein &middot; 68g carbs &middot; 24g fat &middot; 4g fibre <em>(per half pizza, one adult's share)</em></div>
           <ol>
             <li>Chorizo and pepper go on before the mozzarella so the chorizo crisps up and its oil runs into the cheese.</li>
             <li>Same hot tray, 8-10 min. <span class="adult">Chilli flakes over it at the table.</span></li>
@@ -454,7 +456,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Chopped salad</h3></div>
           <div class="ing">1 bag leaves (~100g) &middot; 150g tomatoes, halved &middot; 1 tin sweetcorn (325g), drained &middot; half a cucumber (~150g), chunks &middot; 4 boiled eggs, quartered &middot; 50g cheddar, cubed &middot; 2 tbsp pickled onions &middot; 2 tbsp toasted seeds (~20g) &middot; 30g tortilla chips, crushed over &middot; 4 tbsp house vinaigrette + juice of half a lime</div>
-          <div class="macro">~360 kcal &middot; 15g protein &middot; 19g carbs &middot; 25g fat &middot; 4g fibre <em>(per portion, 1/4, dressed with 4 tbsp vinaigrette)</em></div>
+          <div class="macro" data-macro="w1_fri_salad">~375 kcal &middot; 15g protein &middot; 21g carbs &middot; 26g fat &middot; 4g fibre <em>(per portion, 1/4, dressed with 4 tbsp vinaigrette)</em></div>
           <ol>
             <li>Seeds into a dry pan for 2 min while the oven heats.</li>
             <li>Everything into the big bowl in that order, with the chips and seeds last so they stay crunchy. Lime into the vinaigrette and dress it at the table.</li>
@@ -465,7 +467,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Paprika chicken traybake</h3><span class="mini">Serves 4</span></div>
           <div class="ing">8 bone-in thighs &middot; 2 peppers, chunks &middot; 1 red onion, wedges &middot; 600g sweet potato, chunks &middot; 2 tbsp oil &middot; 2 tsp smoked paprika &middot; 1 lemon &middot; salt</div>
-          <div class="macro">~640 kcal &middot; 47g protein &middot; 36g carbs &middot; 34g fat &middot; 6g fibre <em>(per portion, 1/4; the adults' yoghurt and harissa adds ~55)</em></div>
+          <div class="macro" data-macro="w1_sat">~690 kcal &middot; 42g protein &middot; 37g carbs &middot; 42g fat &middot; 7g fibre <em>(per portion, 1/4; the adults' yoghurt and harissa adds ~40)</em></div>
           <ol>
             <li>Oven 200C. Everything into one big tray, tossed with the oil, paprika and salt.</li>
             <li>40 min, until the chicken skin has crisped. Lemon squeezed over.</li>
@@ -478,7 +480,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Two roast chickens</h3><span class="mini">Sunday dinner, then the week</span></div>
           <div class="ing">2 whole chickens (~1.4kg each) &middot; 2 tbsp oil, salt &middot; 1kg roasting veg, in chunks &middot; gravy granules</div>
-          <div class="macro">~540 kcal &middot; 51g protein &middot; 22g carbs &middot; 27g fat &middot; 3g fibre <em>(per portion, 1/4 of bird one, with roast veg and gravy)</em></div>
+          <div class="macro" data-macro="w1_sun">~550 kcal &middot; 54g protein &middot; 32g carbs &middot; 22g fat &middot; 9g fibre <em>(per portion, 1/4 of bird one, with roast veg and gravy)</em></div>
           <ol>
             <li>Oven 180C fan. Rub both birds with oil and salt. About 90 min, until the juices run clear and it's 75C in the thigh.</li>
             <li>Veg tray on the shelf underneath for the last 45 min.</li>
@@ -545,7 +547,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Tandoori chicken bowls</h3><span class="mini">All four eating &middot; cooked Saturday</span></div>
           <div class="ing">Saturday: 12 boneless thighs &middot; 250g yoghurt &middot; 1 tbsp mild tandoori or tikka mix &middot; squeeze of lemon. On the night: 2 grain pouches, 1 cucumber, 100g leaves, 150g mint yoghurt dressing, 4 tbsp mango chutney</div>
-          <div class="macro">~490 kcal &middot; 35g protein &middot; 47g carbs &middot; 17g fat &middot; 3g fibre <em>(per portion, 1/4, with half a grain pouch and a tbsp of chutney)</em></div>
+          <div class="macro" data-macro="w2_mon">~465 kcal &middot; 35g protein &middot; 47g carbs &middot; 15g fat &middot; 3g fibre <em>(per portion, 1/4, with half a grain pouch and a tbsp of chutney)</em></div>
           <ol>
             <li>Saturday: thighs into the yoghurt marinade, then 25 min at 200C alongside the veg tray. That comes out around 800g cooked. Half goes into the five lunch boxes at 80g each, half into a tub for Monday.</li>
             <li>Monday at half seven: warm the chicken through for 10 min or just slice it cold. Pouches, cucumber, leaves, dressing and chutney out, everyone builds their own.</li>
@@ -556,7 +558,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Mild dal</h3><span class="mini">Cooked Saturday &middot; 8 portions</span></div>
           <div class="ing">500g red lentils, rinsed &middot; 200g frozen onion &middot; 3 garlic cubes &middot; 2 ginger cubes &middot; 2 tsp turmeric &middot; 2 tsp cumin &middot; 1 tin chopped tomatoes &middot; 1 tin coconut milk &middot; 1.2L stock &middot; 100g frozen spinach &middot; 1 tsp garam masala at the end</div>
-          <div class="macro">~540 kcal &middot; 21g protein &middot; 71g carbs &middot; 16g fat &middot; 8g fibre <em>(Tuesday plate: 1/8 of the pot + half a rice pouch. Whole pot ~2,860 kcal and 135g protein, so a bare portion of dal is ~360 kcal and 17g protein. A naan adds ~280 kcal)</em></div>
+          <div class="macro" data-macro="w2_tue">~585 kcal &middot; 24g protein &middot; 73g carbs &middot; 20g fat &middot; 11g fibre <em>(Tuesday plate: 1/8 of the pot + half a rice pouch. Whole pot ~2,935 kcal and 142g protein, so a bare portion of dal is ~365 kcal and 18g protein. A naan adds ~270 kcal)</em></div>
           <ol>
             <li>Saturday: onion, garlic and ginger in a little oil for 3 min. Turmeric and cumin for another minute.</li>
             <li>Lentils, tomatoes, coconut milk and stock in. Simmer 30 min, stirring now and then.</li>
@@ -569,7 +571,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Pork fried rice</h3><span class="mini">One pan, 15 min</span></div>
           <div class="ing">300g leftover pork, diced &middot; 2 grain/rice pouches &middot; 300g frozen stir fry veg &middot; 3 eggs &middot; 2 tbsp soy &middot; 1 garlic cube</div>
-          <div class="macro">~520 kcal &middot; 30g protein &middot; 36g carbs &middot; 27g fat &middot; 3g fibre <em>(per portion, 1/4)</em></div>
+          <div class="macro" data-macro="w2_wed">~530 kcal &middot; 32g protein &middot; 37g carbs &middot; 27g fat &middot; 3g fibre <em>(per portion, 1/4)</em></div>
           <ol>
             <li>Hot pan, pork in to crisp for 3 min. Veg and garlic for another 3.</li>
             <li>Pouches straight in, broken up, 3 min. Push it all to one side and scramble the eggs in the gap.</li>
@@ -582,7 +584,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Chicken and chickpea korma</h3><span class="mini">Slow cooker &middot; 2 bags, one for the freezer</span></div>
           <div class="ing">Per bag: 6 boneless thighs &middot; half jar korma paste &middot; 1 tin chickpeas, drained &middot; 150g frozen onion &middot; 1 tin coconut milk</div>
-          <div class="macro">~730 kcal &middot; 39g protein &middot; 48g carbs &middot; 41g fat &middot; 6g fibre <em>(per portion, 1/4 of one bag + half a rice pouch; the second bag goes in the freezer. Full-fat coconut milk is 720 kcal a tin and drives most of the fat)</em></div>
+          <div class="macro" data-macro="w2_thu">~775 kcal &middot; 43g protein &middot; 55g carbs &middot; 43g fat &middot; 7g fibre <em>(per portion, 1/4 of one bag + half a rice pouch; the second bag goes in the freezer. Full-fat coconut milk is ~790 kcal a tin and drives most of the fat)</em></div>
           <ol>
             <li>Saturday: fill two bags and freeze them flat. Wednesday at bedtime, one into the fridge.</li>
             <li>Thursday morning: into the slow cooker on low, then over to warm until the last one's home.</li>
@@ -594,7 +596,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Tandoori chicken pizza, ours</h3><span class="mini">Method on the Every week tab</span></div>
           <div class="ing">1 thawed dough ball &middot; 2 boneless chicken thighs, diced &middot; 1 tsp mild curry or tandoori spice mix &middot; splash of oil &middot; 80g passata &middot; mozzarella, light layer (~60g) &middot; mango chutney and coriander to finish</div>
-          <div class="macro">~580 kcal &middot; 34g protein &middot; 69g carbs &middot; 18g fat &middot; 3g fibre <em>(per half pizza, one adult's share)</em></div>
+          <div class="macro" data-macro="w2_fri_pizza">~605 kcal &middot; 35g protein &middot; 72g carbs &middot; 18g fat &middot; 4g fibre <em>(per half pizza, one adult's share)</em></div>
           <ol>
             <li>Dice the chicken and fry it with the spice mix for 6-7 min, until cooked through and starting to catch. Do this while the dough comes round and the oven heats.</li>
             <li>Sauce, chicken, mozzarella, same hot tray, 8-10 min. Mango chutney over and coriander scattered on once it's out.</li>
@@ -603,7 +605,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Cucumber and tomato salad</h3></div>
           <div class="ing">1 bag leaves (~100g) &middot; 1 cucumber (~300g), diced small &middot; 150g tomatoes, diced &middot; 2 tbsp pickled onions &middot; 4 boiled eggs, quartered &middot; 2 tbsp toasted seeds and nuts (~20g) &middot; dressing: 3 tbsp yoghurt + 1 tsp mango chutney + squeeze of lemon</div>
-          <div class="macro">~155 kcal &middot; 10g protein &middot; 7g carbs &middot; 9g fat &middot; 2g fibre <em>(per portion, 1/4; a light side salad, the yoghurt dressing keeps it well under the vinaigrette weeks)</em></div>
+          <div class="macro" data-macro="w2_fri_salad">~155 kcal &middot; 10g protein &middot; 8g carbs &middot; 9g fat &middot; 2g fibre <em>(per portion, 1/4; a light side salad, the yoghurt dressing keeps it well under the vinaigrette weeks)</em></div>
           <ol>
             <li>Seeds and nuts into a dry pan for 2 min while the oven heats.</li>
             <li>Mix the dressing in a mug. Everything into the bowl, dressing over it, seeds last.</li>
@@ -614,7 +616,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Lemon salmon traybake</h3><span class="mini">Serves 4</span></div>
           <div class="ing">4 salmon fillets &middot; 500g baby potatoes, halved &middot; 1 head broccoli, florets &middot; 2 tbsp oil &middot; 1 lemon &middot; dried herbs, salt</div>
-          <div class="macro">~440 kcal &middot; 33g protein &middot; 25g carbs &middot; 23g fat &middot; 5g fibre <em>(per portion, 1/4)</em></div>
+          <div class="macro" data-macro="w2_sat">~460 kcal &middot; 32g protein &middot; 28g carbs &middot; 25g fat &middot; 5g fibre <em>(per portion, 1/4)</em></div>
           <ol>
             <li>Oven 200C. Potatoes in with oil and salt, 20 min on their own.</li>
             <li>Broccoli in, salmon on top, lemon slices and herbs over. Another 15 min.</li>
@@ -626,7 +628,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Slow-roast pork shoulder</h3><span class="mini">Sunday dinner, then Wednesday</span></div>
           <div class="ing">Pork shoulder 1.6-2kg &middot; 2 tbsp oil, plenty of salt &middot; 1kg roasting veg, in chunks &middot; apple sauce (3 cooking apples, or a jar) &middot; gravy granules</div>
-          <div class="macro">~700 kcal &middot; 48g protein &middot; 32g carbs &middot; 42g fat &middot; 3g fibre <em>(per portion, 1/4 of a 1.8kg joint once 300g is set aside for Wednesday, with roast veg, apple sauce and gravy)</em></div>
+          <div class="macro" data-macro="w2_sun">~790 kcal &middot; 55g protein &middot; 37g carbs &middot; 45g fat &middot; 9g fibre <em>(per portion, 1/4 of a 1.8kg joint once 300g is set aside for Wednesday, with roast veg, apple sauce and gravy)</em></div>
           <ol>
             <li>Score the skin, then oil and salt it properly. 220C for 30 min.</li>
             <li>Down to 150C fan for 3 hours. It needs no attention, so it fits round the afternoon.</li>
@@ -693,7 +695,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Mezze bowls</h3><span class="mini">All four eating &middot; 10 min</span></div>
           <div class="ing">2 blocks halloumi (225g each), sliced &middot; 4 wholemeal pittas &middot; 400g of Saturday's roast veg &middot; 100g hummus &middot; 2 tbsp pickled onions &middot; 100g leaves &middot; 4 tbsp lemon dressing</div>
-          <div class="macro">~760 kcal &middot; 35g protein &middot; 48g carbs &middot; 47g fat &middot; 9g fibre <em>(per portion, 1/4; halloumi, hummus and dressing carry nearly all the fat, so go lighter on the dressing if that matters)</em></div>
+          <div class="macro" data-macro="w3_mon">~785 kcal &middot; 35g protein &middot; 52g carbs &middot; 46g fat &middot; 10g fibre <em>(per portion, 1/4; halloumi, hummus and dressing carry nearly all the fat, so go lighter on the dressing if that matters)</em></div>
           <ol>
             <li>Halloumi into a dry hot pan, 2 min a side. Pittas in the toaster. No grain pouches with this one, the pitta covers it.</li>
             <li>Everything on the table and everyone helps themselves.</li>
@@ -704,7 +706,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Tomato and chickpea stew with couscous</h3><span class="mini">Cooked Saturday &middot; 8 portions</span></div>
           <div class="ing">2 tins chickpeas &middot; 1 tin cannellini &middot; 200g frozen onion &middot; 3 garlic cubes &middot; 2 tsp cumin &middot; 2 tsp smoked paprika &middot; 2 tins chopped tomatoes &middot; 2 courgettes, chunks &middot; 500ml stock &middot; frozen spinach at the end</div>
-          <div class="macro">~360 kcal &middot; 15g protein &middot; 55g carbs &middot; 6g fat &middot; 10g fibre <em>(Tuesday plate: 1/8 of the pot + 50g dry couscous. Whole pot ~1,460 kcal and 69g protein, so a bare portion of stew is ~180 kcal and 9g protein)</em></div>
+          <div class="macro" data-macro="w3_tue">~350 kcal &middot; 16g protein &middot; 59g carbs &middot; 5g fat &middot; 11g fibre <em>(Tuesday plate: 1/8 of the pot + 50g dry couscous. Whole pot ~1,370 kcal and 73g protein, so a bare portion of stew is ~170 kcal and 9g protein)</em></div>
           <ol>
             <li>Saturday: onion and garlic in oil for 3 min, spices for another minute, then everything else. Simmer 25 min, spinach in for the last 5. Salt.</li>
             <li>A tub for Tuesday, one bag frozen and labelled CHICKPEA STEW with the month.</li>
@@ -717,7 +719,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Gammon, eggs and sweet potato chips</h3><span class="mini">20 min, mostly the oven</span></div>
           <div class="ing">Wednesday's gammon, about 400g cooked &middot; Saturday's part-cooked sweet potato chips, 1kg raw &middot; 5 eggs</div>
-          <div class="macro">~560 kcal &middot; 37g protein &middot; 50g carbs &middot; 23g fat &middot; 8g fibre <em>(per portion, 1/4)</em></div>
+          <div class="macro" data-macro="w3_wed">~530 kcal &middot; 37g protein &middot; 51g carbs &middot; 20g fat &middot; 8g fibre <em>(per portion, 1/4)</em></div>
           <ol>
             <li>Chips back in at 200C for 20 min, timer set to finish around pickup.</li>
             <li>Fry the eggs and slice the gammon. Probably the boys' favourite night of the month.</li>
@@ -728,7 +730,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Chicken, olive and tomato stew</h3><span class="mini">Slow cooker &middot; 2 bags, one for the freezer</span></div>
           <div class="ing">Per bag: 6 boneless thighs &middot; 80g olives &middot; 1 tin chopped tomatoes &middot; 150g frozen onion &middot; 2 garlic cubes &middot; 1 tsp oregano &middot; 1 stock cube &middot; squeeze of lemon</div>
-          <div class="macro">~465 kcal &middot; 33g protein &middot; 37g carbs &middot; 19g fat &middot; 4g fibre <em>(per portion, 1/4 of one bag + half a grain pouch; the second bag goes in the freezer)</em></div>
+          <div class="macro" data-macro="w3_thu">~440 kcal &middot; 34g protein &middot; 41g carbs &middot; 15g fat &middot; 4g fibre <em>(per portion, 1/4 of one bag + half a grain pouch; the second bag goes in the freezer)</em></div>
           <ol>
             <li>Saturday: two bags, frozen flat. Wednesday at bedtime, one into the fridge.</li>
             <li>Thursday morning: into the slow cooker on low, then over to warm until the last one's home. 2 grain pouches with it.</li>
@@ -739,7 +741,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Chorizo, feta and olive pizza, ours</h3><span class="mini">Method on the Every week tab</span></div>
           <div class="ing">1 thawed dough ball &middot; 80g passata &middot; 80g cooking chorizo, sliced &middot; 40g feta, crumbled &middot; handful of olives (~40g) &middot; mozzarella, light layer (~60g) &middot; oregano to finish</div>
-          <div class="macro">~630 kcal &middot; 27g protein &middot; 63g carbs &middot; 28g fat &middot; 4g fibre <em>(per half pizza, one adult's share)</em></div>
+          <div class="macro" data-macro="w3_fri_pizza">~650 kcal &middot; 29g protein &middot; 67g carbs &middot; 28g fat &middot; 4g fibre <em>(per half pizza, one adult's share)</em></div>
           <ol>
             <li>Chorizo, feta and olives over the sauce, then the mozzarella. Go light with it, the feta and chorizo bring plenty of salt and fat already.</li>
             <li>Same hot tray, 8-10 min. Oregano over it once it's out.</li>
@@ -748,7 +750,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Greek salad</h3></div>
           <div class="ing">400g tomatoes, big chunks &middot; 1 cucumber (~300g), big chunks &middot; 100g feta, cubed &middot; 60g olives &middot; 2 tbsp pickled onions &middot; 1 tsp oregano &middot; 2 tbsp toasted seeds (~20g) &middot; 4 tbsp house vinaigrette + juice of half a lemon</div>
-          <div class="macro">~235 kcal &middot; 6g protein &middot; 7g carbs &middot; 20g fat &middot; 2g fibre <em>(per portion, 1/4, dressed with 4 tbsp vinaigrette)</em></div>
+          <div class="macro" data-macro="w3_fri_salad">~245 kcal &middot; 6g protein &middot; 9g carbs &middot; 21g fat &middot; 3g fibre <em>(per portion, 1/4, dressed with 4 tbsp vinaigrette)</em></div>
           <ol>
             <li>Seeds into a dry pan for 2 min while the oven heats.</li>
             <li>No leaves in this one. Everything into the bowl, oregano and seeds over the top, dressed at the table.</li>
@@ -759,7 +761,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Lemon and oregano chicken traybake</h3><span class="mini">Serves 4</span></div>
           <div class="ing">8 bone-in thighs &middot; 2 peppers &middot; 1 courgette &middot; 1 red onion &middot; 100g olives &middot; 2 lemons, one juiced one sliced &middot; 2 tsp oregano &middot; 2 tbsp oil, salt</div>
-          <div class="macro">~555 kcal &middot; 46g protein &middot; 9g carbs &middot; 38g fat &middot; 3g fibre <em>(per portion, 1/4; no starch in this one, add bread or a pouch if you want it)</em></div>
+          <div class="macro" data-macro="w3_sat">~605 kcal &middot; 40g protein &middot; 9g carbs &middot; 46g fat &middot; 3g fibre <em>(per portion, 1/4; no starch in this one, add bread or a pouch if you want it)</em></div>
           <ol>
             <li>Oven 200C. Everything in one tray and tossed together, lemon slices on top.</li>
             <li>40 min, until it's crisped up. Feta crumbled over at the table if anyone wants it.</li>
@@ -771,7 +773,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Roast gammon</h3><span class="mini">Sunday dinner, Wednesday, sandwiches</span></div>
           <div class="ing">Gammon joint 1.5-2kg &middot; foil &middot; 1kg roasting veg, in chunks &middot; if you want a glaze, 1 tbsp honey with 1 tsp mustard</div>
-          <div class="macro">~455 kcal &middot; 42g protein &middot; 22g carbs &middot; 21g fat &middot; 3g fibre <em>(per portion, 1/4 of the half carved for Sunday, with roast veg)</em></div>
+          <div class="macro" data-macro="w3_sun">~420 kcal &middot; 42g protein &middot; 32g carbs &middot; 13g fat &middot; 9g fibre <em>(per portion, 1/4 of the half carved for Sunday, with roast veg)</em></div>
           <ol>
             <li>Wrapped in foil at 180C, 30 min per 500g plus another 30.</li>
             <li>If glazing, unwrap it for the last 20 min, glaze on, oven up to 200C.</li>
@@ -837,7 +839,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Lasagne</h3><span class="mini">Made Saturday &middot; baked Monday on the timer</span></div>
           <div class="ing">A third of the big ragu (Tue tab) &middot; 200g lasagne sheets &middot; 300g creme fraiche, 100g grated cheddar and a splash of milk stirred together, which is the whole white sauce, no roux &middot; 1 ball mozzarella for the top</div>
-          <div class="macro">~900 kcal &middot; 40g protein &middot; 50g carbs &middot; 58g fat &middot; 5g fibre <em>(per portion, 1/4 of the dish plus a dressed side salad; 300g of full-fat creme fraiche is 900 kcal on its own, so the half-fat tub takes about 110 kcal off each portion)</em></div>
+          <div class="macro" data-macro="w4_mon">~875 kcal &middot; 41g protein &middot; 52g carbs &middot; 55g fat &middot; 5g fibre <em>(per portion, 1/4 of the dish plus a dressed side salad; 300g of full-fat creme fraiche is 900 kcal on its own, so the half-fat tub takes about 110 kcal off each portion)</em></div>
           <ol>
             <li>Saturday: ragu, sheets, white mix, and round again. Mozzarella on top, cling film over it, into the fridge.</li>
             <li>Monday: 190C for 40 min on the timer, set to finish when everyone's back.</li><li>Salad with it: 1 bag leaves, 1 cucumber in chunks, 150g tomatoes, 4 tbsp house vinaigrette.</li>
@@ -848,7 +850,7 @@
         <div class="recipe">
           <div class="rhead"><h3>The big ragu, with fresh pasta</h3><span class="mini">Cooked Saturday &middot; Monday, Tuesday and the freezer</span></div>
           <div class="ing">1kg mince, 5% fat &middot; 300g frozen onion &middot; 4 garlic cubes &middot; 2 carrots, grated &middot; 2 tbsp puree &middot; 2 tins chopped tomatoes &middot; 300ml passata &middot; 2 tsp oregano &middot; 400ml stock. On the night: 500g fresh pasta and parmesan</div>
-          <div class="macro">~585 kcal &middot; 40g protein &middot; 71g carbs &middot; 15g fat &middot; 5g fibre <em>(Tuesday plate: 1/4 of the Tuesday third + 125g fresh pasta and parmesan. The whole ragu is ~1,930 kcal and 228g protein, split three ways)</em></div>
+          <div class="macro" data-macro="w4_tue">~570 kcal &middot; 38g protein &middot; 71g carbs &middot; 14g fat &middot; 5g fibre <em>(Tuesday plate: 1/4 of the Tuesday third + 125g fresh pasta and parmesan. The whole ragu is ~2,005 kcal and 231g protein, split three ways)</em></div>
           <ol>
             <li>Saturday: brown the mince properly, don't rush it. Onion, garlic and carrot for 4 min, then the puree and everything else. Simmer 45 min with the lid half on.</li>
             <li>Split it three ways: a third into the lasagne (Mon tab), a tub for Tuesday, and one bag frozen and labelled RAGU with the month.</li>
@@ -860,7 +862,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Beef and tomato orzo</h3><span class="mini">One pot, 15 min</span></div>
           <div class="ing">300g orzo &middot; Sunday's leftover beef, sliced thin &middot; 300ml passata &middot; 600ml stock &middot; 200g frozen veg &middot; parmesan</div>
-          <div class="macro">~490 kcal &middot; 39g protein &middot; 60g carbs &middot; 8g fat &middot; 4g fibre <em>(per portion, 1/4)</em></div>
+          <div class="macro" data-macro="w4_wed">~480 kcal &middot; 38g protein &middot; 60g carbs &middot; 9g fat &middot; 4g fibre <em>(per portion, 1/4)</em></div>
           <ol>
             <li>Orzo, passata, stock and veg into one pan. Simmer 10-12 min, stirring, until it goes saucy.</li>
             <li>Beef in for the last 2 minutes, just to warm through. Parmesan over the top.</li>
@@ -871,7 +873,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Minestrone and garlic bread</h3><span class="mini">Cooked Saturday &middot; Thursday and the freezer</span></div>
           <div class="ing">2 tins cannellini &middot; 150g red lentils &middot; 200g frozen onion &middot; 3 garlic cubes &middot; 2 carrots and 1 courgette, diced &middot; 2 tins chopped tomatoes &middot; 1.4L stock &middot; oregano &middot; frozen spinach at the end &middot; soup pasta, but only when reheating</div>
-          <div class="macro">~550 kcal &middot; 19g protein &middot; 75g carbs &middot; 16g fat &middot; 10g fibre <em>(Thursday plate: 1/8 of the pot + soup pasta + a 75g slice of garlic bread. Whole pot ~1,730 kcal and 87g protein, so a bare portion is ~215 kcal and 11g protein)</em></div>
+          <div class="macro" data-macro="w4_thu">~505 kcal &middot; 19g protein &middot; 67g carbs &middot; 16g fat &middot; 11g fibre <em>(Thursday plate: 1/8 of the pot + soup pasta + a 75g slice of garlic bread. Whole pot ~1,610 kcal and 91g protein, so a bare portion is ~200 kcal and 11g protein)</em></div>
           <ol>
             <li>Saturday: onion, garlic, carrot and courgette in oil for 5 min. Everything else in apart from the pasta, then simmer 25 min.</li>
             <li>A tub for Thursday, one bag frozen and labelled MINESTRONE with the month. Keep the pasta out of the pot or it'll be mush by the time it's reheated.</li>
@@ -883,7 +885,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Pepperoni pizza, ours</h3><span class="mini">Method on the Every week tab</span></div>
           <div class="ing">1 thawed dough ball &middot; 80g passata &middot; 40g pepperoni slices, or 3-4 sliced meatballs out of the freezer if there's a bag in there &middot; mozzarella, light layer (~60g) &middot; chilli oil to finish</div>
-          <div class="macro">~510 kcal &middot; 20g protein &middot; 62g carbs &middot; 19g fat &middot; 3g fibre <em>(per half pizza, one adult's share; the lightest of the four adult pizzas)</em></div>
+          <div class="macro" data-macro="w4_fri_pizza">~520 kcal &middot; 21g protein &middot; 66g carbs &middot; 18g fat &middot; 3g fibre <em>(per half pizza, one adult's share; the lightest of the four adult pizzas)</em></div>
           <ol>
             <li>Pepperoni, or the sliced meatballs, over the sauce and then the mozzarella.</li>
             <li>Same hot tray, 8-10 min. <span class="adult">Chilli oil over it at the table.</span></li>
@@ -893,7 +895,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Tomato and mozzarella salad</h3></div>
           <div class="ing">1 bag leaves (~100g) &middot; 150g tomatoes, halved &middot; 1 tub mozzarella pearls (150g), drained &middot; 1 tin cannellini beans, rinsed &middot; 2 tbsp pickled onions &middot; 2 tbsp toasted seeds or pine nuts (~20g) &middot; 4 tbsp house vinaigrette, made with balsamic this week</div>
-          <div class="macro">~270 kcal &middot; 12g protein &middot; 14g carbs &middot; 18g fat &middot; 5g fibre <em>(per portion, 1/4, dressed with 4 tbsp balsamic vinaigrette)</em></div>
+          <div class="macro" data-macro="w4_fri_salad">~300 kcal &middot; 12g protein &middot; 14g carbs &middot; 20g fat &middot; 5g fibre <em>(per portion, 1/4, dressed with 4 tbsp balsamic vinaigrette)</em></div>
           <ol>
             <li>Seeds into a dry pan for 2 min while the oven heats.</li>
             <li>Everything into the bowl, with the beans and mozzarella stirred through the middle so every serving gets some. Dressed at the table.</li>
@@ -904,7 +906,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Meatball and veg traybake</h3><span class="mini">Serves 4, with a bag left for the freezer</span></div>
           <div class="ing">800g mince, ~12% fat &middot; 60g oats &middot; 1 egg &middot; 2 garlic cubes, thawed &middot; 1 tsp oregano &middot; salt &middot; 2 courgettes and 2 red onions in chunks (~600g) &middot; 300ml passata &middot; fresh bread</div>
-          <div class="macro">~505 kcal &middot; 28g protein &middot; 43g carbs &middot; 22g fat &middot; 6g fibre <em>(per portion, 1/4 of the half batch cooked tonight, with the veg and a 60g slice of bread; the other 12 balls go in the freezer)</em></div>
+          <div class="macro" data-macro="w4_sat">~465 kcal &middot; 29g protein &middot; 46g carbs &middot; 17g fat &middot; 5g fibre <em>(per portion, 1/4 of the half batch cooked tonight, with the veg and a 60g slice of bread; the other 12 balls go in the freezer)</em></div>
           <ol>
             <li>Mix it and roll about 24 balls. Half go on a tray into the freezer, then into a bag once they're solid.</li>
             <li>The other half onto the veg tray at 200C for 20 min. Passata over, another 10.</li>
@@ -917,7 +919,7 @@
         <div class="recipe">
           <div class="rhead"><h3>Roast beef and Yorkshires</h3><span class="mini">Sunday dinner, then Wednesday</span></div>
           <div class="ing">Topside 1.2-1.5kg &middot; 2 tbsp oil, salt, pepper &middot; 1kg roasting veg, in chunks &middot; 8 frozen Yorkshires &middot; gravy granules</div>
-          <div class="macro">~590 kcal &middot; 62g protein &middot; 38g carbs &middot; 18g fat &middot; 4g fibre <em>(per portion, 1/4 of the joint once 300g is set aside for Wednesday, with roast veg, 2 Yorkshires and gravy)</em></div>
+          <div class="macro" data-macro="w4_sun">~600 kcal &middot; 57g protein &middot; 47g carbs &middot; 19g fat &middot; 9g fibre <em>(per portion, 1/4 of the joint once 300g is set aside for Wednesday, with roast veg, 2 Yorkshires and gravy)</em></div>
           <ol>
             <li>Oven 220C. Joint oiled and seasoned, in for 20 min.</li>
             <li>Down to 160C fan, about 25 min per 500g for medium. Veg tray on the shelf below.</li>
