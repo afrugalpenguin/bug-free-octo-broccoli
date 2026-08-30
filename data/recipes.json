@@ -4555,7 +4555,8 @@
       "ovenTimer": true,
       "season": "all-year",
       "source": "emily-english"
-    }
+    },
+    "bucket": "Rotation-ready"
   },
   "ee_goulash": {
     "name": "Goulash",
@@ -4576,7 +4577,8 @@
       "season": "winter",
       "source": "batch-cook"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Rotation-ready"
   },
   "ee_veggie_bol": {
     "name": "Superfood Vegetarian Bolognese",
@@ -4597,7 +4599,8 @@
       "season": "all-year",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Rotation-ready"
   },
   "ee_chicken_orzo": {
     "name": "One-Pot Mediterranean Chicken Orzo",
@@ -4618,7 +4621,8 @@
       "season": "all-year",
       "source": "batch-cook"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Rotation-ready"
   },
   "ee_rainbow_couscous": {
     "name": "Rainbow Couscous",
@@ -4638,7 +4642,8 @@
       "season": "summer",
       "source": "batch-cook"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Summer swaps"
   },
   "ee_sesame_ginger": {
     "name": "Toasted Sesame & Ginger Chicken Salad",
@@ -4659,7 +4664,8 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Summer swaps"
   },
   "ee_multivitamin": {
     "name": "Nature's Multivitamin Salad",
@@ -4680,7 +4686,8 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Sides and extras"
   },
   "ee_mango_jalapeno": {
     "name": "Mango, Jalapeno & Lime Salad",
@@ -4700,7 +4707,8 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Summer swaps"
   },
   "ee_sushi_salad": {
     "name": "Sushi Salad",
@@ -4720,7 +4728,8 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Summer swaps"
   },
   "ee_ppcl": {
     "name": "Pesto Prawn Courgetti Linguine",
@@ -4740,7 +4749,8 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Summer swaps"
   },
   "ee_stir_fry": {
     "name": "Sticky Peanut Stir Fry",
@@ -4760,7 +4770,8 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Summer swaps"
   },
   "ee_salmon_veg": {
     "name": "Salmon and Sexy Veg",
@@ -4781,7 +4792,8 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Summer swaps"
   },
   "ee_risotto": {
     "name": "Oven-Baked Risotto with Smoked Salmon & Peas",
@@ -4802,7 +4814,8 @@
       "season": "all-year",
       "source": "batch-cook"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Together nights"
   },
   "ee_italian_pasta": {
     "name": "Italian Sausage & Broccoli Pasta",
@@ -4823,7 +4836,8 @@
       "season": "all-year",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Together nights"
   },
   "ee_gyoza_soup": {
     "name": "Detox Gyoza Soup",
@@ -4843,6 +4857,7 @@
       "season": "all-year",
       "source": "emily-english"
     },
-    "incomplete": true
+    "incomplete": true,
+    "bucket": "Sides and extras"
   }
 }
