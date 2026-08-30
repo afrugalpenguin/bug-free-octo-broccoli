@@ -15,14 +15,8 @@
 
   "pizza_boys": {"portions":2,"items":{"pizza_dough":500,"passata":200,"mozzarella":250,"olive_oil":14}},
   "shake_bag": {"portions":1,"items":{"frozen_spinach":100,"frozen_berries":100,"oats":30,"seeds_nuts":15,"protein_powder":30,"milk_semi":309}},
-  "lunch_box": {"portions":1,"items":{"olive_oil":21,"vinegar":7.5,"mustard":1.2,"honey":1.7,"grain_pouch":125,"mixed_beans_drained":50,"chicken_roast_meat":80,"roasting_veg":100,"red_onion":15,"salad_leaves":15}},
   "sandwiches": {"portions":1,"items":{"bread_wholemeal":80,"butter":10,"ham_sliced":60,"cheddar":30,"cucumber":30,"tomatoes":30,"salad_leaves":10,"red_onion":10}},
   "pasta_salad": {"portions":4,"items":{"pasta_dry":250,"tuna_drained":224,"egg":116,"cucumber":150,"tomatoes":100,"frozen_peas":100,"seeds_nuts":20,"greek_yoghurt":30,"lemon_juice":20}},
-  "boiled_egg": {"portions":1,"items":{"egg":58}},
-  "pickled_onions": {"portions":33,"items":{"red_onion":200,"vinegar":157,"sugar":12}},
-  "vinaigrette": {"portions":8,"items":{"olive_oil":84,"vinegar":30,"mustard":5,"honey":7}},
-  "yoghurt_dressing": {"portions":11,"items":{"greek_yoghurt":150,"lemon_juice":15,"garlic":5}},
-  "lemon_dressing": {"portions":8,"items":{"olive_oil":84,"lemon_juice":45,"honey":7}},
   "flapjack": {"portions":12,"items":{"oats":250,"protein_powder":60,"peanut_butter":150,"honey":100,"butter":75,"seeds_nuts":50,"banana":100}},
 
   "w1_box": {"portions":1,
