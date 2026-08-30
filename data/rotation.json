@@ -1,7 +1,14 @@
 {
   "_note": "Which recipes fill which slot in which week. Day order is Fri->Thu, anchored to delivery day. Ids are keys in recipes.json; 'scaffold:pizza' means the Friday pizza pair defined in scaffold.json.",
-
-  "day_order": ["fri", "sat", "sun", "mon", "tue", "wed", "thu"],
+  "day_order": [
+    "fri",
+    "sat",
+    "sun",
+    "mon",
+    "tue",
+    "wed",
+    "thu"
+  ],
   "day_names": {
     "fri": "Friday",
     "sat": "Saturday",
@@ -11,7 +18,6 @@
     "wed": "Wednesday",
     "thu": "Thursday"
   },
-
   "weeks": {
     "1": {
       "theme": "Mexican / Chicken",
@@ -44,10 +50,12 @@
       "friday_pizza_topping": "chorizo_pepper_pizza",
       "flapjack": "flapjack_plain_seed",
       "seasonal_swaps": {
-        "summer": { "wed": "ee_rainbow_couscous" }
-      }
+        "summer": {
+          "wed": "ee_rainbow_couscous"
+        }
+      },
+      "saturday_extras": []
     },
-
     "2": {
       "theme": "Curry / Pork",
       "colour": "week2",
@@ -79,10 +87,17 @@
       "friday_pizza_topping": "tandoori_chicken_pizza",
       "flapjack": "flapjack_cinnamon_raisin",
       "seasonal_swaps": {
-        "summer": { "tue": "ee_sesame_ginger" }
-      }
+        "summer": {
+          "tue": "ee_sesame_ginger"
+        }
+      },
+      "saturday_extras": [
+        {
+          "recipe": "tandoori_thighs",
+          "note": "Cook 1.6kg of thighs, not 1kg - 600g of it is Monday night."
+        }
+      ]
     },
-
     "3": {
       "theme": "North African / Gammon",
       "colour": "week3",
@@ -114,10 +129,18 @@
       "friday_pizza_topping": "halloumi_pepper_pizza",
       "flapjack": "flapjack_lemon_seed",
       "seasonal_swaps": {
-        "summer": { "sun": "ee_salmon_veg", "wed": "ee_stir_fry" }
-      }
+        "summer": {
+          "sun": "ee_salmon_veg",
+          "wed": "ee_stir_fry"
+        }
+      },
+      "saturday_extras": [
+        {
+          "recipe": "gammon_eggs_chips",
+          "note": "Sweet potato chips cut and part-cooked now: 200C, 15 minutes. Cooled, into a tub. They finish on Wednesday."
+        }
+      ]
     },
-
     "4": {
       "theme": "Italian / Beef",
       "colour": "week4",
@@ -150,8 +173,16 @@
       "friday_pizza_topping": "pepperoni_pizza",
       "flapjack": "flapjack_cocoa",
       "seasonal_swaps": {
-        "summer": { "tue": "ee_ppcl" }
-      }
+        "summer": {
+          "tue": "ee_ppcl"
+        }
+      },
+      "saturday_extras": [
+        {
+          "recipe": "lasagne",
+          "note": "Assemble the lasagne cold from the ragu tub and leave it raw in the fridge. Monday is an oven timer and nothing else."
+        }
+      ]
     }
   }
 }
