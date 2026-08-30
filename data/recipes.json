@@ -950,7 +950,15 @@
         "food": "chicken_thigh_bonein",
         "grams": 1200,
         "display": "8 bone-in chicken thighs (~1.2kg)",
-        "aisle": "meat"
+        "aisle": "meat",
+        "basketOnly": true
+      },
+      {
+        "food": "chicken_thigh_bonein",
+        "grams": 840,
+        "display": "The meat off them - bone is about 30% of the weight",
+        "aisle": "meat",
+        "macroOnly": true
       },
       {
         "food": "pepper",
@@ -1113,7 +1121,15 @@
         "food": "chicken_thigh_bonein",
         "grams": 1200,
         "display": "8 bone-in chicken thighs (~1.2kg)",
-        "aisle": "meat"
+        "aisle": "meat",
+        "basketOnly": true
+      },
+      {
+        "food": "chicken_thigh_bonein",
+        "grams": 840,
+        "display": "The meat off them - bone is about 30% of the weight",
+        "aisle": "meat",
+        "macroOnly": true
       },
       {
         "food": "butternut_squash",
