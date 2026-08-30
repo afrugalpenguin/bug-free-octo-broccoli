@@ -20,11 +20,15 @@ body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
 header{background:var(--text);color:var(--bg);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;position:sticky;top:0;z-index:20}
 header h1{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;font-weight:400;line-height:1.2}
 header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans-serif}
-#today{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.7rem 1.1rem;font:inherit;font-weight:600;font-size:.85rem;cursor:pointer;white-space:nowrap;min-height:44px}
+#today{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.45rem 1.1rem;font:inherit;cursor:pointer;white-space:nowrap;min-height:44px;display:grid;gap:0;line-height:1.25;text-align:center}
+#today .t-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
+#today .t-slot{font-size:.85rem;font-weight:600}
 #today:active{transform:scale(.97)}
 .tabs{display:flex;background:var(--card);border-bottom:1px solid var(--border);overflow-x:auto;position:sticky;top:76px;z-index:19;-webkit-overflow-scrolling:touch}
 .tab{padding:.85rem 1.1rem;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:.9rem;font-weight:500;color:var(--text-light);white-space:nowrap;cursor:pointer;min-height:44px}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab[data-tab="bank"]{margin-left:auto;color:var(--text-light);opacity:.85}
+.tab[data-tab="bank"].active{opacity:1}
 .tab[data-tab="week-1"].active{color:var(--week1);border-bottom-color:var(--week1)}
 .tab[data-tab="week-2"].active{color:var(--week2);border-bottom-color:var(--week2)}
 .tab[data-tab="week-3"].active{color:var(--week3);border-bottom-color:var(--week3)}
@@ -118,6 +122,9 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .bank .source{font-size:.78rem;color:var(--text-light)}
 .bank em{font-size:.8rem;color:var(--text-light);font-style:normal}
 .bank .flag{font-size:.72rem;color:var(--accent);font-weight:600}
+.bank .slot{font-size:.75rem;color:var(--week2);font-weight:600}
+.bank li.ready{border-left:3px solid var(--week2)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--bg);padding:.1em .35em;border-radius:4px}
 .warn{color:var(--accent);font-weight:600}
 footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-light)}
 .flash{box-shadow:0 0 0 3px var(--accent)}
@@ -136,6 +143,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <button class="tab" data-tab="week-2">Week 2</button>
   <button class="tab" data-tab="week-3">Week 3</button>
   <button class="tab" data-tab="week-4">Week 4</button>
+  <button class="tab" data-tab="bank">Bank</button>
 </nav>
 <main class="container">
 <div class="panel active" data-tab="overview">
@@ -164,70 +172,6 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 
   <section class="block"><h2>Dressings</h2>
     <p>Make the three oil-based dressings in jars on day 1 of the cycle. They keep 3-4 weeks. Mint yoghurt is weekly and only needed in week 2.</p></section>
-
-  <section class="block"><h2>The bank</h2>
-    <p class="notes">Recipes graded and parked, ready for summer swaps, together nights and schedule-dependent slots.</p>
-    <ul class="bank"><li class="">
-      <strong>Meatball &amp; Ricotta Al Forno</strong>
-      <span class="source">Emily English, p.122</span>
-      <em>Rotation-ready - in rotation as week 4's traybake</em>
-      </li><li class="incomplete">
-      <strong>Goulash</strong>
-      <span class="source">Batch Cook, p.140</span>
-      <em>Rotation-ready - week 1 batch pot alternative, winter</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Superfood Vegetarian Bolognese</strong>
-      <span class="source">Emily English, p.132</span>
-      <em>Rotation-ready - week 2 batch pot alternative</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>One-Pot Mediterranean Chicken Orzo</strong>
-      <span class="source">Batch Cook, p.194</span>
-      <em>Rotation-ready with a tweak - orzo goes in on the day, not in the pot</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Rainbow Couscous</strong>
-      <span class="source">Batch Cook</span>
-      <em>Summer cold/assemble - week 1 Wednesday swap</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Toasted Sesame &amp; Ginger Chicken Salad</strong>
-      <span class="source">Emily English, p.50</span>
-      <em>Summer cold/assemble - week 2 Tuesday swap</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Nature's Multivitamin Salad</strong>
-      <span class="source">Emily English, p.55</span>
-      <em>Side salad only - too low in protein to be a dinner</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Mango, Jalapeno &amp; Lime Salad</strong>
-      <span class="source">Emily English</span>
-      <em>Summer cold/assemble - jalapeno on the side for the boys</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Sushi Salad</strong>
-      <span class="source">Emily English</span>
-      <em>Summer cold/assemble</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Pesto Prawn Courgetti Linguine</strong>
-      <span class="source">Emily English</span>
-      <em>Quick-cook, summer - week 4 Tuesday swap</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Sticky Peanut Stir Fry</strong>
-      <span class="source">Emily English</span>
-      <em>Component prep / quick-cook - week 3 Wednesday swap</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Salmon and Sexy Veg</strong>
-      <span class="source">Emily English, p.126</span>
-      <em>Component prep - week 3 Sunday swap in summer</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Oven-Baked Risotto with Smoked Salmon &amp; Peas</strong>
-      <span class="source">Batch Cook, p.126</span>
-      <em>Together night only - wants attention</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Italian Sausage &amp; Broccoli Pasta</strong>
-      <span class="source">Emily English, p.152</span>
-      <em>Together night only</em>
-      <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
-      <strong>Detox Gyoza Soup</strong>
-      <span class="source">Emily English</span>
-      <em>Schedule-dependent - a good WFH lunch</em>
-      <span class="flag">Ingredients not entered yet</span></li></ul></section>
 </div>
 <div class="panel" data-tab="fridays">
   <section class="block"><h2>Friday is pizza night</h2>
@@ -3881,8 +3825,90 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <div class="macro" data-macro="flapjack_cocoa">~285 kcal · 11g protein · 24g carbs · 16g fat · 4g fibre <em>per portion</em></div>
 </article></div></div></div>
 </div>
+<div class="panel" data-tab="bank">
+  <section class="block"><h2>The bank</h2>
+    <p class="lede">Recipes graded and parked. Nothing here is in the weekly rhythm unless it says so, but they are the first place to look for a summer swap, a together night, or a day the schedule goes sideways.</p>
+    <p class="callout">14 of these have no ingredient list yet, so no macros. Add them to <code>data/recipes.json</code> with gram weights and <code>food</code> keys, drop the <code>incomplete</code> flag, and rebuild.</p>
+  </section>
+  <section class="block"><h3>Rotation-ready</h3><ul class="bank"><li class="ready">
+        <strong>Meatball &amp; Ricotta Al Forno</strong>
+        <span class="source">Emily English, p.122</span>
+        <em>Rotation-ready - in rotation as week 4's traybake</em>
+        <span class="slot">Week 4, in rotation now</span>
+        </li><li class="incomplete">
+        <strong>Goulash</strong>
+        <span class="source">Batch Cook, p.140</span>
+        <em>Rotation-ready - week 1 batch pot alternative, winter</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Superfood Vegetarian Bolognese</strong>
+        <span class="source">Emily English, p.132</span>
+        <em>Rotation-ready - week 2 batch pot alternative</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>One-Pot Mediterranean Chicken Orzo</strong>
+        <span class="source">Batch Cook, p.194</span>
+        <em>Rotation-ready with a tweak - orzo goes in on the day, not in the pot</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li></ul></section><section class="block"><h3>Summer swaps</h3><ul class="bank"><li class="incomplete">
+        <strong>Rainbow Couscous</strong>
+        <span class="source">Batch Cook</span>
+        <em>Summer cold/assemble - week 1 Wednesday swap</em>
+        <span class="slot">Week 1 Wednesday, in summer</span>
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Toasted Sesame &amp; Ginger Chicken Salad</strong>
+        <span class="source">Emily English, p.50</span>
+        <em>Summer cold/assemble - week 2 Tuesday swap</em>
+        <span class="slot">Week 2 Tuesday, in summer</span>
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Mango, Jalapeno &amp; Lime Salad</strong>
+        <span class="source">Emily English</span>
+        <em>Summer cold/assemble - jalapeno on the side for the boys</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Sushi Salad</strong>
+        <span class="source">Emily English</span>
+        <em>Summer cold/assemble</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Pesto Prawn Courgetti Linguine</strong>
+        <span class="source">Emily English</span>
+        <em>Quick-cook, summer - week 4 Tuesday swap</em>
+        <span class="slot">Week 4 Tuesday, in summer</span>
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Sticky Peanut Stir Fry</strong>
+        <span class="source">Emily English</span>
+        <em>Component prep / quick-cook - week 3 Wednesday swap</em>
+        <span class="slot">Week 3 Wednesday, in summer</span>
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Salmon and Sexy Veg</strong>
+        <span class="source">Emily English, p.126</span>
+        <em>Component prep - week 3 Sunday swap in summer</em>
+        <span class="slot">Week 3 Sunday, in summer</span>
+        <span class="flag">Ingredients not entered yet</span></li></ul></section><section class="block"><h3>Sides and extras</h3><ul class="bank"><li class="incomplete">
+        <strong>Nature's Multivitamin Salad</strong>
+        <span class="source">Emily English, p.55</span>
+        <em>Side salad only - too low in protein to be a dinner</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Detox Gyoza Soup</strong>
+        <span class="source">Emily English</span>
+        <em>Schedule-dependent - a good WFH lunch</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li></ul></section><section class="block"><h3>Together nights</h3><ul class="bank"><li class="incomplete">
+        <strong>Oven-Baked Risotto with Smoked Salmon &amp; Peas</strong>
+        <span class="source">Batch Cook, p.126</span>
+        <em>Together night only - wants attention</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li><li class="incomplete">
+        <strong>Italian Sausage &amp; Broccoli Pasta</strong>
+        <span class="source">Emily English, p.152</span>
+        <em>Together night only</em>
+        
+        <span class="flag">Ingredients not entered yet</span></li></ul></section>
+</div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-08-30 19:09</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-08-30 19:27</footer>
 <script>
 (function(){
   var anchor = "2026-09-04";
@@ -3955,7 +3981,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 
   var btn = document.getElementById('today');
   var slot = todaySlot();
-  btn.textContent = dayNames[slot.day].slice(0,3) + ', wk ' + slot.week;
+  btn.innerHTML = '<span class="t-label">Today</span><span class="t-slot">'
+    + dayNames[slot.day].slice(0,3) + ', wk ' + slot.week + '</span>';
   btn.setAttribute('aria-label', 'Go to today: ' + dayNames[slot.day] + ' of week ' + slot.week);
   btn.addEventListener('click', function(){
     show('week-'+slot.week);

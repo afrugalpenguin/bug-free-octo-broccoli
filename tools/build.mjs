@@ -383,14 +383,6 @@ function overviewPanel() {
       </button></li>`;
   }).join('');
 
-  const bank = Object.entries(recipes)
-    .filter(([, r]) => r.category === 'bank')
-    .map(([, r]) => `<li class="${r.incomplete ? 'incomplete' : ''}">
-      <strong>${esc(r.name)}</strong>
-      <span class="source">${esc(r.source.book)}${r.source.page ? `, p.${r.source.page}` : ''}</span>
-      <em>${esc(r.classification)}</em>
-      ${r.incomplete ? '<span class="flag">Ingredients not entered yet</span>' : ''}</li>`).join('');
-
   return `<div class="panel active" data-tab="overview">
   <section class="block"><h2>The week</h2>
     <p class="lede">Friday to Thursday, anchored to delivery day. One prep session on Saturday night produces almost everything.</p>
@@ -405,10 +397,53 @@ function overviewPanel() {
 
   <section class="block"><h2>Dressings</h2>
     <p>${esc(scaffold.dressings.notes)}</p></section>
+</div>`;
+}
 
+// Which rotation slot, if any, a bank recipe is wired into. Read off the
+// seasonal swaps so the bank page and the week pages cannot drift apart.
+function bankSlots(id) {
+  const out = [];
+  for (const w of WEEKS) {
+    const week = rotation.weeks[w];
+    for (const [season, map] of Object.entries(week.seasonal_swaps ?? {})) {
+      for (const [day, swapId] of Object.entries(map)) {
+        if (swapId === id) out.push(`Week ${w} ${DAY_NAME[day]}, in ${season}`);
+      }
+    }
+    if (Object.values(week.dinners).includes(id) || recipes[id]?.alias
+        && Object.values(week.dinners).includes(recipes[id].alias)) {
+      out.push(`Week ${w}, in rotation now`);
+    }
+  }
+  return out;
+}
+
+function bankPanel() {
+  const entries = Object.entries(recipes).filter(([, r]) => r.category === 'bank');
+  const buckets = [...new Set(entries.map(([, r]) => r.bucket))];
+
+  const sections = buckets.map(bucket => {
+    const rows = entries.filter(([, r]) => r.bucket === bucket).map(([id, r]) => {
+      const slots = bankSlots(id);
+      return `<li class="${r.incomplete ? 'incomplete' : 'ready'}">
+        <strong>${esc(r.name)}</strong>
+        <span class="source">${esc(r.source.book)}${r.source.page ? `, p.${r.source.page}` : ''}</span>
+        <em>${esc(r.classification)}</em>
+        ${slots.length ? `<span class="slot">${esc(slots.join(' / '))}</span>` : ''}
+        ${r.incomplete ? '<span class="flag">Ingredients not entered yet</span>' : ''}</li>`;
+    }).join('');
+    return `<section class="block"><h3>${esc(bucket)}</h3><ul class="bank">${rows}</ul></section>`;
+  }).join('');
+
+  const waiting = entries.filter(([, r]) => r.incomplete).length;
+
+  return `<div class="panel" data-tab="bank">
   <section class="block"><h2>The bank</h2>
-    <p class="notes">Recipes graded and parked, ready for summer swaps, together nights and schedule-dependent slots.</p>
-    <ul class="bank">${bank}</ul></section>
+    <p class="lede">Recipes graded and parked. Nothing here is in the weekly rhythm unless it says so, but they are the first place to look for a summer swap, a together night, or a day the schedule goes sideways.</p>
+    ${waiting ? `<p class="callout">${waiting} of these have no ingredient list yet, so no macros. Add them to <code>data/recipes.json</code> with gram weights and <code>food</code> keys, drop the <code>incomplete</code> flag, and rebuild.</p>` : ''}
+  </section>
+  ${sections}
 </div>`;
 }
 
@@ -444,11 +479,15 @@ body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;backgro
 header{background:var(--text);color:var(--bg);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;position:sticky;top:0;z-index:20}
 header h1{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;font-weight:400;line-height:1.2}
 header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans-serif}
-#today{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.7rem 1.1rem;font:inherit;font-weight:600;font-size:.85rem;cursor:pointer;white-space:nowrap;min-height:44px}
+#today{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.45rem 1.1rem;font:inherit;cursor:pointer;white-space:nowrap;min-height:44px;display:grid;gap:0;line-height:1.25;text-align:center}
+#today .t-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
+#today .t-slot{font-size:.85rem;font-weight:600}
 #today:active{transform:scale(.97)}
 .tabs{display:flex;background:var(--card);border-bottom:1px solid var(--border);overflow-x:auto;position:sticky;top:76px;z-index:19;-webkit-overflow-scrolling:touch}
 .tab{padding:.85rem 1.1rem;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:.9rem;font-weight:500;color:var(--text-light);white-space:nowrap;cursor:pointer;min-height:44px}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab[data-tab="bank"]{margin-left:auto;color:var(--text-light);opacity:.85}
+.tab[data-tab="bank"].active{opacity:1}
 .tab[data-tab="week-1"].active{color:var(--week1);border-bottom-color:var(--week1)}
 .tab[data-tab="week-2"].active{color:var(--week2);border-bottom-color:var(--week2)}
 .tab[data-tab="week-3"].active{color:var(--week3);border-bottom-color:var(--week3)}
@@ -542,6 +581,9 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .bank .source{font-size:.78rem;color:var(--text-light)}
 .bank em{font-size:.8rem;color:var(--text-light);font-style:normal}
 .bank .flag{font-size:.72rem;color:var(--accent);font-weight:600}
+.bank .slot{font-size:.75rem;color:var(--week2);font-weight:600}
+.bank li.ready{border-left:3px solid var(--week2)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--bg);padding:.1em .35em;border-radius:4px}
 .warn{color:var(--accent);font-weight:600}
 footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-light)}
 .flash{box-shadow:0 0 0 3px var(--accent)}
@@ -620,7 +662,8 @@ const JS = `
 
   var btn = document.getElementById('today');
   var slot = todaySlot();
-  btn.textContent = dayNames[slot.day].slice(0,3) + ', wk ' + slot.week;
+  btn.innerHTML = '<span class="t-label">Today</span><span class="t-slot">'
+    + dayNames[slot.day].slice(0,3) + ', wk ' + slot.week + '</span>';
   btn.setAttribute('aria-label', 'Go to today: ' + dayNames[slot.day] + ' of week ' + slot.week);
   btn.addEventListener('click', function(){
     show('week-'+slot.week);
@@ -639,6 +682,7 @@ const tabs = [
   ['overview', 'Overview'],
   ['fridays', 'Fridays'],
   ...WEEKS.map(w => [`week-${w}`, `Week ${w}`]),
+  ['bank', 'Bank'],
 ];
 
 const html = `<!DOCTYPE html>
@@ -665,6 +709,7 @@ const html = `<!DOCTYPE html>
 ${overviewPanel()}
 ${fridaysPanel()}
 ${WEEKS.map(weekPanel).join('\n')}
+${bankPanel()}
 </main>
 <footer>Generated from data/ by tools/build.mjs, ${new Date().toISOString().slice(0, 16).replace('T', ' ')}</footer>
 <script>${JS}</script>
