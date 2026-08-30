@@ -1,0 +1,157 @@
+{
+  "_note": "Which recipes fill which slot in which week. Day order is Fri->Thu, anchored to delivery day. Ids are keys in recipes.json; 'scaffold:pizza' means the Friday pizza pair defined in scaffold.json.",
+
+  "day_order": ["fri", "sat", "sun", "mon", "tue", "wed", "thu"],
+  "day_names": {
+    "fri": "Friday",
+    "sat": "Saturday",
+    "sun": "Sunday",
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday"
+  },
+
+  "weeks": {
+    "1": {
+      "theme": "Mexican / Chicken",
+      "colour": "week1",
+      "roast": "roast_two_chickens",
+      "traybake": "paprika_chicken_traybake",
+      "batch_pot": "chilli",
+      "freezer_bag": "pulled_chicken_bag",
+      "dinners": {
+        "fri": "scaffold:pizza",
+        "sat": "paprika_chicken_traybake",
+        "sun": "roast_two_chickens",
+        "mon": "chicken_fajita_bowls",
+        "tue": "chilli_with_rice",
+        "wed": "chilli_loaded_sweet_potatoes",
+        "thu": "pulled_chicken_bag"
+      },
+      "lunchbox": "lunchbox_w1",
+      "lunchbox_protein": "roast_chicken_stripped",
+      "lunchbox_veg_tray": "lunchbox_veg_tray_w1",
+      "lunchbox_dressing": "house_vinaigrette",
+      "lunchbox_finishers": {
+        "mon": "20g tortilla chips crushed, squeeze of lime",
+        "tue": "30g cheddar cubed, chilli flakes",
+        "wed": "60g sweetcorn and chopped coriander",
+        "thu": "A boiled egg with smoked paprika",
+        "fri": "40g Greek yoghurt with chipotle or paprika"
+      },
+      "friday_salad": "chopped_salad_w1",
+      "friday_pizza_topping": "chorizo_pepper_pizza",
+      "flapjack": "flapjack_plain_seed",
+      "seasonal_swaps": {
+        "summer": { "wed": "ee_rainbow_couscous" }
+      }
+    },
+
+    "2": {
+      "theme": "Curry / Pork",
+      "colour": "week2",
+      "roast": "slow_roast_pork",
+      "traybake": "salmon_traybake_glazed",
+      "batch_pot": "dal",
+      "freezer_bag": "korma_bag",
+      "dinners": {
+        "fri": "scaffold:pizza",
+        "sat": "salmon_traybake_glazed",
+        "sun": "slow_roast_pork",
+        "mon": "tandoori_chicken_bowls",
+        "tue": "dal_with_rice",
+        "wed": "pork_fried_rice",
+        "thu": "korma_bag"
+      },
+      "lunchbox": "lunchbox_w2",
+      "lunchbox_protein": "tandoori_thighs",
+      "lunchbox_veg_tray": "lunchbox_veg_tray_w2",
+      "lunchbox_dressing": "mint_yoghurt",
+      "lunchbox_finishers": {
+        "mon": "1 tbsp mango chutney and coriander",
+        "tue": "A boiled egg with toasted cumin seeds",
+        "wed": "20g toasted seeds and nuts with garam masala",
+        "thu": "Lime pickle, or more chutney for a milder one",
+        "fri": "50g cucumber ribbons and extra mint yoghurt"
+      },
+      "friday_salad": "cucumber_tomato_salad_w2",
+      "friday_pizza_topping": "tandoori_chicken_pizza",
+      "flapjack": "flapjack_cinnamon_raisin",
+      "seasonal_swaps": {
+        "summer": { "tue": "ee_sesame_ginger" }
+      }
+    },
+
+    "3": {
+      "theme": "North African / Gammon",
+      "colour": "week3",
+      "roast": "gammon_roast",
+      "traybake": "harissa_chicken_squash_traybake",
+      "batch_pot": "north_african_chickpea_stew",
+      "freezer_bag": "chicken_olive_tomato_bag",
+      "dinners": {
+        "fri": "scaffold:pizza",
+        "sat": "harissa_chicken_squash_traybake",
+        "sun": "gammon_roast",
+        "mon": "chicken_wraps",
+        "tue": "chickpea_stew_with_couscous",
+        "wed": "gammon_eggs_chips",
+        "thu": "chicken_olive_tomato_bag"
+      },
+      "lunchbox": "lunchbox_w3",
+      "lunchbox_protein": "roast_chicken_lemon",
+      "lunchbox_veg_tray": "lunchbox_veg_tray_w3",
+      "lunchbox_dressing": "lemon_dressing",
+      "lunchbox_finishers": {
+        "mon": "30g feta and oregano",
+        "tue": "20g olives halved, and lemon zest",
+        "wed": "40g hummus with smoked paprika",
+        "thu": "A boiled egg with toasted seeds",
+        "fri": "60g cucumber and extra lemon dressing"
+      },
+      "friday_salad": "greek_salad_w3",
+      "friday_pizza_topping": "halloumi_pepper_pizza",
+      "flapjack": "flapjack_lemon_seed",
+      "seasonal_swaps": {
+        "summer": { "sun": "ee_salmon_veg", "wed": "ee_stir_fry" }
+      }
+    },
+
+    "4": {
+      "theme": "Italian / Beef",
+      "colour": "week4",
+      "roast": "roast_beef_topside",
+      "traybake": "meatball_al_forno",
+      "batch_pot": "ragu",
+      "extra_pot": "minestrone",
+      "freezer_bag": "sausage_pepper_bag",
+      "dinners": {
+        "fri": "scaffold:pizza",
+        "sat": "meatball_al_forno",
+        "sun": "roast_beef_topside",
+        "mon": "lasagne",
+        "tue": "ragu_with_pasta",
+        "wed": "beef_tomato_orzo",
+        "thu": "sausage_pepper_bag"
+      },
+      "lunchbox": "lunchbox_w4",
+      "lunchbox_protein": "meatballs_from_traybake",
+      "lunchbox_veg_tray": "lunchbox_veg_tray_w4",
+      "lunchbox_dressing": "balsamic_vinaigrette",
+      "lunchbox_finishers": {
+        "mon": "30g mozzarella pearls and oregano",
+        "tue": "15g parmesan and a splash of balsamic",
+        "wed": "20g pepperoni and chilli oil",
+        "thu": "A boiled egg with toasted seeds",
+        "fri": "2 tbsp meatball tray sauce, with parmesan"
+      },
+      "friday_salad": "tomato_mozzarella_salad_w4",
+      "friday_pizza_topping": "pepperoni_pizza",
+      "flapjack": "flapjack_cocoa",
+      "seasonal_swaps": {
+        "summer": { "tue": "ee_ppcl" }
+      }
+    }
+  }
+}
