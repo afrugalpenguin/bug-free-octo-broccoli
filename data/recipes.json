@@ -1,0 +1,4832 @@
+{
+  "_note": "Every recipe in the system. Ingredients carry a food key into foods.json for macros, a display string for the card, and an aisle for the basket. basketOnly ingredients are bought but not eaten in this recipe; macroOnly ones are eaten here but bought under another recipe. from pulls whole portions out of another recipe.",
+  "chilli": {
+    "name": "Mild Chilli, Double Batch",
+    "category": "batch-pot",
+    "week": 1,
+    "day": "sat",
+    "serves": 12,
+    "splits": {
+      "tue": 4,
+      "wed": 4,
+      "freezer": 4
+    },
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 20,
+      "passiveMinutes": 60,
+      "source": "system"
+    },
+    "notes": "Nothing hot goes in the pot. Flakes at the table for the adults.",
+    "ingredients": [
+      {
+        "food": "beef_mince_5",
+        "grams": 1000,
+        "display": "1kg 5% fat beef mince",
+        "aisle": "meat"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "onion",
+        "grams": 300,
+        "display": "2 onions, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 12,
+        "display": "4 cloves garlic, crushed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 160,
+        "display": "1 red pepper, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 100,
+        "display": "1 large carrot, grated",
+        "aisle": "fresh"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 5,
+        "display": "2 tsp smoked paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cumin",
+        "grams": 5,
+        "display": "2 tsp ground cumin",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "ground_coriander",
+        "grams": 2.5,
+        "display": "1 tsp ground coriander",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "display": "1 tsp dried oregano",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 30,
+        "display": "2 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 800,
+        "display": "2 tins chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "kidney_beans_drained",
+        "grams": 480,
+        "display": "2 tins kidney beans, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_lentils_dry",
+        "grams": 150,
+        "display": "150g red lentils",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_made",
+        "grams": 600,
+        "display": "600ml beef stock (2 cubes)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "worcestershire",
+        "grams": 15,
+        "display": "1 tbsp Worcestershire sauce",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "dark_chocolate",
+        "grams": 15,
+        "display": "15g dark chocolate (70%+)",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Brown the mince in the biggest pot, breaking it up. Drain any excess fat.",
+      "Onion, garlic, pepper and carrot in for 5 minutes until softened.",
+      "Spices and tomato puree for 1 minute, stirring.",
+      "Everything else in except the chocolate. Simmer 50-60 minutes, lid half off, stirring occasionally.",
+      "Chocolate in at the very end, stir until melted. Salt to taste."
+    ],
+    "serving_suggestion": "With rice pouches and Greek yoghurt.",
+    "adults": "Chilli flakes or hot sauce at the table.",
+    "basket_notes": {
+      "beef_mince_5": "the double chilli",
+      "dark_chocolate": "15g - one or two squares, not a whole bar"
+    }
+  },
+  "dal": {
+    "name": "Dal",
+    "category": "batch-pot",
+    "week": 2,
+    "day": "sat",
+    "serves": 8,
+    "splits": {
+      "tue": 4,
+      "freezer": 4
+    },
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 35,
+      "source": "system"
+    },
+    "notes": "Mild base. The tarka is an adults-only pour-over at the table.",
+    "ingredients": [
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "onion",
+        "grams": 300,
+        "display": "2 onions, diced (or 200g frozen)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "display": "3 cloves garlic, crushed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "ginger",
+        "grams": 15,
+        "display": "Thumb of fresh ginger, grated",
+        "aisle": "fresh"
+      },
+      {
+        "food": "turmeric",
+        "grams": 5,
+        "display": "2 tsp turmeric",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cumin",
+        "grams": 5,
+        "display": "2 tsp ground cumin",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "red_lentils_dry",
+        "grams": 500,
+        "display": "500g red lentils, rinsed",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chickpeas_drained",
+        "grams": 240,
+        "display": "1 tin chickpeas, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 400,
+        "display": "1 tin chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "coconut_milk_light",
+        "grams": 400,
+        "display": "1 tin light coconut milk",
+        "aisle": "tinned"
+      },
+      {
+        "food": "stock_made",
+        "grams": 1200,
+        "display": "1.2L vegetable stock",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "frozen_spinach",
+        "grams": 100,
+        "display": "100g frozen spinach",
+        "aisle": "frozen"
+      },
+      {
+        "food": "garam_masala",
+        "grams": 2.5,
+        "display": "1 tsp garam masala",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 15,
+        "display": "Juice of half a lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Onion, garlic and ginger in oil for 3 minutes.",
+      "Turmeric and cumin for 1 minute.",
+      "Lentils, chickpeas, tomatoes, coconut milk and stock in. Simmer 30 minutes.",
+      "Spinach and garam masala for the last 5 minutes.",
+      "Lemon juice at the end. Salt to taste."
+    ],
+    "serving_suggestion": "With rice pouches and a spoon of yoghurt.",
+    "adults": "Tarka: 1 tbsp oil, 1 tsp mustard seeds, 1 tsp cumin seeds, pinch of chilli flakes. Fry 30 seconds and pour over the adults' bowls only.",
+    "basket_notes": {
+      "red_lentils_dry": "500g for the dal, 150g more if you are making minestrone"
+    }
+  },
+  "north_african_chickpea_stew": {
+    "name": "North African Chickpea & Sweet Potato Stew",
+    "category": "batch-pot",
+    "week": 3,
+    "day": "sat",
+    "serves": 8,
+    "splits": {
+      "tue": 4,
+      "freezer": 4
+    },
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 30,
+      "source": "system"
+    },
+    "notes": "No harissa in the pot - it goes into the adults' bowls at the table.",
+    "ingredients": [
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "onion",
+        "grams": 300,
+        "display": "2 onions, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 12,
+        "display": "4 cloves garlic, crushed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 5,
+        "display": "2 tsp smoked paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "ground_coriander",
+        "grams": 2.5,
+        "display": "1 tsp ground coriander",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sweet_potato",
+        "grams": 500,
+        "display": "1 large sweet potato, cubed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "chickpeas_drained",
+        "grams": 480,
+        "display": "2 tins chickpeas, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 800,
+        "display": "2 tins chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "stock_made",
+        "grams": 500,
+        "display": "500ml vegetable stock",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "frozen_spinach",
+        "grams": 200,
+        "display": "200g frozen spinach",
+        "aisle": "frozen"
+      },
+      {
+        "food": "honey",
+        "grams": 21,
+        "display": "1 tbsp honey",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "Juice of 1 lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Onion and garlic in oil for 5 minutes.",
+      "Spices for 1 minute.",
+      "Sweet potato, chickpeas, tomatoes and stock in. Simmer 25-30 minutes until the sweet potato is soft.",
+      "Spinach for the last 5 minutes.",
+      "Honey and lemon at the end. Salt to taste."
+    ],
+    "serving_suggestion": "With couscous.",
+    "adults": "A spoon of harissa stirred through the bowl."
+  },
+  "ragu": {
+    "name": "Beef Ragu, Double Batch",
+    "category": "batch-pot",
+    "week": 4,
+    "day": "sat",
+    "serves": 12,
+    "splits": {
+      "mon": 4,
+      "tue": 4,
+      "freezer": 4
+    },
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 25,
+      "passiveMinutes": 110,
+      "source": "system"
+    },
+    "notes": "The long simmer is the whole recipe. Thick enough that a spoon leaves a trail.",
+    "ingredients": [
+      {
+        "food": "beef_mince_5",
+        "grams": 1000,
+        "display": "1kg 5% fat beef mince",
+        "aisle": "meat"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "onion",
+        "grams": 300,
+        "display": "2 onions, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 200,
+        "display": "2 carrots, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "celery",
+        "grams": 100,
+        "display": "2 celery sticks, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 12,
+        "display": "4 cloves garlic, crushed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_wine",
+        "grams": 200,
+        "display": "200ml red wine (or 2 tbsp balsamic + extra stock)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 800,
+        "display": "2 tins chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "passata",
+        "grams": 500,
+        "display": "500g passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 30,
+        "display": "2 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_made",
+        "grams": 500,
+        "display": "500ml beef stock (2 cubes)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "display": "1 tsp dried oregano",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Brown the mince in batches in the biggest pot, set aside.",
+      "Soffritto - onion, carrot, celery - in the same pot 8-10 minutes on low. Sweat, don't brown.",
+      "Garlic for 1 minute. Wine in, reduce 3-4 minutes.",
+      "Mince back in. Tomatoes, passata, puree, stock and oregano in with 2 bay leaves and a parmesan rind if you have one.",
+      "Simmer 1.5-2 hours, lid off, stirring occasionally.",
+      "Fish out the bay leaves and the rind."
+    ],
+    "serving_suggestion": "With fresh pasta and parmesan. Pasta cooked on the day, never Saturday.",
+    "basket_notes": {
+      "beef_mince_5": "the double ragu - a second kilo goes in the meatballs"
+    }
+  },
+  "minestrone": {
+    "name": "Minestrone",
+    "category": "batch-pot",
+    "week": 4,
+    "day": null,
+    "serves": 8,
+    "splits": {
+      "fridge": 4,
+      "freezer": 4
+    },
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "winter",
+      "activeMinutes": 15,
+      "passiveMinutes": 30,
+      "source": "system"
+    },
+    "notes": "Optional extra pot in week 4 if the freezer needs topping up. NO pasta in the pot - it goes in when you reheat.",
+    "ingredients": [
+      {
+        "food": "pancetta",
+        "grams": 100,
+        "display": "100g pancetta or bacon lardons (optional)",
+        "aisle": "meat"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "onion",
+        "grams": 300,
+        "display": "2 onions, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 9,
+        "display": "3 cloves garlic, crushed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 200,
+        "display": "2 carrots, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "celery",
+        "grams": 100,
+        "display": "2 celery sticks, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "courgette",
+        "grams": 200,
+        "display": "1 courgette, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 15,
+        "display": "1 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 800,
+        "display": "2 tins chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "cannellini_drained",
+        "grams": 480,
+        "display": "2 tins cannellini beans, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_lentils_dry",
+        "grams": 150,
+        "display": "150g red lentils",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_made",
+        "grams": 1400,
+        "display": "1.4L vegetable stock",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "display": "1 tsp dried oregano",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "frozen_spinach",
+        "grams": 100,
+        "display": "100g frozen spinach",
+        "aisle": "frozen"
+      }
+    ],
+    "method": [
+      "Pancetta fried 3 minutes if using.",
+      "Onion, garlic, carrot, celery and courgette for 5 minutes.",
+      "Tomato puree for 1 minute.",
+      "Everything else in except the spinach, with a bay leaf and a parmesan rind. Simmer 25 minutes.",
+      "Spinach for the last 5 minutes. Remove the bay leaf and rind.",
+      "DO NOT add pasta to the pot."
+    ],
+    "serving_suggestion": "Add 100g soup pasta per 4 portions when reheating and simmer 8 minutes. Garlic bread on the side."
+  },
+  "pulled_chicken_bag": {
+    "name": "Pulled Chicken Freezer Bag",
+    "category": "freezer-bag",
+    "week": 1,
+    "day": "thu",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": true,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Everything raw into the bag. Freeze flat. Wednesday night into the fridge, Thursday morning into the slow cooker on low.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 600,
+        "display": "6 boneless chicken thighs (~600g)",
+        "aisle": "meat"
+      },
+      {
+        "food": "frozen_onion",
+        "grams": 150,
+        "display": "150g frozen onion",
+        "aisle": "frozen"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "display": "2 garlic cubes",
+        "aisle": "frozen"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 5,
+        "display": "2 tsp smoked paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cumin",
+        "grams": 2.5,
+        "display": "1 tsp ground cumin",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 21,
+        "display": "1 tbsp honey",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 15,
+        "display": "1 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cider_vinegar",
+        "grams": 15,
+        "display": "1 tbsp cider vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "passata",
+        "grams": 200,
+        "display": "200ml passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "stock_cube",
+        "grams": 10,
+        "display": "1 chicken stock cube, crumbled",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything into a freezer bag, raw. Squeeze the air out, seal, label PULLED CHICKEN + the month.",
+      "Freeze flat so it stacks.",
+      "Wednesday bedtime: bag out of the freezer into the fridge.",
+      "Thursday morning: contents into the slow cooker on low. Shred with two forks before serving."
+    ],
+    "serving_suggestion": "In wraps with slaw and yoghurt, or over rice pouches."
+  },
+  "korma_bag": {
+    "name": "Chicken & Chickpea Korma Freezer Bag",
+    "category": "freezer-bag",
+    "week": 2,
+    "day": "thu",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": true,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Yoghurt goes on the side when serving, not in the bag.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 600,
+        "display": "6 boneless chicken thighs (~600g)",
+        "aisle": "meat"
+      },
+      {
+        "food": "korma_paste",
+        "grams": 100,
+        "display": "Half a jar of korma paste",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chickpeas_drained",
+        "grams": 240,
+        "display": "1 tin chickpeas, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "frozen_onion",
+        "grams": 150,
+        "display": "150g frozen onion",
+        "aisle": "frozen"
+      },
+      {
+        "food": "coconut_milk_light",
+        "grams": 400,
+        "display": "1 tin light coconut milk",
+        "aisle": "tinned"
+      },
+      {
+        "food": "garam_masala",
+        "grams": 2.5,
+        "display": "1 tsp garam masala",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "frozen_spinach",
+        "grams": 50,
+        "display": "A handful of frozen spinach",
+        "aisle": "frozen"
+      }
+    ],
+    "method": [
+      "Everything into a freezer bag, raw. Seal, label KORMA + the month, freeze flat.",
+      "Wednesday bedtime: into the fridge.",
+      "Thursday morning: into the slow cooker on low."
+    ],
+    "serving_suggestion": "Rice pouches, yoghurt on the side, mango chutney."
+  },
+  "chicken_olive_tomato_bag": {
+    "name": "Chicken, Olive & Tomato Freezer Bag",
+    "category": "freezer-bag",
+    "week": 3,
+    "day": "thu",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": true,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Fresh basil torn over when serving.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 600,
+        "display": "6 boneless chicken thighs (~600g)",
+        "aisle": "meat"
+      },
+      {
+        "food": "olives_drained",
+        "grams": 80,
+        "display": "80g olives",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 400,
+        "display": "1 tin chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "frozen_onion",
+        "grams": 150,
+        "display": "150g frozen onion",
+        "aisle": "frozen"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "display": "2 garlic cubes",
+        "aisle": "frozen"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "display": "1 tsp dried oregano",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sun_dried_tomato_paste",
+        "grams": 15,
+        "display": "1 tbsp sun-dried tomato paste",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "pepper",
+        "grams": 160,
+        "display": "1 red pepper, chunked",
+        "aisle": "fresh"
+      },
+      {
+        "food": "stock_cube",
+        "grams": 10,
+        "display": "1 chicken stock cube",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "A squeeze of lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Everything into a freezer bag, raw. Seal, label CHICKEN OLIVE + the month, freeze flat.",
+      "Wednesday bedtime: into the fridge.",
+      "Thursday morning: into the slow cooker on low. Basil torn over at the table."
+    ],
+    "serving_suggestion": "Rice pouches or pasta cooked on the day."
+  },
+  "sausage_pepper_bag": {
+    "name": "Italian Sausage & Pepper Freezer Bag",
+    "category": "freezer-bag",
+    "week": 4,
+    "day": "thu",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": true,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Chicken sausages (Heck or similar), each cut into 3 chunks.",
+    "ingredients": [
+      {
+        "food": "chicken_sausage",
+        "grams": 360,
+        "display": "6 chicken sausages, each cut into 3",
+        "aisle": "meat"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 400,
+        "display": "1 tin chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "frozen_onion",
+        "grams": 150,
+        "display": "150g frozen onion",
+        "aisle": "frozen"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "display": "2 garlic cubes",
+        "aisle": "frozen"
+      },
+      {
+        "food": "pepper",
+        "grams": 320,
+        "display": "1 red and 1 yellow pepper, chunked",
+        "aisle": "fresh"
+      },
+      {
+        "food": "oregano",
+        "grams": 2.5,
+        "display": "1 tsp dried oregano",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 2.5,
+        "display": "1 tsp smoked paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 15,
+        "display": "1 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_cube",
+        "grams": 10,
+        "display": "1 chicken stock cube, crumbled",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sugar",
+        "grams": 2,
+        "display": "A pinch of sugar",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything into a freezer bag, raw. Seal, label SAUSAGE PEPPER + the month, freeze flat.",
+      "Wednesday bedtime: into the fridge.",
+      "Thursday morning: into the slow cooker on low."
+    ],
+    "serving_suggestion": "Pasta cooked on the day, or crusty bread."
+  },
+  "paprika_chicken_traybake": {
+    "name": "Paprika Chicken Traybake",
+    "category": "traybake",
+    "week": 1,
+    "day": "sat",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 55,
+      "source": "system"
+    },
+    "notes": "Tonight's dinner, cooked during the prep session.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_bonein",
+        "grams": 1200,
+        "display": "8 bone-in chicken thighs (~1.2kg)",
+        "aisle": "meat"
+      },
+      {
+        "food": "pepper",
+        "grams": 320,
+        "display": "2 red peppers, chunked",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 150,
+        "display": "1 red onion, in wedges",
+        "aisle": "fresh"
+      },
+      {
+        "food": "sweet_potato",
+        "grams": 600,
+        "display": "600g sweet potato, chunked",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 20,
+        "display": "4-6 unpeeled garlic cloves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 28,
+        "display": "2 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 5,
+        "display": "2 tsp smoked paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "1 lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Oven 200C.",
+      "Sweet potato, peppers, onion and garlic in first with the oil, paprika and salt. 15 minutes head start.",
+      "Chicken on top, skin up. 35-40 minutes more.",
+      "Lemon squeezed over at the table."
+    ],
+    "adults": "2 tbsp yoghurt with 1 tsp harissa each, on the side."
+  },
+  "salmon_traybake_glazed": {
+    "name": "Glazed Salmon Traybake",
+    "category": "traybake",
+    "week": 2,
+    "day": "sat",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 35,
+      "source": "system"
+    },
+    "notes": "Tonight's dinner, cooked during the prep session.",
+    "ingredients": [
+      {
+        "food": "salmon_fillet",
+        "grams": 520,
+        "display": "4 salmon fillets",
+        "aisle": "fish"
+      },
+      {
+        "food": "baby_potato",
+        "grams": 500,
+        "display": "500g baby potatoes, halved",
+        "aisle": "fresh"
+      },
+      {
+        "food": "broccoli",
+        "grams": 350,
+        "display": "1 head broccoli, in florets",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 150,
+        "display": "150g cherry tomatoes, halved",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 28,
+        "display": "2 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "display": "Dried herbs",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "soy_sauce",
+        "grams": 15,
+        "display": "1 tbsp soy sauce (glaze)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 21,
+        "display": "1 tbsp honey (glaze)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "1 lemon",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Fresh dill or parsley",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Oven 200C. Mix the glaze: soy, honey and the juice of half the lemon.",
+      "Potatoes in with oil and salt, 20 minutes on their own.",
+      "Broccoli and tomatoes in, glazed salmon on top. 15 minutes more.",
+      "Dill or parsley scattered over. The other lemon half squeezed at the table."
+    ]
+  },
+  "harissa_chicken_squash_traybake": {
+    "name": "Harissa Chicken with Squash & Chickpeas",
+    "category": "traybake",
+    "week": 3,
+    "day": "sat",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 55,
+      "source": "system"
+    },
+    "notes": "Mild harissa only in the tray. The hot stuff comes out at the table.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_bonein",
+        "grams": 1200,
+        "display": "8 bone-in chicken thighs (~1.2kg)",
+        "aisle": "meat"
+      },
+      {
+        "food": "butternut_squash",
+        "grams": 800,
+        "display": "1 butternut squash, cubed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "chickpeas_drained",
+        "grams": 240,
+        "display": "1 tin chickpeas, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_onion",
+        "grams": 150,
+        "display": "1 red onion, in wedges",
+        "aisle": "fresh"
+      },
+      {
+        "food": "harissa",
+        "grams": 30,
+        "display": "2 tbsp harissa (mild)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 28,
+        "display": "2 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 10,
+        "display": "A drizzle of honey",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Oven 200C.",
+      "Squash, chickpeas and onion in with the oil, harissa and salt. 15 minutes head start.",
+      "Chicken on top. 35-40 minutes more.",
+      "Honey drizzled over at the end."
+    ],
+    "adults": "Extra harissa at the table."
+  },
+  "meatball_al_forno": {
+    "name": "Meatball & Ricotta Al Forno, Doubled",
+    "category": "traybake",
+    "week": 4,
+    "day": "sat",
+    "serves": 8,
+    "splits": {
+      "sat": 4,
+      "lunchbox": 2,
+      "freezer": 2
+    },
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 35,
+      "passiveMinutes": 20,
+      "source": "emily-english"
+    },
+    "source": {
+      "book": "Emily English",
+      "page": 122
+    },
+    "notes": "Doubled - one tray is tonight's dinner, the second is portioned for lunch boxes and the freezer. Don't over-mix the meatballs.",
+    "ingredients": [
+      {
+        "food": "beef_mince_5",
+        "grams": 1000,
+        "display": "1kg 5% fat beef mince",
+        "aisle": "meat"
+      },
+      {
+        "food": "ricotta",
+        "grams": 240,
+        "display": "16 tbsp ricotta",
+        "aisle": "dairy"
+      },
+      {
+        "food": "breadcrumbs_wholemeal",
+        "grams": 160,
+        "display": "160g wholemeal breadcrumbs",
+        "aisle": "bakery"
+      },
+      {
+        "food": "parmesan",
+        "grams": 100,
+        "display": "100g parmesan",
+        "aisle": "dairy"
+      },
+      {
+        "food": "egg",
+        "grams": 116,
+        "display": "2 eggs",
+        "aisle": "dairy"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 40,
+        "display": "2 bunches fresh basil",
+        "aisle": "fresh"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "Zest of 2 lemons",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 28,
+        "display": "2 tbsp olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "courgette",
+        "grams": 400,
+        "display": "2 courgettes, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 320,
+        "display": "2 red peppers, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 300,
+        "display": "2 red onions, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "display": "2 cloves garlic",
+        "aisle": "fresh"
+      },
+      {
+        "food": "sun_dried_tomato_paste",
+        "grams": 30,
+        "display": "2 tbsp sun-dried tomato paste",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 30,
+        "display": "2 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "butter_beans_drained",
+        "grams": 480,
+        "display": "2 tins butter beans, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 5,
+        "display": "2 tsp smoked paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "passata",
+        "grams": 1000,
+        "display": "1kg passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "stock_cube",
+        "grams": 20,
+        "display": "2 chicken stock cubes",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "balsamic",
+        "grams": 60,
+        "display": "4 tbsp balsamic vinegar",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Mince, half the ricotta, breadcrumbs, half the parmesan, eggs, lemon zest and most of the basil together. Form meatballs - don't over-mix.",
+      "Brown the meatballs in batches, set aside.",
+      "Sauce: courgette, peppers and onion 5 minutes. Garlic 1 minute. Sun-dried tomato paste and puree 1 minute.",
+      "Butter beans, paprika, passata, stock and balsamic in. Simmer 10 minutes.",
+      "Meatballs into the sauce across two trays. Remaining parmesan and ricotta dotted on top.",
+      "220C (fan 200C) for 15-20 minutes.",
+      "One tray is dinner. The second cools, then splits: meatballs for the lunch boxes, the rest bagged for the freezer."
+    ],
+    "serving_suggestion": "Bread and a green salad. No pasta needed."
+  },
+  "roast_two_chickens": {
+    "name": "Two Roast Chickens",
+    "category": "roast",
+    "week": 1,
+    "day": "sun",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 20,
+      "passiveMinutes": 90,
+      "source": "system"
+    },
+    "notes": "Two birds, because Monday and the lunch boxes both live off the leftovers. Strip both carcasses the same evening.",
+    "ingredients": [
+      {
+        "food": "chicken_roast_meat",
+        "grams": 2400,
+        "display": "2 whole chickens (~1.2kg each)",
+        "aisle": "meat",
+        "basketOnly": true
+      },
+      {
+        "food": "chicken_roast_meat",
+        "grams": 750,
+        "display": "Sunday's share of the meat",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "baby_potato",
+        "grams": 800,
+        "display": "800g potatoes for roasting",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 500,
+        "display": "500g carrots",
+        "aisle": "fresh"
+      },
+      {
+        "food": "broccoli",
+        "grams": 300,
+        "display": "1 head broccoli",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 28,
+        "display": "2 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "gravy_made",
+        "grams": 400,
+        "display": "Gravy",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Oven 190C. Both birds in together, roughly 20 minutes per 500g plus 20.",
+      "Potatoes in oil and salt for the last hour, turned once.",
+      "Carrots and broccoli in the last 20 minutes.",
+      "Rest 15 minutes while the gravy comes together.",
+      "After dinner, strip both carcasses. ~350g goes in a tub for Monday, ~400g in a tub for the lunch box protein. Carcasses into the freezer for stock, or the bin."
+    ]
+  },
+  "slow_roast_pork": {
+    "name": "Slow Roast Pork Shoulder",
+    "category": "roast",
+    "week": 2,
+    "day": "sun",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 300,
+      "source": "system"
+    },
+    "notes": "Low and slow, in early. Wednesday's fried rice comes out of the leftovers.",
+    "ingredients": [
+      {
+        "food": "pork_shoulder_roast",
+        "grams": 2000,
+        "display": "2kg pork shoulder, skin scored",
+        "aisle": "meat",
+        "basketOnly": true
+      },
+      {
+        "food": "pork_shoulder_roast",
+        "grams": 800,
+        "display": "Sunday's share of the pork",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "baby_potato",
+        "grams": 800,
+        "display": "800g potatoes for roasting",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 500,
+        "display": "500g carrots",
+        "aisle": "fresh"
+      },
+      {
+        "food": "broccoli",
+        "grams": 300,
+        "display": "1 head broccoli",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "apple_sauce",
+        "grams": 100,
+        "display": "Apple sauce",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "gravy_made",
+        "grams": 400,
+        "display": "Gravy",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Skin scored, salted hard, left uncovered in the fridge overnight if you remember.",
+      "Oven 220C for 30 minutes to start the crackling, then down to 150C for 4-5 hours.",
+      "Potatoes and veg in for the last hour, oven back up to 200C for the final 20 minutes.",
+      "Rest 20 minutes. Pull or slice.",
+      "Set aside ~300g diced for Wednesday's fried rice before it all disappears."
+    ]
+  },
+  "gammon_roast": {
+    "name": "Gammon Joint",
+    "category": "roast",
+    "week": 3,
+    "day": "sun",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": true,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 180,
+      "source": "system"
+    },
+    "notes": "Wednesday's gammon and eggs comes out of this. Save ~400g.",
+    "ingredients": [
+      {
+        "food": "gammon_cooked",
+        "grams": 1800,
+        "display": "1.8kg gammon joint",
+        "aisle": "meat",
+        "basketOnly": true
+      },
+      {
+        "food": "gammon_cooked",
+        "grams": 650,
+        "display": "Sunday's share of the joint",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "honey",
+        "grams": 21,
+        "display": "1 tbsp honey for the glaze",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mustard",
+        "grams": 10,
+        "display": "1 tsp mustard for the glaze",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "baby_potato",
+        "grams": 800,
+        "display": "800g potatoes for roasting",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 500,
+        "display": "500g carrots",
+        "aisle": "fresh"
+      },
+      {
+        "food": "broccoli",
+        "grams": 300,
+        "display": "1 head broccoli",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Gammon simmered in water 1.5-2 hours, or slow cooker on low all afternoon.",
+      "Skin off, fat scored, honey and mustard glaze on. 200C for 20 minutes to colour.",
+      "Potatoes and veg roasted alongside.",
+      "Rest 15 minutes. Slice ~400g into a tub for Wednesday before serving."
+    ]
+  },
+  "roast_beef_topside": {
+    "name": "Roast Beef Topside",
+    "category": "roast",
+    "week": 4,
+    "day": "sun",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 20,
+      "passiveMinutes": 90,
+      "source": "system"
+    },
+    "notes": "Wednesday's orzo wants ~300g shredded. Cut it before it goes.",
+    "ingredients": [
+      {
+        "food": "beef_topside_roast",
+        "grams": 1500,
+        "display": "1.5kg beef topside",
+        "aisle": "meat",
+        "basketOnly": true
+      },
+      {
+        "food": "beef_topside_roast",
+        "grams": 650,
+        "display": "Sunday's share of the joint",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "baby_potato",
+        "grams": 800,
+        "display": "800g potatoes for roasting",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 500,
+        "display": "500g carrots",
+        "aisle": "fresh"
+      },
+      {
+        "food": "broccoli",
+        "grams": 300,
+        "display": "1 head broccoli",
+        "aisle": "fresh"
+      },
+      {
+        "food": "yorkshire_pudding",
+        "grams": 160,
+        "display": "8 Yorkshire puddings",
+        "aisle": "frozen"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 28,
+        "display": "2 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "gravy_made",
+        "grams": 400,
+        "display": "Gravy",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Oven 220C for 20 minutes, then 180C - 15 minutes per 500g for pink, 20 for done.",
+      "Potatoes in oil and salt for the last hour.",
+      "Rest 20 minutes under foil - this matters more than the timing.",
+      "Yorkshires and veg while it rests.",
+      "Set aside ~300g for Wednesday's orzo."
+    ]
+  },
+  "chicken_fajita_bowls": {
+    "name": "Chicken Fajita Bowls",
+    "category": "leftover-transform",
+    "week": 1,
+    "day": "mon",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Together night. Everything on the table, build your own.",
+    "ingredients": [
+      {
+        "food": "chicken_roast_meat",
+        "grams": 350,
+        "display": "350g shredded roast chicken from Sunday",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "pepper",
+        "grams": 300,
+        "display": "2 peppers, sliced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "spice_mix",
+        "grams": 8,
+        "display": "1 sachet fajita spice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "grain_pouch",
+        "grams": 500,
+        "display": "2 rice pouches",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cucumber",
+        "grams": 150,
+        "display": "Half a cucumber, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 100,
+        "display": "A bag of leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 200,
+        "display": "200g Greek yoghurt",
+        "aisle": "dairy"
+      },
+      {
+        "food": "red_onion",
+        "grams": 30,
+        "display": "Pickled onions from the jar",
+        "aisle": "fresh"
+      },
+      {
+        "food": "lime_juice",
+        "grams": 30,
+        "display": "2 limes, in wedges",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Coriander",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Peppers fried hard with the fajita spice, 5 minutes.",
+      "Rice pouches in the microwave.",
+      "Chicken warmed through, or straight from the fridge cold - either works.",
+      "Everything in bowls in the middle of the table."
+    ],
+    "adults": "Hot sauce and extra lime."
+  },
+  "chilli_with_rice": {
+    "name": "Chilli with Rice",
+    "category": "leftover-transform",
+    "week": 1,
+    "day": "tue",
+    "serves": 4,
+    "from": [
+      [
+        "chilli",
+        4
+      ]
+    ],
+    "tags": {
+      "prepStyle": "reheat-only",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 10,
+      "source": "system"
+    },
+    "notes": "Tuesday's tub of chilli from Saturday.",
+    "ingredients": [
+      {
+        "food": "grain_pouch",
+        "grams": 500,
+        "display": "2 rice pouches",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 120,
+        "display": "Greek yoghurt",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Chilli into a pan on a low heat, 10 minutes, or the microwave in bowls.",
+      "Rice pouches at the last minute.",
+      "Yoghurt on top."
+    ],
+    "adults": "Chilli flakes."
+  },
+  "chilli_loaded_sweet_potatoes": {
+    "name": "Chilli-Loaded Sweet Potatoes",
+    "category": "leftover-transform",
+    "week": 1,
+    "day": "wed",
+    "serves": 4,
+    "from": [
+      [
+        "chilli",
+        4
+      ]
+    ],
+    "tags": {
+      "prepStyle": "reheat-only",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 45,
+      "source": "system"
+    },
+    "notes": "Potatoes go on a timer before anyone is home.",
+    "ingredients": [
+      {
+        "food": "sweet_potato",
+        "grams": 1000,
+        "display": "4 sweet potatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cheddar",
+        "grams": 80,
+        "display": "80g cheddar",
+        "aisle": "dairy"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 160,
+        "display": "160g Greek yoghurt",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Sweet potatoes pricked, oven timer 200C for 45 minutes.",
+      "Chilli reheated while they finish.",
+      "Split, loaded, cheese and yoghurt on top."
+    ],
+    "adults": "Chilli flakes."
+  },
+  "tandoori_chicken_bowls": {
+    "name": "Tandoori Chicken Bowls",
+    "category": "leftover-transform",
+    "week": 2,
+    "day": "mon",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Thighs roasted Saturday alongside the lunch box batch. Warm or cold, both fine.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 600,
+        "display": "600g tandoori thighs from Saturday",
+        "aisle": "meat"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 125,
+        "display": "125g yoghurt for the marinade",
+        "aisle": "dairy"
+      },
+      {
+        "food": "spice_mix",
+        "grams": 8,
+        "display": "2 tsp tandoori spice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "grain_pouch",
+        "grams": 500,
+        "display": "2 rice pouches",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cucumber",
+        "grams": 300,
+        "display": "1 cucumber, in ribbons",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 100,
+        "display": "A bag of leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "mango_chutney",
+        "grams": 60,
+        "display": "Mango chutney",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "A lemon, in wedges",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Rice pouches in the microwave.",
+      "Thighs sliced, warmed 2 minutes or served cold.",
+      "Mint yoghurt from the fridge, chutney, cucumber and leaves on the table. Build your own."
+    ],
+    "adults": "Lime pickle."
+  },
+  "dal_with_rice": {
+    "name": "Dal with Rice",
+    "category": "leftover-transform",
+    "week": 2,
+    "day": "tue",
+    "serves": 4,
+    "from": [
+      [
+        "dal",
+        4
+      ]
+    ],
+    "tags": {
+      "prepStyle": "reheat-only",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 10,
+      "source": "system"
+    },
+    "notes": "Tuesday's tub of dal from Saturday.",
+    "ingredients": [
+      {
+        "food": "grain_pouch",
+        "grams": 500,
+        "display": "2 rice pouches",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 100,
+        "display": "Greek yoghurt",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Dal into a pan on low, 10 minutes. It thickens - loosen with a splash of water.",
+      "Rice pouches at the last minute."
+    ],
+    "adults": "The tarka, made fresh: 1 tbsp oil, 1 tsp mustard seeds, 1 tsp cumin seeds, pinch of chilli flakes, 30 seconds in the pan, poured over."
+  },
+  "pork_fried_rice": {
+    "name": "Pork Fried Rice",
+    "category": "leftover-transform",
+    "week": 2,
+    "day": "wed",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Make the lot at the first sitting, microwave per person after.",
+    "ingredients": [
+      {
+        "food": "pork_shoulder_roast",
+        "grams": 300,
+        "display": "300g leftover pork, diced",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "grain_pouch",
+        "grams": 500,
+        "display": "2 rice pouches",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stir_fry_veg",
+        "grams": 300,
+        "display": "300g frozen stir fry veg",
+        "aisle": "frozen"
+      },
+      {
+        "food": "egg",
+        "grams": 174,
+        "display": "3 eggs",
+        "aisle": "dairy"
+      },
+      {
+        "food": "soy_sauce",
+        "grams": 30,
+        "display": "2 tbsp soy sauce",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "garlic",
+        "grams": 3,
+        "display": "1 garlic cube",
+        "aisle": "frozen"
+      },
+      {
+        "food": "sesame_oil",
+        "grams": 5,
+        "display": "1 tsp sesame oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "spring_onion",
+        "grams": 40,
+        "display": "Spring onions, sliced",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Pork crisped in a hot pan, 3 minutes.",
+      "Frozen veg and garlic in, 4 minutes.",
+      "Rice pouches broken in, soy over, tossed 3 minutes.",
+      "Eggs scrambled into a gap in the pan, then stirred through.",
+      "Sesame oil off the heat. Spring onions on top."
+    ]
+  },
+  "chicken_wraps": {
+    "name": "Chicken Wraps",
+    "category": "leftover-transform",
+    "week": 3,
+    "day": "mon",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Together night. Same idea as the other Mondays, but wrapped instead of over rice.",
+    "ingredients": [
+      {
+        "food": "chicken_roast_meat",
+        "grams": 350,
+        "display": "350g lemon chicken from Saturday",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "tortilla_wrap",
+        "grams": 240,
+        "display": "8 tortilla wraps",
+        "aisle": "bakery"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 100,
+        "display": "A bag of leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cucumber",
+        "grams": 200,
+        "display": "Cucumber, in batons",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 150,
+        "display": "Tomatoes, sliced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "hummus",
+        "grams": 150,
+        "display": "150g hummus",
+        "aisle": "dairy"
+      },
+      {
+        "food": "red_onion",
+        "grams": 30,
+        "display": "Pickled onions from the jar",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Wraps warmed 20 seconds in the microwave under a damp cloth, or 2 minutes in a dry pan.",
+      "Everything on the table. Lemon dressing from the jar.",
+      "Build your own."
+    ]
+  },
+  "chickpea_stew_with_couscous": {
+    "name": "Chickpea Stew with Couscous",
+    "category": "leftover-transform",
+    "week": 3,
+    "day": "tue",
+    "serves": 4,
+    "from": [
+      [
+        "north_african_chickpea_stew",
+        4
+      ]
+    ],
+    "tags": {
+      "prepStyle": "reheat-only",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 10,
+      "source": "system"
+    },
+    "notes": "Tuesday's tub of stew from Saturday. Couscous made on the day - 5 minutes in a bowl.",
+    "ingredients": [
+      {
+        "food": "couscous_dry",
+        "grams": 200,
+        "display": "200g couscous",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Coriander",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Stew into a pan on low, 10 minutes.",
+      "Couscous in a bowl, boiling water just over the top, plate on, 5 minutes. Fork through.",
+      "Coriander over."
+    ],
+    "adults": "Harissa stirred into the bowl."
+  },
+  "gammon_eggs_chips": {
+    "name": "Gammon, Eggs & Sweet Potato Chips",
+    "category": "leftover-transform",
+    "week": 3,
+    "day": "wed",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 20,
+      "source": "system"
+    },
+    "notes": "Chips part-cooked on Saturday, finished on the night.",
+    "ingredients": [
+      {
+        "food": "gammon_cooked",
+        "grams": 400,
+        "display": "400g leftover gammon, sliced",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "sweet_potato",
+        "grams": 1000,
+        "display": "1kg sweet potato, cut for chips",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 20,
+        "display": "1.5 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "egg",
+        "grams": 290,
+        "display": "5 eggs",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Chips out of the fridge, oven timer 200C for 20 minutes.",
+      "Gammon slices warmed in a dry pan, 2 minutes a side.",
+      "Eggs fried on the day, one each and one spare."
+    ]
+  },
+  "lasagne": {
+    "name": "Lasagne",
+    "category": "leftover-transform",
+    "week": 4,
+    "day": "mon",
+    "serves": 4,
+    "from": [
+      [
+        "ragu",
+        4
+      ]
+    ],
+    "tags": {
+      "prepStyle": "reheat-only",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 40,
+      "source": "system"
+    },
+    "notes": "Assembled cold on Saturday from the ragu, sits raw in the fridge until Monday. Oven timer job.",
+    "ingredients": [
+      {
+        "food": "lasagne_sheets",
+        "grams": 200,
+        "display": "200g lasagne sheets",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "white_sauce_jar",
+        "grams": 500,
+        "display": "500g white sauce (jar or made)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 125,
+        "display": "1 ball mozzarella, torn",
+        "aisle": "dairy"
+      },
+      {
+        "food": "cheddar",
+        "grams": 100,
+        "display": "100g cheddar, grated",
+        "aisle": "dairy"
+      },
+      {
+        "food": "frozen_spinach",
+        "grams": 100,
+        "display": "100g frozen spinach (optional layer)",
+        "aisle": "frozen"
+      }
+    ],
+    "method": [
+      "Saturday: ragu, sheets, white sauce, repeat. Spinach layer if you want it. Cheese on top. Cover, fridge.",
+      "Monday: oven timer 190C, 40 minutes from the fridge.",
+      "Stand 10 minutes before cutting or it slides."
+    ],
+    "serving_suggestion": "Green salad and garlic bread."
+  },
+  "ragu_with_pasta": {
+    "name": "Ragu with Pasta",
+    "category": "leftover-transform",
+    "week": 4,
+    "day": "tue",
+    "serves": 4,
+    "from": [
+      [
+        "ragu",
+        4
+      ]
+    ],
+    "tags": {
+      "prepStyle": "reheat-only",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 12,
+      "source": "system"
+    },
+    "notes": "Tuesday's tub of ragu from Saturday. Pasta on the day, always.",
+    "ingredients": [
+      {
+        "food": "fresh_pasta",
+        "grams": 500,
+        "display": "500g fresh pasta",
+        "aisle": "dairy"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "display": "60g parmesan",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Ragu into a pan on low while the water comes up.",
+      "Fresh pasta 3 minutes.",
+      "Pasta into the sauce, not the other way round. Splash of pasta water. Parmesan over."
+    ]
+  },
+  "beef_tomato_orzo": {
+    "name": "Beef & Tomato Orzo",
+    "category": "leftover-transform",
+    "week": 4,
+    "day": "wed",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "One pan. The beef goes in at the very end - it toughens if it cooks.",
+    "ingredients": [
+      {
+        "food": "beef_topside_roast",
+        "grams": 300,
+        "display": "300g leftover roast beef, shredded",
+        "aisle": "meat",
+        "macroOnly": true
+      },
+      {
+        "food": "orzo_dry",
+        "grams": 200,
+        "display": "200g orzo",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_made",
+        "grams": 500,
+        "display": "500ml stock",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 400,
+        "display": "1 tin chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "courgette",
+        "grams": 200,
+        "display": "1 courgette, diced (or a handful of frozen peas)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "parmesan",
+        "grams": 40,
+        "display": "40g parmesan",
+        "aisle": "dairy"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "Zest of a lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Orzo, stock and tomatoes into a pan. Simmer 10-12 minutes, stirring so it doesn't catch.",
+      "Courgette in for the last 3 minutes.",
+      "Beef in for the last 2 minutes only, just to warm.",
+      "Lemon zest and parmesan over."
+    ]
+  },
+  "margherita_pizza": {
+    "name": "Margherita, the Boys'",
+    "category": "pizza",
+    "week": null,
+    "day": "fri",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 12,
+      "source": "system"
+    },
+    "notes": "Dough out of the freezer into the fridge on Thursday night.",
+    "ingredients": [
+      {
+        "food": "pizza_dough",
+        "grams": 500,
+        "display": "2 dough balls",
+        "aisle": "frozen"
+      },
+      {
+        "food": "passata",
+        "grams": 200,
+        "display": "200g passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 250,
+        "display": "2 balls mozzarella",
+        "aisle": "dairy"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Oven as hot as it goes with the tray or stone in it.",
+      "Dough stretched by hand, not rolled. Passata thin, cheese torn on.",
+      "8-12 minutes depending on the oven."
+    ]
+  },
+  "chorizo_pepper_pizza": {
+    "name": "Chorizo & Pepper, the Adults'",
+    "category": "pizza",
+    "week": 1,
+    "day": "fri",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 12,
+      "source": "system"
+    },
+    "notes": "Topping under the cheese. Less mozzarella than the boys'.",
+    "ingredients": [
+      {
+        "food": "pizza_dough",
+        "grams": 250,
+        "display": "1 dough ball",
+        "aisle": "frozen"
+      },
+      {
+        "food": "passata",
+        "grams": 80,
+        "display": "80g passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "chorizo_cooking",
+        "grams": 100,
+        "display": "100g cooking chorizo",
+        "aisle": "meat"
+      },
+      {
+        "food": "pepper",
+        "grams": 75,
+        "display": "Half a red pepper",
+        "aisle": "fresh"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 60,
+        "display": "60g mozzarella",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Chorizo and pepper on the passata, cheese over the top. Same oven, same time as the boys'."
+    ]
+  },
+  "tandoori_chicken_pizza": {
+    "name": "Tandoori Chicken, the Adults'",
+    "category": "pizza",
+    "week": 2,
+    "day": "fri",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 12,
+      "source": "system"
+    },
+    "notes": "Chutney dotted on after it comes out, not before.",
+    "ingredients": [
+      {
+        "food": "pizza_dough",
+        "grams": 250,
+        "display": "1 dough ball",
+        "aisle": "frozen"
+      },
+      {
+        "food": "passata",
+        "grams": 80,
+        "display": "80g passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 200,
+        "display": "200g chicken thigh",
+        "aisle": "meat"
+      },
+      {
+        "food": "spice_mix",
+        "grams": 3,
+        "display": "1 tsp tandoori spice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 7,
+        "display": "1 tsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 60,
+        "display": "60g mozzarella",
+        "aisle": "dairy"
+      },
+      {
+        "food": "mango_chutney",
+        "grams": 20,
+        "display": "Mango chutney, after",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Chicken tossed in spice and oil, on the passata, cheese over. Chutney dotted on once it's out."
+    ]
+  },
+  "halloumi_pepper_pizza": {
+    "name": "Halloumi & Pepper, the Adults'",
+    "category": "pizza",
+    "week": 3,
+    "day": "fri",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 12,
+      "source": "system"
+    },
+    "notes": "Halloumi sliced thin or it stays squeaky.",
+    "ingredients": [
+      {
+        "food": "pizza_dough",
+        "grams": 250,
+        "display": "1 dough ball",
+        "aisle": "frozen"
+      },
+      {
+        "food": "passata",
+        "grams": 80,
+        "display": "80g passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "halloumi",
+        "grams": 120,
+        "display": "120g halloumi, sliced",
+        "aisle": "dairy"
+      },
+      {
+        "food": "pepper",
+        "grams": 100,
+        "display": "Half a red pepper",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 40,
+        "display": "Red onion, sliced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 60,
+        "display": "60g mozzarella",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Peppers and onion on the passata, halloumi and mozzarella over the top."
+    ]
+  },
+  "pepperoni_pizza": {
+    "name": "Pepperoni, the Adults'",
+    "category": "pizza",
+    "week": 4,
+    "day": "fri",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 12,
+      "source": "system"
+    },
+    "notes": "The simplest one. Don't overthink it.",
+    "ingredients": [
+      {
+        "food": "pizza_dough",
+        "grams": 250,
+        "display": "1 dough ball",
+        "aisle": "frozen"
+      },
+      {
+        "food": "passata",
+        "grams": 80,
+        "display": "80g passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "pepperoni",
+        "grams": 40,
+        "display": "40g pepperoni",
+        "aisle": "meat"
+      },
+      {
+        "food": "mozzarella",
+        "grams": 60,
+        "display": "60g mozzarella",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Pepperoni on the passata, cheese over. Chilli oil after, for the adults."
+    ]
+  },
+  "chopped_salad_w1": {
+    "name": "Chopped Salad",
+    "category": "salad",
+    "week": 1,
+    "day": "fri",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Goes on the table with the pizzas. The eggs are 4 of Saturday's 8.",
+    "ingredients": [
+      {
+        "food": "salad_leaves",
+        "grams": 100,
+        "display": "A bag of leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 150,
+        "display": "150g tomatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "sweetcorn_drained",
+        "grams": 260,
+        "display": "1 tin sweetcorn, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "cucumber",
+        "grams": 150,
+        "display": "Half a cucumber",
+        "aisle": "fresh"
+      },
+      {
+        "food": "egg",
+        "grams": 232,
+        "display": "4 boiled eggs",
+        "aisle": "dairy"
+      },
+      {
+        "food": "cheddar",
+        "grams": 50,
+        "display": "50g cheddar, cubed",
+        "aisle": "dairy"
+      },
+      {
+        "food": "red_onion",
+        "grams": 30,
+        "display": "Pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 20,
+        "display": "20g seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tortilla_chips",
+        "grams": 30,
+        "display": "30g tortilla chips, crushed",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 42,
+        "display": "3 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "vinegar",
+        "grams": 15,
+        "display": "1 tbsp vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lime_juice",
+        "grams": 15,
+        "display": "Juice of a lime",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Everything chopped small, dressed at the last minute so the chips stay crunchy."
+    ]
+  },
+  "cucumber_tomato_salad_w2": {
+    "name": "Cucumber & Tomato Salad",
+    "category": "salad",
+    "week": 2,
+    "day": "fri",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Cooling, to sit next to the tandoori pizza.",
+    "ingredients": [
+      {
+        "food": "salad_leaves",
+        "grams": 100,
+        "display": "A bag of leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cucumber",
+        "grams": 300,
+        "display": "1 cucumber",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 150,
+        "display": "150g tomatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 30,
+        "display": "Pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "egg",
+        "grams": 232,
+        "display": "4 boiled eggs",
+        "aisle": "dairy"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 20,
+        "display": "20g seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 45,
+        "display": "Mint yoghurt from the jar",
+        "aisle": "dairy"
+      },
+      {
+        "food": "mango_chutney",
+        "grams": 7,
+        "display": "A little chutney",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "A squeeze of lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Cucumber in half-moons, tomatoes in wedges. Mint yoghurt loosened with lemon, spooned over."
+    ]
+  },
+  "greek_salad_w3": {
+    "name": "Greek Salad",
+    "category": "salad",
+    "week": 3,
+    "day": "fri",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "No leaves in a proper one. Big chunks.",
+    "ingredients": [
+      {
+        "food": "tomatoes",
+        "grams": 400,
+        "display": "400g tomatoes, in chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cucumber",
+        "grams": 300,
+        "display": "1 cucumber, in chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "feta",
+        "grams": 100,
+        "display": "100g feta",
+        "aisle": "dairy"
+      },
+      {
+        "food": "olives_drained",
+        "grams": 60,
+        "display": "60g olives",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "red_onion",
+        "grams": 30,
+        "display": "Pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "egg",
+        "grams": 232,
+        "display": "4 boiled eggs",
+        "aisle": "dairy"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 20,
+        "display": "20g seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 42,
+        "display": "3 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 15,
+        "display": "Juice of half a lemon",
+        "aisle": "fresh"
+      },
+      {
+        "food": "oregano",
+        "grams": 1,
+        "display": "Dried oregano",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Chunks, not slices. Feta in a slab on top. Oil, lemon and oregano over."
+    ]
+  },
+  "tomato_mozzarella_salad_w4": {
+    "name": "Tomato & Mozzarella Salad",
+    "category": "salad",
+    "week": 4,
+    "day": "fri",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Beans make it a salad you can actually eat a bowl of.",
+    "ingredients": [
+      {
+        "food": "salad_leaves",
+        "grams": 100,
+        "display": "A bag of leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 150,
+        "display": "150g tomatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "mozzarella_pearls",
+        "grams": 150,
+        "display": "150g mozzarella pearls",
+        "aisle": "dairy"
+      },
+      {
+        "food": "cannellini_drained",
+        "grams": 240,
+        "display": "1 tin cannellini, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_onion",
+        "grams": 30,
+        "display": "Pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "egg",
+        "grams": 232,
+        "display": "4 boiled eggs",
+        "aisle": "dairy"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 20,
+        "display": "20g seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 15,
+        "display": "Basil",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 42,
+        "display": "3 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "balsamic",
+        "grams": 15,
+        "display": "1 tbsp balsamic",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Beans dressed first so they take the flavour, then everything else folded through."
+    ]
+  },
+  "roast_chicken_stripped": {
+    "name": "Roast Paprika Chicken for the Boxes",
+    "category": "lunchbox",
+    "week": 1,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 35,
+      "source": "system"
+    },
+    "notes": "1kg of thighs roasts down to ~800g - 80g per box across 10 boxes. Goes in the oven with the veg tray.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 1000,
+        "display": "1kg boneless chicken thighs",
+        "aisle": "meat"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 5,
+        "display": "2 tsp smoked paprika",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Thighs tossed in oil and paprika, spread on a tray. 200C for 30-35 minutes. Cooled, then sliced or torn."
+    ],
+    "basket_notes": {
+      "chicken_thigh_boneless": "1kg for the lunch boxes, 600g more for Thursday's freezer bag"
+    }
+  },
+  "tandoori_thighs": {
+    "name": "Tandoori Thighs for the Boxes",
+    "category": "lunchbox",
+    "week": 2,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 35,
+      "source": "system"
+    },
+    "notes": "Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1.6kg total.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 1000,
+        "display": "1kg boneless chicken thighs",
+        "aisle": "meat"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 150,
+        "display": "150g Greek yoghurt",
+        "aisle": "dairy"
+      },
+      {
+        "food": "spice_mix",
+        "grams": 15,
+        "display": "2 tbsp tandoori spice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 15,
+        "display": "Juice of half a lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Yoghurt, spice and lemon mixed, thighs turned through it. 200C for 30-35 minutes until the edges char."
+    ]
+  },
+  "roast_chicken_lemon": {
+    "name": "Lemon Chicken for the Boxes",
+    "category": "lunchbox",
+    "week": 3,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 35,
+      "source": "system"
+    },
+    "notes": "Cook 1.4kg - 1kg for the boxes and 350g for Monday's wraps.",
+    "ingredients": [
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 1400,
+        "display": "1.4kg boneless chicken thighs",
+        "aisle": "meat"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "Juice of 1 lemon",
+        "aisle": "fresh"
+      },
+      {
+        "food": "oregano",
+        "grams": 2,
+        "display": "2 tsp dried oregano",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Oil, lemon and oregano over the thighs. 200C for 30-35 minutes. 1kg cooled for the boxes, 350g in a tub for Monday."
+    ]
+  },
+  "meatballs_from_traybake": {
+    "name": "Meatballs from the Al Forno Tray",
+    "category": "lunchbox",
+    "week": 4,
+    "day": "sat",
+    "serves": 10,
+    "from": [
+      [
+        "meatball_al_forno",
+        2
+      ]
+    ],
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 0,
+      "source": "emily-english"
+    },
+    "notes": "No extra cooking - two portions off the second tray, split across the ten boxes.",
+    "ingredients": [],
+    "method": [
+      "Once the second tray has cooled, lift out the meatballs for the boxes. A spoon of the tray sauce goes in with them."
+    ]
+  },
+  "lunchbox_veg_tray_w1": {
+    "name": "Lunch Box Veg Tray",
+    "category": "lunchbox",
+    "week": 1,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 35,
+      "source": "system"
+    },
+    "notes": "One big tray, 100g per box. Roasts down, so weigh generously.",
+    "ingredients": [
+      {
+        "food": "sweet_potato",
+        "grams": 500,
+        "display": "500g sweet potato, cubed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 300,
+        "display": "2 peppers, chunked",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 200,
+        "display": "1 large red onion, in wedges",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 21,
+        "display": "1.5 tbsp oil",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything on the biggest tray, oiled and salted. 200C for 30-35 minutes once the flapjacks are out. Cool before it goes near a box."
+    ]
+  },
+  "lunchbox_veg_tray_w2": {
+    "name": "Lunch Box Veg Tray",
+    "category": "lunchbox",
+    "week": 2,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 30,
+      "source": "system"
+    },
+    "notes": "One big tray, 100g per box.",
+    "ingredients": [
+      {
+        "food": "broccoli",
+        "grams": 400,
+        "display": "1 head broccoli, in florets",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cauliflower",
+        "grams": 300,
+        "display": "Half a cauliflower",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 150,
+        "display": "2 carrots, in batons",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 150,
+        "display": "1 red onion, in wedges",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 21,
+        "display": "1.5 tbsp oil",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything on the biggest tray, oiled and salted. 200C for 25-30 minutes. Cool completely."
+    ]
+  },
+  "lunchbox_veg_tray_w3": {
+    "name": "Lunch Box Veg Tray",
+    "category": "lunchbox",
+    "week": 3,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 35,
+      "source": "system"
+    },
+    "notes": "One big tray, 100g per box.",
+    "ingredients": [
+      {
+        "food": "sweet_potato",
+        "grams": 400,
+        "display": "400g sweet potato, cubed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 300,
+        "display": "2 peppers, chunked",
+        "aisle": "fresh"
+      },
+      {
+        "food": "courgette",
+        "grams": 200,
+        "display": "1 courgette, in chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 150,
+        "display": "1 red onion, in wedges",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 21,
+        "display": "1.5 tbsp oil",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything on the biggest tray, oiled and salted. 200C for 30-35 minutes. Cool completely."
+    ]
+  },
+  "lunchbox_veg_tray_w4": {
+    "name": "Lunch Box Veg Tray",
+    "category": "lunchbox",
+    "week": 4,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 30,
+      "source": "system"
+    },
+    "notes": "One big tray, 100g per box.",
+    "ingredients": [
+      {
+        "food": "courgette",
+        "grams": 300,
+        "display": "2 courgettes, in chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 400,
+        "display": "2-3 peppers, chunked",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 200,
+        "display": "1 large red onion",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 150,
+        "display": "150g cherry tomatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 21,
+        "display": "1.5 tbsp oil",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything on the biggest tray, oiled and salted. 200C for 25-30 minutes. Cool completely."
+    ]
+  },
+  "house_vinaigrette": {
+    "name": "House Vinaigrette",
+    "category": "scaffold",
+    "week": null,
+    "day": null,
+    "serves": 10,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Monthly batch - keeps 3-4 weeks in a jar in the fridge. 2 tbsp per lunch box.",
+    "ingredients": [
+      {
+        "food": "olive_oil",
+        "grams": 210,
+        "display": "210ml olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "vinegar",
+        "grams": 75,
+        "display": "75ml red wine vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mustard",
+        "grams": 12,
+        "display": "2 tsp Dijon mustard",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 17,
+        "display": "2 tsp honey",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything in a jam jar. Lid on, shake hard. Shake again before each use."
+    ]
+  },
+  "lemon_dressing": {
+    "name": "Lemon Dressing",
+    "category": "scaffold",
+    "week": null,
+    "day": null,
+    "serves": 10,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Monthly batch. 2 tbsp per lunch box.",
+    "ingredients": [
+      {
+        "food": "olive_oil",
+        "grams": 210,
+        "display": "210ml olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 110,
+        "display": "Juice of 3-4 lemons",
+        "aisle": "fresh"
+      },
+      {
+        "food": "honey",
+        "grams": 17,
+        "display": "2 tsp honey",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything in a jam jar. Lid on, shake hard."
+    ]
+  },
+  "balsamic_vinaigrette": {
+    "name": "Balsamic Vinaigrette",
+    "category": "scaffold",
+    "week": null,
+    "day": null,
+    "serves": 10,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Monthly batch. 2 tbsp per lunch box.",
+    "ingredients": [
+      {
+        "food": "olive_oil",
+        "grams": 210,
+        "display": "210ml olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "balsamic",
+        "grams": 75,
+        "display": "75ml balsamic",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mustard",
+        "grams": 12,
+        "display": "2 tsp Dijon mustard",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 17,
+        "display": "2 tsp honey",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Everything in a jam jar. Lid on, shake hard."
+    ]
+  },
+  "mint_yoghurt": {
+    "name": "Mint Yoghurt",
+    "category": "scaffold",
+    "week": 2,
+    "day": "sat",
+    "serves": 10,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "The one dressing that will not keep a month - make it fresh in week 2.",
+    "ingredients": [
+      {
+        "food": "greek_yoghurt",
+        "grams": 300,
+        "display": "300g Greek yoghurt",
+        "aisle": "dairy"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 20,
+        "display": "A handful of mint, chopped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "Juice of 1 lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Mint chopped fine, stirred through the yoghurt with the lemon and a good pinch of salt."
+    ]
+  },
+  "lunchbox_w1": {
+    "name": "Lunch Box, Week 1",
+    "category": "lunchbox",
+    "week": 1,
+    "day": "sat",
+    "serves": 1,
+    "from": [
+      [
+        "house_vinaigrette",
+        1
+      ],
+      [
+        "roast_chicken_stripped",
+        1
+      ],
+      [
+        "lunchbox_veg_tray_w1",
+        1
+      ]
+    ],
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing.",
+    "ingredients": [
+      {
+        "food": "grain_pouch",
+        "grams": 125,
+        "display": "Half a rice pouch",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mixed_beans_drained",
+        "grams": 50,
+        "display": "50g tinned beans",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_onion",
+        "grams": 15,
+        "display": "A spoonful of pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 15,
+        "display": "A handful of leaves",
+        "aisle": "fresh"
+      }
+    ],
+    "finishers": {
+      "mon": {
+        "tortilla_chips": 20,
+        "lime_juice": 5
+      },
+      "tue": {
+        "cheddar": 30
+      },
+      "wed": {
+        "sweetcorn_drained": 60,
+        "fresh_herbs": 5
+      },
+      "thu": {
+        "egg": 58,
+        "smoked_paprika": 1
+      },
+      "fri": {
+        "greek_yoghurt": 40
+      }
+    },
+    "method": [
+      "Dressing in the bottom.",
+      "Rice, then beans, then chicken, then roast veg.",
+      "Pickled onions, then leaves on top.",
+      "Finisher goes on the day, not now - especially the crunchy ones and the boiled eggs."
+    ]
+  },
+  "lunchbox_w2": {
+    "name": "Lunch Box, Week 2",
+    "category": "lunchbox",
+    "week": 2,
+    "day": "sat",
+    "serves": 1,
+    "from": [
+      [
+        "mint_yoghurt",
+        1
+      ],
+      [
+        "tandoori_thighs",
+        1
+      ],
+      [
+        "lunchbox_veg_tray_w2",
+        1
+      ]
+    ],
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Ten of these - five each.",
+    "ingredients": [
+      {
+        "food": "grain_pouch",
+        "grams": 125,
+        "display": "Half a rice pouch",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mixed_beans_drained",
+        "grams": 50,
+        "display": "50g tinned beans",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_onion",
+        "grams": 15,
+        "display": "A spoonful of pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 15,
+        "display": "A handful of leaves",
+        "aisle": "fresh"
+      }
+    ],
+    "finishers": {
+      "mon": {
+        "mango_chutney": 20,
+        "fresh_herbs": 5
+      },
+      "tue": {
+        "egg": 58,
+        "cumin": 2
+      },
+      "wed": {
+        "seeds_nuts": 20,
+        "garam_masala": 1
+      },
+      "thu": {
+        "lime_pickle": 15
+      },
+      "fri": {
+        "cucumber": 50,
+        "greek_yoghurt": 30
+      }
+    },
+    "method": [
+      "Mint yoghurt in the bottom.",
+      "Rice, then beans, then tandoori chicken, then roast veg.",
+      "Pickled onions, then leaves on top.",
+      "Finisher on the day."
+    ]
+  },
+  "lunchbox_w3": {
+    "name": "Lunch Box, Week 3",
+    "category": "lunchbox",
+    "week": 3,
+    "day": "sat",
+    "serves": 1,
+    "from": [
+      [
+        "lemon_dressing",
+        1
+      ],
+      [
+        "roast_chicken_lemon",
+        1
+      ],
+      [
+        "lunchbox_veg_tray_w3",
+        1
+      ]
+    ],
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Ten of these - five each.",
+    "ingredients": [
+      {
+        "food": "grain_pouch",
+        "grams": 125,
+        "display": "Half a rice pouch",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mixed_beans_drained",
+        "grams": 50,
+        "display": "50g tinned beans",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_onion",
+        "grams": 15,
+        "display": "A spoonful of pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 15,
+        "display": "A handful of leaves",
+        "aisle": "fresh"
+      }
+    ],
+    "finishers": {
+      "mon": {
+        "feta": 30,
+        "oregano": 1
+      },
+      "tue": {
+        "olives_drained": 20,
+        "lemon_juice": 3
+      },
+      "wed": {
+        "hummus": 40,
+        "smoked_paprika": 1
+      },
+      "thu": {
+        "egg": 58,
+        "seeds_nuts": 10
+      },
+      "fri": {
+        "cucumber": 60,
+        "olive_oil": 10,
+        "lemon_juice": 5
+      }
+    },
+    "method": [
+      "Lemon dressing in the bottom.",
+      "Rice, then beans, then lemon chicken, then roast veg.",
+      "Pickled onions, then leaves on top.",
+      "Finisher on the day."
+    ]
+  },
+  "lunchbox_w4": {
+    "name": "Lunch Box, Week 4",
+    "category": "lunchbox",
+    "week": 4,
+    "day": "sat",
+    "serves": 1,
+    "from": [
+      [
+        "balsamic_vinaigrette",
+        1
+      ],
+      [
+        "meatballs_from_traybake",
+        1
+      ],
+      [
+        "lunchbox_veg_tray_w4",
+        1
+      ]
+    ],
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Ten of these - five each. The protein comes off the second al forno tray.",
+    "ingredients": [
+      {
+        "food": "grain_pouch",
+        "grams": 125,
+        "display": "Half a rice pouch",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cannellini_drained",
+        "grams": 50,
+        "display": "50g cannellini beans",
+        "aisle": "tinned"
+      },
+      {
+        "food": "red_onion",
+        "grams": 15,
+        "display": "A spoonful of pickled onions",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 15,
+        "display": "A handful of leaves",
+        "aisle": "fresh"
+      }
+    ],
+    "finishers": {
+      "mon": {
+        "mozzarella_pearls": 30,
+        "oregano": 1
+      },
+      "tue": {
+        "parmesan": 15,
+        "balsamic": 5
+      },
+      "wed": {
+        "pepperoni": 20,
+        "olive_oil": 5
+      },
+      "thu": {
+        "egg": 58,
+        "seeds_nuts": 10
+      },
+      "fri": {
+        "passata": 35,
+        "parmesan": 10
+      }
+    },
+    "method": [
+      "Balsamic vinaigrette in the bottom.",
+      "Rice, then beans, then meatballs, then roast veg.",
+      "Pickled onions, then leaves on top.",
+      "Finisher on the day."
+    ]
+  },
+  "sandwiches_adults": {
+    "name": "Saturday Sandwich, Adults'",
+    "category": "scaffold",
+    "week": null,
+    "day": "sat",
+    "serves": 1,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Cold lunch on prep day. Double filling - the evening is a long one.",
+    "ingredients": [
+      {
+        "food": "bread_wholemeal",
+        "grams": 80,
+        "display": "2 slices wholemeal bread",
+        "aisle": "bakery"
+      },
+      {
+        "food": "butter",
+        "grams": 10,
+        "display": "Butter",
+        "aisle": "dairy"
+      },
+      {
+        "food": "ham_sliced",
+        "grams": 60,
+        "display": "60g ham",
+        "aisle": "meat"
+      },
+      {
+        "food": "cheddar",
+        "grams": 30,
+        "display": "30g cheddar",
+        "aisle": "dairy"
+      },
+      {
+        "food": "cucumber",
+        "grams": 30,
+        "display": "Cucumber",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 30,
+        "display": "Tomato",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 10,
+        "display": "Leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 10,
+        "display": "Pickled onions",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Made and eaten standing up, probably."
+    ]
+  },
+  "sandwiches_boys": {
+    "name": "Saturday Sandwich, Boys'",
+    "category": "scaffold",
+    "week": null,
+    "day": "sat",
+    "serves": 1,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Single filling, no pickles.",
+    "ingredients": [
+      {
+        "food": "bread_wholemeal",
+        "grams": 80,
+        "display": "2 slices wholemeal bread",
+        "aisle": "bakery"
+      },
+      {
+        "food": "butter",
+        "grams": 10,
+        "display": "Butter",
+        "aisle": "dairy"
+      },
+      {
+        "food": "ham_sliced",
+        "grams": 30,
+        "display": "30g ham",
+        "aisle": "meat"
+      },
+      {
+        "food": "cucumber",
+        "grams": 30,
+        "display": "Cucumber",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 30,
+        "display": "Tomato",
+        "aisle": "fresh"
+      },
+      {
+        "food": "salad_leaves",
+        "grams": 10,
+        "display": "Leaves",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Crusts on. They'll live."
+    ]
+  },
+  "tuna_pasta_salad": {
+    "name": "Tuna Pasta Salad",
+    "category": "scaffold",
+    "week": null,
+    "day": "sat",
+    "serves": 4,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 15,
+      "passiveMinutes": 12,
+      "source": "system"
+    },
+    "notes": "The one exception to the pasta rule - made Saturday for Sunday lunch, because it is meant to be cold. Yoghurt and seeds go on Sunday, not now.",
+    "ingredients": [
+      {
+        "food": "pasta_dry",
+        "grams": 250,
+        "display": "250g pasta",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tuna_drained",
+        "grams": 224,
+        "display": "2 tins tuna, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "egg",
+        "grams": 116,
+        "display": "2 boiled eggs",
+        "aisle": "dairy"
+      },
+      {
+        "food": "cucumber",
+        "grams": 150,
+        "display": "Half a cucumber, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 100,
+        "display": "100g tomatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "frozen_peas",
+        "grams": 100,
+        "display": "100g frozen peas",
+        "aisle": "frozen"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 20,
+        "display": "20g seeds (Sunday)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 30,
+        "display": "Greek yoghurt (Sunday)",
+        "aisle": "dairy"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 20,
+        "display": "Juice of half a lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Pasta cooked, peas thrown in for the last 2 minutes, both drained and run under cold water.",
+      "Tuna, cucumber, tomatoes and lemon folded through. Eggs quartered on top.",
+      "Fridge. Sunday: yoghurt loosened with a splash of water, stirred through, seeds over."
+    ]
+  },
+  "boiled_eggs": {
+    "name": "Boiled Eggs",
+    "category": "scaffold",
+    "week": null,
+    "day": "sat",
+    "serves": 8,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 3,
+      "passiveMinutes": 8,
+      "source": "system"
+    },
+    "notes": "2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.",
+    "ingredients": [
+      {
+        "food": "egg",
+        "grams": 464,
+        "display": "8 eggs",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge."
+    ]
+  },
+  "quick_pickled_red_onions": {
+    "name": "Quick Pickled Red Onions",
+    "category": "scaffold",
+    "week": null,
+    "day": "sat",
+    "serves": 20,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 30,
+      "source": "system"
+    },
+    "notes": "Every Saturday, or skip it if last week's jar is still good - they keep 4-6 weeks.",
+    "ingredients": [
+      {
+        "food": "red_onion",
+        "grams": 300,
+        "display": "2 red onions, sliced thin",
+        "aisle": "fresh"
+      },
+      {
+        "food": "vinegar",
+        "grams": 150,
+        "display": "150ml red wine vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sugar",
+        "grams": 20,
+        "display": "1 tbsp sugar",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Onions into a jar. Vinegar, sugar and a good pinch of salt warmed until dissolved, poured over. Lid on, 30 minutes minimum."
+    ]
+  },
+  "smoothie_bag": {
+    "name": "Smoothie Bag",
+    "category": "scaffold",
+    "week": null,
+    "day": "sat",
+    "serves": 1,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": true,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 1,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Ten bags. Fill them all one ingredient at a time - spinach in all ten, then berries in all ten, and so on. Back in the freezer standing in a tub.",
+    "ingredients": [
+      {
+        "food": "frozen_spinach",
+        "grams": 100,
+        "display": "100g frozen spinach",
+        "aisle": "frozen"
+      },
+      {
+        "food": "frozen_berries",
+        "grams": 100,
+        "display": "100g frozen berries",
+        "aisle": "frozen"
+      },
+      {
+        "food": "oats",
+        "grams": 30,
+        "display": "30g oats",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 15,
+        "display": "1 tbsp seeds or peanut butter",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "protein_powder",
+        "grams": 30,
+        "display": "30g protein powder (added in the morning)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "milk_semi",
+        "grams": 300,
+        "display": "300ml milk (added in the morning)",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Frozen things into the bag Saturday. Bag flat in the freezer.",
+      "In the morning: bag into the blender with the protein powder, creatine and milk."
+    ]
+  },
+  "flapjack_plain_seed": {
+    "name": "Seed Flapjacks",
+    "category": "scaffold",
+    "week": 1,
+    "day": "sat",
+    "serves": 12,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 25,
+      "source": "system"
+    },
+    "notes": "First thing in the oven at 180C, before anything else needs it.",
+    "ingredients": [
+      {
+        "food": "oats",
+        "grams": 250,
+        "display": "250g oats",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "protein_powder",
+        "grams": 60,
+        "display": "60g protein powder",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "peanut_butter",
+        "grams": 150,
+        "display": "150g peanut butter",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 100,
+        "display": "100g honey",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "butter",
+        "grams": 75,
+        "display": "75g butter",
+        "aisle": "dairy"
+      },
+      {
+        "food": "banana",
+        "grams": 100,
+        "display": "1 ripe banana, mashed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 80,
+        "display": "80g mixed seeds",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Butter, peanut butter and honey melted together in a pan.",
+      "Off the heat, everything else stirred in.",
+      "Pressed hard into a lined tin - hard, or they crumble.",
+      "180C for 22-25 minutes. Cool completely in the tin before cutting into 12."
+    ]
+  },
+  "flapjack_cinnamon_raisin": {
+    "name": "Cinnamon & Raisin Flapjacks",
+    "category": "scaffold",
+    "week": 2,
+    "day": "sat",
+    "serves": 12,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 25,
+      "source": "system"
+    },
+    "notes": "First thing in the oven at 180C.",
+    "ingredients": [
+      {
+        "food": "oats",
+        "grams": 250,
+        "display": "250g oats",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "protein_powder",
+        "grams": 60,
+        "display": "60g protein powder",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "peanut_butter",
+        "grams": 150,
+        "display": "150g peanut butter",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 100,
+        "display": "100g honey",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "butter",
+        "grams": 75,
+        "display": "75g butter",
+        "aisle": "dairy"
+      },
+      {
+        "food": "banana",
+        "grams": 100,
+        "display": "1 ripe banana, mashed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 50,
+        "display": "50g mixed seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "raisins",
+        "grams": 80,
+        "display": "80g raisins, plus 2 tsp cinnamon",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Butter, peanut butter and honey melted together in a pan.",
+      "Off the heat, everything else stirred in.",
+      "Pressed hard into a lined tin.",
+      "180C for 22-25 minutes. Cool completely before cutting into 12."
+    ]
+  },
+  "flapjack_lemon_seed": {
+    "name": "Lemon & Seed Flapjacks",
+    "category": "scaffold",
+    "week": 3,
+    "day": "sat",
+    "serves": 12,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 25,
+      "source": "system"
+    },
+    "notes": "First thing in the oven at 180C.",
+    "ingredients": [
+      {
+        "food": "oats",
+        "grams": 250,
+        "display": "250g oats",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "protein_powder",
+        "grams": 60,
+        "display": "60g protein powder",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "peanut_butter",
+        "grams": 150,
+        "display": "150g peanut butter",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 100,
+        "display": "100g honey",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "butter",
+        "grams": 75,
+        "display": "75g butter",
+        "aisle": "dairy"
+      },
+      {
+        "food": "banana",
+        "grams": 100,
+        "display": "1 ripe banana, mashed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 80,
+        "display": "80g mixed seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 20,
+        "display": "Zest and juice of a lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Butter, peanut butter and honey melted together in a pan.",
+      "Off the heat, everything else stirred in.",
+      "Pressed hard into a lined tin.",
+      "180C for 22-25 minutes. Cool completely before cutting into 12."
+    ]
+  },
+  "flapjack_cocoa": {
+    "name": "Cocoa Flapjacks",
+    "category": "scaffold",
+    "week": 4,
+    "day": "sat",
+    "serves": 12,
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 10,
+      "passiveMinutes": 25,
+      "source": "system"
+    },
+    "notes": "First thing in the oven at 180C.",
+    "ingredients": [
+      {
+        "food": "oats",
+        "grams": 250,
+        "display": "250g oats",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "protein_powder",
+        "grams": 60,
+        "display": "60g protein powder",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "peanut_butter",
+        "grams": 150,
+        "display": "150g peanut butter",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 100,
+        "display": "100g honey",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "butter",
+        "grams": 75,
+        "display": "75g butter",
+        "aisle": "dairy"
+      },
+      {
+        "food": "banana",
+        "grams": 100,
+        "display": "1 ripe banana, mashed",
+        "aisle": "fresh"
+      },
+      {
+        "food": "seeds_nuts",
+        "grams": 50,
+        "display": "50g mixed seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cocoa",
+        "grams": 25,
+        "display": "25g cocoa powder",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Butter, peanut butter and honey melted together in a pan.",
+      "Off the heat, everything else stirred in. The cocoa wants sifting or it clumps.",
+      "Pressed hard into a lined tin.",
+      "180C for 22-25 minutes. Cool completely before cutting into 12."
+    ]
+  },
+  "ee_meatball": {
+    "name": "Meatball & Ricotta Al Forno",
+    "category": "bank",
+    "week": 4,
+    "day": "sat",
+    "serves": 8,
+    "alias": "meatball_al_forno",
+    "source": {
+      "book": "Emily English",
+      "page": 122
+    },
+    "classification": "Rotation-ready - in rotation as week 4's traybake",
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "source": "emily-english"
+    }
+  },
+  "ee_goulash": {
+    "name": "Goulash",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Batch Cook",
+      "page": 140
+    },
+    "classification": "Rotation-ready - week 1 batch pot alternative, winter",
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": true,
+      "ovenTimer": false,
+      "season": "winter",
+      "source": "batch-cook"
+    },
+    "incomplete": true
+  },
+  "ee_veggie_bol": {
+    "name": "Superfood Vegetarian Bolognese",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English",
+      "page": 132
+    },
+    "classification": "Rotation-ready - week 2 batch pot alternative",
+    "tags": {
+      "prepStyle": "batch",
+      "freezerSafe": true,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_chicken_orzo": {
+    "name": "One-Pot Mediterranean Chicken Orzo",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Batch Cook",
+      "page": 194
+    },
+    "classification": "Rotation-ready with a tweak - orzo goes in on the day, not in the pot",
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "source": "batch-cook"
+    },
+    "incomplete": true
+  },
+  "ee_rainbow_couscous": {
+    "name": "Rainbow Couscous",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Batch Cook"
+    },
+    "classification": "Summer cold/assemble - week 1 Wednesday swap",
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "summer",
+      "source": "batch-cook"
+    },
+    "incomplete": true
+  },
+  "ee_sesame_ginger": {
+    "name": "Toasted Sesame & Ginger Chicken Salad",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English",
+      "page": 50
+    },
+    "classification": "Summer cold/assemble - week 2 Tuesday swap",
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "summer",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_multivitamin": {
+    "name": "Nature's Multivitamin Salad",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English",
+      "page": 55
+    },
+    "classification": "Side salad only - too low in protein to be a dinner",
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "summer",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_mango_jalapeno": {
+    "name": "Mango, Jalapeno & Lime Salad",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English"
+    },
+    "classification": "Summer cold/assemble - jalapeno on the side for the boys",
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "summer",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_sushi_salad": {
+    "name": "Sushi Salad",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English"
+    },
+    "classification": "Summer cold/assemble",
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "summer",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_ppcl": {
+    "name": "Pesto Prawn Courgetti Linguine",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English"
+    },
+    "classification": "Quick-cook, summer - week 4 Tuesday swap",
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "summer",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_stir_fry": {
+    "name": "Sticky Peanut Stir Fry",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English"
+    },
+    "classification": "Component prep / quick-cook - week 3 Wednesday swap",
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "summer",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_salmon_veg": {
+    "name": "Salmon and Sexy Veg",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English",
+      "page": 126
+    },
+    "classification": "Component prep - week 3 Sunday swap in summer",
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "summer",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_risotto": {
+    "name": "Oven-Baked Risotto with Smoked Salmon & Peas",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Batch Cook",
+      "page": 126
+    },
+    "classification": "Together night only - wants attention",
+    "tags": {
+      "prepStyle": "cook-serve",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": true,
+      "season": "all-year",
+      "source": "batch-cook"
+    },
+    "incomplete": true
+  },
+  "ee_italian_pasta": {
+    "name": "Italian Sausage & Broccoli Pasta",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English",
+      "page": 152
+    },
+    "classification": "Together night only",
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  },
+  "ee_gyoza_soup": {
+    "name": "Detox Gyoza Soup",
+    "category": "bank",
+    "week": null,
+    "day": null,
+    "source": {
+      "book": "Emily English"
+    },
+    "classification": "Schedule-dependent - a good WFH lunch",
+    "tags": {
+      "prepStyle": "quick-cook",
+      "freezerSafe": false,
+      "reheatable": true,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "source": "emily-english"
+    },
+    "incomplete": true
+  }
+}

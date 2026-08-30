@@ -1,0 +1,120 @@
+{
+  "_note": "Everything that happens every single week, whichever rotation week it is. Recipe ids are keys in recipes.json.",
+
+  "rhythm": [
+    { "when": "Wed/Thu",  "what": "Order online. Open the basket, add to the trolley, book the slot." },
+    { "when": "Thu, bed", "what": "Pizza dough out of the freezer into the fridge." },
+    { "when": "Friday",   "what": "Delivery. Pizza night - every week, no exceptions." },
+    { "when": "Saturday", "what": "Sandwiches for lunch. Prep session in the evening, 2-3 hours. That night's dinner is the traybake, cooked during the session." },
+    { "when": "Sunday",   "what": "Tuna pasta salad for lunch, made Saturday. Roast for dinner." },
+    { "when": "Monday",   "what": "Leftovers from the roast, build-your-own. Together night." },
+    { "when": "Tue-Thu",  "what": "Shift dinners - reheats, slow cooker, oven timers. Nothing over 15 minutes' active effort." },
+    { "when": "Wed, bed", "what": "Thursday's freezer bag out of the freezer into the fridge." }
+  ],
+
+  "friday_pizza": {
+    "boys": {
+      "recipe": "margherita_pizza",
+      "notes": "2 dough balls, passata, 2 balls mozzarella."
+    },
+    "adults": {
+      "notes": "1 dough ball, passata, that week's topping, less mozzarella than the boys'. Topping under the cheese."
+    },
+    "salad": "Every Friday has a salad alongside - see the week's page."
+  },
+
+  "saturday_lunch": {
+    "recipes": ["sandwiches_adults", "sandwiches_boys"],
+    "notes": "Cold lunch - bread, ham, cheddar, salad, pickled onions. Double filling on the adults'."
+  },
+
+  "sunday_lunch": {
+    "recipe": "tuna_pasta_salad",
+    "notes": "Made Saturday. Yoghurt and seeds added on Sunday."
+  },
+
+  "smoothie_bags": {
+    "recipe": "smoothie_bag",
+    "count": 10,
+    "added_morning": { "protein_powder": "30g", "creatine": "10g", "milk": "300ml" },
+    "notes": "Fill all bags one ingredient at a time. Back in the freezer standing in a tub."
+  },
+
+  "boiled_eggs": {
+    "recipe": "boiled_eggs",
+    "count": 8,
+    "usage": "2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare"
+  },
+
+  "pickled_onions": {
+    "recipe": "quick_pickled_red_onions",
+    "frequency": "Every Saturday, or skip if the jar from last week is still good - they keep 4-6 weeks."
+  },
+
+  "flapjacks": {
+    "frequency": "Every Saturday, first thing in the oven at 180C",
+    "notes": "The variant changes per week - see the week's page."
+  },
+
+  "lunch_boxes": {
+    "count_per_adult": 5,
+    "total": 10,
+    "base_per_box": {
+      "dressing": "2 tbsp (that week's dressing)",
+      "grains": "half a rice pouch (125g)",
+      "beans": "50g tinned beans, drained",
+      "protein": "80g (that week's protein)",
+      "roast_veg": "100g from Saturday's veg tray",
+      "pickled_onions": "a spoonful",
+      "leaves": "a handful (~15g)"
+    },
+    "finishers": "Different every day - that is where the variety comes from. See the week's page.",
+    "build_notes": "Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday."
+  },
+
+  "dressings": {
+    "monthly_batch": ["house_vinaigrette", "lemon_dressing", "balsamic_vinaigrette"],
+    "weekly": ["mint_yoghurt"],
+    "notes": "Make the three oil-based dressings in jars on day 1 of the cycle. They keep 3-4 weeks. Mint yoghurt is weekly and only needed in week 2."
+  },
+
+  "freezer_bank": {
+    "cycle_1": {
+      "description": "Double the freezer bags - 2 per week instead of 1. Batch pots bank 1 bag each on top. Goal is ~9 dinners banked by the end of the month.",
+      "weekly_bags": 2,
+      "pot_bags": 1
+    },
+    "cycle_2_onwards": {
+      "description": "Single freezer bags only. Batch pots still bank 1 bag each. The freezer grows slowly.",
+      "weekly_bags": 1,
+      "pot_bags": 1
+    },
+    "freezer_week": "When the tub holds 8+ bags, skip a cook session. Shop only fresh things. Eat 5 bags that week, oldest first."
+  },
+
+  "cook_order": [
+    { "step": "Flapjacks",        "detail": "First in the oven, 180C. They cool while everything else cooks." },
+    { "step": "Veg tray",         "detail": "Oven up to 200C once the flapjacks are out. The lunch box veg goes in." },
+    { "step": "Lunch box protein","detail": "Marinated or oiled, on a second tray alongside the veg." },
+    { "step": "Traybake",         "detail": "Tonight's dinner. In alongside or straight after the veg." },
+    { "step": "Batch pot",        "detail": "On the hob, simmering through all of the oven work." },
+    { "step": "Boiled eggs",      "detail": "While the pot simmers. 8 minutes, then cold water." },
+    { "step": "Cold work",        "detail": "Freezer bags assembled, smoothie bags filled, dressings made, pickles done, tuna pasta salad made." },
+    { "step": "Build the boxes",  "detail": "Last, once the veg and protein have cooled enough." },
+    { "step": "Divide and label", "detail": "Tubs to the fridge, bags to the freezer, everything labelled with the month." }
+  ],
+
+  "not_made_saturday": [
+    "All pasta, rice, orzo and couscous - cooked fresh on the day, every time.",
+    "Fried eggs and anything crunchy for the lunch boxes.",
+    "Sunday's roast.",
+    "Monday's peppers and anything else that wants to be hot.",
+    "The tarka, if it is a dal week."
+  ],
+
+  "today_button": {
+    "anchor_friday": "2026-09-04",
+    "cycle_length_days": 28,
+    "notes": "Which rotation week and which day today is, worked out from the anchor Friday."
+  }
+}
