@@ -631,4 +631,4 @@ These should all be in `recipes.json` with full ingredient lists. They're availa
 - **Basket annotations matter.** "7 peppers" is useless. "7 peppers: 5 red and 2 yellow — 2 for the traybake, 1 in the chilli, 1 for Wednesday, 1 for the salad, 2 yellow for the fajita bowls" is the whole point.
 - **Pasta/rice/orzo is ALWAYS cooked fresh on the day, never prepped Saturday.** It goes stodgy. The sauce, the stew, the ragù — those are Saturday. The carb is on the day.
 - **Every Thursday is a freezer bag to slow cooker.** No exceptions.
-- **The Emily English recipes in the bank need their ingredients converted to gram weights** with `food` keys matching `foods.json` for macro calculation. The current data uses informal quantities ("1 bunch", "2 tbsp") which must be converted.
+- **The Emily English / Batch Cook bank recipes now carry gram weights** with `food` keys matching `foods.json`, so they compute macros like everything else. `ee_meatball` is the exception: it is an `alias` onto `meatball_al_forno`, the doubled tray already in rotation, rather than a second copy of the same dish.

@@ -4569,6 +4569,7 @@
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 4,
     "source": {
       "book": "Batch Cook",
       "page": 140
@@ -4583,14 +4584,90 @@
       "season": "winter",
       "source": "batch-cook"
     },
-    "incomplete": true,
-    "bucket": "Rotation-ready"
+    "bucket": "Rotation-ready",
+    "ingredients": [
+      {
+        "food": "stewing_steak",
+        "grams": 500,
+        "display": "500g stewing steak, in bite-sized pieces",
+        "aisle": "meat"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 22,
+        "display": "3 tbsp smoked sweet paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "onion",
+        "grams": 175,
+        "display": "1 large onion, in large chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 160,
+        "display": "1 red pepper, in large chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 160,
+        "display": "1 yellow pepper, in large chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic_granules",
+        "grams": 2,
+        "display": "3/4 tsp garlic granules",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "carrot",
+        "grams": 200,
+        "display": "2 carrots, in 2.5cm chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "baby_potato",
+        "grams": 175,
+        "display": "175g potatoes, peeled, in 2.5cm chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 400,
+        "display": "1 tin chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 30,
+        "display": "2 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_made",
+        "grams": 500,
+        "display": "500ml beef stock (2 stock pots)",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Toss the steak in the paprika until well coated. Preheat the oven to 190C (fan 170C / gas mark 5).",
+      "Spray a large casserole dish with low-calorie cooking spray and place over a medium heat, add the meat and cook for 5 minutes until browned. Remove and set aside.",
+      "Return the dish to a medium heat, spray with more low-calorie cooking spray, then add the onion and peppers. Cook for 3-4 minutes until they start to soften.",
+      "Return the browned meat to the pan and add the garlic granules, carrots, potatoes, tomato puree, chopped tomatoes and stock. Stir well and bring to the boil.",
+      "Cover with a tight-fitting lid and cook in the oven for 1.5-2 hours or until the meat is tender.",
+      "Taste, and season with salt and pepper if necessary. Serve with red cabbage if you like."
+    ]
   },
   "ee_veggie_bol": {
     "name": "Superfood Vegetarian Bolognese",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 6,
     "source": {
       "book": "Emily English",
       "page": 132
@@ -4605,14 +4682,126 @@
       "season": "all-year",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Rotation-ready"
+    "bucket": "Rotation-ready",
+    "ingredients": [
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "onion",
+        "grams": 150,
+        "display": "1 white onion, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "leek",
+        "grams": 150,
+        "display": "1 leek, trimmed, cleaned and finely chopped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "celery",
+        "grams": 100,
+        "display": "2 celery sticks, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 200,
+        "display": "2 carrots, peeled and finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 3,
+        "display": "Sprig of rosemary, leaves stripped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "courgette",
+        "grams": 200,
+        "display": "1 courgette, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "mushrooms",
+        "grams": 150,
+        "display": "2-3 handfuls mushrooms, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_wine",
+        "grams": 175,
+        "display": "175ml red wine",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "green_lentils_cooked",
+        "grams": 500,
+        "display": "500g cooked green lentils (tin or pouch)",
+        "aisle": "tinned"
+      },
+      {
+        "food": "passata",
+        "grams": 500,
+        "display": "500g passata",
+        "aisle": "tinned"
+      },
+      {
+        "food": "chopped_tomatoes",
+        "grams": 400,
+        "display": "1 tin chopped tomatoes",
+        "aisle": "tinned"
+      },
+      {
+        "food": "tomato_puree",
+        "grams": 15,
+        "display": "1 tbsp tomato puree",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sun_dried_tomato_paste",
+        "grams": 15,
+        "display": "1 tbsp sun-dried tomato paste",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_cube",
+        "grams": 10,
+        "display": "1 vegetable stock cube, crumbled",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "balsamic",
+        "grams": 30,
+        "display": "2 tbsp balsamic vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 30,
+        "display": "30g basil leaves",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Heat the olive oil in a pan over a medium heat, add the onion, leek, celery, carrots and rosemary, with a pinch of salt, and sweat for 5 minutes.",
+      "Add the courgette and mushrooms and continue to sweat for another 10-15 minutes, or until starting to colour and turn golden.",
+      "Pour in the wine and reduce down over a high heat for 3 minutes.",
+      "Add the lentils, passata, canned tomatoes, tomato puree and sun-dried tomato paste. Half-fill the chopped tomato tin with water and add the stock cube, then tip into the pot and season with pepper and the balsamic vinegar.",
+      "Let the mixture simmer, uncovered, over a medium heat for 25-30 minutes, or until thickened and reduced. Taste and season again if needed, then tear in the basil leaves.",
+      "Serve with pasta, as a cottage pie or in a jacket potato."
+    ]
   },
   "ee_chicken_orzo": {
     "name": "One-Pot Mediterranean Chicken Orzo",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 4,
     "source": {
       "book": "Batch Cook",
       "page": 194
@@ -4627,14 +4816,109 @@
       "season": "all-year",
       "source": "batch-cook"
     },
-    "incomplete": true,
-    "bucket": "Rotation-ready"
+    "bucket": "Rotation-ready",
+    "ingredients": [
+      {
+        "food": "smoked_paprika",
+        "grams": 4,
+        "display": "1.5 tsp smoked sweet paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "allspice",
+        "grams": 3,
+        "display": "1.25 tsp ground allspice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "turmeric",
+        "grams": 1.25,
+        "display": "1/2 tsp ground turmeric",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 600,
+        "display": "6 chicken thighs, skin and visible fat removed",
+        "aisle": "meat"
+      },
+      {
+        "food": "onion",
+        "grams": 150,
+        "display": "1 onion, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 100,
+        "display": "1 medium carrot, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "celery",
+        "grams": 50,
+        "display": "1 celery stick, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 18,
+        "display": "6 garlic cloves, peeled and left whole",
+        "aisle": "fresh"
+      },
+      {
+        "food": "mushrooms",
+        "grams": 80,
+        "display": "4 mushrooms, thickly sliced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 100,
+        "display": "Handful of cherry tomatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "Juice of 1 lemon",
+        "aisle": "fresh"
+      },
+      {
+        "food": "stock_made",
+        "grams": 500,
+        "display": "500ml chicken stock",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "orzo_dry",
+        "grams": 250,
+        "display": "250g orzo",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Handful of fresh parsley, roughly chopped",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Combine the paprika, ground allspice, turmeric and salt. Coat the chicken thighs in the spice mixture and set them aside for 10 minutes.",
+      "Preheat the oven to 200C (fan 180C / gas mark 6).",
+      "Spray a large ovenproof frying pan or casserole dish with low-calorie cooking spray and place over a medium heat. Add the chicken thighs and saute for a few minutes until they start to brown, then turn them over and brown them on the other side. Remove from the pan and set aside.",
+      "Spray the pan with more low-calorie cooking spray, then add the onion, carrot, celery, garlic and mushrooms and fry for 5 minutes until the onion is soft.",
+      "Add the tomatoes, lemon juice and 100ml of the chicken stock, then return the chicken to the pan. Cover with a lid (or a piece of foil) and place in the oven for 30 minutes.",
+      "Carefully remove the pan from the oven, then add the orzo, parsley and the rest of the stock. Stir and return to the oven for 20 minutes with the lid off.",
+      "Serve, garnished with extra parsley."
+    ]
   },
   "ee_rainbow_couscous": {
     "name": "Rainbow Couscous",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 4,
     "source": {
       "book": "Batch Cook"
     },
@@ -4648,14 +4932,93 @@
       "season": "summer",
       "source": "batch-cook"
     },
-    "incomplete": true,
-    "bucket": "Summer swaps"
+    "bucket": "Summer swaps",
+    "ingredients": [
+      {
+        "food": "couscous_dry",
+        "grams": 200,
+        "display": "200g couscous",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_cube",
+        "grams": 10,
+        "display": "1 vegetable stock cube",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "red_onion",
+        "grams": 75,
+        "display": "1/2 red onion, finely chopped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cucumber",
+        "grams": 150,
+        "display": "1/2 cucumber, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 150,
+        "display": "10 cherry tomatoes, halved",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 80,
+        "display": "1/2 yellow pepper, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 80,
+        "display": "1/2 orange pepper, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "vinegar",
+        "grams": 22,
+        "display": "1.5 tbsp red wine vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "pomegranate_seeds",
+        "grams": 36,
+        "display": "3 tbsp pomegranate seeds",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Handful of fresh mint, chopped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Handful of fresh parsley, chopped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "feta_reduced_fat",
+        "grams": 65,
+        "display": "65g reduced-fat feta, crumbled",
+        "aisle": "dairy"
+      }
+    ],
+    "method": [
+      "Prepare the couscous according to the packet instructions, adding the vegetable stock cube to the water.",
+      "Stir all the veg into the couscous, then add the red wine vinegar, pomegranate seeds, chopped mint and parsley and mix well. Season to taste with salt.",
+      "Divide the couscous among four plates and sprinkle the crumbled feta equally over each portion."
+    ]
   },
   "ee_sesame_ginger": {
     "name": "Toasted Sesame & Ginger Chicken Salad",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 2,
     "source": {
       "book": "Emily English",
       "page": 50
@@ -4670,14 +5033,151 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Summer swaps"
+    "bucket": "Summer swaps",
+    "ingredients": [
+      {
+        "food": "radish",
+        "grams": 50,
+        "display": "4-5 radishes, thinly sliced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "rice_vinegar",
+        "grams": 150,
+        "display": "150ml rice vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sugar",
+        "grams": 10,
+        "display": "2 tsp caster sugar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "frozen_peas",
+        "grams": 100,
+        "display": "100g frozen peas",
+        "aisle": "frozen"
+      },
+      {
+        "food": "quinoa_cooked",
+        "grams": 150,
+        "display": "150g cooked quinoa",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cucumber",
+        "grams": 75,
+        "display": "1/4 cucumber, deseeded and diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "spring_onion",
+        "grams": 30,
+        "display": "2 spring onions, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "avocado",
+        "grams": 70,
+        "display": "1/2 ripe avocado, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "chicken_breast",
+        "grams": 120,
+        "display": "1 roasted chicken breast, shredded",
+        "aisle": "meat"
+      },
+      {
+        "food": "spinach_fresh",
+        "grams": 30,
+        "display": "Handful of baby spinach leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Handful of coriander (optional)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "chickpeas_drained",
+        "grams": 240,
+        "display": "1 tin chickpeas, drained (roasted chickpeas)",
+        "aisle": "tinned"
+      },
+      {
+        "food": "sesame_oil",
+        "grams": 5,
+        "display": "1 tsp toasted sesame oil (roasted chickpeas)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "soy_sauce",
+        "grams": 15,
+        "display": "1 tbsp light soy sauce (roasted chickpeas)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cornflour",
+        "grams": 4,
+        "display": "1 heaped tsp cornflour (roasted chickpeas)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "ginger",
+        "grams": 10,
+        "display": "2 tsp ginger paste (dressing)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tahini",
+        "grams": 10,
+        "display": "2 tsp tahini (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sesame_oil",
+        "grams": 10,
+        "display": "2 tsp toasted sesame oil (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "soy_sauce",
+        "grams": 30,
+        "display": "2 tbsp light soy sauce (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "rice_vinegar",
+        "grams": 30,
+        "display": "2 tbsp rice vinegar (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "honey",
+        "grams": 7,
+        "display": "1 tsp honey (dressing)",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Preheat the oven to 230C / 210C fan (450F) gas mark 8, or set an air fryer to 200C (400F).",
+      "In a bowl, toss together the chickpeas with the toasted sesame oil, light soy sauce, cornflour and a pinch of salt. Spread the chickpeas in a single layer on a baking tray and roast in the oven or air fryer for 15-20 minutes, until crisp and golden. Set aside to cool.",
+      "Meanwhile, place the radishes in a clean bowl and add the rice vinegar and sugar so the radish slices are completely submerged. Leave to pickle for at least 10 minutes. (Keep the leftover vinegar for future pickling projects!)",
+      "Prepare the dressing in another bowl by whisking together the ginger paste, tahini, toasted sesame oil, soy sauce, rice vinegar and honey. Taste and adjust to your preference, adding more of any ingredient as needed.",
+      "Cook the peas in a pan of boiling water for 2-3 minutes, or in the microwave according to packaging instructions, then drain.",
+      "In a large salad bowl, toss together the roasted chickpeas, the quinoa, cucumber, spring onions, avocado, chicken, peas and drained pickled radishes. Add in the spinach, and the coriander if using.",
+      "Serve the salad in bowls with a generous drizzle of the dressing over the top."
+    ]
   },
   "ee_multivitamin": {
     "name": "Nature's Multivitamin Salad",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 4,
     "source": {
       "book": "Emily English",
       "page": 55
@@ -4692,14 +5192,114 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Sides and extras"
+    "bucket": "Sides and extras",
+    "ingredients": [
+      {
+        "food": "seeds_nuts",
+        "grams": 30,
+        "display": "2 tbsp pumpkin seeds",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cucumber",
+        "grams": 150,
+        "display": "1/2 cucumber",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 160,
+        "display": "1 red pepper, cored, deseeded and diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "capers",
+        "grams": 18,
+        "display": "2 tbsp capers",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "red_onion",
+        "grams": 75,
+        "display": "1/2 red onion, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pomegranate_seeds",
+        "grams": 80,
+        "display": "80g pomegranate seeds",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Handful of mint leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 10,
+        "display": "Handful of parsley leaves",
+        "aisle": "fresh"
+      },
+      {
+        "food": "chickpeas_drained",
+        "grams": 240,
+        "display": "1 tin chickpeas, drained and rinsed",
+        "aisle": "tinned"
+      },
+      {
+        "food": "quinoa_cooked",
+        "grams": 250,
+        "display": "250g cooked quinoa",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "feta",
+        "grams": 100,
+        "display": "100g feta cheese",
+        "aisle": "dairy"
+      },
+      {
+        "food": "mustard",
+        "grams": 6,
+        "display": "1 heaped tsp Dijon mustard (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 14,
+        "display": "1 tbsp extra virgin olive oil (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "Juice of 1 lemon (dressing)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "honey",
+        "grams": 8,
+        "display": "1 heaped tsp honey (dressing)",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "In a dry frying pan over a medium heat, lightly toast the pumpkin seeds for a few minutes, then season with salt, tip onto a plate and set to one side.",
+      "Dice the cucumber, removing the seeds (this prevents the salad from going soggy).",
+      "In a large mixing bowl, combine the cucumber, red pepper, capers, red onion, pomegranate seeds, mint, parsley and chickpeas. Fold in the cooked quinoa, crumble in the feta and sprinkle in the toasted pumpkin seeds.",
+      "In a small bowl, whisk together the Dijon mustard, olive oil, lemon juice and honey until well combined, seasoning with salt and pepper.",
+      "Drizzle the dressing over the salad, tossing gently to coat all the ingredients evenly.",
+      "Serve immediately, or refrigerate for later."
+    ]
   },
   "ee_mango_jalapeno": {
     "name": "Mango, Jalapeno & Lime Salad",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 2,
     "source": {
       "book": "Emily English"
     },
@@ -4713,14 +5313,126 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Summer swaps"
+    "bucket": "Summer swaps",
+    "ingredients": [
+      {
+        "food": "chickpeas_drained",
+        "grams": 240,
+        "display": "1 tin chickpeas, drained and rinsed",
+        "aisle": "tinned"
+      },
+      {
+        "food": "cornflour",
+        "grams": 3,
+        "display": "1 tsp cornflour",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "garlic_granules",
+        "grams": 3,
+        "display": "1 tsp garlic granules",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "smoked_paprika",
+        "grams": 2.5,
+        "display": "1 tsp smoked paprika",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 10,
+        "display": "2 tsp olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mango",
+        "grams": 200,
+        "display": "200g ripe mango flesh, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "avocado",
+        "grams": 140,
+        "display": "1 ripe avocado, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cucumber",
+        "grams": 75,
+        "display": "1/4 cucumber, deseeded and diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_onion",
+        "grams": 40,
+        "display": "1/4 red onion, thinly sliced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "jalapenos_jarred",
+        "grams": 30,
+        "display": "2 tbsp diced jalapenos from a jar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "prawns_cooked",
+        "grams": 150,
+        "display": "150g cooked peeled prawns",
+        "aisle": "fish"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 20,
+        "display": "2 large handfuls chopped coriander or parsley",
+        "aisle": "fresh"
+      },
+      {
+        "food": "lime_juice",
+        "grams": 30,
+        "display": "1 lime, cut into wedges",
+        "aisle": "fresh"
+      },
+      {
+        "food": "jalapeno_brine",
+        "grams": 30,
+        "display": "2 tbsp jalapeno brine from the jar (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lime_juice",
+        "grams": 25,
+        "display": "Juice of 1 lime (dressing)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "honey",
+        "grams": 7,
+        "display": "1 tsp honey (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mustard",
+        "grams": 5,
+        "display": "1 tsp Dijon mustard (dressing)",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Preheat the oven to 230C / 210C fan (450F) gas mark 8, or set an air fryer to 200C (400F).",
+      "In a mixing bowl, toss the chickpeas in the cornflour, garlic granules and smoked paprika, and season with salt. Drizzle in the olive oil and stir until the chickpeas are well coated.",
+      "Spread the chickpeas in a single layer on a baking tray and roast in the oven or air fryer for 15-20 minutes, until crisp and golden. Set aside to cool.",
+      "While the chickpeas are roasting, prepare the dressing. In a small bowl, whisk together the jalapeno brine, lime juice, honey and Dijon mustard, adding salt to taste. Check and adjust, adding more honey or lime juice as needed.",
+      "In a large salad bowl, prepare your vegetables. Combine the mango, avocado, cucumber, red onion, diced jalapenos, prawns (or tofu), and coriander or parsley.",
+      "Add the cooled roasted chickpeas to the salad bowl, pour over the dressing and toss everything together until well combined. Serve immediately."
+    ]
   },
   "ee_sushi_salad": {
     "name": "Sushi Salad",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 2,
     "source": {
       "book": "Emily English"
     },
@@ -4734,14 +5446,107 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Summer swaps"
+    "bucket": "Summer swaps",
+    "ingredients": [
+      {
+        "food": "frozen_peas",
+        "grams": 100,
+        "display": "100g frozen peas",
+        "aisle": "frozen"
+      },
+      {
+        "food": "avocado",
+        "grams": 140,
+        "display": "1 ripe avocado, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "cucumber",
+        "grams": 150,
+        "display": "1/2 cucumber, deseeded and diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "spring_onion",
+        "grams": 30,
+        "display": "2 spring onions, chopped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "nori",
+        "grams": 6,
+        "display": "2 nori sheets, shredded, plus extra to serve",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tuna_drained",
+        "grams": 120,
+        "display": "120g canned tuna in brine, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "grain_pouch",
+        "grams": 250,
+        "display": "1 packet precooked brown rice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "radish",
+        "grams": 100,
+        "display": "10 pink radishes, thinly sliced (pickle)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "rice_vinegar",
+        "grams": 100,
+        "display": "100ml rice vinegar with 100ml water (pickle)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "sugar",
+        "grams": 5,
+        "display": "1 heaped tsp caster sugar (pickle)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "soy_sauce",
+        "grams": 30,
+        "display": "2 tbsp light soy sauce (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "tahini",
+        "grams": 8,
+        "display": "1 heaped tsp tahini (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "wasabi_paste",
+        "grams": 5,
+        "display": "1 tsp wasabi paste (dressing)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "mirin",
+        "grams": 15,
+        "display": "1 tbsp mirin (dressing)",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "For the pickle, using a mandolin or sharp knife, thinly slice your radishes. Mix the rice vinegar, water and sugar together in a small pan. Warm on the hob or in the microwave on HIGH until just below simmering, then turn off the heat. Drop the sliced radishes into the pickling liquid and leave to one side.",
+      "Cook the peas according to the packet instructions, drain and leave to one side to cool slightly.",
+      "Mix the dressing ingredients together in a small bowl and set to one side.",
+      "In a separate bowl, mix together the peas, avocado, cucumber, spring onions, shredded nori sheets and tuna. Tip in the packet of cold rice and a few spoonfuls of the drained pickled radishes, then toss through the dressing.",
+      "Serve with extra nori on the side for scooping."
+    ]
   },
   "ee_ppcl": {
     "name": "Pesto Prawn Courgetti Linguine",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 2,
     "source": {
       "book": "Emily English"
     },
@@ -4755,14 +5560,97 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Summer swaps"
+    "bucket": "Summer swaps",
+    "ingredients": [
+      {
+        "food": "courgette",
+        "grams": 200,
+        "display": "1 large courgette, spiralized or in ribbons",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 5,
+        "display": "1 tsp olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "shallot",
+        "grams": 60,
+        "display": "2 banana shallots, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "display": "2 garlic cloves, minced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "tomatoes",
+        "grams": 250,
+        "display": "2-3 large handfuls cherry tomatoes",
+        "aisle": "fresh"
+      },
+      {
+        "food": "sun_dried_tomatoes_oil",
+        "grams": 40,
+        "display": "8 sun-dried tomatoes in oil, drained and diced",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "linguine_dry",
+        "grams": 150,
+        "display": "150g dried linguine",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "prawns_raw",
+        "grams": 160,
+        "display": "160g raw peeled prawns",
+        "aisle": "fish"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "Zest of 1 lemon plus a squeeze of juice",
+        "aisle": "fresh"
+      },
+      {
+        "food": "parmesan",
+        "grams": 30,
+        "display": "30g parmesan, grated",
+        "aisle": "dairy"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 15,
+        "display": "Generous handful of basil leaves, torn",
+        "aisle": "fresh"
+      },
+      {
+        "food": "chilli_flakes",
+        "grams": 1,
+        "display": "Dried chilli flakes, to serve",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Place the courgette in a colander, sprinkle with a pinch of salt, toss and leave to drain for 5 minutes. Dab dry using kitchen paper, then set aside.",
+      "Heat the olive oil in a deep frying pan over a low-medium heat, then saute the shallots and garlic with a pinch of salt until translucent.",
+      "Add the cherry tomatoes and sun-dried tomatoes and continue sauteing for 5 minutes, or until the cherry tomatoes start to burst.",
+      "Meanwhile, cook the linguine in a pan of boiling salted water until al dente. Drain, reserving a cupful of the cooking water.",
+      "Use the back of a wooden spoon to press the tomatoes, releasing their juices. Add 2 tablespoons of the reserved pasta water and the prawns to the pan, allowing the prawns to cook for about 2 minutes.",
+      "Incorporate the drained pasta, lemon zest, a squeeze of juice, two-thirds of the parmesan, the basil and a crack of black pepper. Stir well to meld all the flavours, then fold in the courgette ribbons just to warm them through.",
+      "Serve sprinkled with the remaining parmesan and a pinch of chilli flakes."
+    ]
   },
   "ee_stir_fry": {
     "name": "Sticky Peanut Stir Fry",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 2,
     "source": {
       "book": "Emily English"
     },
@@ -4776,14 +5664,126 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Summer swaps"
+    "bucket": "Summer swaps",
+    "ingredients": [
+      {
+        "food": "brown_rice_dry",
+        "grams": 100,
+        "display": "100g brown rice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 10,
+        "display": "2 tsp neutral-flavoured oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chicken_breast",
+        "grams": 300,
+        "display": "300g chicken breast, in thin strips",
+        "aisle": "meat"
+      },
+      {
+        "food": "soy_sauce",
+        "grams": 15,
+        "display": "1 tbsp light soy sauce",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "spring_onion",
+        "grams": 45,
+        "display": "3 spring onions, in chunks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_chilli",
+        "grams": 20,
+        "display": "1/2 red chilli, deseeded and finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 3,
+        "display": "1 garlic clove, minced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "carrot",
+        "grams": 100,
+        "display": "1 carrot, in matchsticks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 160,
+        "display": "1 red pepper, in thin strips",
+        "aisle": "fresh"
+      },
+      {
+        "food": "broccoli",
+        "grams": 150,
+        "display": "150g tenderstem broccoli, each stem cut into 3",
+        "aisle": "fresh"
+      },
+      {
+        "food": "peanuts_roasted",
+        "grams": 30,
+        "display": "2 tbsp roasted salted peanuts",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "peanut_butter",
+        "grams": 15,
+        "display": "1 tbsp peanut butter (sauce)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "soy_sauce",
+        "grams": 30,
+        "display": "2 tbsp light soy sauce (sauce)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "rice_vinegar",
+        "grams": 5,
+        "display": "1 tsp rice vinegar (sauce)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lime_juice",
+        "grams": 15,
+        "display": "Zest and juice of 1/2 lime (sauce)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 3,
+        "display": "1 garlic clove, minced (sauce)",
+        "aisle": "fresh"
+      },
+      {
+        "food": "honey",
+        "grams": 8,
+        "display": "1 heaped tsp honey (sauce)",
+        "aisle": "cupboard"
+      }
+    ],
+    "method": [
+      "Cook your rice in a pan of boiling salted water, according to the packet instructions, then drain.",
+      "Meanwhile, make the stir-fry sauce by mixing the peanut butter, soy sauce, rice vinegar, lime zest and juice, garlic and honey together in a small bowl until smooth. Set aside.",
+      "Heat a nonstick frying pan or wok over a high heat, add 1 teaspoon of the oil, then add the chicken strips and soy sauce. Stir-fry for 3-4 minutes until browned, then remove to a plate.",
+      "Add the remaining teaspoon of oil to the same pan, then stir-fry the spring onions, chilli and garlic, moving them around the pan constantly so they don't catch.",
+      "Add the carrot, red pepper and broccoli and stir-fry for 3 minutes, then add the chicken strips back in with the roasted peanuts and the sauce.",
+      "Cook until sticky, caramelised and bubbling. Finish with a scattering of extra spring onion slices and serve with the cooked rice."
+    ]
   },
   "ee_salmon_veg": {
     "name": "Salmon and Sexy Veg",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 2,
     "source": {
       "book": "Emily English",
       "page": 126
@@ -4798,14 +5798,72 @@
       "season": "summer",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Summer swaps"
+    "bucket": "Summer swaps",
+    "ingredients": [
+      {
+        "food": "salmon_fillet",
+        "grams": 260,
+        "display": "2 salmon fillets, skin on",
+        "aisle": "fish"
+      },
+      {
+        "food": "anchovies_oil",
+        "grams": 12,
+        "display": "4 anchovies in oil, drained and roughly chopped",
+        "aisle": "fish"
+      },
+      {
+        "food": "red_chilli",
+        "grams": 20,
+        "display": "1/2 red chilli, deseeded and finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "display": "2 garlic cloves, roughly chopped",
+        "aisle": "fresh"
+      },
+      {
+        "food": "capers",
+        "grams": 9,
+        "display": "1 tbsp capers",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "Zest and juice of 1 lemon",
+        "aisle": "fresh"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 10,
+        "display": "2 tsp extra virgin olive oil, plus extra for frying",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "broccoli",
+        "grams": 350,
+        "display": "350g tenderstem broccoli",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Dry the salmon fillets well and season them with salt and pepper. Place them, skin-side up, in the refrigerator while you prepare your flavour base.",
+      "In a pestle and mortar, combine the anchovies, chilli, garlic, capers and lemon zest and juice. Add the extra virgin olive oil and mash everything together to form a rough paste. Season with a pinch of salt and set aside.",
+      "Heat a frying pan over a medium-high heat, with a little olive oil added. Place the salmon, skin-side down in the pan, pressing gently to seal. Let it cook for 4 minutes, so the skin crisps.",
+      "Meanwhile, heat a second frying pan over a medium-high heat and add a dash of olive oil and the broccoli. Allow it to blister slightly for 2 minutes, then pour in the water to steam the broccoli. Once the water has evaporated, add the paste you prepared earlier and saute for a few minutes while you finish cooking the salmon.",
+      "Flip the salmon and sear the other side for 2 minutes, then remove from the pan.",
+      "To serve, dish up a crispy-skin salmon fillet alongside the sauteed broccoli. Pair with a grain such as quinoa or rice, if needed."
+    ]
   },
   "ee_risotto": {
     "name": "Oven-Baked Risotto with Smoked Salmon & Peas",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 4,
     "source": {
       "book": "Batch Cook",
       "page": 126
@@ -4820,14 +5878,72 @@
       "season": "all-year",
       "source": "batch-cook"
     },
-    "incomplete": true,
-    "bucket": "Together nights"
+    "bucket": "Together nights",
+    "ingredients": [
+      {
+        "food": "onion",
+        "grams": 75,
+        "display": "1/2 medium onion, diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "risotto_rice",
+        "grams": 300,
+        "display": "300g risotto rice",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "vinegar",
+        "grams": 10,
+        "display": "2 tsp white wine vinegar",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "stock_made",
+        "grams": 1000,
+        "display": "1L stock (2 vegetable or chicken stock cubes)",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "frozen_peas",
+        "grams": 150,
+        "display": "150g frozen peas",
+        "aisle": "frozen"
+      },
+      {
+        "food": "spring_onion",
+        "grams": 60,
+        "display": "4 spring onions, trimmed and thinly sliced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "smoked_salmon",
+        "grams": 100,
+        "display": "100g smoked salmon, sliced",
+        "aisle": "fish"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 30,
+        "display": "Juice of 1 lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Preheat the oven to 180C (fan 160C / gas mark 4).",
+      "Spray a casserole dish suitable for both hob and oven with low-calorie cooking spray. Add the finely diced onion and saute over a medium-low heat for 3-4 minutes until soft and translucent.",
+      "Add the rice to the pan, stir and saute for another minute.",
+      "Pour in the white wine vinegar and stock, stir and increase the heat. Bring to the boil, then cover with a tight-fitting lid and place in the oven.",
+      "After 20 minutes, remove from the oven and stir in the peas, spring onions, smoked salmon and lemon juice.",
+      "Return to the oven for 5 more minutes. When cooked, season with salt and pepper and serve."
+    ]
   },
   "ee_italian_pasta": {
     "name": "Italian Sausage & Broccoli Pasta",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 2,
     "source": {
       "book": "Emily English",
       "page": 152
@@ -4842,14 +5958,102 @@
       "season": "all-year",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Together nights"
+    "bucket": "Together nights",
+    "ingredients": [
+      {
+        "food": "pasta_dry",
+        "grams": 150,
+        "display": "150g dried pasta, fusilli or spaghetti",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "chicken_sausage",
+        "grams": 300,
+        "display": "5 chicken sausages, skins removed",
+        "aisle": "meat"
+      },
+      {
+        "food": "olive_oil",
+        "grams": 28,
+        "display": "2 tbsp olive oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "red_onion",
+        "grams": 75,
+        "display": "1/2 red onion, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "fennel_seeds",
+        "grams": 4,
+        "display": "1 heaped tsp fennel seeds, coarsely ground",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "anchovies_oil",
+        "grams": 6,
+        "display": "2 anchovies in oil, drained and chopped",
+        "aisle": "fish"
+      },
+      {
+        "food": "garlic",
+        "grams": 6,
+        "display": "2 garlic cloves, finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "red_chilli",
+        "grams": 20,
+        "display": "1/2 red chilli, deseeded and finely diced",
+        "aisle": "fresh"
+      },
+      {
+        "food": "broccoli",
+        "grams": 200,
+        "display": "200g tenderstem broccoli, in 2.5cm pieces",
+        "aisle": "fresh"
+      },
+      {
+        "food": "creme_fraiche_half",
+        "grams": 150,
+        "display": "150g half-fat creme fraiche",
+        "aisle": "dairy"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "Zest of 1 lemon, wedges to serve",
+        "aisle": "fresh"
+      },
+      {
+        "food": "parmesan",
+        "grams": 60,
+        "display": "60g parmesan, grated",
+        "aisle": "dairy"
+      },
+      {
+        "food": "fresh_herbs",
+        "grams": 5,
+        "display": "1 tbsp chopped parsley, plus extra to serve",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Cook the pasta in a pan of boiling salted water until al dente, then drain and set aside.",
+      "Meanwhile, using your hands, break up the sausages into small, rough pieces.",
+      "Heat the olive oil in a frying pan and brown the sausage pieces over a medium heat for 3-4 minutes until they have some colour. Remove to a plate using a slotted spoon.",
+      "Add the red onion, fennel seeds, anchovies, garlic, chilli and 1 teaspoon of pepper to the pan. Saute for 5 minutes, adding 1 tablespoon of the water to help lift all the flavours from the bottom of the pan.",
+      "Add the broccoli pieces to the pan, mix well and cook until softened but still with bite, adding the remaining 1 tablespoon of water to create steam to speed this up.",
+      "Stir in the browned sausage pieces, drained pasta, the creme fraiche, lemon zest, parmesan and parsley. Season to taste and serve with extra parsley, and lemon wedges on the side."
+    ]
   },
   "ee_gyoza_soup": {
     "name": "Detox Gyoza Soup",
     "category": "bank",
     "week": null,
     "day": null,
+    "serves": 1,
     "source": {
       "book": "Emily English"
     },
@@ -4863,7 +6067,62 @@
       "season": "all-year",
       "source": "emily-english"
     },
-    "incomplete": true,
-    "bucket": "Sides and extras"
+    "bucket": "Sides and extras",
+    "ingredients": [
+      {
+        "food": "soy_sauce",
+        "grams": 15,
+        "display": "1 tbsp light soy sauce",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "miso_soup_sachet",
+        "grams": 20,
+        "display": "1 x 20g miso soup sachet in 300ml water",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "carrot",
+        "grams": 100,
+        "display": "1 carrot, peeled into ribbons",
+        "aisle": "fresh"
+      },
+      {
+        "food": "bok_choy",
+        "grams": 150,
+        "display": "1 head bok choy, base cut off",
+        "aisle": "fresh"
+      },
+      {
+        "food": "frozen_gyoza",
+        "grams": 120,
+        "display": "6 frozen gyoza",
+        "aisle": "frozen"
+      },
+      {
+        "food": "egg",
+        "grams": 58,
+        "display": "1 egg",
+        "aisle": "dairy"
+      },
+      {
+        "food": "chilli_oil",
+        "grams": 5,
+        "display": "1 tsp crispy chilli oil",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "spring_onion",
+        "grams": 15,
+        "display": "1 spring onion, finely sliced",
+        "aisle": "fresh"
+      }
+    ],
+    "method": [
+      "Add the water to a pan with the soy sauce and the contents of the miso soup sachet. Bring to a gentle simmer, then add the carrot and bok choy and simmer for 1 minute.",
+      "Drop in the frozen gyoza and simmer for 3-4 minutes until the gyoza are cooked through.",
+      "In a small bowl, whisk the egg, then slowly pour it into the hot soup, stirring gently to allow ribbons to form.",
+      "Serve with the crispy chilli oil drizzled over, and a scattering of spring onion on top."
+    ]
   }
 }

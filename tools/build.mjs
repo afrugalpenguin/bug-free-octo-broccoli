@@ -67,38 +67,87 @@ function methodList(id) {
   return `<ol class="method">${m.map(s => `<li>${esc(s)}</li>`).join('')}</ol>`;
 }
 
-function sourceTag(id) {
+// The book reference, as a pill rather than a line of italics.
+function bookRef(id) {
   const s = recipes[id].source;
   if (!s || typeof s !== 'object') return '';
-  return `<span class="source">${esc(s.book)}${s.page ? `, p.${s.page}` : ''}</span>`;
+  return `<span class="book-ref">${esc(s.book)}${s.page ? `, p.${s.page}` : ''}</span>`;
 }
 
-function timeTag(id) {
-  const t = recipes[id].tags ?? {};
+// What kind of thing this is, in the same slot the meal-type tag used to sit.
+const CATEGORY_TAG = {
+  'batch-pot':          ['Batch pot',  'dinner'],
+  'traybake':           ['Traybake',   'dinner'],
+  'roast':              ['Roast',      'dinner'],
+  'leftover-transform': ['Leftovers',  'dinner'],
+  'freezer-bag':        ['Freezer bag', 'freezer'],
+  'scaffold':           ['Every week', 'scaffold'],
+  'bank':               ['Bank',       'scaffold'],
+};
+
+function categoryTag(id) {
+  const t = CATEGORY_TAG[recipes[id].category];
+  return t ? `<span class="meal-tag ${t[1]}">${esc(t[0])}</span>` : '';
+}
+
+function metaLine(id) {
+  const r = recipes[id];
+  const t = r.tags ?? {};
   const bits = [];
+  if (r.serves) bits.push(`Serves ${r.serves}`);
   if (t.activeMinutes) bits.push(`${t.activeMinutes} min hands-on`);
   if (t.passiveMinutes) bits.push(`${t.passiveMinutes} min waiting`);
-  return bits.length ? `<span class="time">${esc(bits.join(' / '))}</span>` : '';
+  return bits.length ? `<p class="servings">${esc(bits.join(' · '))}</p>` : '';
 }
 
-function recipeCard(id, { anchor = null, heading = null, level = 'h3' } = {}) {
+// The first five things in the recipe, the way the old library cards read.
+function previewLine(id) {
+  const r = recipes[id];
+  const bits = [
+    ...(r.from ?? []).map(([src, n]) => {
+      const s = recipes[src];
+      return n === s.serves ? `the whole ${s.name.toLowerCase()}` : `${n} portions of ${s.name.toLowerCase()}`;
+    }),
+    ...(r.ingredients ?? []).filter(i => i.display).map(i => i.display),
+  ];
+  if (!bits.length) return '';
+  const more = bits.length > 5 ? ` +${bits.length - 5} more` : '';
+  return `<p class="ingredients-preview">${esc(bits.slice(0, 5).join(' · ') + more)}</p>`;
+}
+
+// Preview on the face, everything underneath. The Recipes tab is the only
+// place a Tuesday dinner or a Friday pizza can be read, so the method has to
+// stay reachable - it folds away, it does not go missing.
+// An alias card keeps its own name and classification - the bank entry for the
+// meatballs points at the doubled tray that is actually in rotation, and both
+// halves of that sentence matter.
+function recipeCard(id, { anchor = null, heading = null, level = 'h3',
+                          extra = '', classification = null } = {}) {
   const r = recipes[id];
   if (!r) return `<div class="card"><p class="warn">Missing recipe: ${esc(id)}</p></div>`;
-  if (r.alias) return recipeCard(r.alias, { anchor, heading, level });
+  if (r.alias) return recipeCard(r.alias, {
+    anchor, level, extra,
+    heading: heading ?? r.name,
+    classification: classification ?? r.classification,
+  });
 
-  const serves = r.serves ? `<span class="serves">Serves ${r.serves}</span>` : '';
   const idAttr = anchor ? ` id="${esc(anchor)}"` : '';
+  const tags = `${bookRef(id)}${categoryTag(id)}`;
+  const note = classification ?? r.classification;
+  const hasFull = (r.ingredients?.length || r.from?.length || r.method?.length);
+  const full = `${ingredientList(id)}${methodList(id)}
+    ${r.serving_suggestion ? `<p class="serving">${esc(r.serving_suggestion)}</p>` : ''}
+    ${r.adults ? `<p class="adults"><strong>Adults:</strong> ${esc(r.adults)}</p>` : ''}`;
 
   return `<article class="card"${idAttr}>
   <${level} class="card-title">${esc(heading ?? r.name)}</${level}>
-  <div class="meta">${serves}${timeTag(id)}${sourceTag(id)}</div>
-  ${r.classification ? `<p class="classification">${esc(r.classification)}</p>` : ''}
-  ${r.notes ? `<p class="notes">${esc(r.notes)}</p>` : ''}
-  ${ingredientList(id)}
-  ${methodList(id)}
-  ${r.serving_suggestion ? `<p class="serving">${esc(r.serving_suggestion)}</p>` : ''}
-  ${r.adults ? `<p class="adults"><strong>Adults:</strong> ${esc(r.adults)}</p>` : ''}
-  ${macroEl(id)}
+  ${tags ? `<div class="tag-row">${tags}</div>` : ''}
+  ${metaLine(id)}
+  ${note ? `<p class="classification">${esc(note)}</p>` : ''}
+  ${r.notes ? `<p class="card-notes">${esc(r.notes)}</p>` : ''}
+  ${previewLine(id)}
+  ${macroEl(id)}${extra}
+  ${hasFull ? `<details class="full"><summary>Full recipe</summary>${full}</details>` : ''}
 </article>`;
 }
 
@@ -326,7 +375,8 @@ function recipesPanel(week) {
         + recipeCard(w.friday_salad, { level: 'h4' })
       : recipeCard(id, { level: 'h4' });
     return `<div id="w${week}-${day}" class="day-group">
-      <h3 class="day-head">${esc(DAY_NAME[day])}</h3>${inner}</div>`;
+      <h3 class="day-head">${esc(DAY_NAME[day])}</h3>
+      <div class="recipe-grid">${inner}</div></div>`;
   }).join('');
 
   const support = [w.batch_pot, w.extra_pot, w.lunchbox_protein, w.lunchbox_veg_tray,
@@ -335,7 +385,8 @@ function recipesPanel(week) {
     .map(id => recipeCard(id, { level: 'h4' })).join('');
 
   return `<div class="recipes">${cards}
-  <div class="day-group"><h3 class="day-head">Made on Saturday</h3>${support}</div></div>`;
+  <div class="day-group"><h3 class="day-head">Made on Saturday</h3>
+    <div class="recipe-grid">${support}</div></div></div>`;
 }
 
 function weekPanel(week) {
@@ -427,14 +478,12 @@ function bankPanel() {
   const sections = buckets.map(bucket => {
     const rows = entries.filter(([, r]) => r.bucket === bucket).map(([id, r]) => {
       const slots = bankSlots(id);
-      return `<li class="${r.incomplete ? 'incomplete' : 'ready'}">
-        <strong>${esc(r.name)}</strong>
-        <span class="source">${esc(r.source.book)}${r.source.page ? `, p.${r.source.page}` : ''}</span>
-        <em>${esc(r.classification)}</em>
-        ${slots.length ? `<span class="slot">${esc(slots.join(' / '))}</span>` : ''}
-        ${r.incomplete ? '<span class="flag">Ingredients not entered yet</span>' : ''}</li>`;
+      const extra = `${slots.length ? `<p class="slot">${esc(slots.join(' / '))}</p>` : ''}`
+        + `${r.incomplete ? '<p class="flag">Ingredients not entered yet</p>' : ''}`;
+      return recipeCard(id, { level: 'h4', extra });
     }).join('');
-    return `<section class="block"><h3>${esc(bucket)}</h3><ul class="bank">${rows}</ul></section>`;
+    return `<div class="day-group"><h3 class="day-head">${esc(bucket)}</h3>
+      <div class="recipe-grid">${rows}</div></div>`;
   }).join('');
 
   const waiting = entries.filter(([, r]) => r.incomplete).length;
@@ -452,8 +501,10 @@ function fridaysPanel() {
   const weeks = WEEKS.map(w => {
     const r = rotation.weeks[w];
     return `<div class="day-group"><h3 class="day-head week${w}">Week ${w}: ${esc(r.theme)}</h3>
-      ${recipeCard(r.friday_pizza_topping, { level: 'h4' })}
-      ${recipeCard(r.friday_salad, { level: 'h4' })}</div>`;
+      <div class="recipe-grid">
+        ${recipeCard(r.friday_pizza_topping, { level: 'h4' })}
+        ${recipeCard(r.friday_salad, { level: 'h4' })}
+      </div></div>`;
   }).join('');
 
   return `<div class="panel" data-tab="fridays">
@@ -472,8 +523,11 @@ const CSS = `
 :root{
   --bg:#FAF7F2; --card:#FFFFFF; --border:#E8E0D4; --text:#2C2416; --text-light:#8A7E6B;
   --accent:#C45D3E; --accent-light:#F4E8E3;
+  --blue:#3D6B8E; --blue-light:#E3EDF4;
+  --green:#4A7C59; --green-light:#E8F0EA;
+  --lunch:#D4880F; --lunch-light:#FDF3E0; --dinner:#7B5EA7; --dinner-light:#F0EBF5;
   --week1:#C45D3E; --week2:#4A7C59; --week3:#3D6B8E; --week4:#7B5EA7;
-  --shadow:0 1px 3px rgba(44,36,22,.08);
+  --shadow:0 1px 3px rgba(44,36,22,.08); --shadow-lg:0 4px 12px rgba(44,36,22,.1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-text-size-adjust:100%}
@@ -529,11 +583,26 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .menu-macro{font-size:.75rem;color:var(--text-light);margin-top:.3rem;padding-left:5.25rem}
 .swap{font-size:.75rem;color:var(--accent);margin-top:.25rem;padding-left:5.25rem;font-style:italic}
 .theme{font-size:.9rem;color:var(--text-light);margin-bottom:.75rem}
-.card,.inline-recipe{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;margin-bottom:.9rem;box-shadow:var(--shadow)}
-.card-title{font-size:1.05rem}
-.meta{display:flex;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--text-light);margin-bottom:.5rem}
+.recipe-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;align-items:start}
+.card,.inline-recipe{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.2rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.card{transition:box-shadow .2s}
+.card:hover{box-shadow:var(--shadow-lg)}
+.recipe-grid .card{margin-bottom:0}
+.card-title{font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;font-weight:400;line-height:1.3;margin-bottom:.2rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:.3rem;margin:.4rem 0 .6rem}
+.book-ref{font-size:.75rem;color:var(--blue);background:var(--blue-light);padding:.15rem .5rem;border-radius:3px}
+.meal-tag{font-size:.7rem;font-weight:600;padding:.15rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.04em}
+.meal-tag.dinner{color:var(--dinner);background:var(--dinner-light)}
+.meal-tag.scaffold{color:var(--lunch);background:var(--lunch-light)}
+.meal-tag.freezer{color:var(--green);background:var(--green-light)}
+.servings{font-size:.8rem;color:var(--text-light);margin-bottom:.6rem}
 .serves{font-size:.75rem;color:var(--text-light);font-weight:600}
-.source{font-style:italic}
+.card-notes{font-size:.85rem;color:var(--text-light);font-style:italic;margin-bottom:.5rem}
+.ingredients-preview{font-size:.82rem;color:var(--text-light);line-height:1.5;margin-bottom:.8rem}
+.card details.full summary{font-size:.8rem;font-weight:600;color:var(--accent);cursor:pointer;list-style:none;min-height:36px;display:flex;align-items:center}
+.card details.full summary::-webkit-details-marker{display:none}
+.card details.full summary:before{content:"+";display:inline-block;width:1rem;font-weight:700}
+.card details.full[open] summary:before{content:"−"}
 .classification{font-size:.85rem;color:var(--accent);margin-bottom:.4rem}
 .ingredients{list-style:none;margin:.6rem 0;display:grid;gap:.2rem}
 .ingredients li{font-size:.9rem;padding-left:1rem;position:relative}
@@ -571,19 +640,14 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .step-n{flex:0 0 1.9rem;height:1.9rem;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:.85rem;font-weight:700}
 .step-detail{color:var(--text-light);font-size:.9rem;margin:.4rem 0 .75rem}
 .inline-recipe{background:var(--bg);box-shadow:none}
-.inline-recipe h4{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+.inline-recipe h4{font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;font-weight:400;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
 .finishers,.split{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.8rem;margin-top:.6rem}
 .finishers ul,.split ul{list-style:none;display:grid;gap:.3rem;font-size:.88rem}
 .not-made ul{list-style:none;display:grid;gap:.35rem;font-size:.9rem}
 .not-made li{padding-left:1rem;position:relative}
 .not-made li:before{content:"x";position:absolute;left:0;color:var(--accent);font-weight:700}
-.bank{list-style:none;display:grid;gap:.5rem}
-.bank li{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.7rem .85rem;display:grid;gap:.15rem;font-size:.9rem}
-.bank .source{font-size:.78rem;color:var(--text-light)}
-.bank em{font-size:.8rem;color:var(--text-light);font-style:normal}
-.bank .flag{font-size:.72rem;color:var(--accent);font-weight:600}
-.bank .slot{font-size:.75rem;color:var(--week2);font-weight:600}
-.bank li.ready{border-left:3px solid var(--week2)}
+.slot{font-size:.75rem;color:var(--green);font-weight:600;margin-top:.5rem}
+.flag{font-size:.72rem;color:var(--accent);font-weight:600;margin-top:.4rem}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--bg);padding:.1em .35em;border-radius:4px}
 .warn{color:var(--accent);font-weight:600}
 footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-light)}
