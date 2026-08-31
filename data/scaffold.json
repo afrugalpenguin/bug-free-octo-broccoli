@@ -59,11 +59,12 @@
     "recipe": "smoothie_bag",
     "count": 10,
     "added_morning": {
-      "protein_powder": "30g",
-      "creatine": "10g",
-      "milk": "300ml"
+      "protein_powder": "30g (unflavoured, vanilla or chocolate)",
+      "milk": "250ml semi-skimmed",
+      "creatine": "5g"
     },
-    "notes": "Fill all bags one ingredient at a time. Back in the freezer standing in a tub."
+    "notes": "Fill all bags one ingredient at a time. Back in the freezer standing in a tub.",
+    "banana_note": "Buy 3 × 300g bags PACK'D frozen banana slices (or equivalent). Add ~100g to each shake bag on Saturday."
   },
   "boiled_eggs": {
     "recipe": "boiled_eggs",

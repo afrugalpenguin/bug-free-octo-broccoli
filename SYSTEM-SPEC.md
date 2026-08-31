@@ -332,17 +332,19 @@ Things that happen every single week regardless of which rotation week it is.
   "smoothie_bags": {
     "count": 10,
     "per_bag_frozen": {
-      "frozen_spinach": 100,
-      "frozen_berries": 100,
-      "oats": 30,
+      "banana": 100,
+      "frozen_berries": 80,
+      "frozen_spinach": 30,
+      "oats": 15,
       "seeds_or_peanut_butter": "1 tbsp"
     },
     "added_morning": {
       "protein_powder": 30,
-      "creatine": 10,
-      "milk": 300
+      "milk": 250,
+      "creatine": 5
     },
-    "notes": "Fill all bags one ingredient at a time. Back in the freezer standing in a tub."
+    "notes": "Fill all bags one ingredient at a time. Back in the freezer standing in a tub.",
+    "banana_note": "Buy 3 × 300g bags PACK'D frozen banana slices (or equivalent). Add ~100g to each shake bag on Saturday."
   },
   "boiled_eggs": {
     "count": 8,

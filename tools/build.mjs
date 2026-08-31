@@ -241,7 +241,8 @@ function saturdayPanel(week, cycle) {
     : 'Cycle 2 onwards: one bag. That is Thursday.';
   const cold = [
     inlineRecipe(w.freezer_bag, bagHeading, bagNote),
-    inlineRecipe('smoothie_bag', `Smoothie bags, make ${scaffold.smoothie_bags.count}`, scaffold.smoothie_bags.notes),
+    inlineRecipe('smoothie_bag', `Smoothie bags, make ${scaffold.smoothie_bags.count}`,
+      `${scaffold.smoothie_bags.notes} ${scaffold.smoothie_bags.banana_note}`),
     inlineRecipe(w.lunchbox_dressing),
     inlineRecipe('quick_pickled_red_onions', null, scaffold.pickled_onions.frequency),
     inlineRecipe('tuna_pasta_salad'),
