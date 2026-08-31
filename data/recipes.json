@@ -4197,48 +4197,54 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Ten bags. Fill them all one ingredient at a time - spinach in all ten, then berries in all ten, and so on. Back in the freezer standing in a tub.",
+    "notes": "Ten bags. Fill them all one ingredient at a time - banana in all ten, then berries in all ten, and so on. Back in the freezer standing in a tub.",
     "ingredients": [
       {
-        "food": "frozen_spinach",
+        "food": "banana",
         "grams": 100,
-        "display": "100g frozen spinach",
+        "display": "1 frozen banana, sliced (~100g)",
         "aisle": "frozen"
       },
       {
         "food": "frozen_berries",
-        "grams": 100,
-        "display": "100g frozen berries",
+        "grams": 80,
+        "display": "80g frozen berries",
+        "aisle": "frozen"
+      },
+      {
+        "food": "frozen_spinach",
+        "grams": 30,
+        "display": "30g frozen spinach",
         "aisle": "frozen"
       },
       {
         "food": "oats",
-        "grams": 30,
-        "display": "30g oats",
+        "grams": 15,
+        "display": "15g oats",
         "aisle": "cupboard"
       },
       {
         "food": "seeds_nuts",
         "grams": 15,
-        "display": "1 tbsp seeds or peanut butter",
+        "display": "1 tbsp peanut butter or 1 tbsp seeds",
         "aisle": "cupboard"
       },
       {
         "food": "protein_powder",
         "grams": 30,
-        "display": "30g protein powder (added in the morning)",
+        "display": "30g protein powder - unflavoured, vanilla or chocolate (added in the morning)",
         "aisle": "cupboard"
       },
       {
         "food": "milk_semi",
-        "grams": 300,
-        "display": "300ml milk (added in the morning)",
+        "grams": 250,
+        "display": "250ml semi-skimmed milk (added in the morning)",
         "aisle": "dairy"
       }
     ],
     "method": [
-      "Frozen things into the bag Saturday. Bag flat in the freezer.",
-      "In the morning: bag into the blender with the protein powder, creatine and milk."
+      "Frozen things into the bag Saturday - banana, berries, spinach, oats, peanut butter or seeds. Bag flat in the freezer.",
+      "In the morning: bag into the blender with 30g protein powder, 250ml semi-skimmed milk and 5g creatine."
     ]
   },
   "flapjack_plain_seed": {
