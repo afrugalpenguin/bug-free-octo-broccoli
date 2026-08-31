@@ -1,6 +1,6 @@
 # Family Food System
 
-A four-week dinner rotation for two adults and two boys, generated from JSON into
+A four-week dinner rotation for a family of four, generated from JSON into
 a single phone-friendly page. One prep session on Saturday night produces almost
 everything for the week.
 
@@ -60,10 +60,3 @@ tub and bag goes.
 ## Deploying
 
 GitHub Pages serves `docs/` from `main`. Push and it updates.
-
-## Known gaps
-
-Fourteen Emily English / Batch Cook recipes are in the bank as stubs: name, source,
-page and classification, but no ingredients, so no macros. They render with a note
-saying so. Paste the real ingredient lists into `data/recipes.json` with `food`
-keys and gram weights, drop the `incomplete` flag, and rebuild.
