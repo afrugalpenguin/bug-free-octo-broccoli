@@ -1,15 +1,15 @@
 // One-off generator for docs/week2-freezer.html.
 //
-// This is week 2 as normal, with the freezer use-up substitutions applied, so
-// the page can be cooked and shopped from on its own rather than being a diff
-// you hold in your head against the main site.
+// This is week 2 as normal with the freezer use-up substitutions applied, so I
+// can cook and shop from this page on its own instead of holding a diff in my
+// head against the main site.
 //
 // It is deliberately NOT part of tools/build.mjs. Delete this file and the page
 // it writes when the week is done, and nothing else changes.
 //
-// The macro maths is duplicated from calc.mjs rather than imported, because
-// calc.mjs closes over the real recipes and foods and this script needs to
-// compute against patched ones.
+// I duplicate the macro maths from calc.mjs rather than importing it, because
+// calc.mjs closes over the real recipes and foods and I need to compute against
+// patched ones here.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -36,8 +36,8 @@ Object.assign(foods, {
   mini_corn:   [30, 2.0, 5.0, 0.3, 2.0],
 });
 
-// What is already in the freezer, and how much. The basket subtracts these and
-// only asks you to buy the shortfall.
+// What I already have in the freezer, and how much. The basket subtracts these
+// and only asks me to buy the shortfall.
 const FREEZER = {
   basa_fillet:      480,
   salmon_fillet:    130,
@@ -50,7 +50,7 @@ const FREEZER = {
   chicken_thigh_boneless: 800,
 };
 
-// Recipe patches. Each gets the real recipe and returns the changed one.
+// My patches. Each one takes the real recipe and returns the changed one.
 const OVERRIDES = {
   salmon_traybake_glazed: r => ({
     ...r,
@@ -222,10 +222,10 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const qty = g => (g >= 1000 ? `${Math.round(g / 100) / 10}kg` : `${Math.round(g)}g`);
 const foodLabel = f => f.replace(/_/g, ' ');
 
-// Counted, not weighed - "1.2kg egg" is no use in a shop. Unit weights match
-// the ones the recipes use, so they cannot drift from the data. Same map as
-// build.mjs; duplicated because this script is throwaway and should not make
-// the real build depend on it.
+// Counted, not weighed - "1.2kg egg" is no use to me in a shop. I match the
+// unit weights the recipes use so they cannot drift from the data. Same map as
+// build.mjs; I duplicate it because this script is throwaway and I do not want
+// the real build depending on it.
 const COUNTED = {
   egg:               [58,  'egg', 'eggs'],
   pizza_dough:       [250, 'dough ball', 'dough balls'],
