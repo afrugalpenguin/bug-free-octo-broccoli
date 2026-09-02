@@ -1,9 +1,9 @@
-// Reads the four data files and writes docs/index.html - the whole site, one
-// self-contained page. Run `node tools/build.mjs`.
+// I read the four data files and write docs/index.html - the whole site as one
+// self-contained page. I run it with `node tools/build.mjs`.
 //
-// The Saturday cook-through is the point of the exercise: every step carries
-// its full ingredient list and method inline, so nobody has to tab away with
-// their hands covered in flour. Everything else on the page supports it.
+// I built this around the Saturday cook-through: every step carries its full
+// ingredient list and method inline, so I never have to tab away with my hands
+// covered in flour. Everything else on the page supports that.
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -19,16 +19,16 @@ const esc = s => String(s)
   .replace(/"/g, '&quot;');
 
 const WEEKS = ['1', '2', '3', '4'];
-// DAYS is the logical week, Friday first, anchored to delivery. The cycle
-// maths in the today button counts from it, so it must not be reordered.
-// DISPLAY_DAYS is the same seven days in reading order, Sunday first - the
-// week tabs use it and nothing else does.
+// I keep two orderings. DAYS is the logical week, Friday first, anchored to
+// delivery - the today button counts from it, so I must not reorder it.
+// DISPLAY_DAYS is the same seven days in the order I want to read them, Sunday
+// first. Only the week tabs use it.
 const DAYS = rotation.day_order;
 const DISPLAY_DAYS = rotation.display_order ?? rotation.day_order;
 
-// Every setting the panel offers, in render order. Adding one is a new entry
-// here plus a case in applySettings() on the client - nothing else. `key` is
-// both the localStorage field and the input id.
+// Every setting the panel offers, in render order. To add one I write an entry
+// here and a case in applySettings() on the client - nothing else. I use `key`
+// as both the localStorage field and the input id.
 const WEEKDAYS = [
   ['mon', 'Monday'], ['tue', 'Tuesday'], ['wed', 'Wednesday'], ['thu', 'Thursday'],
   ['fri', 'Friday'], ['sat', 'Saturday'], ['sun', 'Sunday'],
@@ -51,13 +51,13 @@ const SETTINGS_SCHEMA = [
 
 const SETTINGS_KEY = 'ffs-settings';
 
-// A hand-written page that sits beside the generated one for a single week.
-// Nothing else knows about it - set this to null and the link is gone.
+// A one-off page I keep beside the generated one for a single week. Nothing
+// else knows about it - I set this to null and the link is gone.
 const ONE_OFF = { label: 'Use up week', href: 'week2-freezer.html' };
 
-// The same slot maths the client does, run at build time against the defaults.
-// Without this the page is briefly - or permanently, with JS off - missing every
-// computed day name.
+// I repeat the client's slot maths here and run it at build time against the
+// defaults. Without it the page is briefly - or permanently, with JS off -
+// missing every computed day name.
 const WEEKDAY_IDS = WEEKDAYS.map(([id]) => id);
 const WEEKDAY_NAME = Object.fromEntries(WEEKDAYS);
 const weekdayAtOffset = (n, delivery = scaffold.defaults.delivery_day) =>
@@ -113,14 +113,14 @@ function methodList(id) {
   return `<ol class="method">${m.map(s => `<li>${esc(s)}</li>`).join('')}</ol>`;
 }
 
-// The book reference, as a pill rather than a line of italics.
+// I show the book reference as a pill rather than a line of italics.
 function bookRef(id) {
   const s = recipes[id].source;
   if (!s || typeof s !== 'object') return '';
   return `<span class="book-ref">${esc(s.book)}${s.page ? `, p.${s.page}` : ''}</span>`;
 }
 
-// What kind of thing this is, in the same slot the meal-type tag used to sit.
+// What kind of thing this is. I put it in the slot the meal-type tag used to sit in.
 const CATEGORY_TAG = {
   'batch-pot':          ['Batch pot',  'dinner'],
   'traybake':           ['Traybake',   'dinner'],
@@ -146,7 +146,7 @@ function metaLine(id) {
   return bits.length ? `<p class="servings">${esc(bits.join(' · '))}</p>` : '';
 }
 
-// The first five things in the recipe, the way the old library cards read.
+// The first five things in the recipe, the way I remember library cards reading.
 function previewLine(id) {
   const r = recipes[id];
   const bits = [
@@ -161,12 +161,12 @@ function previewLine(id) {
   return `<p class="ingredients-preview">${esc(bits.slice(0, 5).join(' · ') + more)}</p>`;
 }
 
-// Preview on the face, everything underneath. The Recipes tab is the only
-// place a Tuesday dinner or a Friday pizza can be read, so the method has to
-// stay reachable - it folds away, it does not go missing.
-// An alias card keeps its own name and classification - the bank entry for the
-// meatballs points at the doubled tray that is actually in rotation, and both
-// halves of that sentence matter.
+// Preview on the face, everything underneath. This is the only place I can
+// read a Tuesday dinner or a Friday pizza, so I keep the method reachable - it
+// folds away, it does not go missing.
+// An alias card keeps its own name and classification, because the bank entry
+// for the meatballs points at the doubled tray I actually cook, and I need both
+// halves of that sentence.
 function recipeCard(id, { anchor = null, heading = null, level = 'h3',
                           extra = '', classification = null } = {}) {
   const r = recipes[id];
@@ -199,10 +199,10 @@ function recipeCard(id, { anchor = null, heading = null, level = 'h3',
 
 // ------------------------------------------------------------------- baskets
 
-// Everything a week needs bought, as a list of {recipe, multiplier}. `from`
-// links are deliberately NOT followed: a `from` always means portions of a
-// batch that is already on this list at full size, so following one would buy
-// the same pot twice.
+// Everything a week needs bought, as a list of {recipe, multiplier}. I do not
+// follow `from` links here on purpose: a `from` always means portions of a
+// batch already on this list at full size, so following one would buy me the
+// same pot twice.
 function weekBasketPlan(week, cycle) {
   const w = rotation.weeks[week];
   const bags = cycle === 1 ? scaffold.freezer_bank.cycle_1.weekly_bags
@@ -230,21 +230,21 @@ function weekBasketPlan(week, cycle) {
   add('boiled_eggs');
   add('quick_pickled_red_onions');
   add(scaffold.breakfast_bags.recipe, scaffold.breakfast_bags.count);
-  // Basket only - the eldest's packed lunch is made each evening, so it has no
-  // Saturday step and no card. It is here so its shopping merges with the
-  // cucumber, pepper and berry lines rather than sitting in a corner.
+  // Basket only. The eldest's packed lunch gets made each evening, so it has no
+  // Saturday step and no card. I add it here so its shopping merges with the
+  // cucumber, pepper and berry lines instead of sitting in a corner.
   add(scaffold.packed_lunch.recipe);
-  // Wednesday, Thursday and Friday's box protein - same every week, one
-  // pack each covering both adults for that day.
+  // Wednesday, Thursday and Friday's box protein. Same every week, one pack
+  // each covering both of us for that day.
   for (const d of Object.values(scaffold.lunch_boxes.protein_schedule)) {
     if (d.recipe !== 'week') add(d.recipe);
   }
   return plan;
 }
 
-// Roll the plan up into one line per food, carrying the reasons with it. The
-// reasons are the point: "7 peppers" is useless, "7 peppers, 2 for the
-// traybake and 1 in the chilli" is a shopping list you can act on.
+// I roll the plan up into one line per food and carry the reasons with it. The
+// reasons are the point: "7 peppers" tells me nothing, "7 peppers, 2 for the
+// traybake and 1 in the chilli" is a list I can shop from.
 function buildBasket(week, cycle) {
   const items = new Map();
   for (const { id, n } of weekBasketPlan(week, cycle)) {
@@ -265,9 +265,9 @@ function buildBasket(week, cycle) {
   return items;
 }
 
-// foods.json is per 100g "or per 100ml for liquids", so the data has always
-// known which of these are poured rather than weighed. The basket did not, and
-// asked for 600g of beef stock.
+// foods.json has always said "per 100g, or per 100ml for liquids", so my data
+// knew which of these I pour rather than weigh. The basket did not, and asked
+// me for 600g of beef stock.
 const LIQUID = new Set([
   'beef_stock', 'chicken_stock', 'vegetable_stock', 'gravy_made',
   'olive_oil', 'sesame_oil', 'chilli_oil',
@@ -285,11 +285,11 @@ function quantity(grams, food) {
   return `${Math.round(grams)}g`;
 }
 
-// Some things are sold and counted in units, not weighed, and a basket line
-// reading "1.2kg egg" is no use in a shop. Unit weights are the ones the
-// recipes already use - an egg is 58g everywhere in recipes.json, a dough ball
-// 250g - so these stay in step with the data rather than being a second
-// opinion about it. Counts round up: you cannot buy 0.7 of an egg.
+// I buy these by the unit rather than by weight, and a line saying "1.2kg egg"
+// is no use to me in a shop. I take the unit weights from what the recipes
+// already use - an egg is 58g everywhere in recipes.json, a dough ball 250g -
+// so they cannot drift from the data. I round counts up, because I cannot buy
+// 0.7 of an egg.
 const COUNTED = {
   egg:               [58,  'egg', 'eggs'],
   pizza_dough:       [250, 'dough ball', 'dough balls'],
@@ -299,9 +299,9 @@ const COUNTED = {
   stock_cube:        [10,  'stock cube', 'stock cubes'],
   lemon_juice:       [30,  'lemon', 'lemons'],
 
-  // Tins and pouches. Sizes are the ones the recipes state - "400g = 1 tin
-  // chopped tomatoes", "224g = 2 tins tuna", "500g = 2 rice pouches" - so
-  // these stay tied to the data rather than to what I think a tin holds.
+  // Tins and pouches. I take the sizes from what the recipes state - "400g = 1
+  // tin chopped tomatoes", "224g = 2 tins tuna", "500g = 2 rice pouches" - so
+  // they stay tied to the data rather than to what I assume a tin holds.
   grain_pouch:          [250, 'rice pouch', 'rice pouches'],
   chopped_tomatoes:     [400, 'tin chopped tomatoes', 'tins chopped tomatoes'],
   coconut_milk_light:   [400, 'tin light coconut milk', 'tins light coconut milk'],
@@ -314,22 +314,22 @@ const COUNTED = {
   sweetcorn_drained:    [260, 'tin sweetcorn', 'tins sweetcorn'],
   tuna_drained:         [112, 'tin tuna', 'tins tuna'],
 
-  // Sold as whole things. A head of broccoli is 300-400g across the recipes,
-  // so 350g is the middle of what they already assume. Tenderstem is its own
-  // food now and stays a weight, because it is sold by the pack.
+  // I buy these whole. A head of broccoli runs 300-400g across my recipes, so I
+  // use 350g as the middle of what they already assume. Tenderstem is its own
+  // food and stays a weight, because I buy that by the pack.
   cucumber:             [300, 'cucumber', 'cucumbers'],
   broccoli:             [350, 'head of broccoli', 'heads of broccoli'],
   wholemeal_roll:       [60,  'wholemeal roll', 'wholemeal rolls'],
   pepper:               [160, 'pepper', 'peppers'],
 
-  // Pack sizes the shop actually sells, from shopping the list for real.
+  // Pack sizes I found by taking the list round the shop.
   spring_onion:         [100, 'bunch spring onions', 'bunches spring onions'],
   frozen_onion:         [200, 'bag frozen diced onion', 'bags frozen diced onion'],
 };
 
-// Things bought far less often than weekly. Counting these would round a 200g
-// need up to a whole 900g bag every single week, so they stay as weights and
-// say what the pack is instead.
+// I buy these far less often than weekly. If I counted them, a 200g need would
+// round up to a whole 900g bag every week, so I keep them as weights and say
+// what the pack is instead.
 const FOOD_NOTE = {
   frozen_spinach: 'Sold in 900g bags - about a month of weeks. Check the freezer before buying.',
   chia_seeds:     'A 250g bag lasts 2-3 weeks. Check the level.',
@@ -337,8 +337,8 @@ const FOOD_NOTE = {
   protein_powder: 'A tub lasts weeks. Check before buying.',
 };
 
-// Where the key does not read as a shopping label on its own - two kinds of
-// Greek yoghurt sitting next to each other in Dairy being the obvious one.
+// Where the key does not read as a shopping label on its own. Two kinds of
+// Greek yoghurt sitting next to each other in Dairy is the one that caught me.
 const FOOD_LABEL = {
   greek_yoghurt:        'Greek yoghurt (full fat)',
   greek_yoghurt_0:      '0% Greek yoghurt',
@@ -359,6 +359,11 @@ const FOOD_LABEL = {
   gravy_made:           'gravy - made up',
   mustard:              'Dijon mustard',
   mozzarella:           'mozzarella balls',
+  // The shelf choices I settled on, so I stop deciding them in the aisle.
+  pasta_dry:            'fusilli - pasta twirls, bulk bag',
+  salad_leaves:         'mixed salad leaves',
+  cheddar:              'mature cheddar',
+  oats:                 'porridge oats',
 };
 
 function basketLine(it) {
@@ -480,8 +485,8 @@ function saturdayPanel(week, cycle) {
   step(order[8].step, order[8].detail, dests.join('') || '<p class="notes">Nothing to divide this week.</p>');
 
   // Some roasts want a job doing the night before - the pork wants its skin
-  // scored and salted and left uncovered. It lived as step one of Sunday's
-  // method, which is the wrong day to be reading it.
+  // scored and salted and left uncovered. That used to be step one of Sunday's
+  // method, which is the wrong day for me to be reading it.
   const nightBefore = recipes[w.roast]?.night_before;
   if (nightBefore && order[9]) {
     step(order[9].step, order[9].detail,
@@ -503,9 +508,9 @@ function saturdayPanel(week, cycle) {
 
 // ---------------------------------------------------------------- week panels
 
-// Five boxes, five proteins. Wednesday is the oily fish day and reads high on
-// fat next to the others, which is the point of it rather than a problem, so
-// it says so rather than leaving the number to be read as a mistake.
+// Five boxes, five proteins. Wednesday is my oily fish day and reads high on
+// fat next to the others, which is the point of it rather than a problem, so I
+// label it instead of leaving the number looking like a mistake.
 function lunchboxDays(week) {
   const sched = scaffold.lunch_boxes.protein_schedule;
   return Object.entries(sched).map(([day, spec]) => {
@@ -571,9 +576,9 @@ function recipesPanel(week) {
     .filter(Boolean)
     .map(id => recipeCard(id, { level: 'h4' })).join('');
 
-  // The three day-proteins are deliberately not Saturday work, so they get
-  // their own group rather than sitting under Made on Saturday - otherwise
-  // their methods live nowhere and the box list is the only place they appear.
+  // I do not make the three day-proteins on Saturday, so I give them their own
+  // group rather than filing them under Made on Saturday. Otherwise their
+  // methods live nowhere and the box list is the only place they appear.
   const onTheDay = Object.values(scaffold.lunch_boxes.protein_schedule)
     .filter(d => d.recipe !== 'week')
     .map(d => recipeCard(d.recipe, { level: 'h4' })).join('');
