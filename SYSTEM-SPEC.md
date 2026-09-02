@@ -1,4 +1,4 @@
-# Family Food System — Build Specification
+# Family Food Diary - Build Specification
 
 ## What this is
 

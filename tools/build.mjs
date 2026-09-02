@@ -261,7 +261,22 @@ function buildBasket(week, cycle) {
   return items;
 }
 
-function quantity(grams) {
+// foods.json is per 100g "or per 100ml for liquids", so the data has always
+// known which of these are poured rather than weighed. The basket did not, and
+// asked for 600g of beef stock.
+const LIQUID = new Set([
+  'beef_stock', 'chicken_stock', 'vegetable_stock', 'gravy_made',
+  'olive_oil', 'sesame_oil', 'chilli_oil',
+  'red_wine_vinegar', 'white_wine_vinegar', 'cider_vinegar', 'rice_vinegar', 'balsamic',
+  'soy_sauce', 'worcestershire', 'mirin', 'red_wine', 'passata',
+  'milk_semi', 'coconut_milk', 'coconut_milk_light', 'jalapeno_brine',
+  'lemon_juice', 'lime_juice',
+]);
+
+function quantity(grams, food) {
+  if (LIQUID.has(food)) {
+    return grams >= 1000 ? `${Math.round(grams / 100) / 10}L` : `${Math.round(grams)}ml`;
+  }
   if (grams >= 1000) return `${Math.round(grams / 100) / 10}kg`;
   return `${Math.round(grams)}g`;
 }
@@ -330,14 +345,20 @@ const FOOD_LABEL = {
   white_wine_vinegar:   'white wine vinegar',
   fajita_spice:         'fajita spice',
   tandoori_spice:       'tandoori spice',
-  stock_made:           'stock - made up from cubes',
+  beef_stock:           'beef stock - made up from cubes',
+  chicken_stock:        'chicken stock - made up from cubes',
+  vegetable_stock:      'vegetable stock - made up from cubes',
+  chicken_stock_cube:   'chicken stock cubes',
+  vegetable_stock_cube: 'vegetable stock cubes',
   gravy_made:           'gravy - made up',
+  mustard:              'Dijon mustard',
+  mozzarella:           'mozzarella balls',
 };
 
 function basketLine(it) {
   const c = COUNTED[it.food];
   const plain = FOOD_LABEL[it.food] ?? it.food.replace(/_/g, ' ');
-  if (!c) return { qty: quantity(it.grams), label: plain };
+  if (!c) return { qty: quantity(it.grams, it.food), label: plain };
   const n = Math.ceil(it.grams / c[0]);
   return { qty: String(n), label: n === 1 ? c[1] : c[2] };
 }
@@ -1177,12 +1198,23 @@ const tabs = [
 ];
 
 const html = `<!DOCTYPE html>
+<!--
+  GENERATED FILE - DO NOT EDIT.
+
+  Everything here is built from data/ by tools/build.mjs, and the next build
+  overwrites whatever you change. Edit the source instead:
+
+    a recipe, an ingredient, a quantity, a day    ->  data/*.json
+    the layout, a label, a unit, the wording      ->  tools/build.mjs
+
+  Then run:  node tools/build.mjs
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2C2416">
-<title>Family Food System</title>
+<title>Family Food Diary</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1190,7 +1222,7 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
 <header>
-  <h1>Family Food System<span class="sub">Friday to Thursday, four week rotation</span></h1>
+  <h1>Family Food Diary<span class="sub">Friday to Thursday, four week rotation</span></h1>
   <div class="header-actions">
   <button id="today" type="button">Today</button>
   <button id="settings-open" type="button" aria-label="Settings" title="Settings">
