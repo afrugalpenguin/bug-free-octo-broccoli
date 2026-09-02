@@ -35,8 +35,10 @@ const WEEKDAYS = [
 ];
 
 const SETTINGS_SCHEMA = [
-  { key: 'delivery_day', label: 'Delivery day', type: 'select', options: WEEKDAYS,
-    default: scaffold.defaults.delivery_day },
+  { key: 'delivery_day', label: 'Delivery day', type: 'select',
+    options: WEEKDAYS.filter(([id]) => scaffold.defaults.delivery_days_allowed.includes(id)),
+    default: scaffold.defaults.delivery_day,
+    note: 'Prep is the day after delivery and has to land before the working week, so the box protein exists by Monday.' },
   { key: 'week_start_day', label: 'Week starts on', type: 'select', options: WEEKDAYS,
     default: scaffold.defaults.week_start_day, note: 'Reading order only. Does not move delivery, prep or the roast.' },
   { key: 'anchor_date', label: 'Cycle 1 anchor date', type: 'date',
@@ -345,8 +347,8 @@ function saturdayPanel(week, cycle) {
   ].join('');
   step(order[6].step, order[6].detail, cold);
 
-  const finishers = DISPLAY_DAYS.filter(d => w.lunchbox_finishers[d])
-    .map(d => `<li data-day="${esc(d)}"><strong data-daylabel="${esc(d)}">${esc(DAY_NAME[d])}</strong> ${esc(w.lunchbox_finishers[d])}</li>`).join('');
+  const finishers = WEEKDAY_IDS.filter(d => w.lunchbox_finishers[d])
+    .map(d => `<li data-wday="${esc(d)}"><strong>${esc(DAY_NAME[d])}</strong> ${esc(w.lunchbox_finishers[d])}</li>`).join('');
   step(order[7].step, `${order[7].detail} ${scaffold.lunch_boxes.build_notes}`,
     `${inlineRecipe(w.lunchbox, `${recipes[w.lunchbox].name}, build ${scaffold.lunch_boxes.total}`)}
      <div class="finishers"><h4>Finishers, added on the day</h4><ul>${finishers}</ul></div>`);
@@ -393,8 +395,8 @@ function lunchboxDays(week) {
     const flag = spec.source === 'smoked_mackerel'
       ? '<span class="omega">omega-3 day</span>' : '';
     const when = spec.recipe === 'week' ? 'in on Saturday' : 'in on the day';
-    return `<li class="boxday">
-      <span class="boxday-day" data-daylabel="${esc(day)}">${esc(DAY_NAME[day])}</span>
+    return `<li class="boxday" data-wday="${esc(day)}">
+      <span class="boxday-day">${esc(DAY_NAME[day])}</span>
       <span class="boxday-protein">${esc(spec.grams)}g ${esc(name)} <em>${esc(when)}</em>${flag}</span>
       <span class="boxday-macro">${esc(lunchboxDayLine(week, day))}</span>
     </li>`;
@@ -833,17 +835,29 @@ const JS = `
     });
   }
 
+  // Weekdays in reading order, from week_start_day.
+  function orderedWeekdays(){
+    var start = weekdayIndex(settings.week_start_day);
+    return WEEKDAY_IDS.slice(start).concat(WEEKDAY_IDS.slice(0, start));
+  }
+
+  // Two kinds of list. data-day is a delivery-relative slot - the dinner rota,
+  // which moves when delivery moves. data-wday is an absolute working weekday -
+  // the lunch boxes, which do not: Monday's box is Monday's whatever day the
+  // van comes. Both read in week_start_day order.
   function applyDayOrder(){
-    var order = orderedSlots();
-    document.querySelectorAll('.menu-list, .recipes, .finishers ul').forEach(function(list){
-      var kids = Array.prototype.slice.call(list.children).filter(function(el){ return el.dataset.day; });
-      if(!kids.length) return;
-      order.forEach(function(slot){
-        kids.forEach(function(el){ if(el.dataset.day === slot) list.appendChild(el); });
+    var slotOrder = orderedSlots(), wdayOrder = orderedWeekdays();
+    document.querySelectorAll('.menu-list, .recipes, .finishers ul, .boxdays').forEach(function(list){
+      var kids = Array.prototype.slice.call(list.children);
+      var attr = kids.some(function(el){ return el.dataset.wday; }) ? 'wday' : 'day';
+      var order = attr === 'wday' ? wdayOrder : slotOrder;
+      if(!kids.some(function(el){ return el.dataset[attr]; })) return;
+      order.forEach(function(key){
+        kids.forEach(function(el){ if(el.dataset[attr] === key) list.appendChild(el); });
       });
-      // anything without a slot (Made on Saturday, Into the boxes) stays last
+      // anything unkeyed (Made on Saturday, Into the boxes) stays last
       Array.prototype.slice.call(list.children).forEach(function(el){
-        if(!el.dataset.day) list.appendChild(el);
+        if(!el.dataset[attr]) list.appendChild(el);
       });
     });
   }

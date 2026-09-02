@@ -193,7 +193,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   </div>
   <div class="settings-body"><div class="set-field">
       <label for="set-delivery_day">Delivery day</label>
-      <select id="set-delivery_day"><option value="mon">Monday</option><option value="tue">Tuesday</option><option value="wed">Wednesday</option><option value="thu">Thursday</option><option value="fri" selected>Friday</option><option value="sat">Saturday</option><option value="sun">Sunday</option></select></div><div class="set-field">
+      <select id="set-delivery_day"><option value="thu">Thursday</option><option value="fri" selected>Friday</option><option value="sat">Saturday</option></select><p class="set-note">Prep is the day after delivery and has to land before the working week, so the box protein exists by Monday.</p></div><div class="set-field">
       <label for="set-week_start_day">Week starts on</label>
       <select id="set-week_start_day"><option value="mon">Monday</option><option value="tue">Tuesday</option><option value="wed">Wednesday</option><option value="thu">Thursday</option><option value="fri">Friday</option><option value="sat">Saturday</option><option value="sun" selected>Sunday</option></select><p class="set-note">Reading order only. Does not move delivery, prep or the roast.</p></div><div class="set-field">
       <label for="set-anchor_date">Cycle 1 anchor date</label>
@@ -283,24 +283,24 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        house vinaigrette, rice, beans and roast veg. The protein changes.</p>
-    <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day" data-daylabel="mon">Monday</span>
+    <ul class="boxdays"><li class="boxday" data-wday="mon">
+      <span class="boxday-day">Monday</span>
       <span class="boxday-protein">80g Roast Paprika Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~755 kcal · 30g protein · 70g carbs · 39g fat · 9g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
+    </li><li class="boxday" data-wday="tue">
+      <span class="boxday-day">Tuesday</span>
       <span class="boxday-protein">80g Roast Paprika Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~780 kcal · 36g protein · 57g carbs · 45g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
+    </li><li class="boxday" data-wday="wed">
+      <span class="boxday-day">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~820 kcal · 27g protein · 67g carbs · 49g fat · 10g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="thu">Thursday</span>
+    </li><li class="boxday" data-wday="thu">
+      <span class="boxday-day">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~605 kcal · 28g protein · 58g carbs · 29g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="fri">Friday</span>
+    </li><li class="boxday" data-wday="fri">
+      <span class="boxday-day">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~820 kcal · 47g protein · 59g carbs · 44g fat · 8g fibre</span>
     </li></ul>
@@ -848,7 +848,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 1, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -859,7 +859,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w1">~520-645 kcal · 10-17g protein · 57-70g carbs · 28-39g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 60g sweetcorn and chopped coriander</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Smoked paprika and a squeeze of lime</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li data-wday="tue"><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li data-wday="wed"><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li data-wday="thu"><strong>Thursday</strong> Smoked paprika and a squeeze of lime</li><li data-wday="fri"><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -867,7 +867,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s1" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -1000,7 +1000,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 1, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -1011,7 +1011,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w1">~520-645 kcal · 10-17g protein · 57-70g carbs · 28-39g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 60g sweetcorn and chopped coriander</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Smoked paprika and a squeeze of lime</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li data-wday="tue"><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li data-wday="wed"><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li data-wday="thu"><strong>Thursday</strong> Smoked paprika and a squeeze of lime</li><li data-wday="fri"><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -1019,7 +1019,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="1-recipes"><div class="recipes"><div id="w1-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -1275,24 +1275,24 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        mint yoghurt, rice, beans and roast veg. The protein changes.</p>
-    <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day" data-daylabel="mon">Monday</span>
+    <ul class="boxdays"><li class="boxday" data-wday="mon">
+      <span class="boxday-day">Monday</span>
       <span class="boxday-protein">80g Tandoori Thighs for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~535 kcal · 32g protein · 64g carbs · 16g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
+    </li><li class="boxday" data-wday="tue">
+      <span class="boxday-day">Tuesday</span>
       <span class="boxday-protein">80g Tandoori Thighs for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~575 kcal · 39g protein · 53g carbs · 22g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
+    </li><li class="boxday" data-wday="wed">
+      <span class="boxday-day">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~700 kcal · 32g protein · 54g carbs · 40g fat · 10g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="thu">Thursday</span>
+    </li><li class="boxday" data-wday="thu">
+      <span class="boxday-day">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~445 kcal · 30g protein · 52g carbs · 13g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="fri">Friday</span>
+    </li><li class="boxday" data-wday="fri">
+      <span class="boxday-day">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~635 kcal · 49g protein · 54g carbs · 25g fat · 8g fibre</span>
     </li></ul>
@@ -1834,7 +1834,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 2, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -1845,7 +1845,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 1 tbsp mango chutney and coriander</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li data-wday="tue"><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-wday="wed"><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-wday="thu"><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-wday="fri"><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -1853,7 +1853,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s2" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -1986,7 +1986,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 2, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -1997,7 +1997,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 1 tbsp mango chutney and coriander</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li data-wday="tue"><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-wday="wed"><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-wday="thu"><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-wday="fri"><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -2005,7 +2005,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="2-recipes"><div class="recipes"><div id="w2-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -2261,24 +2261,24 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        lemon dressing, rice, beans and roast veg. The protein changes.</p>
-    <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day" data-daylabel="mon">Monday</span>
+    <ul class="boxdays"><li class="boxday" data-wday="mon">
+      <span class="boxday-day">Monday</span>
       <span class="boxday-protein">80g Lemon Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~730 kcal · 33g protein · 57g carbs · 41g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
+    </li><li class="boxday" data-wday="tue">
+      <span class="boxday-day">Tuesday</span>
       <span class="boxday-protein">80g Lemon Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~680 kcal · 28g protein · 57g carbs · 38g fat · 9g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
+    </li><li class="boxday" data-wday="wed">
+      <span class="boxday-day">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~880 kcal · 28g protein · 61g carbs · 58g fat · 10g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="thu">Thursday</span>
+    </li><li class="boxday" data-wday="thu">
+      <span class="boxday-day">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~650 kcal · 30g protein · 57g carbs · 34g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="fri">Friday</span>
+    </li><li class="boxday" data-wday="fri">
+      <span class="boxday-day">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~865 kcal · 45g protein · 59g carbs · 50g fat · 8g fibre</span>
     </li></ul>
@@ -2823,7 +2823,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 3, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -2834,7 +2834,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w3">~515-635 kcal · 10-14g protein · 56-61g carbs · 28-38g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g feta and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 20g olives halved, and lemon zest</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 40g hummus with smoked paprika</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 30g feta and oregano</li><li data-wday="tue"><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li data-wday="wed"><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li data-wday="thu"><strong>Thursday</strong> Toasted seeds</li><li data-wday="fri"><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -2842,7 +2842,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s3" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -2984,7 +2984,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 3, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -2995,7 +2995,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w3">~515-635 kcal · 10-14g protein · 56-61g carbs · 28-38g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g feta and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 20g olives halved, and lemon zest</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 40g hummus with smoked paprika</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 30g feta and oregano</li><li data-wday="tue"><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li data-wday="wed"><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li data-wday="thu"><strong>Thursday</strong> Toasted seeds</li><li data-wday="fri"><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -3003,7 +3003,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="3-recipes"><div class="recipes"><div id="w3-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -3259,24 +3259,24 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        balsamic vinaigrette, rice, beans and roast veg. The protein changes.</p>
-    <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day" data-daylabel="mon">Monday</span>
+    <ul class="boxdays"><li class="boxday" data-wday="mon">
+      <span class="boxday-day">Monday</span>
       <span class="boxday-protein">80g Meatballs from the Al Forno Tray <em>in on Saturday</em></span>
       <span class="boxday-macro">~680 kcal · 24g protein · 58g carbs · 38g fat · 9g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
+    </li><li class="boxday" data-wday="tue">
+      <span class="boxday-day">Tuesday</span>
       <span class="boxday-protein">80g Meatballs from the Al Forno Tray <em>in on Saturday</em></span>
       <span class="boxday-macro">~670 kcal · 24g protein · 58g carbs · 37g fat · 9g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
+    </li><li class="boxday" data-wday="wed">
+      <span class="boxday-day">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~885 kcal · 29g protein · 51g carbs · 62g fat · 7g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="thu">Thursday</span>
+    </li><li class="boxday" data-wday="thu">
+      <span class="boxday-day">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~635 kcal · 30g protein · 52g carbs · 34g fat · 8g fibre</span>
-    </li><li class="boxday">
-      <span class="boxday-day" data-daylabel="fri">Friday</span>
+    </li><li class="boxday" data-wday="fri">
+      <span class="boxday-day">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~800 kcal · 48g protein · 53g carbs · 43g fat · 8g fibre</span>
     </li></ul>
@@ -3878,7 +3878,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 4, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -3889,7 +3889,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w4">~495-640 kcal · 10-15g protein · 50-52g carbs · 28-42g fat · 7-8g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g mozzarella pearls and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 15g parmesan and a splash of balsamic</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g pepperoni and chilli oil</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds and torn basil</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li data-wday="tue"><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li data-wday="wed"><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li data-wday="thu"><strong>Thursday</strong> Toasted seeds and torn basil</li><li data-wday="fri"><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -3897,7 +3897,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s4" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -4048,7 +4048,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 4, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -4059,7 +4059,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w4">~495-640 kcal · 10-15g protein · 50-52g carbs · 28-42g fat · 7-8g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g mozzarella pearls and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 15g parmesan and a splash of balsamic</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g pepperoni and chilli oil</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds and torn basil</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li data-wday="tue"><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li data-wday="wed"><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li data-wday="thu"><strong>Thursday</strong> Toasted seeds and torn basil</li><li data-wday="fri"><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -4067,7 +4067,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="4-recipes"><div class="recipes"><div id="w4-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -4474,7 +4474,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div>
 </div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-09-02 12:42</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-09-02 13:13</footer>
 <script>
 (function(){
   var SLOTS = ["fri","sat","sun","mon","tue","wed","thu"];            // day_order: slot 0 is delivery
@@ -4567,17 +4567,29 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
     });
   }
 
+  // Weekdays in reading order, from week_start_day.
+  function orderedWeekdays(){
+    var start = weekdayIndex(settings.week_start_day);
+    return WEEKDAY_IDS.slice(start).concat(WEEKDAY_IDS.slice(0, start));
+  }
+
+  // Two kinds of list. data-day is a delivery-relative slot - the dinner rota,
+  // which moves when delivery moves. data-wday is an absolute working weekday -
+  // the lunch boxes, which do not: Monday's box is Monday's whatever day the
+  // van comes. Both read in week_start_day order.
   function applyDayOrder(){
-    var order = orderedSlots();
-    document.querySelectorAll('.menu-list, .recipes, .finishers ul').forEach(function(list){
-      var kids = Array.prototype.slice.call(list.children).filter(function(el){ return el.dataset.day; });
-      if(!kids.length) return;
-      order.forEach(function(slot){
-        kids.forEach(function(el){ if(el.dataset.day === slot) list.appendChild(el); });
+    var slotOrder = orderedSlots(), wdayOrder = orderedWeekdays();
+    document.querySelectorAll('.menu-list, .recipes, .finishers ul, .boxdays').forEach(function(list){
+      var kids = Array.prototype.slice.call(list.children);
+      var attr = kids.some(function(el){ return el.dataset.wday; }) ? 'wday' : 'day';
+      var order = attr === 'wday' ? wdayOrder : slotOrder;
+      if(!kids.some(function(el){ return el.dataset[attr]; })) return;
+      order.forEach(function(key){
+        kids.forEach(function(el){ if(el.dataset[attr] === key) list.appendChild(el); });
       });
-      // anything without a slot (Made on Saturday, Into the boxes) stays last
+      // anything unkeyed (Made on Saturday, Into the boxes) stays last
       Array.prototype.slice.call(list.children).forEach(function(el){
-        if(!el.dataset.day) list.appendChild(el);
+        if(!el.dataset[attr]) list.appendChild(el);
       });
     });
   }
