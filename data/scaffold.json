@@ -2,36 +2,39 @@
   "_note": "Everything that happens every single week, whichever rotation week it is. Recipe ids are keys in recipes.json.",
   "rhythm": [
     {
-      "when": "Wed/Thu",
+      "offset": -2,
       "what": "Order online. Open the basket, add to the trolley, book the slot."
     },
     {
-      "when": "Thu, bed",
+      "offset": -1,
+      "at": "bed",
       "what": "Pizza dough out of the freezer into the fridge."
     },
     {
-      "when": "Friday",
+      "offset": 0,
       "what": "Delivery. Pizza night - every week, no exceptions."
     },
     {
-      "when": "Saturday",
+      "offset": 1,
       "what": "Sandwiches for lunch. Prep session in the evening, 2-3 hours. That night's dinner is the traybake, cooked during the session."
     },
     {
-      "when": "Sunday",
-      "what": "Tuna pasta salad for lunch, made Saturday. Roast for dinner."
+      "offset": 2,
+      "what": "Tuna pasta salad for lunch, made {{d+1}}. Roast for dinner."
     },
     {
-      "when": "Monday",
+      "offset": 3,
       "what": "Leftovers from the roast, build-your-own. Together night."
     },
     {
-      "when": "Tue-Thu",
+      "offset": 4,
+      "to": 6,
       "what": "Shift dinners - reheats, slow cooker, oven timers. Nothing over 15 minutes' active effort."
     },
     {
-      "when": "Wed, bed",
-      "what": "Thursday's freezer bag out of the freezer into the fridge."
+      "offset": 5,
+      "at": "bed",
+      "what": "{{d+6}}'s freezer bag out of the freezer into the fridge."
     }
   ],
   "friday_pizza": {
@@ -184,7 +187,7 @@
     },
     {
       "step": "Build the boxes",
-      "detail": "Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day."
+      "detail": "Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day."
     },
     {
       "step": "Divide and label",
@@ -192,18 +195,42 @@
     }
   ],
   "not_made_saturday": [
-    "All pasta, rice, orzo and couscous - cooked fresh on the day, every time.",
-    "Fried eggs and anything crunchy for the lunch boxes.",
-    "Sunday's roast.",
-    "Monday's peppers and anything else that wants to be hot.",
-    "The tarka, if it is a dal week.",
-    "Wednesday's lunch box mackerel - flaked in on the day, skin off.",
-    "Thursday's lunch box prawns - straight from the pack on the day.",
-    "Friday's lunch box tuna and boiled eggs - in on the day."
+    {
+      "what": "All pasta, rice, orzo and couscous - cooked fresh on the day, every time."
+    },
+    {
+      "what": "Fried eggs and anything crunchy for the lunch boxes."
+    },
+    {
+      "day": "sun",
+      "what": "{{day}}'s roast."
+    },
+    {
+      "day": "mon",
+      "what": "{{day}}'s peppers and anything else that wants to be hot."
+    },
+    {
+      "what": "The tarka, if it is a dal week."
+    },
+    {
+      "day": "wed",
+      "what": "{{day}}'s lunch box mackerel - flaked in on the day, skin off."
+    },
+    {
+      "day": "thu",
+      "what": "{{day}}'s lunch box prawns - straight from the pack on the day."
+    },
+    {
+      "day": "fri",
+      "what": "{{day}}'s lunch box tuna and boiled eggs - in on the day."
+    }
   ],
-  "today_button": {
-    "anchor_friday": "2026-08-28",
+  "defaults": {
+    "delivery_day": "fri",
+    "week_start_day": "sun",
+    "anchor_date": "2026-08-28",
+    "current_cycle": "auto",
     "cycle_length_days": 28,
-    "notes": "Which rotation week and which day today is, worked out from the anchor Friday. The anchor is the Friday week 1 actually started, not a planned start date."
+    "notes": "Defaults for the settings panel, and what the build falls back to. delivery_day is slot 0 of day_order in rotation.json - every other slot is counted from it, so prep is delivery+1 and the roast is delivery+2 whatever weekday delivery lands on. anchor_date is the first delivery day of cycle 1, not a planned start. current_cycle 'auto' works it out from the anchor; '1' or '2' pin it. week_start_day is display order only and does not move any slot."
   }
 }

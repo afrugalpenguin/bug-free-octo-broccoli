@@ -449,11 +449,13 @@ Things that happen every single week regardless of which rotation week it is.
     },
     "freezer_week": "When the tub holds 8+ bags, skip a cook session. Shop only fresh things. Eat 5 bags that week, oldest first."
   },
-  "today_button": {
-    "anchor_friday": "2026-09-04",
+  "defaults": {
+    "delivery_day": "fri",
+    "week_start_day": "sun",
+    "anchor_date": "2026-08-28",
+    "current_cycle": "auto",
     "cycle_length_days": 28,
-    "day_order": ["fri", "sat", "sun", "mon", "tue", "wed", "thu"],
-    "notes": "The 'Today' button calculates which week and day it is based on the anchor date and shows the relevant recipe."
+    "notes": "Defaults for the settings panel, and what the build falls back to. delivery_day is slot 0 of day_order; every other slot counts from it. current_cycle 'auto' works it out from the anchor."
   }
 }
 ```
@@ -613,6 +615,36 @@ These should all be in `recipes.json` with full ingredient lists. They're availa
 | ee_gyoza_soup | Detox Gyoza Soup | Emily English | Schedule-dependent (WFH days) |
 
 ---
+
+## Settings
+
+A cog beside the Today button opens a right-hand panel. Four settings, stored as one `ffs-settings` object in `localStorage`, falling back to `scaffold.defaults`:
+
+| Setting | Type | Default | Affects |
+|---|---|---|---|
+| `delivery_day` | Mon-Sun | `fri` | every slot label, the rhythm reminders, prep and roast days |
+| `week_start_day` | Mon-Sun | `sun` | display order of the day cards, menu list and finishers |
+| `anchor_date` | date | `2026-08-28` | the Today button, the auto cycle |
+| `current_cycle` | auto / 1 / 2 | `auto` | which basket variant opens by default |
+
+### Slots, not weekdays
+
+`rotation.day_order` is a list of **slots**, not weekday names. Slot 0 is delivery day and every other slot is a fixed number of days after it, so prep is always delivery+1 and the roast delivery+2. Move delivery to Thursday and prep becomes Friday, the roast Saturday - the data does not change, only the labels.
+
+The keys are still spelled `fri`, `sat`, `sun`... because that is where the defaults put them. Read them as slot ids.
+
+### Computed day names in prose
+
+Two tokens are substituted in any string carrying `data-tpl`:
+
+- `{{day}}` - the weekday name of that element's own slot
+- `{{d+N}}` - the weekday name at delivery + N days
+
+Used in `scaffold.rhythm`, `scaffold.not_made_saturday` and the `cook_order` details. The build fills them from the defaults so the page is correct with JavaScript off; the client refills them when a setting changes.
+
+### Adding a setting
+
+One entry in `SETTINGS_SCHEMA` in `build.mjs` (key, label, type, default, optional note) plus a line in the client's `applySettings()`. The panel markup and the persistence are generated from the schema.
 
 ## Design / UI requirements
 
