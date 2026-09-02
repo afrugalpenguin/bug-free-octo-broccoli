@@ -1,7 +1,7 @@
-// Works out the per-portion figures for every recipe from its ingredient list,
+// I work out the per-portion figures for every recipe from its ingredient list,
 // so the numbers on the page follow from the recipes rather than sitting beside
-// them. Run `node tools/calc.mjs` to print the table; build.mjs imports the
-// same functions so the page and the table can never disagree.
+// them. `node tools/calc.mjs` prints the table; build.mjs imports these same
+// functions, so the page and the table cannot disagree with each other.
 //
 // Two ingredient flags matter here:
 //   basketOnly  bought for this recipe but not eaten in it (the whole chicken
@@ -33,9 +33,9 @@ function addFood(acc, food, grams, where) {
   KEYS.forEach((k, i) => { acc[k] += (row[i] * grams) / 100; });
 }
 
-// Everything a recipe contains, before dividing by portions. Ingredients marked
-// basketOnly are shopping-list entries, not food on the plate, so they sit this
-// one out.
+// Everything a recipe contains, before I divide by portions. I skip anything
+// marked basketOnly, because those are shopping-list entries rather than food
+// on the plate.
 export function totals(id, seen = new Set()) {
   if (seen.has(id)) throw new Error(`recipes.json: ${id} includes itself`);
   seen.add(id);
@@ -48,7 +48,7 @@ export function totals(id, seen = new Set()) {
     addFood(out, ing.food, ing.grams, id);
   }
 
-  // Portions pulled out of another recipe: a twelfth of the chilli pot, two
+  // Portions I pull out of another recipe: a twelfth of the chilli pot, two
   // portions of meatballs spread across ten lunch boxes.
   for (const [source, portions] of r.from ?? []) {
     const per = perPortion(source, new Set(seen));
@@ -63,12 +63,13 @@ export function perPortion(id, seen = new Set()) {
   return Object.fromEntries(KEYS.map(k => [k, t[k] / n]));
 }
 
-// Round the way a recipe card should: calories to the nearest 5, grams to whole
-// numbers, and anything under 1g to one decimal so it doesn't silently vanish.
+// I round the way a recipe card should: calories to the nearest 5, grams to
+// whole numbers, and anything under 1g to one decimal so it does not silently
+// vanish on me.
 export const roundKcal = v => Math.round(v / 5) * 5;
 export const roundG = v => (v < 1 ? Math.round(v * 10) / 10 : Math.round(v));
 
-// A lunch box is a fixed base plus one of five daily finishers, so it has a
+// A lunch box is a fixed base plus one of five daily finishers, so I give it a
 // range rather than a figure. Everything else has the same low and high.
 export function finisherRange(id, base) {
   const days = recipes[id].finishers;
@@ -86,13 +87,13 @@ export function finisherRange(id, base) {
 }
 
 // A lunch box is no longer one thing: the base is the same all week but the
-// protein changes by day, so a box has five figures rather than one. Base plus
-// that day's protein plus that day's finisher, per box.
+// protein changes by day, so I give a box five figures rather than one. Base
+// plus that day's protein plus that day's finisher, per box.
 //
 // Monday and Tuesday take their protein from the week's roast tray; the other
-// three days each have their own little recipe. Both are per-portion figures,
-// because a tray that serves 4 boxes and a pack that serves 2 both divide down
-// to one box.
+// three days each have their own little recipe. I use per-portion figures for
+// both, because a tray serving 4 boxes and a pack serving 2 both divide down to
+// one box.
 export function lunchboxDay(weekId, day) {
   const w = rotation.weeks[weekId];
   const boxId = w.lunchbox;
