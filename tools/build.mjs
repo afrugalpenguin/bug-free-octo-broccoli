@@ -518,7 +518,12 @@ function lunchboxDays(week) {
     const name = recipes[d.proteinId]?.name ?? d.proteinId;
     const flag = spec.source === 'smoked_mackerel'
       ? '<span class="omega">omega-3 day</span>' : '';
-    const when = spec.recipe === 'week' ? 'in on Saturday' : 'in on the day';
+    // The prep day is delivery+1, so I take its name from the slot rather than
+    // writing Saturday, which stops being true the moment delivery day moves.
+    // I say cooked here because roast reads as Sunday's bird otherwise, and
+    // this tray is its own thing, done on prep night.
+    const when = spec.recipe === 'week'
+      ? `cooked on ${slotLabel('sat')}` : 'in on the day';
     return `<li class="boxday" data-wday="${esc(day)}">
       <span class="boxday-day">${esc(DAY_NAME[day])}</span>
       <span class="boxday-protein">${esc(spec.grams)}g ${esc(name)} <em>${esc(when)}</em>${flag}</span>
