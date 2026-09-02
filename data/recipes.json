@@ -37,9 +37,9 @@
         "aisle": "cupboard"
       },
       {
-        "food": "onion",
+        "food": "frozen_onion",
         "grams": 300,
-        "display": "2 onions, diced",
+        "display": "300g frozen diced onion",
         "aisle": "fresh"
       },
       {
@@ -171,9 +171,9 @@
         "aisle": "cupboard"
       },
       {
-        "food": "onion",
+        "food": "frozen_onion",
         "grams": 300,
-        "display": "2 onions, diced (or 200g frozen)",
+        "display": "300g frozen diced onion",
         "aisle": "fresh"
       },
       {
@@ -292,9 +292,9 @@
         "aisle": "cupboard"
       },
       {
-        "food": "onion",
+        "food": "frozen_onion",
         "grams": 300,
-        "display": "2 onions, diced",
+        "display": "300g frozen diced onion",
         "aisle": "fresh"
       },
       {
@@ -405,9 +405,9 @@
         "aisle": "cupboard"
       },
       {
-        "food": "onion",
+        "food": "frozen_onion",
         "grams": 300,
-        "display": "2 onions, finely diced",
+        "display": "300g frozen diced onion",
         "aisle": "fresh"
       },
       {
@@ -514,9 +514,9 @@
         "aisle": "cupboard"
       },
       {
-        "food": "onion",
+        "food": "frozen_onion",
         "grams": 300,
-        "display": "2 onions, diced",
+        "display": "300g frozen diced onion",
         "aisle": "fresh"
       },
       {
@@ -1049,7 +1049,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "tomatoes",
+        "food": "cherry_tomatoes",
         "grams": 150,
         "display": "150g cherry tomatoes, halved",
         "aisle": "fresh"
@@ -1473,12 +1473,12 @@
       }
     ],
     "method": [
-      "Skin scored, salted hard, left uncovered in the fridge overnight if you remember.",
       "Oven 220C for 30 minutes to start the crackling, then down to 150C for 4-5 hours.",
       "Potatoes and veg in for the last hour, oven back up to 200C for the final 20 minutes.",
       "Rest 20 minutes. Pull or slice.",
       "Set aside ~300g diced for Wednesday's fried rice before it all disappears."
-    ]
+    ],
+    "night_before": "Skin scored, salted hard, left uncovered in the fridge overnight."
   },
   "gammon_roast": {
     "name": "Gammon Joint",
@@ -3368,7 +3368,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "tomatoes",
+        "food": "cherry_tomatoes",
         "grams": 150,
         "display": "150g cherry tomatoes",
         "aisle": "fresh"
@@ -4158,12 +4158,12 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Not made Saturday. Skin off, flaked straight into the box on Wednesday morning.",
+    "notes": "Not made Saturday. Skin off, flaked straight into the box on Wednesday morning. A pack is 140g, so 70g a box.",
     "ingredients": [
       {
         "food": "smoked_mackerel",
-        "grams": 160,
-        "display": "2 smoked mackerel fillets (~160g)",
+        "grams": 140,
+        "display": "2 smoked mackerel fillets (140g pack)",
         "aisle": "fish"
       },
       {
@@ -4999,7 +4999,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "tomatoes",
+        "food": "cherry_tomatoes",
         "grams": 100,
         "display": "Handful of cherry tomatoes",
         "aisle": "fresh"
@@ -5085,7 +5085,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "tomatoes",
+        "food": "cherry_tomatoes",
         "grams": 150,
         "display": "10 cherry tomatoes, halved",
         "aisle": "fresh"
@@ -5713,7 +5713,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "tomatoes",
+        "food": "cherry_tomatoes",
         "grams": 250,
         "display": "2-3 large handfuls cherry tomatoes",
         "aisle": "fresh"
@@ -5847,7 +5847,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "broccoli",
+        "food": "tenderstem_broccoli",
         "grams": 150,
         "display": "150g tenderstem broccoli, each stem cut into 3",
         "aisle": "fresh"
@@ -5969,7 +5969,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "broccoli",
+        "food": "tenderstem_broccoli",
         "grams": 350,
         "display": "350g tenderstem broccoli",
         "aisle": "fresh"
@@ -6135,7 +6135,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "broccoli",
+        "food": "tenderstem_broccoli",
         "grams": 200,
         "display": "200g tenderstem broccoli, in 2.5cm pieces",
         "aisle": "fresh"
