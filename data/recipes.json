@@ -109,7 +109,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_made",
+        "food": "beef_stock",
         "grams": 600,
         "display": "600ml beef stock (2 cubes)",
         "aisle": "cupboard"
@@ -225,7 +225,7 @@
         "aisle": "tinned"
       },
       {
-        "food": "stock_made",
+        "food": "vegetable_stock",
         "grams": 1200,
         "display": "1.2L vegetable stock",
         "aisle": "cupboard"
@@ -334,7 +334,7 @@
         "aisle": "tinned"
       },
       {
-        "food": "stock_made",
+        "food": "vegetable_stock",
         "grams": 500,
         "display": "500ml vegetable stock",
         "aisle": "cupboard"
@@ -453,7 +453,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_made",
+        "food": "beef_stock",
         "grams": 500,
         "display": "500ml beef stock (2 cubes)",
         "aisle": "cupboard"
@@ -568,7 +568,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_made",
+        "food": "vegetable_stock",
         "grams": 1400,
         "display": "1.4L vegetable stock",
         "aisle": "cupboard"
@@ -670,7 +670,7 @@
         "aisle": "tinned"
       },
       {
-        "food": "stock_cube",
+        "food": "chicken_stock_cube",
         "grams": 10,
         "display": "1 chicken stock cube, crumbled",
         "aisle": "cupboard"
@@ -821,7 +821,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "stock_cube",
+        "food": "chicken_stock_cube",
         "grams": 10,
         "display": "1 chicken stock cube",
         "aisle": "cupboard"
@@ -908,7 +908,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_cube",
+        "food": "chicken_stock_cube",
         "grams": 10,
         "display": "1 chicken stock cube, crumbled",
         "aisle": "cupboard"
@@ -1307,7 +1307,7 @@
         "aisle": "tinned"
       },
       {
-        "food": "stock_cube",
+        "food": "chicken_stock_cube",
         "grams": 20,
         "display": "2 chicken stock cubes",
         "aisle": "cupboard"
@@ -2333,9 +2333,9 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_made",
+        "food": "beef_stock",
         "grams": 500,
-        "display": "500ml stock",
+        "display": "500ml beef stock",
         "aisle": "cupboard"
       },
       {
@@ -4773,7 +4773,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_made",
+        "food": "beef_stock",
         "grams": 500,
         "display": "500ml beef stock (2 stock pots)",
         "aisle": "cupboard"
@@ -4895,7 +4895,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_cube",
+        "food": "vegetable_stock_cube",
         "grams": 10,
         "display": "1 vegetable stock cube, crumbled",
         "aisle": "cupboard"
@@ -5011,7 +5011,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "stock_made",
+        "food": "chicken_stock",
         "grams": 500,
         "display": "500ml chicken stock",
         "aisle": "cupboard"
@@ -5067,7 +5067,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_cube",
+        "food": "vegetable_stock_cube",
         "grams": 10,
         "display": "1 vegetable stock cube",
         "aisle": "cupboard"
@@ -6025,7 +6025,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "stock_made",
+        "food": "vegetable_stock",
         "grams": 1000,
         "display": "1L stock (2 vegetable or chicken stock cubes)",
         "aisle": "cupboard"

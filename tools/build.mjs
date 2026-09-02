@@ -330,8 +330,14 @@ const FOOD_LABEL = {
   white_wine_vinegar:   'white wine vinegar',
   fajita_spice:         'fajita spice',
   tandoori_spice:       'tandoori spice',
-  stock_made:           'stock - made up from cubes',
+  beef_stock:           'beef stock - made up from cubes',
+  chicken_stock:        'chicken stock - made up from cubes',
+  vegetable_stock:      'vegetable stock - made up from cubes',
+  chicken_stock_cube:   'chicken stock cubes',
+  vegetable_stock_cube: 'vegetable stock cubes',
   gravy_made:           'gravy - made up',
+  mustard:              'Dijon mustard',
+  mozzarella:           'mozzarella balls',
 };
 
 function basketLine(it) {
