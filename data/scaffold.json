@@ -72,8 +72,8 @@
   },
   "boiled_eggs": {
     "recipe": "boiled_eggs",
-    "count": 8,
-    "usage": "2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare"
+    "count": 12,
+    "usage": "2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare"
   },
   "pickled_onions": {
     "recipe": "quick_pickled_red_onions",
@@ -90,13 +90,44 @@
       "dressing": "2 tbsp (that week's dressing)",
       "grains": "half a rice pouch (125g)",
       "beans": "50g tinned beans, drained",
-      "protein": "80g (that week's protein)",
       "roast_veg": "100g from Saturday's veg tray",
       "pickled_onions": "a spoonful",
       "leaves": "a handful (~15g)"
     },
-    "finishers": "Different every day - that is where the variety comes from. See the week's page.",
-    "build_notes": "Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday."
+    "finishers": "Different every day - see the week's page.",
+    "build_notes": "Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.",
+    "protein_schedule": {
+      "mon": {
+        "source": "roast",
+        "grams": 80,
+        "recipe": "week",
+        "notes": "That week's roast protein, in on Saturday"
+      },
+      "tue": {
+        "source": "roast",
+        "grams": 80,
+        "recipe": "week",
+        "notes": "That week's roast protein, in on Saturday"
+      },
+      "wed": {
+        "source": "smoked_mackerel",
+        "grams": 80,
+        "recipe": "lunchbox_mackerel",
+        "notes": "Flaked in on the day, skin off. Squeeze of lemon. The oily-fish day."
+      },
+      "thu": {
+        "source": "prawns",
+        "grams": 80,
+        "recipe": "lunchbox_prawns",
+        "notes": "Cooked peeled prawns, in on the day."
+      },
+      "fri": {
+        "source": "tuna_and_eggs",
+        "grams": 80,
+        "recipe": "lunchbox_tuna_egg",
+        "notes": "80g tuna plus 2 boiled eggs, in on the day."
+      }
+    }
   },
   "dressings": {
     "monthly_batch": [
@@ -153,7 +184,7 @@
     },
     {
       "step": "Build the boxes",
-      "detail": "Last, once the veg and protein have cooled enough."
+      "detail": "Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day."
     },
     {
       "step": "Divide and label",
@@ -165,7 +196,10 @@
     "Fried eggs and anything crunchy for the lunch boxes.",
     "Sunday's roast.",
     "Monday's peppers and anything else that wants to be hot.",
-    "The tarka, if it is a dal week."
+    "The tarka, if it is a dal week.",
+    "Wednesday's lunch box mackerel - flaked in on the day, skin off.",
+    "Thursday's lunch box prawns - straight from the pack on the day.",
+    "Friday's lunch box tuna and boiled eggs - in on the day."
   ],
   "today_button": {
     "anchor_friday": "2026-08-28",

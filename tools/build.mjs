@@ -8,7 +8,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { recipes, rotation, scaffold, macroLine, macrosFor } from './calc.mjs';
+import {recipes, rotation, scaffold, macroLine, macrosFor, lunchboxDay, lunchboxDayLine} from './calc.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const outDir = join(here, '..', 'docs');
@@ -189,6 +189,11 @@ function weekBasketPlan(week, cycle) {
   add('boiled_eggs');
   add('quick_pickled_red_onions');
   add(scaffold.breakfast_bags.recipe, scaffold.breakfast_bags.count);
+  // Wednesday, Thursday and Friday's box protein - same every week, one
+  // pack each covering both adults for that day.
+  for (const d of Object.values(scaffold.lunch_boxes.protein_schedule)) {
+    if (d.recipe !== 'week') add(d.recipe);
+  }
   return plan;
 }
 
@@ -341,6 +346,25 @@ function saturdayPanel(week, cycle) {
 
 // ---------------------------------------------------------------- week panels
 
+// Five boxes, five proteins. Wednesday is the oily fish day and reads high on
+// fat next to the others, which is the point of it rather than a problem, so
+// it says so rather than leaving the number to be read as a mistake.
+function lunchboxDays(week) {
+  const sched = scaffold.lunch_boxes.protein_schedule;
+  return Object.entries(sched).map(([day, spec]) => {
+    const d = lunchboxDay(week, day);
+    const name = recipes[d.proteinId]?.name ?? d.proteinId;
+    const flag = spec.source === 'smoked_mackerel'
+      ? '<span class="omega">omega-3 day</span>' : '';
+    const when = spec.recipe === 'week' ? 'in on Saturday' : 'in on the day';
+    return `<li class="boxday">
+      <span class="boxday-day">${esc(DAY_NAME[day])}</span>
+      <span class="boxday-protein">${esc(spec.grams)}g ${esc(name)} <em>${esc(when)}</em>${flag}</span>
+      <span class="boxday-macro">${esc(lunchboxDayLine(week, day))}</span>
+    </li>`;
+  }).join('');
+}
+
 function menuPanel(week) {
   const w = rotation.weeks[week];
   const rows = DISPLAY_DAYS.map(day => {
@@ -364,9 +388,9 @@ function menuPanel(week) {
   <p class="theme">${esc(w.theme)}</p>
   <ul class="menu-list">${rows}</ul>
   <section class="block"><h3>Lunches</h3>
-    <p>${scaffold.lunch_boxes.total} boxes, ${scaffold.lunch_boxes.count_per_adult} each.
-       ${esc(recipes[w.lunchbox_protein].name)} with ${esc(recipes[w.lunchbox_dressing].name.toLowerCase())}.</p>
-    ${macroEl(w.lunchbox)}
+    <p>${scaffold.lunch_boxes.total} boxes, ${scaffold.lunch_boxes.count_per_adult} each. Same base every day -
+       ${esc(recipes[w.lunchbox_dressing].name.toLowerCase())}, rice, beans and roast veg. The protein changes.</p>
+    <ul class="boxdays">${lunchboxDays(week)}</ul>
     <p class="notes">Saturday is sandwiches. Sunday is the tuna pasta salad made the night before.</p></section>
 </div>`;
 }
@@ -390,9 +414,18 @@ function recipesPanel(week) {
     .filter(Boolean)
     .map(id => recipeCard(id, { level: 'h4' })).join('');
 
+  // The three day-proteins are deliberately not Saturday work, so they get
+  // their own group rather than sitting under Made on Saturday - otherwise
+  // their methods live nowhere and the box list is the only place they appear.
+  const onTheDay = Object.values(scaffold.lunch_boxes.protein_schedule)
+    .filter(d => d.recipe !== 'week')
+    .map(d => recipeCard(d.recipe, { level: 'h4' })).join('');
+
   return `<div class="recipes">${cards}
   <div class="day-group"><h3 class="day-head">Made on Saturday</h3>
-    <div class="recipe-grid">${support}</div></div></div>`;
+    <div class="recipe-grid">${support}</div></div>
+  <div class="day-group"><h3 class="day-head">Into the boxes on the day</h3>
+    <div class="recipe-grid">${onTheDay}</div></div></div>`;
 }
 
 function weekPanel(week) {
@@ -562,6 +595,13 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .wk.week3 button{background:var(--week3)}.wk.week4 button{background:var(--week4)}
 .wk span{font-size:.85rem;opacity:.9}.wk em{font-size:.78rem;opacity:.75;font-style:normal}
 .menu-list{list-style:none;display:grid;gap:.5rem;margin-bottom:1rem}
+.boxdays{list-style:none;display:grid;gap:.5rem;margin:.75rem 0}
+.boxday{display:grid;gap:.15rem;padding:.6rem .7rem;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.boxday-day{font-weight:600;font-size:.85rem}
+.boxday-protein{font-size:.85rem}
+.boxday-protein em{color:var(--text-light);font-style:normal;font-size:.78rem}
+.boxday-macro{font-size:.75rem;color:var(--text-light)}
+.omega{display:inline-block;margin-left:.4rem;font-size:.68rem;padding:.1rem .4rem;border-radius:3px;background:var(--accent);color:#fff;vertical-align:middle}
 .menu-row{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.75rem .9rem;box-shadow:var(--shadow)}
 .menu-row a{display:flex;gap:.75rem;align-items:baseline;text-decoration:none;color:inherit;min-height:32px}
 .menu-day{flex:0 0 4.5rem;font-weight:600;font-size:.85rem;color:var(--text-light)}

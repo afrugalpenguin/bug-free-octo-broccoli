@@ -53,7 +53,7 @@
         "mon": "20g tortilla chips crushed, squeeze of lime",
         "tue": "30g cheddar cubed, chilli flakes",
         "wed": "60g sweetcorn and chopped coriander",
-        "thu": "A boiled egg with smoked paprika",
+        "thu": "Smoked paprika and a squeeze of lime",
         "fri": "40g Greek yoghurt with chipotle or paprika"
       },
       "friday_salad": "chopped_salad_w1",
@@ -132,7 +132,7 @@
         "mon": "30g feta and oregano",
         "tue": "20g olives halved, and lemon zest",
         "wed": "40g hummus with smoked paprika",
-        "thu": "A boiled egg with toasted seeds",
+        "thu": "Toasted seeds",
         "fri": "60g cucumber and extra lemon dressing"
       },
       "friday_salad": "greek_salad_w3",
@@ -176,7 +176,7 @@
         "mon": "30g mozzarella pearls and oregano",
         "tue": "15g parmesan and a splash of balsamic",
         "wed": "20g pepperoni and chilli oil",
-        "thu": "A boiled egg with toasted seeds",
+        "thu": "Toasted seeds and torn basil",
         "fri": "2 tbsp meatball tray sauce, with parmesan"
       },
       "friday_salad": "tomato_mozzarella_salad_w4",

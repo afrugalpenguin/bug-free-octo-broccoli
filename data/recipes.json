@@ -2995,7 +2995,7 @@
     "category": "lunchbox",
     "week": 1,
     "day": "sat",
-    "serves": 10,
+    "serves": 4,
     "tags": {
       "prepStyle": "batch",
       "freezerSafe": true,
@@ -3007,24 +3007,24 @@
       "passiveMinutes": 35,
       "source": "system"
     },
-    "notes": "1kg of thighs roasts down to ~800g - 80g per box across 10 boxes. Goes in the oven with the veg tray.",
+    "notes": "400g of thighs roasts down to ~320g - 80g per box across Monday and Tuesday's four boxes. Goes in the oven with the veg tray.",
     "ingredients": [
       {
         "food": "chicken_thigh_boneless",
-        "grams": 1000,
-        "display": "1kg boneless chicken thighs",
+        "grams": 400,
+        "display": "400g boneless chicken thighs",
         "aisle": "meat"
       },
       {
         "food": "olive_oil",
-        "grams": 14,
-        "display": "1 tbsp oil",
+        "grams": 6,
+        "display": "2 tsp oil",
         "aisle": "cupboard"
       },
       {
         "food": "smoked_paprika",
-        "grams": 5,
-        "display": "2 tsp smoked paprika",
+        "grams": 2,
+        "display": "1 tsp smoked paprika",
         "aisle": "cupboard"
       }
     ],
@@ -3032,7 +3032,7 @@
       "Thighs tossed in oil and paprika, spread on a tray. 200C for 30-35 minutes. Cooled, then sliced or torn."
     ],
     "basket_notes": {
-      "chicken_thigh_boneless": "1kg for the lunch boxes, 600g more for Thursday's freezer bag"
+      "chicken_thigh_boneless": "400g for Monday and Tuesday's boxes, 600g more for Thursday's freezer bag"
     }
   },
   "tandoori_thighs": {
@@ -3040,7 +3040,7 @@
     "category": "lunchbox",
     "week": 2,
     "day": "sat",
-    "serves": 10,
+    "serves": 4,
     "tags": {
       "prepStyle": "batch",
       "freezerSafe": true,
@@ -3052,30 +3052,30 @@
       "passiveMinutes": 35,
       "source": "system"
     },
-    "notes": "Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1.6kg total.",
+    "notes": "Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1kg total.",
     "ingredients": [
       {
         "food": "chicken_thigh_boneless",
-        "grams": 1000,
-        "display": "1kg boneless chicken thighs",
+        "grams": 400,
+        "display": "400g boneless chicken thighs",
         "aisle": "meat"
       },
       {
         "food": "greek_yoghurt",
-        "grams": 150,
-        "display": "150g Greek yoghurt",
+        "grams": 60,
+        "display": "60g Greek yoghurt",
         "aisle": "dairy"
       },
       {
         "food": "spice_mix",
-        "grams": 15,
-        "display": "2 tbsp tandoori spice",
+        "grams": 6,
+        "display": "2 tsp tandoori spice",
         "aisle": "cupboard"
       },
       {
         "food": "lemon_juice",
-        "grams": 15,
-        "display": "Juice of half a lemon",
+        "grams": 6,
+        "display": "Squeeze of lemon",
         "aisle": "fresh"
       }
     ],
@@ -3088,7 +3088,7 @@
     "category": "lunchbox",
     "week": 3,
     "day": "sat",
-    "serves": 10,
+    "serves": 4,
     "tags": {
       "prepStyle": "batch",
       "freezerSafe": true,
@@ -3100,24 +3100,24 @@
       "passiveMinutes": 35,
       "source": "system"
     },
-    "notes": "Cook 1.4kg - 1kg for the boxes and 350g for Monday's wraps.",
+    "notes": "400g for Monday and Tuesday's boxes. The 350g for Monday's wraps is on the same tray but is not box food.",
     "ingredients": [
       {
         "food": "chicken_thigh_boneless",
-        "grams": 1400,
-        "display": "1.4kg boneless chicken thighs",
+        "grams": 400,
+        "display": "400g boneless chicken thighs",
         "aisle": "meat"
       },
       {
         "food": "olive_oil",
-        "grams": 14,
-        "display": "1 tbsp oil",
+        "grams": 6,
+        "display": "2 tsp oil",
         "aisle": "cupboard"
       },
       {
         "food": "lemon_juice",
-        "grams": 30,
-        "display": "Juice of 1 lemon",
+        "grams": 12,
+        "display": "Juice of half a lemon",
         "aisle": "fresh"
       },
       {
@@ -3125,22 +3125,32 @@
         "grams": 2,
         "display": "2 tsp dried oregano",
         "aisle": "cupboard"
+      },
+      {
+        "food": "chicken_thigh_boneless",
+        "grams": 350,
+        "display": "350g more on the same tray for Monday's wraps",
+        "aisle": "meat",
+        "basketOnly": true
       }
     ],
     "method": [
       "Oil, lemon and oregano over the thighs. 200C for 30-35 minutes. 1kg cooled for the boxes, 350g in a tub for Monday."
-    ]
+    ],
+    "basket_notes": {
+      "chicken_thigh_boneless": "400g for the boxes, 350g on the same tray for Monday's wraps"
+    }
   },
   "meatballs_from_traybake": {
     "name": "Meatballs from the Al Forno Tray",
     "category": "lunchbox",
     "week": 4,
     "day": "sat",
-    "serves": 10,
+    "serves": 4,
     "from": [
       [
         "meatball_al_forno",
-        2
+        0.8
       ]
     ],
     "tags": {
@@ -3154,7 +3164,7 @@
       "passiveMinutes": 0,
       "source": "emily-english"
     },
-    "notes": "No extra cooking - two portions off the second tray, split across the ten boxes.",
+    "notes": "No extra cooking - four fifths of a portion off the second tray, split across Monday and Tuesday's four boxes.",
     "ingredients": [],
     "method": [
       "Once the second tray has cooled, lift out the meatballs for the boxes. A spoon of the tray sauce goes in with them."
@@ -3562,10 +3572,6 @@
         1
       ],
       [
-        "roast_chicken_stripped",
-        1
-      ],
-      [
         "lunchbox_veg_tray_w1",
         1
       ]
@@ -3581,7 +3587,7 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing.",
+    "notes": "Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.",
     "ingredients": [
       {
         "food": "grain_pouch",
@@ -3621,8 +3627,8 @@
         "fresh_herbs": 5
       },
       "thu": {
-        "egg": 58,
-        "smoked_paprika": 1
+        "smoked_paprika": 1,
+        "lime_juice": 5
       },
       "fri": {
         "greek_yoghurt": 40
@@ -3630,9 +3636,10 @@
     },
     "method": [
       "Dressing in the bottom.",
-      "Rice, then beans, then chicken, then roast veg.",
+      "Rice, then beans, then roast veg.",
       "Pickled onions, then leaves on top.",
-      "Finisher goes on the day, not now - especially the crunchy ones and the boiled eggs."
+      "Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.",
+      "Finisher goes on the day, not now - especially the crunchy ones."
     ]
   },
   "lunchbox_w2": {
@@ -3644,10 +3651,6 @@
     "from": [
       [
         "mint_yoghurt",
-        1
-      ],
-      [
-        "tandoori_thighs",
         1
       ],
       [
@@ -3666,7 +3669,7 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Ten of these - five each.",
+    "notes": "Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.",
     "ingredients": [
       {
         "food": "grain_pouch",
@@ -3715,10 +3718,11 @@
       }
     },
     "method": [
-      "Mint yoghurt in the bottom.",
-      "Rice, then beans, then tandoori chicken, then roast veg.",
+      "Dressing in the bottom.",
+      "Rice, then beans, then roast veg.",
       "Pickled onions, then leaves on top.",
-      "Finisher on the day."
+      "Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.",
+      "Finisher goes on the day, not now - especially the crunchy ones."
     ]
   },
   "lunchbox_w3": {
@@ -3730,10 +3734,6 @@
     "from": [
       [
         "lemon_dressing",
-        1
-      ],
-      [
-        "roast_chicken_lemon",
         1
       ],
       [
@@ -3752,7 +3752,7 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Ten of these - five each.",
+    "notes": "Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.",
     "ingredients": [
       {
         "food": "grain_pouch",
@@ -3793,7 +3793,6 @@
         "smoked_paprika": 1
       },
       "thu": {
-        "egg": 58,
         "seeds_nuts": 10
       },
       "fri": {
@@ -3803,10 +3802,11 @@
       }
     },
     "method": [
-      "Lemon dressing in the bottom.",
-      "Rice, then beans, then lemon chicken, then roast veg.",
+      "Dressing in the bottom.",
+      "Rice, then beans, then roast veg.",
       "Pickled onions, then leaves on top.",
-      "Finisher on the day."
+      "Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.",
+      "Finisher goes on the day, not now - especially the crunchy ones."
     ]
   },
   "lunchbox_w4": {
@@ -3818,10 +3818,6 @@
     "from": [
       [
         "balsamic_vinaigrette",
-        1
-      ],
-      [
-        "meatballs_from_traybake",
         1
       ],
       [
@@ -3840,7 +3836,7 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Ten of these - five each. The protein comes off the second al forno tray.",
+    "notes": "Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.",
     "ingredients": [
       {
         "food": "grain_pouch",
@@ -3881,8 +3877,8 @@
         "olive_oil": 5
       },
       "thu": {
-        "egg": 58,
-        "seeds_nuts": 10
+        "seeds_nuts": 10,
+        "fresh_herbs": 5
       },
       "fri": {
         "passata": 35,
@@ -3890,10 +3886,11 @@
       }
     },
     "method": [
-      "Balsamic vinaigrette in the bottom.",
-      "Rice, then beans, then meatballs, then roast veg.",
+      "Dressing in the bottom.",
+      "Rice, then beans, then roast veg.",
       "Pickled onions, then leaves on top.",
-      "Finisher on the day."
+      "Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.",
+      "Finisher goes on the day, not now - especially the crunchy ones."
     ]
   },
   "sandwiches_adults": {
@@ -4113,7 +4110,7 @@
     "category": "scaffold",
     "week": null,
     "day": "sat",
-    "serves": 8,
+    "serves": 12,
     "tags": {
       "prepStyle": "batch",
       "freezerSafe": false,
@@ -4129,13 +4126,131 @@
     "ingredients": [
       {
         "food": "egg",
-        "grams": 464,
-        "display": "8 eggs",
+        "grams": 696,
+        "display": "12 eggs",
         "aisle": "dairy"
       }
     ],
     "method": [
       "Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge."
+    ]
+  },
+  "lunchbox_mackerel": {
+    "name": "Smoked Mackerel for Wednesday's Boxes",
+    "category": "lunchbox",
+    "week": null,
+    "day": "wed",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 2,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Not made Saturday. Skin off, flaked straight into the box on Wednesday morning.",
+    "ingredients": [
+      {
+        "food": "smoked_mackerel",
+        "grams": 160,
+        "display": "2 smoked mackerel fillets (~160g)",
+        "aisle": "fish"
+      },
+      {
+        "food": "lemon_juice",
+        "grams": 10,
+        "display": "A squeeze of lemon",
+        "aisle": "fresh"
+      }
+    ],
+    "basket_notes": {
+      "smoked_mackerel": "Wednesday lunch boxes, both adults"
+    },
+    "method": [
+      "Skin off, flaked into the box on the day. Squeeze of lemon over."
+    ]
+  },
+  "lunchbox_prawns": {
+    "name": "Prawns for Thursday's Boxes",
+    "category": "lunchbox",
+    "week": null,
+    "day": "thu",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 1,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Not made Saturday. Straight from the pack into the box on Thursday morning.",
+    "ingredients": [
+      {
+        "food": "prawns_cooked",
+        "grams": 160,
+        "display": "160g cooked peeled prawns",
+        "aisle": "fish"
+      }
+    ],
+    "basket_notes": {
+      "prawns_cooked": "Thursday lunch boxes"
+    },
+    "method": [
+      "Into the box on the day, on top of the leaves."
+    ]
+  },
+  "lunchbox_tuna_egg": {
+    "name": "Tuna and Egg for Friday's Boxes",
+    "category": "lunchbox",
+    "week": null,
+    "day": "fri",
+    "serves": 2,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 2,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Not made Saturday. Tuna and two halved eggs into the box on Friday morning.",
+    "from": [
+      [
+        "boiled_eggs",
+        4
+      ]
+    ],
+    "ingredients": [
+      {
+        "food": "tuna_drained",
+        "grams": 160,
+        "display": "160g tinned tuna in spring water, drained",
+        "aisle": "tinned"
+      },
+      {
+        "food": "tuna_drained",
+        "grams": 64,
+        "display": "Rounds the tuna up to 2 whole tins",
+        "aisle": "tinned",
+        "basketOnly": true
+      }
+    ],
+    "basket_notes": {
+      "tuna_drained": "4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes"
+    },
+    "method": [
+      "Tuna drained and forked in, two boiled eggs halved on top."
     ]
   },
   "quick_pickled_red_onions": {
