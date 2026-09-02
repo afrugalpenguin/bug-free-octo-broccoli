@@ -230,6 +230,10 @@ function weekBasketPlan(week, cycle) {
   add('boiled_eggs');
   add('quick_pickled_red_onions');
   add(scaffold.breakfast_bags.recipe, scaffold.breakfast_bags.count);
+  // Basket only - the eldest's packed lunch is made each evening, so it has no
+  // Saturday step and no card. It is here so its shopping merges with the
+  // cucumber, pepper and berry lines rather than sitting in a corner.
+  add(scaffold.packed_lunch.recipe);
   // Wednesday, Thursday and Friday's box protein - same every week, one
   // pack each covering both adults for that day.
   for (const d of Object.values(scaffold.lunch_boxes.protein_schedule)) {
@@ -315,6 +319,8 @@ const COUNTED = {
   // food now and stays a weight, because it is sold by the pack.
   cucumber:             [300, 'cucumber', 'cucumbers'],
   broccoli:             [350, 'head of broccoli', 'heads of broccoli'],
+  wholemeal_roll:       [60,  'wholemeal roll', 'wholemeal rolls'],
+  pepper:               [160, 'pepper', 'peppers'],
 
   // Pack sizes the shop actually sells, from shopping the list for real.
   spring_onion:         [100, 'bunch spring onions', 'bunches spring onions'],
@@ -640,6 +646,11 @@ function overviewPanel() {
     <p>${esc(scaffold.freezer_bank.cycle_2_onwards.description)}</p>
     <p class="callout">${esc(scaffold.freezer_bank.freezer_week)}</p></section>
 
+  <section class="block"><h2>Packed lunch</h2>
+    <p class="lede">${esc(scaffold.packed_lunch.who[0].toUpperCase() + scaffold.packed_lunch.who.slice(1))}, ${scaffold.packed_lunch.days} days. Made ${esc(scaffold.packed_lunch.made)}.</p>
+    <ul class="packed">${Object.values(scaffold.packed_lunch.per_day).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+    <p class="notes">${esc(scaffold.packed_lunch.notes)}</p></section>
+
   <section class="block"><h2>Dressings</h2>
     <p>${esc(scaffold.dressings.notes)}</p></section>
 </div>`;
@@ -763,6 +774,9 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .callout{background:var(--accent-light);border-left:3px solid var(--accent);padding:.6rem .8rem;border-radius:0 6px 6px 0;margin:.6rem 0;font-size:.9rem}
 .rhythm{list-style:none}
 .rhythm li{display:flex;gap:.75rem;padding:.5rem 0;border-bottom:1px solid var(--border)}
+.packed{list-style:none;display:grid;gap:.35rem;margin:.2rem 0 .6rem}
+.packed li{font-size:.9rem;padding-left:1rem;position:relative}
+.packed li:before{content:'';position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
 .rhythm li:last-child{border:0}
 .when{flex:0 0 5.5rem;font-weight:600;font-size:.85rem}
 .what{font-size:.9rem;color:var(--text-light)}
