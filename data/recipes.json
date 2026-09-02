@@ -40,7 +40,7 @@
         "food": "frozen_onion",
         "grams": 300,
         "display": "300g frozen diced onion",
-        "aisle": "fresh"
+        "aisle": "frozen"
       },
       {
         "food": "garlic",
@@ -174,7 +174,7 @@
         "food": "frozen_onion",
         "grams": 300,
         "display": "300g frozen diced onion",
-        "aisle": "fresh"
+        "aisle": "frozen"
       },
       {
         "food": "garlic",
@@ -295,7 +295,7 @@
         "food": "frozen_onion",
         "grams": 300,
         "display": "300g frozen diced onion",
-        "aisle": "fresh"
+        "aisle": "frozen"
       },
       {
         "food": "garlic",
@@ -408,7 +408,7 @@
         "food": "frozen_onion",
         "grams": 300,
         "display": "300g frozen diced onion",
-        "aisle": "fresh"
+        "aisle": "frozen"
       },
       {
         "food": "carrot",
@@ -517,7 +517,7 @@
         "food": "frozen_onion",
         "grams": 300,
         "display": "300g frozen diced onion",
-        "aisle": "fresh"
+        "aisle": "frozen"
       },
       {
         "food": "garlic",
