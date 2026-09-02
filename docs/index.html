@@ -152,6 +152,7 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .qty{font-weight:600;font-size:.9rem;flex:0 0 auto}
 .food{font-size:.9rem;text-transform:capitalize}
 .uses{font-size:.75rem;color:var(--text-light);margin-top:.35rem;padding-left:2.2rem;line-height:1.45}
+.stock-note{font-size:.75rem;color:var(--accent);margin-top:.35rem;padding-left:2.2rem;line-height:1.45;font-weight:500}
 .basket-item.done .qty,.basket-item.done .food{text-decoration:line-through;opacity:.45}
 .basket-item.done .uses{opacity:.4}
 .cook-through .step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
@@ -316,400 +317,532 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
       <div class="cycle-body" data-group="b1" data-cycle="1"><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chicken_roast_meat">
         <span class="qty">2.4kg</span>
         <span class="food">chicken roast meat</span></label>
+        
         <div class="uses">2 whole chickens (~1.2kg each) (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chicken_thigh_boneless">
         <span class="qty">1.6kg</span>
         <span class="food">chicken thigh boneless</span></label>
+        
         <div class="uses">400g boneless chicken thighs (Roast Paprika Chicken for the Boxes) - 400g for Monday and Tuesday's boxes, 600g more for Thursday's freezer bag<br>6 boneless chicken thighs (~600g) x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chicken_thigh_bonein">
         <span class="qty">1.2kg</span>
         <span class="food">chicken thigh bonein</span></label>
+        
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Paprika Chicken Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-beef_mince_5">
         <span class="qty">1kg</span>
         <span class="food">beef mince 5</span></label>
+        
         <div class="uses">1kg 5% fat beef mince (Mild Chilli, Double Batch) - the double chilli</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chorizo_cooking">
         <span class="qty">100g</span>
         <span class="food">chorizo cooking</span></label>
+        
         <div class="uses">100g cooking chorizo (Chorizo &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-egg">
         <span class="qty">12</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt">
         <span class="qty">510g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-cheddar">
         <span class="qty">190g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">80g cheddar (Chilli-Loaded Sweet Potatoes)<br>50g cheddar, cubed (Chopped Salad)<br>30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-sweet_potato">
         <span class="qty">2.1kg</span>
         <span class="food">sweet potato</span></label>
+        
         <div class="uses">500g sweet potato, cubed (Lunch Box Veg Tray)<br>600g sweet potato, chunked (Paprika Chicken Traybake)<br>4 sweet potatoes (Chilli-Loaded Sweet Potatoes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-pepper">
         <span class="qty">1.2kg</span>
         <span class="food">pepper</span></label>
+        
         <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, diced (Mild Chilli, Double Batch)<br>2 red peppers, chunked (Paprika Chicken Traybake)<br>2 peppers, sliced (Chicken Fajita Bowls)<br>Half a red pepper (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-red_onion">
         <span class="qty">880g</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 large red onion, in wedges (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 1)<br>1 red onion, in wedges (Paprika Chicken Traybake)<br>Pickled onions from the jar (Chicken Fajita Bowls)<br>Pickled onions (Chopped Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-baby_potato">
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">800g potatoes for roasting (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-carrot">
         <span class="qty">600g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">1 large carrot, grated (Mild Chilli, Double Batch)<br>500g carrots (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-cucumber">
         <span class="qty">2</span>
         <span class="food">cucumbers</span></label>
+        
         <div class="uses">Half a cucumber, diced (Chicken Fajita Bowls)<br>Half a cucumber (Chopped Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-salad_leaves">
         <span class="qty">390g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 1)<br>A bag of leaves (Chicken Fajita Bowls)<br>A bag of leaves (Chopped Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">150g tomatoes (Chopped Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-broccoli">
         <span class="qty">1</span>
         <span class="food">head of broccoli</span></label>
+        
         <div class="uses">1 head broccoli (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-lemon_juice">
         <span class="qty">2</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">1 lemon (Paprika Chicken Traybake)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-lime_juice">
         <span class="qty">45g</span>
         <span class="food">lime juice</span></label>
+        
         <div class="uses">2 limes, in wedges (Chicken Fajita Bowls)<br>Juice of a lime (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-garlic">
         <span class="qty">44g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">4 cloves garlic, crushed (Mild Chilli, Double Batch)<br>4-6 unpeeled garlic cloves (Paprika Chicken Traybake)<br>2 garlic cubes x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-fresh_herbs">
         <span class="qty">10g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">Coriander (Chicken Fajita Bowls)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-frozen_onion">
-        <span class="qty">600g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">3</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (Mild Chilli, Double Batch)<br>150g frozen onion x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chopped_tomatoes">
         <span class="qty">2</span>
         <span class="food">tins chopped tomatoes</span></label>
+        
         <div class="uses">2 tins chopped tomatoes (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-passata">
         <span class="qty">680g</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">200ml passata x2 (Pulled Chicken Freezer Bag)<br>200g passata (Margherita, the Boys')<br>80g passata (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-mixed_beans_drained">
         <span class="qty">3</span>
         <span class="food">tins mixed beans</span></label>
+        
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 1)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-kidney_beans_drained">
         <span class="qty">2</span>
         <span class="food">tins kidney beans</span></label>
+        
         <div class="uses">2 tins kidney beans, drained (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-sweetcorn_drained">
         <span class="qty">1</span>
         <span class="food">tin sweetcorn</span></label>
+        
         <div class="uses">1 tin sweetcorn, drained (Chopped Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-grain_pouch">
         <span class="qty">9</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 1)<br>2 rice pouches (Chicken Fajita Bowls)<br>2 rice pouches (Chilli with Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Seed Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-stock_made">
         <span class="qty">600g</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">600ml beef stock (2 cubes) (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-gravy_made">
         <span class="qty">400g</span>
         <span class="food">gravy - made up</span></label>
+        
         <div class="uses">Gravy (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-olive_oil">
         <span class="qty">377g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">210ml olive oil (House Vinaigrette)<br>2 tsp oil (Roast Paprika Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Mild Chilli, Double Batch)<br>2 tbsp oil (Paprika Chicken Traybake)<br>2 tbsp oil (Two Roast Chickens)<br>1 tbsp oil (Chicken Fajita Bowls)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
-        <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-vinegar">
+        
+        <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-red_wine_vinegar">
         <span class="qty">240g</span>
-        <span class="food">vinegar</span></label>
-        <div class="uses">75ml red wine vinegar (House Vinaigrette)<br>1 tbsp vinegar (Chopped Salad)<br>150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-honey">
+        <span class="food">red wine vinegar</span></label>
+        
+        <div class="uses">75ml red wine vinegar (House Vinaigrette)<br>1 tbsp red wine vinegar (Chopped Salad)<br>150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-honey">
         <span class="qty">159g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Seed Flapjacks)<br>2 tsp honey (House Vinaigrette)<br>1 tbsp honey x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
+        
         <div class="uses">150g peanut butter (Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-red_lentils_dry">
         <span class="qty">150g</span>
         <span class="food">red lentils dry</span></label>
+        
         <div class="uses">150g red lentils (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-seeds_nuts">
         <span class="qty">120g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">80g mixed seeds (Seed Flapjacks)<br>20g seeds (Chopped Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-tomato_puree">
         <span class="qty">60g</span>
         <span class="food">tomato puree</span></label>
+        
         <div class="uses">2 tbsp tomato puree (Mild Chilli, Double Batch)<br>1 tbsp tomato puree x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-cider_vinegar">
         <span class="qty">30g</span>
         <span class="food">cider vinegar</span></label>
+        
         <div class="uses">1 tbsp cider vinegar x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-tortilla_chips">
         <span class="qty">30g</span>
         <span class="food">tortilla chips</span></label>
+        
         <div class="uses">30g tortilla chips, crushed (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-smoked_paprika">
         <span class="qty">22g</span>
         <span class="food">smoked paprika</span></label>
+        
         <div class="uses">1 tsp smoked paprika (Roast Paprika Chicken for the Boxes)<br>2 tsp smoked paprika (Mild Chilli, Double Batch)<br>2 tsp smoked paprika (Paprika Chicken Traybake)<br>2 tsp smoked paprika x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-stock_cube">
         <span class="qty">2</span>
         <span class="food">stock cubes</span></label>
+        
         <div class="uses">1 chicken stock cube, crumbled x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
+        
         <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-worcestershire">
         <span class="qty">15g</span>
         <span class="food">worcestershire</span></label>
+        
         <div class="uses">1 tbsp Worcestershire sauce (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-dark_chocolate">
         <span class="qty">15g</span>
         <span class="food">dark chocolate</span></label>
+        
         <div class="uses">15g dark chocolate (70%+) (Mild Chilli, Double Batch) - 15g - one or two squares, not a whole bar</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-mustard">
         <span class="qty">12g</span>
         <span class="food">mustard</span></label>
+        
         <div class="uses">2 tsp Dijon mustard (House Vinaigrette)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-cumin">
         <span class="qty">10g</span>
         <span class="food">cumin</span></label>
-        <div class="uses">2 tsp ground cumin (Mild Chilli, Double Batch)<br>1 tsp ground cumin x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-spice_mix">
+        
+        <div class="uses">2 tsp ground cumin (Mild Chilli, Double Batch)<br>1 tsp ground cumin x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-fajita_spice">
         <span class="qty">8g</span>
-        <span class="food">spice mix</span></label>
+        <span class="food">fajita spice</span></label>
+        
         <div class="uses">1 sachet fajita spice (Chicken Fajita Bowls)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-ground_coriander">
         <span class="qty">3g</span>
         <span class="food">ground coriander</span></label>
+        
         <div class="uses">1 tsp ground coriander (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-oregano">
         <span class="qty">1g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">1 tsp dried oregano (Mild Chilli, Double Batch)</div></li></ul></section></div>
       <div class="cycle-body" data-group="b1" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_roast_meat">
         <span class="qty">2.4kg</span>
         <span class="food">chicken roast meat</span></label>
+        
         <div class="uses">2 whole chickens (~1.2kg each) (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_thigh_bonein">
         <span class="qty">1.2kg</span>
         <span class="food">chicken thigh bonein</span></label>
+        
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Paprika Chicken Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_thigh_boneless">
         <span class="qty">1kg</span>
         <span class="food">chicken thigh boneless</span></label>
+        
         <div class="uses">400g boneless chicken thighs (Roast Paprika Chicken for the Boxes) - 400g for Monday and Tuesday's boxes, 600g more for Thursday's freezer bag<br>6 boneless chicken thighs (~600g) (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-beef_mince_5">
         <span class="qty">1kg</span>
         <span class="food">beef mince 5</span></label>
+        
         <div class="uses">1kg 5% fat beef mince (Mild Chilli, Double Batch) - the double chilli</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chorizo_cooking">
         <span class="qty">100g</span>
         <span class="food">chorizo cooking</span></label>
+        
         <div class="uses">100g cooking chorizo (Chorizo &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-egg">
         <span class="qty">12</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt">
         <span class="qty">510g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-cheddar">
         <span class="qty">190g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">80g cheddar (Chilli-Loaded Sweet Potatoes)<br>50g cheddar, cubed (Chopped Salad)<br>30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-sweet_potato">
         <span class="qty">2.1kg</span>
         <span class="food">sweet potato</span></label>
+        
         <div class="uses">500g sweet potato, cubed (Lunch Box Veg Tray)<br>600g sweet potato, chunked (Paprika Chicken Traybake)<br>4 sweet potatoes (Chilli-Loaded Sweet Potatoes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-pepper">
         <span class="qty">1.2kg</span>
         <span class="food">pepper</span></label>
+        
         <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, diced (Mild Chilli, Double Batch)<br>2 red peppers, chunked (Paprika Chicken Traybake)<br>2 peppers, sliced (Chicken Fajita Bowls)<br>Half a red pepper (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-red_onion">
         <span class="qty">880g</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 large red onion, in wedges (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 1)<br>1 red onion, in wedges (Paprika Chicken Traybake)<br>Pickled onions from the jar (Chicken Fajita Bowls)<br>Pickled onions (Chopped Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-baby_potato">
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">800g potatoes for roasting (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-carrot">
         <span class="qty">600g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">1 large carrot, grated (Mild Chilli, Double Batch)<br>500g carrots (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-cucumber">
         <span class="qty">2</span>
         <span class="food">cucumbers</span></label>
+        
         <div class="uses">Half a cucumber, diced (Chicken Fajita Bowls)<br>Half a cucumber (Chopped Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-salad_leaves">
         <span class="qty">390g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 1)<br>A bag of leaves (Chicken Fajita Bowls)<br>A bag of leaves (Chopped Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">150g tomatoes (Chopped Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-broccoli">
         <span class="qty">1</span>
         <span class="food">head of broccoli</span></label>
+        
         <div class="uses">1 head broccoli (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-lemon_juice">
         <span class="qty">2</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">1 lemon (Paprika Chicken Traybake)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-lime_juice">
         <span class="qty">45g</span>
         <span class="food">lime juice</span></label>
+        
         <div class="uses">2 limes, in wedges (Chicken Fajita Bowls)<br>Juice of a lime (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-garlic">
         <span class="qty">38g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">4 cloves garlic, crushed (Mild Chilli, Double Batch)<br>4-6 unpeeled garlic cloves (Paprika Chicken Traybake)<br>2 garlic cubes (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-fresh_herbs">
         <span class="qty">10g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">Coriander (Chicken Fajita Bowls)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-frozen_onion">
-        <span class="qty">450g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">3</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (Mild Chilli, Double Batch)<br>150g frozen onion (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chopped_tomatoes">
         <span class="qty">2</span>
         <span class="food">tins chopped tomatoes</span></label>
+        
         <div class="uses">2 tins chopped tomatoes (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-mixed_beans_drained">
         <span class="qty">3</span>
         <span class="food">tins mixed beans</span></label>
+        
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 1)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-kidney_beans_drained">
         <span class="qty">2</span>
         <span class="food">tins kidney beans</span></label>
+        
         <div class="uses">2 tins kidney beans, drained (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-passata">
         <span class="qty">480g</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">200ml passata (Pulled Chicken Freezer Bag)<br>200g passata (Margherita, the Boys')<br>80g passata (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-sweetcorn_drained">
         <span class="qty">1</span>
         <span class="food">tin sweetcorn</span></label>
+        
         <div class="uses">1 tin sweetcorn, drained (Chopped Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-grain_pouch">
         <span class="qty">9</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 1)<br>2 rice pouches (Chicken Fajita Bowls)<br>2 rice pouches (Chilli with Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Seed Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-stock_made">
         <span class="qty">600g</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">600ml beef stock (2 cubes) (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-gravy_made">
         <span class="qty">400g</span>
         <span class="food">gravy - made up</span></label>
+        
         <div class="uses">Gravy (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-olive_oil">
         <span class="qty">377g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">210ml olive oil (House Vinaigrette)<br>2 tsp oil (Roast Paprika Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Mild Chilli, Double Batch)<br>2 tbsp oil (Paprika Chicken Traybake)<br>2 tbsp oil (Two Roast Chickens)<br>1 tbsp oil (Chicken Fajita Bowls)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
-        <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-vinegar">
+        
+        <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-red_wine_vinegar">
         <span class="qty">240g</span>
-        <span class="food">vinegar</span></label>
-        <div class="uses">75ml red wine vinegar (House Vinaigrette)<br>1 tbsp vinegar (Chopped Salad)<br>150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-peanut_butter">
+        <span class="food">red wine vinegar</span></label>
+        
+        <div class="uses">75ml red wine vinegar (House Vinaigrette)<br>1 tbsp red wine vinegar (Chopped Salad)<br>150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
+        
         <div class="uses">150g peanut butter (Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-red_lentils_dry">
         <span class="qty">150g</span>
         <span class="food">red lentils dry</span></label>
+        
         <div class="uses">150g red lentils (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-honey">
         <span class="qty">138g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Seed Flapjacks)<br>2 tsp honey (House Vinaigrette)<br>1 tbsp honey (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-seeds_nuts">
         <span class="qty">120g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">80g mixed seeds (Seed Flapjacks)<br>20g seeds (Chopped Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-tomato_puree">
         <span class="qty">45g</span>
         <span class="food">tomato puree</span></label>
+        
         <div class="uses">2 tbsp tomato puree (Mild Chilli, Double Batch)<br>1 tbsp tomato puree (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-tortilla_chips">
         <span class="qty">30g</span>
         <span class="food">tortilla chips</span></label>
+        
         <div class="uses">30g tortilla chips, crushed (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
+        
         <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-smoked_paprika">
         <span class="qty">17g</span>
         <span class="food">smoked paprika</span></label>
+        
         <div class="uses">1 tsp smoked paprika (Roast Paprika Chicken for the Boxes)<br>2 tsp smoked paprika (Mild Chilli, Double Batch)<br>2 tsp smoked paprika (Paprika Chicken Traybake)<br>2 tsp smoked paprika (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-worcestershire">
         <span class="qty">15g</span>
         <span class="food">worcestershire</span></label>
+        
         <div class="uses">1 tbsp Worcestershire sauce (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-dark_chocolate">
         <span class="qty">15g</span>
         <span class="food">dark chocolate</span></label>
+        
         <div class="uses">15g dark chocolate (70%+) (Mild Chilli, Double Batch) - 15g - one or two squares, not a whole bar</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-cider_vinegar">
         <span class="qty">15g</span>
         <span class="food">cider vinegar</span></label>
+        
         <div class="uses">1 tbsp cider vinegar (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-mustard">
         <span class="qty">12g</span>
         <span class="food">mustard</span></label>
+        
         <div class="uses">2 tsp Dijon mustard (House Vinaigrette)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-stock_cube">
         <span class="qty">1</span>
         <span class="food">stock cube</span></label>
-        <div class="uses">1 chicken stock cube, crumbled (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-spice_mix">
+        
+        <div class="uses">1 chicken stock cube, crumbled (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-fajita_spice">
         <span class="qty">8g</span>
-        <span class="food">spice mix</span></label>
+        <span class="food">fajita spice</span></label>
+        
         <div class="uses">1 sachet fajita spice (Chicken Fajita Bowls)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-cumin">
         <span class="qty">8g</span>
         <span class="food">cumin</span></label>
+        
         <div class="uses">2 tsp ground cumin (Mild Chilli, Double Batch)<br>1 tsp ground cumin (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-ground_coriander">
         <span class="qty">3g</span>
         <span class="food">ground coriander</span></label>
+        
         <div class="uses">1 tsp ground coriander (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-oregano">
         <span class="qty">1g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">1 tsp dried oregano (Mild Chilli, Double Batch)</div></li></ul></section></div></div><div class="subpanel" data-sub="1-saturday"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="s1">Cycle 1</button>
         <button class="cyc" data-cycle="2" data-group="s1">Cycle 2+</button>
@@ -1114,7 +1247,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="card-notes">Goes on the table with the pizzas. The eggs are 4 of Saturday's 8.</p>
   <p class="ingredients-preview">A bag of leaves · 150g tomatoes · 1 tin sweetcorn, drained · Half a cucumber · 4 boiled eggs +7 more</p>
   <div class="macro" data-macro="chopped_salad_w1">~370 kcal · 15g protein · 21g carbs · 26g fat · 4g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>A bag of leaves</li><li>150g tomatoes</li><li>1 tin sweetcorn, drained</li><li>Half a cucumber</li><li class="macro-only">4 boiled eggs</li><li>50g cheddar, cubed</li><li>Pickled onions</li><li>20g seeds</li><li>30g tortilla chips, crushed</li><li>3 tbsp oil</li><li>1 tbsp vinegar</li><li>Juice of a lime</li></ul><ol class="method"><li>Everything chopped small, dressed at the last minute so the chips stay crunchy.</li></ol>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>A bag of leaves</li><li>150g tomatoes</li><li>1 tin sweetcorn, drained</li><li>Half a cucumber</li><li class="macro-only">4 boiled eggs</li><li>50g cheddar, cubed</li><li>Pickled onions</li><li>20g seeds</li><li>30g tortilla chips, crushed</li><li>3 tbsp oil</li><li>1 tbsp red wine vinegar</li><li>Juice of a lime</li></ul><ol class="method"><li>Everything chopped small, dressed at the last minute so the chips stay crunchy.</li></ol>
     
     </details>
 </article></div></div><div id="w1-sat" class="day-group" data-day="sat">
@@ -1302,400 +1435,532 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
       <div class="cycle-body" data-group="b2" data-cycle="1"><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-chicken_thigh_boneless">
         <span class="qty">2.4kg</span>
         <span class="food">chicken thigh boneless</span></label>
+        
         <div class="uses">400g boneless chicken thighs (Tandoori Thighs for the Boxes)<br>600g tandoori thighs from Saturday (Tandoori Chicken Bowls)<br>6 boneless chicken thighs (~600g) x2 (Chicken &amp; Chickpea Korma Freezer Bag)<br>200g chicken thigh (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-pork_shoulder_roast">
         <span class="qty">2kg</span>
         <span class="food">pork shoulder roast</span></label>
+        
         <div class="uses">2kg pork shoulder, skin scored (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-salmon_fillet">
         <span class="qty">520g</span>
         <span class="food">salmon fillet</span></label>
+        
         <div class="uses">4 salmon fillets (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-egg">
         <span class="qty">15</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">3 eggs (Pork Fried Rice)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt">
         <span class="qty">660g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Cinnamon &amp; Raisin Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cheddar">
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-baby_potato">
         <span class="qty">1.3kg</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">500g baby potatoes, halved (Glazed Salmon Traybake)<br>800g potatoes for roasting (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-broccoli">
         <span class="qty">3</span>
         <span class="food">heads of broccoli</span></label>
+        
         <div class="uses">1 head broccoli, in florets (Lunch Box Veg Tray)<br>1 head broccoli, in florets (Glazed Salmon Traybake)<br>1 head broccoli (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cucumber">
         <span class="qty">3</span>
         <span class="food">cucumbers</span></label>
+        
         <div class="uses">1 cucumber, in ribbons (Tandoori Chicken Bowls)<br>1 cucumber (Cucumber &amp; Tomato Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-carrot">
         <span class="qty">650g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">2 carrots, in batons (Lunch Box Veg Tray)<br>500g carrots (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-red_onion">
         <span class="qty">650g</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 red onion, in wedges (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 2)<br>Pickled onions (Cucumber &amp; Tomato Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-salad_leaves">
         <span class="qty">390g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 2)<br>A bag of leaves (Tandoori Chicken Bowls)<br>A bag of leaves (Cucumber &amp; Tomato Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">150g tomatoes (Cucumber &amp; Tomato Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cauliflower">
         <span class="qty">300g</span>
         <span class="food">cauliflower</span></label>
+        
         <div class="uses">Half a cauliflower (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cherry_tomatoes">
         <span class="qty">150g</span>
         <span class="food">cherry tomatoes</span></label>
+        
         <div class="uses">150g cherry tomatoes, halved (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-lemon_juice">
         <span class="qty">5</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">Juice of 1 lemon (Mint Yoghurt)<br>Squeeze of lemon (Tandoori Thighs for the Boxes)<br>Juice of half a lemon (Dal)<br>1 lemon (Glazed Salmon Traybake)<br>A lemon, in wedges (Tandoori Chicken Bowls)<br>A squeeze of lemon (Cucumber &amp; Tomato Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-spring_onion">
-        <span class="qty">40g</span>
-        <span class="food">spring onion</span></label>
+        <span class="qty">1</span>
+        <span class="food">bunch spring onions</span></label>
+        
         <div class="uses">Spring onions, sliced (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-fresh_herbs">
         <span class="qty">30g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">A handful of mint, chopped (Mint Yoghurt)<br>Fresh dill or parsley (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-ginger">
         <span class="qty">15g</span>
         <span class="food">ginger</span></label>
+        
         <div class="uses">Thumb of fresh ginger, grated (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-garlic">
         <span class="qty">12g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">3 cloves garlic, crushed (Dal)<br>1 garlic cube (Pork Fried Rice)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-frozen_onion">
-        <span class="qty">600g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">3</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (Dal)<br>150g frozen onion x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-stir_fry_veg">
         <span class="qty">300g</span>
         <span class="food">stir fry veg</span></label>
+        
         <div class="uses">300g frozen stir fry veg (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
+        <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
         <div class="uses">100g frozen spinach (Dal)<br>A handful of frozen spinach x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-coconut_milk_light">
         <span class="qty">3</span>
         <span class="food">tins light coconut milk</span></label>
+        
         <div class="uses">1 tin light coconut milk (Dal)<br>1 tin light coconut milk x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-chickpeas_drained">
         <span class="qty">3</span>
         <span class="food">tins chickpeas</span></label>
+        
         <div class="uses">1 tin chickpeas, drained (Dal)<br>1 tin chickpeas, drained x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mixed_beans_drained">
         <span class="qty">3</span>
         <span class="food">tins mixed beans</span></label>
+        
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 2)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-chopped_tomatoes">
         <span class="qty">1</span>
         <span class="food">tin chopped tomatoes</span></label>
+        
         <div class="uses">1 tin chopped tomatoes (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Tandoori Chicken, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-grain_pouch">
         <span class="qty">11</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 2)<br>2 rice pouches (Tandoori Chicken Bowls)<br>2 rice pouches (Dal with Rice)<br>2 rice pouches (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-stock_made">
         <span class="qty">1.2kg</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">1.2L vegetable stock (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Cinnamon &amp; Raisin Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-red_lentils_dry">
         <span class="qty">500g</span>
         <span class="food">red lentils dry</span></label>
+        
         <div class="uses">500g red lentils, rinsed (Dal) - 500g for the dal, 150g more if you are making minestrone</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-gravy_made">
         <span class="qty">400g</span>
         <span class="food">gravy - made up</span></label>
+        
         <div class="uses">Gravy (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Cinnamon &amp; Raisin Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
+        
         <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-korma_paste">
         <span class="qty">200g</span>
         <span class="food">korma paste</span></label>
+        
         <div class="uses">Half a jar of korma paste x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
-        <div class="uses">150g peanut butter (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-vinegar">
+        
+        <div class="uses">150g peanut butter (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-red_wine_vinegar">
         <span class="qty">150g</span>
-        <span class="food">vinegar</span></label>
+        <span class="food">red wine vinegar</span></label>
+        
         <div class="uses">150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-honey">
         <span class="qty">121g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Cinnamon &amp; Raisin Flapjacks)<br>1 tbsp honey (glaze) (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-olive_oil">
         <span class="qty">112g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Dal)<br>2 tbsp oil (Glazed Salmon Traybake)<br>1 tbsp oil (Slow Roast Pork Shoulder)<br>1 tbsp oil (Pork Fried Rice)<br>1 tbsp oil (Margherita, the Boys')<br>1 tsp oil (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-apple_sauce">
         <span class="qty">100g</span>
         <span class="food">apple sauce</span></label>
+        
         <div class="uses">Apple sauce (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-seeds_nuts">
         <span class="qty">90g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">50g mixed seeds (Cinnamon &amp; Raisin Flapjacks)<br>20g seeds (Cucumber &amp; Tomato Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mango_chutney">
         <span class="qty">87g</span>
         <span class="food">mango chutney</span></label>
+        
         <div class="uses">Mango chutney (Tandoori Chicken Bowls)<br>Mango chutney, after (Tandoori Chicken, the Adults')<br>A little chutney (Cucumber &amp; Tomato Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-raisins">
         <span class="qty">80g</span>
         <span class="food">raisins</span></label>
+        
         <div class="uses">80g raisins, plus 2 tsp cinnamon (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-soy_sauce">
         <span class="qty">45g</span>
-        <span class="food">soy sauce</span></label>
+        <span class="food">light soy sauce</span></label>
+        
         <div class="uses">1 tbsp soy sauce (glaze) (Glazed Salmon Traybake)<br>2 tbsp soy sauce (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
-        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-spice_mix">
+        
+        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-tandoori_spice">
         <span class="qty">17g</span>
-        <span class="food">spice mix</span></label>
+        <span class="food">tandoori spice</span></label>
+        
         <div class="uses">2 tsp tandoori spice (Tandoori Thighs for the Boxes)<br>2 tsp tandoori spice (Tandoori Chicken Bowls)<br>1 tsp tandoori spice (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-garam_masala">
         <span class="qty">8g</span>
         <span class="food">garam masala</span></label>
+        
         <div class="uses">1 tsp garam masala (Dal)<br>1 tsp garam masala x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-turmeric">
         <span class="qty">5g</span>
         <span class="food">turmeric</span></label>
+        
         <div class="uses">2 tsp turmeric (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cumin">
         <span class="qty">5g</span>
         <span class="food">cumin</span></label>
+        
         <div class="uses">2 tsp ground cumin (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-sesame_oil">
         <span class="qty">5g</span>
         <span class="food">sesame oil</span></label>
+        
         <div class="uses">1 tsp sesame oil (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-oregano">
         <span class="qty">1g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">Dried herbs (Glazed Salmon Traybake)</div></li></ul></section></div>
       <div class="cycle-body" data-group="b2" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-pork_shoulder_roast">
         <span class="qty">2kg</span>
         <span class="food">pork shoulder roast</span></label>
+        
         <div class="uses">2kg pork shoulder, skin scored (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chicken_thigh_boneless">
         <span class="qty">1.8kg</span>
         <span class="food">chicken thigh boneless</span></label>
+        
         <div class="uses">400g boneless chicken thighs (Tandoori Thighs for the Boxes)<br>600g tandoori thighs from Saturday (Tandoori Chicken Bowls)<br>6 boneless chicken thighs (~600g) (Chicken &amp; Chickpea Korma Freezer Bag)<br>200g chicken thigh (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-salmon_fillet">
         <span class="qty">520g</span>
         <span class="food">salmon fillet</span></label>
+        
         <div class="uses">4 salmon fillets (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-egg">
         <span class="qty">15</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">3 eggs (Pork Fried Rice)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt">
         <span class="qty">660g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Cinnamon &amp; Raisin Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cheddar">
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-baby_potato">
         <span class="qty">1.3kg</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">500g baby potatoes, halved (Glazed Salmon Traybake)<br>800g potatoes for roasting (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-broccoli">
         <span class="qty">3</span>
         <span class="food">heads of broccoli</span></label>
+        
         <div class="uses">1 head broccoli, in florets (Lunch Box Veg Tray)<br>1 head broccoli, in florets (Glazed Salmon Traybake)<br>1 head broccoli (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cucumber">
         <span class="qty">3</span>
         <span class="food">cucumbers</span></label>
+        
         <div class="uses">1 cucumber, in ribbons (Tandoori Chicken Bowls)<br>1 cucumber (Cucumber &amp; Tomato Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-carrot">
         <span class="qty">650g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">2 carrots, in batons (Lunch Box Veg Tray)<br>500g carrots (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-red_onion">
         <span class="qty">650g</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 red onion, in wedges (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 2)<br>Pickled onions (Cucumber &amp; Tomato Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-salad_leaves">
         <span class="qty">390g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 2)<br>A bag of leaves (Tandoori Chicken Bowls)<br>A bag of leaves (Cucumber &amp; Tomato Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">150g tomatoes (Cucumber &amp; Tomato Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cauliflower">
         <span class="qty">300g</span>
         <span class="food">cauliflower</span></label>
+        
         <div class="uses">Half a cauliflower (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cherry_tomatoes">
         <span class="qty">150g</span>
         <span class="food">cherry tomatoes</span></label>
+        
         <div class="uses">150g cherry tomatoes, halved (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-lemon_juice">
         <span class="qty">5</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">Juice of 1 lemon (Mint Yoghurt)<br>Squeeze of lemon (Tandoori Thighs for the Boxes)<br>Juice of half a lemon (Dal)<br>1 lemon (Glazed Salmon Traybake)<br>A lemon, in wedges (Tandoori Chicken Bowls)<br>A squeeze of lemon (Cucumber &amp; Tomato Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-spring_onion">
-        <span class="qty">40g</span>
-        <span class="food">spring onion</span></label>
+        <span class="qty">1</span>
+        <span class="food">bunch spring onions</span></label>
+        
         <div class="uses">Spring onions, sliced (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-fresh_herbs">
         <span class="qty">30g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">A handful of mint, chopped (Mint Yoghurt)<br>Fresh dill or parsley (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-ginger">
         <span class="qty">15g</span>
         <span class="food">ginger</span></label>
+        
         <div class="uses">Thumb of fresh ginger, grated (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-garlic">
         <span class="qty">12g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">3 cloves garlic, crushed (Dal)<br>1 garlic cube (Pork Fried Rice)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-frozen_onion">
-        <span class="qty">450g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">3</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (Dal)<br>150g frozen onion (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-stir_fry_veg">
         <span class="qty">300g</span>
         <span class="food">stir fry veg</span></label>
+        
         <div class="uses">300g frozen stir fry veg (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-frozen_spinach">
         <span class="qty">150g</span>
         <span class="food">frozen spinach</span></label>
+        <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
         <div class="uses">100g frozen spinach (Dal)<br>A handful of frozen spinach (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-coconut_milk_light">
         <span class="qty">2</span>
         <span class="food">tins light coconut milk</span></label>
+        
         <div class="uses">1 tin light coconut milk (Dal)<br>1 tin light coconut milk (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-mixed_beans_drained">
         <span class="qty">3</span>
         <span class="food">tins mixed beans</span></label>
+        
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 2)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chickpeas_drained">
         <span class="qty">2</span>
         <span class="food">tins chickpeas</span></label>
+        
         <div class="uses">1 tin chickpeas, drained (Dal)<br>1 tin chickpeas, drained (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chopped_tomatoes">
         <span class="qty">1</span>
         <span class="food">tin chopped tomatoes</span></label>
+        
         <div class="uses">1 tin chopped tomatoes (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Tandoori Chicken, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-grain_pouch">
         <span class="qty">11</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 2)<br>2 rice pouches (Tandoori Chicken Bowls)<br>2 rice pouches (Dal with Rice)<br>2 rice pouches (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-stock_made">
         <span class="qty">1.2kg</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">1.2L vegetable stock (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Cinnamon &amp; Raisin Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-red_lentils_dry">
         <span class="qty">500g</span>
         <span class="food">red lentils dry</span></label>
+        
         <div class="uses">500g red lentils, rinsed (Dal) - 500g for the dal, 150g more if you are making minestrone</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-gravy_made">
         <span class="qty">400g</span>
         <span class="food">gravy - made up</span></label>
+        
         <div class="uses">Gravy (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Cinnamon &amp; Raisin Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
+        
         <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
-        <div class="uses">150g peanut butter (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-vinegar">
+        
+        <div class="uses">150g peanut butter (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-red_wine_vinegar">
         <span class="qty">150g</span>
-        <span class="food">vinegar</span></label>
+        <span class="food">red wine vinegar</span></label>
+        
         <div class="uses">150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-honey">
         <span class="qty">121g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Cinnamon &amp; Raisin Flapjacks)<br>1 tbsp honey (glaze) (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-olive_oil">
         <span class="qty">112g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Dal)<br>2 tbsp oil (Glazed Salmon Traybake)<br>1 tbsp oil (Slow Roast Pork Shoulder)<br>1 tbsp oil (Pork Fried Rice)<br>1 tbsp oil (Margherita, the Boys')<br>1 tsp oil (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-apple_sauce">
         <span class="qty">100g</span>
         <span class="food">apple sauce</span></label>
+        
         <div class="uses">Apple sauce (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-korma_paste">
         <span class="qty">100g</span>
         <span class="food">korma paste</span></label>
+        
         <div class="uses">Half a jar of korma paste (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-seeds_nuts">
         <span class="qty">90g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">50g mixed seeds (Cinnamon &amp; Raisin Flapjacks)<br>20g seeds (Cucumber &amp; Tomato Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-mango_chutney">
         <span class="qty">87g</span>
         <span class="food">mango chutney</span></label>
+        
         <div class="uses">Mango chutney (Tandoori Chicken Bowls)<br>Mango chutney, after (Tandoori Chicken, the Adults')<br>A little chutney (Cucumber &amp; Tomato Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-raisins">
         <span class="qty">80g</span>
         <span class="food">raisins</span></label>
+        
         <div class="uses">80g raisins, plus 2 tsp cinnamon (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-soy_sauce">
         <span class="qty">45g</span>
-        <span class="food">soy sauce</span></label>
+        <span class="food">light soy sauce</span></label>
+        
         <div class="uses">1 tbsp soy sauce (glaze) (Glazed Salmon Traybake)<br>2 tbsp soy sauce (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
-        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-spice_mix">
+        
+        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-tandoori_spice">
         <span class="qty">17g</span>
-        <span class="food">spice mix</span></label>
+        <span class="food">tandoori spice</span></label>
+        
         <div class="uses">2 tsp tandoori spice (Tandoori Thighs for the Boxes)<br>2 tsp tandoori spice (Tandoori Chicken Bowls)<br>1 tsp tandoori spice (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-turmeric">
         <span class="qty">5g</span>
         <span class="food">turmeric</span></label>
+        
         <div class="uses">2 tsp turmeric (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cumin">
         <span class="qty">5g</span>
         <span class="food">cumin</span></label>
+        
         <div class="uses">2 tsp ground cumin (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-garam_masala">
         <span class="qty">5g</span>
         <span class="food">garam masala</span></label>
+        
         <div class="uses">1 tsp garam masala (Dal)<br>1 tsp garam masala (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-sesame_oil">
         <span class="qty">5g</span>
         <span class="food">sesame oil</span></label>
+        
         <div class="uses">1 tsp sesame oil (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-oregano">
         <span class="qty">1g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">Dried herbs (Glazed Salmon Traybake)</div></li></ul></section></div></div><div class="subpanel" data-sub="2-saturday"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="s2">Cycle 1</button>
         <button class="cyc" data-cycle="2" data-group="s2">Cycle 2+</button>
@@ -2298,388 +2563,516 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
       <div class="cycle-body" data-group="b3" data-cycle="1"><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-chicken_thigh_boneless">
         <span class="qty">2kg</span>
         <span class="food">chicken thigh boneless</span></label>
+        
         <div class="uses">400g boneless chicken thighs (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>350g more on the same tray for Monday's wraps (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>6 boneless chicken thighs (~600g) x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-gammon_cooked">
         <span class="qty">1.8kg</span>
         <span class="food">gammon cooked</span></label>
+        
         <div class="uses">1.8kg gammon joint (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-chicken_thigh_bonein">
         <span class="qty">1.2kg</span>
         <span class="food">chicken thigh bonein</span></label>
+        
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-egg">
         <span class="qty">17</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-hummus">
         <span class="qty">150g</span>
         <span class="food">hummus</span></label>
+        
         <div class="uses">150g hummus (Chicken Wraps)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-halloumi">
         <span class="qty">120g</span>
         <span class="food">halloumi</span></label>
+        
         <div class="uses">120g halloumi, sliced (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Lemon &amp; Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-feta">
         <span class="qty">100g</span>
         <span class="food">feta</span></label>
+        
         <div class="uses">100g feta (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-cheddar">
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-greek_yoghurt">
         <span class="qty">30g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-tortilla_wrap">
         <span class="qty">8</span>
         <span class="food">tortilla wraps</span></label>
+        
         <div class="uses">8 tortilla wraps (Chicken Wraps)</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-sweet_potato">
         <span class="qty">1.9kg</span>
         <span class="food">sweet potato</span></label>
+        
         <div class="uses">400g sweet potato, cubed (Lunch Box Veg Tray)<br>1 large sweet potato, cubed (North African Chickpea &amp; Sweet Potato Stew)<br>1kg sweet potato, cut for chips (Gammon, Eggs &amp; Sweet Potato Chips)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-red_onion">
         <span class="qty">870g</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 red onion, in wedges (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 3)<br>1 red onion, in wedges (Harissa Chicken with Squash &amp; Chickpeas)<br>Pickled onions from the jar (Chicken Wraps)<br>Red onion, sliced (Halloumi &amp; Pepper, the Adults')<br>Pickled onions (Greek Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-butternut_squash">
         <span class="qty">800g</span>
         <span class="food">butternut squash</span></label>
+        
         <div class="uses">1 butternut squash, cubed (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-baby_potato">
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">800g potatoes for roasting (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-cucumber">
         <span class="qty">3</span>
         <span class="food">cucumbers</span></label>
+        
         <div class="uses">Cucumber, in batons (Chicken Wraps)<br>1 cucumber, in chunks (Greek Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-tomatoes">
         <span class="qty">770g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">Tomatoes, sliced (Chicken Wraps)<br>400g tomatoes, in chunks (Greek Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-pepper">
         <span class="qty">720g</span>
         <span class="food">pepper</span></label>
+        
         <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, chunked x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>Half a red pepper (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-carrot">
         <span class="qty">500g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">500g carrots (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-broccoli">
         <span class="qty">1</span>
         <span class="food">head of broccoli</span></label>
+        
         <div class="uses">1 head broccoli (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-salad_leaves">
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 3)<br>A bag of leaves (Chicken Wraps)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-lemon_juice">
         <span class="qty">8</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">Zest and juice of a lemon (Lemon &amp; Seed Flapjacks)<br>Juice of 3-4 lemons (Lemon Dressing)<br>Juice of half a lemon (Lemon Chicken for the Boxes)<br>Juice of 1 lemon (North African Chickpea &amp; Sweet Potato Stew)<br>A squeeze of lemon x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>Juice of half a lemon (Greek Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-courgette">
         <span class="qty">200g</span>
         <span class="food">courgette</span></label>
+        
         <div class="uses">1 courgette, in chunks (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Lemon &amp; Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-garlic">
         <span class="qty">24g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">4 cloves garlic, crushed (North African Chickpea &amp; Sweet Potato Stew)<br>2 garlic cubes x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-fresh_herbs">
         <span class="qty">10g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">Coriander (Chickpea Stew with Couscous)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-frozen_onion">
-        <span class="qty">600g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">3</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (North African Chickpea &amp; Sweet Potato Stew)<br>150g frozen onion x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
+        <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
         <div class="uses">200g frozen spinach (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-chopped_tomatoes">
         <span class="qty">4</span>
         <span class="food">tins chopped tomatoes</span></label>
+        
         <div class="uses">2 tins chopped tomatoes (North African Chickpea &amp; Sweet Potato Stew)<br>1 tin chopped tomatoes x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-chickpeas_drained">
         <span class="qty">3</span>
         <span class="food">tins chickpeas</span></label>
+        
         <div class="uses">2 tins chickpeas, drained (North African Chickpea &amp; Sweet Potato Stew)<br>1 tin chickpeas, drained (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-mixed_beans_drained">
         <span class="qty">3</span>
         <span class="food">tins mixed beans</span></label>
+        
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Halloumi &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-grain_pouch">
         <span class="qty">5</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Lemon &amp; Seed Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-stock_made">
         <span class="qty">500g</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-olive_oil">
         <span class="qty">369g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">210ml olive oil (Lemon Dressing)<br>2 tsp oil (Lemon Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (North African Chickpea &amp; Sweet Potato Stew)<br>2 tbsp oil (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp oil (Gammon Joint)<br>1.5 tbsp oil (Gammon, Eggs &amp; Sweet Potato Chips)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Lemon &amp; Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
+        
         <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-olives_drained">
         <span class="qty">220g</span>
         <span class="food">olives drained</span></label>
+        
         <div class="uses">80g olives x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>60g olives (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-couscous_dry">
         <span class="qty">200g</span>
         <span class="food">couscous dry</span></label>
+        
         <div class="uses">200g couscous (Chickpea Stew with Couscous)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-honey">
         <span class="qty">169g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Lemon &amp; Seed Flapjacks)<br>2 tsp honey (Lemon Dressing)<br>1 tbsp honey (North African Chickpea &amp; Sweet Potato Stew)<br>A drizzle of honey (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp honey for the glaze (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
-        <div class="uses">150g peanut butter (Lemon &amp; Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-vinegar">
+        
+        <div class="uses">150g peanut butter (Lemon &amp; Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-red_wine_vinegar">
         <span class="qty">150g</span>
-        <span class="food">vinegar</span></label>
+        <span class="food">red wine vinegar</span></label>
+        
         <div class="uses">150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-seeds_nuts">
         <span class="qty">120g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">80g mixed seeds (Lemon &amp; Seed Flapjacks)<br>20g seeds (Greek Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-harissa">
         <span class="qty">30g</span>
         <span class="food">harissa</span></label>
+        
         <div class="uses">2 tbsp harissa (mild) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-sun_dried_tomato_paste">
         <span class="qty">30g</span>
         <span class="food">sun dried tomato paste</span></label>
+        
         <div class="uses">1 tbsp sun-dried tomato paste x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-stock_cube">
         <span class="qty">2</span>
         <span class="food">stock cubes</span></label>
+        
         <div class="uses">1 chicken stock cube x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
+        
         <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-mustard">
         <span class="qty">10g</span>
         <span class="food">mustard</span></label>
+        
         <div class="uses">1 tsp mustard for the glaze (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-oregano">
         <span class="qty">5g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">2 tsp dried oregano (Lemon Chicken for the Boxes)<br>1 tsp dried oregano x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>Dried oregano (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-smoked_paprika">
         <span class="qty">5g</span>
         <span class="food">smoked paprika</span></label>
+        
         <div class="uses">2 tsp smoked paprika (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-ground_coriander">
         <span class="qty">3g</span>
         <span class="food">ground coriander</span></label>
+        
         <div class="uses">1 tsp ground coriander (North African Chickpea &amp; Sweet Potato Stew)</div></li></ul></section></div>
       <div class="cycle-body" data-group="b3" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-gammon_cooked">
         <span class="qty">1.8kg</span>
         <span class="food">gammon cooked</span></label>
+        
         <div class="uses">1.8kg gammon joint (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chicken_thigh_boneless">
         <span class="qty">1.4kg</span>
         <span class="food">chicken thigh boneless</span></label>
+        
         <div class="uses">400g boneless chicken thighs (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>350g more on the same tray for Monday's wraps (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>6 boneless chicken thighs (~600g) (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chicken_thigh_bonein">
         <span class="qty">1.2kg</span>
         <span class="food">chicken thigh bonein</span></label>
+        
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-egg">
         <span class="qty">17</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-hummus">
         <span class="qty">150g</span>
         <span class="food">hummus</span></label>
+        
         <div class="uses">150g hummus (Chicken Wraps)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-halloumi">
         <span class="qty">120g</span>
         <span class="food">halloumi</span></label>
+        
         <div class="uses">120g halloumi, sliced (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Lemon &amp; Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-feta">
         <span class="qty">100g</span>
         <span class="food">feta</span></label>
+        
         <div class="uses">100g feta (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-cheddar">
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-greek_yoghurt">
         <span class="qty">30g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-tortilla_wrap">
         <span class="qty">8</span>
         <span class="food">tortilla wraps</span></label>
+        
         <div class="uses">8 tortilla wraps (Chicken Wraps)</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-sweet_potato">
         <span class="qty">1.9kg</span>
         <span class="food">sweet potato</span></label>
+        
         <div class="uses">400g sweet potato, cubed (Lunch Box Veg Tray)<br>1 large sweet potato, cubed (North African Chickpea &amp; Sweet Potato Stew)<br>1kg sweet potato, cut for chips (Gammon, Eggs &amp; Sweet Potato Chips)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-red_onion">
         <span class="qty">870g</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 red onion, in wedges (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 3)<br>1 red onion, in wedges (Harissa Chicken with Squash &amp; Chickpeas)<br>Pickled onions from the jar (Chicken Wraps)<br>Red onion, sliced (Halloumi &amp; Pepper, the Adults')<br>Pickled onions (Greek Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-butternut_squash">
         <span class="qty">800g</span>
         <span class="food">butternut squash</span></label>
+        
         <div class="uses">1 butternut squash, cubed (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-baby_potato">
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">800g potatoes for roasting (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-cucumber">
         <span class="qty">3</span>
         <span class="food">cucumbers</span></label>
+        
         <div class="uses">Cucumber, in batons (Chicken Wraps)<br>1 cucumber, in chunks (Greek Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-tomatoes">
         <span class="qty">770g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">Tomatoes, sliced (Chicken Wraps)<br>400g tomatoes, in chunks (Greek Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-pepper">
         <span class="qty">560g</span>
         <span class="food">pepper</span></label>
+        
         <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, chunked (Chicken, Olive &amp; Tomato Freezer Bag)<br>Half a red pepper (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-carrot">
         <span class="qty">500g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">500g carrots (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-broccoli">
         <span class="qty">1</span>
         <span class="food">head of broccoli</span></label>
+        
         <div class="uses">1 head broccoli (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-salad_leaves">
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 3)<br>A bag of leaves (Chicken Wraps)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-lemon_juice">
         <span class="qty">8</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">Zest and juice of a lemon (Lemon &amp; Seed Flapjacks)<br>Juice of 3-4 lemons (Lemon Dressing)<br>Juice of half a lemon (Lemon Chicken for the Boxes)<br>Juice of 1 lemon (North African Chickpea &amp; Sweet Potato Stew)<br>A squeeze of lemon (Chicken, Olive &amp; Tomato Freezer Bag)<br>Juice of half a lemon (Greek Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-courgette">
         <span class="qty">200g</span>
         <span class="food">courgette</span></label>
+        
         <div class="uses">1 courgette, in chunks (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Lemon &amp; Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-garlic">
         <span class="qty">18g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">4 cloves garlic, crushed (North African Chickpea &amp; Sweet Potato Stew)<br>2 garlic cubes (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-fresh_herbs">
         <span class="qty">10g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">Coriander (Chickpea Stew with Couscous)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-frozen_onion">
-        <span class="qty">450g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">3</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (North African Chickpea &amp; Sweet Potato Stew)<br>150g frozen onion (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
+        <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
         <div class="uses">200g frozen spinach (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chopped_tomatoes">
         <span class="qty">3</span>
         <span class="food">tins chopped tomatoes</span></label>
+        
         <div class="uses">2 tins chopped tomatoes (North African Chickpea &amp; Sweet Potato Stew)<br>1 tin chopped tomatoes (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chickpeas_drained">
         <span class="qty">3</span>
         <span class="food">tins chickpeas</span></label>
+        
         <div class="uses">2 tins chickpeas, drained (North African Chickpea &amp; Sweet Potato Stew)<br>1 tin chickpeas, drained (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-mixed_beans_drained">
         <span class="qty">3</span>
         <span class="food">tins mixed beans</span></label>
+        
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Halloumi &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-grain_pouch">
         <span class="qty">5</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Lemon &amp; Seed Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-stock_made">
         <span class="qty">500g</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-olive_oil">
         <span class="qty">369g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">210ml olive oil (Lemon Dressing)<br>2 tsp oil (Lemon Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (North African Chickpea &amp; Sweet Potato Stew)<br>2 tbsp oil (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp oil (Gammon Joint)<br>1.5 tbsp oil (Gammon, Eggs &amp; Sweet Potato Chips)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Lemon &amp; Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
+        
         <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-couscous_dry">
         <span class="qty">200g</span>
         <span class="food">couscous dry</span></label>
+        
         <div class="uses">200g couscous (Chickpea Stew with Couscous)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-honey">
         <span class="qty">169g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Lemon &amp; Seed Flapjacks)<br>2 tsp honey (Lemon Dressing)<br>1 tbsp honey (North African Chickpea &amp; Sweet Potato Stew)<br>A drizzle of honey (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp honey for the glaze (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
-        <div class="uses">150g peanut butter (Lemon &amp; Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-vinegar">
+        
+        <div class="uses">150g peanut butter (Lemon &amp; Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-red_wine_vinegar">
         <span class="qty">150g</span>
-        <span class="food">vinegar</span></label>
+        <span class="food">red wine vinegar</span></label>
+        
         <div class="uses">150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-olives_drained">
         <span class="qty">140g</span>
         <span class="food">olives drained</span></label>
+        
         <div class="uses">80g olives (Chicken, Olive &amp; Tomato Freezer Bag)<br>60g olives (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-seeds_nuts">
         <span class="qty">120g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">80g mixed seeds (Lemon &amp; Seed Flapjacks)<br>20g seeds (Greek Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-harissa">
         <span class="qty">30g</span>
         <span class="food">harissa</span></label>
+        
         <div class="uses">2 tbsp harissa (mild) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
+        
         <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-sun_dried_tomato_paste">
         <span class="qty">15g</span>
         <span class="food">sun dried tomato paste</span></label>
+        
         <div class="uses">1 tbsp sun-dried tomato paste (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-mustard">
         <span class="qty">10g</span>
         <span class="food">mustard</span></label>
+        
         <div class="uses">1 tsp mustard for the glaze (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-stock_cube">
         <span class="qty">1</span>
         <span class="food">stock cube</span></label>
+        
         <div class="uses">1 chicken stock cube (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-smoked_paprika">
         <span class="qty">5g</span>
         <span class="food">smoked paprika</span></label>
+        
         <div class="uses">2 tsp smoked paprika (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-oregano">
         <span class="qty">4g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">2 tsp dried oregano (Lemon Chicken for the Boxes)<br>1 tsp dried oregano (Chicken, Olive &amp; Tomato Freezer Bag)<br>Dried oregano (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-ground_coriander">
         <span class="qty">3g</span>
         <span class="food">ground coriander</span></label>
+        
         <div class="uses">1 tsp ground coriander (North African Chickpea &amp; Sweet Potato Stew)</div></li></ul></section></div></div><div class="subpanel" data-sub="3-saturday"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="s3">Cycle 1</button>
         <button class="cyc" data-cycle="2" data-group="s3">Cycle 2+</button>
@@ -3290,442 +3683,588 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
       <div class="cycle-body" data-group="b4" data-cycle="1"><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-beef_mince_5">
         <span class="qty">2kg</span>
         <span class="food">beef mince 5</span></label>
+        
         <div class="uses">1kg 5% fat beef mince (Beef Ragu, Double Batch) - the double ragu - a second kilo goes in the meatballs<br>1kg 5% fat beef mince (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-beef_topside_roast">
         <span class="qty">1.5kg</span>
         <span class="food">beef topside roast</span></label>
+        
         <div class="uses">1.5kg beef topside (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-chicken_sausage">
         <span class="qty">720g</span>
         <span class="food">chicken sausage</span></label>
+        
         <div class="uses">6 chicken sausages, each cut into 3 x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pancetta">
         <span class="qty">100g</span>
         <span class="food">pancetta</span></label>
+        
         <div class="uses">100g pancetta or bacon lardons (optional) (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pepperoni">
         <span class="qty">40g</span>
         <span class="food">pepperoni</span></label>
+        
         <div class="uses">40g pepperoni (Pepperoni, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-egg">
         <span class="qty">14</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-fresh_pasta">
         <span class="qty">500g</span>
         <span class="food">fresh pasta</span></label>
+        
         <div class="uses">500g fresh pasta (Ragu with Pasta)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-mozzarella">
         <span class="qty">435g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">1 ball mozzarella, torn (Lasagne)<br>2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-ricotta">
         <span class="qty">240g</span>
         <span class="food">ricotta</span></label>
+        
         <div class="uses">16 tbsp ricotta (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-parmesan">
         <span class="qty">200g</span>
         <span class="food">parmesan</span></label>
+        
         <div class="uses">100g parmesan (Meatball &amp; Ricotta Al Forno, Doubled)<br>60g parmesan (Ragu with Pasta)<br>40g parmesan (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-cheddar">
         <span class="qty">160g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">100g cheddar, grated (Lasagne)<br>30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-mozzarella_pearls">
         <span class="qty">150g</span>
         <span class="food">mozzarella pearls</span></label>
+        
         <div class="uses">150g mozzarella pearls (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Cocoa Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-greek_yoghurt">
         <span class="qty">30g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-breadcrumbs_wholemeal">
         <span class="qty">160g</span>
         <span class="food">breadcrumbs wholemeal</span></label>
+        
         <div class="uses">160g wholemeal breadcrumbs (Meatball &amp; Ricotta Al Forno, Doubled)</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pepper">
         <span class="qty">1.4kg</span>
         <span class="food">pepper</span></label>
+        
         <div class="uses">2-3 peppers, chunked (Lunch Box Veg Tray)<br>2 red peppers, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 red and 1 yellow pepper, chunked x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-courgette">
         <span class="qty">1.1kg</span>
         <span class="food">courgette</span></label>
+        
         <div class="uses">2 courgettes, in chunks (Lunch Box Veg Tray)<br>1 courgette, diced (Minestrone)<br>2 courgettes, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 courgette, diced (or a handful of frozen peas) (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-red_onion">
         <span class="qty">1kg</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 large red onion (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 4)<br>2 red onions, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>Pickled onions (Tomato &amp; Mozzarella Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-carrot">
         <span class="qty">900g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">2 carrots, finely diced (Beef Ragu, Double Batch)<br>2 carrots, diced (Minestrone)<br>500g carrots (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-baby_potato">
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">800g potatoes for roasting (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">150g tomatoes (Tomato &amp; Mozzarella Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-broccoli">
         <span class="qty">1</span>
         <span class="food">head of broccoli</span></label>
+        
         <div class="uses">1 head broccoli (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-salad_leaves">
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 4)<br>A bag of leaves (Tomato &amp; Mozzarella Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-cucumber">
         <span class="qty">1</span>
         <span class="food">cucumber</span></label>
+        
         <div class="uses">Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-celery">
         <span class="qty">200g</span>
         <span class="food">celery</span></label>
+        
         <div class="uses">2 celery sticks, finely diced (Beef Ragu, Double Batch)<br>2 celery sticks, diced (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-cherry_tomatoes">
         <span class="qty">150g</span>
         <span class="food">cherry tomatoes</span></label>
+        
         <div class="uses">150g cherry tomatoes (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Cocoa Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-fresh_herbs">
         <span class="qty">55g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">2 bunches fresh basil (Meatball &amp; Ricotta Al Forno, Doubled)<br>Basil (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-lemon_juice">
         <span class="qty">2</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">Zest of 2 lemons (Meatball &amp; Ricotta Al Forno, Doubled)<br>Zest of a lemon (Beef &amp; Tomato Orzo)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-garlic">
         <span class="qty">39g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">4 cloves garlic, crushed (Beef Ragu, Double Batch)<br>3 cloves garlic, crushed (Minestrone)<br>2 cloves garlic (Meatball &amp; Ricotta Al Forno, Doubled)<br>2 garlic cubes x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-frozen_onion">
-        <span class="qty">900g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">5</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (Beef Ragu, Double Batch)<br>300g frozen diced onion (Minestrone)<br>150g frozen onion x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
+        <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
         <div class="uses">100g frozen spinach (Minestrone)<br>100g frozen spinach (optional layer) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-yorkshire_pudding">
         <span class="qty">8</span>
         <span class="food">Yorkshire puddings</span></label>
+        
         <div class="uses">8 Yorkshire puddings (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-chopped_tomatoes">
         <span class="qty">7</span>
         <span class="food">tins chopped tomatoes</span></label>
+        
         <div class="uses">2 tins chopped tomatoes (Beef Ragu, Double Batch)<br>2 tins chopped tomatoes (Minestrone)<br>1 tin chopped tomatoes (Beef &amp; Tomato Orzo)<br>1 tin chopped tomatoes x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-passata">
         <span class="qty">1.8kg</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">500g passata (Beef Ragu, Double Batch)<br>1kg passata (Meatball &amp; Ricotta Al Forno, Doubled)<br>200g passata (Margherita, the Boys')<br>80g passata (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-cannellini_drained">
         <span class="qty">6</span>
         <span class="food">tins cannellini</span></label>
+        
         <div class="uses">50g cannellini beans x10 (Lunch Box, Week 4)<br>2 tins cannellini beans, drained (Minestrone)<br>1 tin cannellini, drained (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-butter_beans_drained">
         <span class="qty">2</span>
         <span class="food">tins butter beans</span></label>
+        
         <div class="uses">2 tins butter beans, drained (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-stock_made">
         <span class="qty">2.4kg</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">500ml beef stock (2 cubes) (Beef Ragu, Double Batch)<br>1.4L vegetable stock (Minestrone)<br>500ml stock (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-grain_pouch">
         <span class="qty">5</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 4)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Cocoa Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-white_sauce_jar">
         <span class="qty">500g</span>
         <span class="food">white sauce jar</span></label>
+        
         <div class="uses">500g white sauce (jar or made) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-gravy_made">
         <span class="qty">400g</span>
         <span class="food">gravy - made up</span></label>
+        
         <div class="uses">Gravy (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-olive_oil">
         <span class="qty">371g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">210ml olive oil (Balsamic Vinaigrette)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Beef Ragu, Double Batch)<br>1 tbsp oil (Minestrone)<br>2 tbsp olive oil (Meatball &amp; Ricotta Al Forno, Doubled)<br>2 tbsp oil (Roast Beef Topside)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Cocoa Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
+        
         <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-red_wine">
         <span class="qty">200g</span>
         <span class="food">red wine</span></label>
+        
         <div class="uses">200ml red wine (or 2 tbsp balsamic + extra stock) (Beef Ragu, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-lasagne_sheets">
         <span class="qty">200g</span>
         <span class="food">lasagne sheets</span></label>
+        
         <div class="uses">200g lasagne sheets (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-orzo_dry">
         <span class="qty">200g</span>
         <span class="food">orzo dry</span></label>
+        
         <div class="uses">200g orzo (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
+        
         <div class="uses">150g peanut butter (Cocoa Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-balsamic">
         <span class="qty">150g</span>
         <span class="food">balsamic</span></label>
+        
         <div class="uses">75ml balsamic (Balsamic Vinaigrette)<br>4 tbsp balsamic vinegar (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 tbsp balsamic (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-red_lentils_dry">
         <span class="qty">150g</span>
         <span class="food">red lentils dry</span></label>
-        <div class="uses">150g red lentils (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-vinegar">
+        
+        <div class="uses">150g red lentils (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-red_wine_vinegar">
         <span class="qty">150g</span>
-        <span class="food">vinegar</span></label>
+        <span class="food">red wine vinegar</span></label>
+        
         <div class="uses">150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-honey">
         <span class="qty">117g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Cocoa Flapjacks)<br>2 tsp honey (Balsamic Vinaigrette)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-tomato_puree">
         <span class="qty">105g</span>
         <span class="food">tomato puree</span></label>
+        
         <div class="uses">2 tbsp tomato puree (Beef Ragu, Double Batch)<br>1 tbsp tomato puree (Minestrone)<br>2 tbsp tomato puree (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 tbsp tomato puree x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-seeds_nuts">
         <span class="qty">90g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">50g mixed seeds (Cocoa Flapjacks)<br>20g seeds (Tomato &amp; Mozzarella Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-stock_cube">
         <span class="qty">4</span>
         <span class="food">stock cubes</span></label>
+        
         <div class="uses">2 chicken stock cubes (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 chicken stock cube, crumbled x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-sun_dried_tomato_paste">
         <span class="qty">30g</span>
         <span class="food">sun dried tomato paste</span></label>
+        
         <div class="uses">2 tbsp sun-dried tomato paste (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-cocoa">
         <span class="qty">25g</span>
         <span class="food">cocoa</span></label>
+        
         <div class="uses">25g cocoa powder (Cocoa Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-sugar">
         <span class="qty">24g</span>
         <span class="food">sugar</span></label>
+        
         <div class="uses">A pinch of sugar x2 (Italian Sausage &amp; Pepper Freezer Bag)<br>1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-mustard">
         <span class="qty">12g</span>
         <span class="food">mustard</span></label>
+        
         <div class="uses">2 tsp Dijon mustard (Balsamic Vinaigrette)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-smoked_paprika">
         <span class="qty">10g</span>
         <span class="food">smoked paprika</span></label>
+        
         <div class="uses">2 tsp smoked paprika (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 tsp smoked paprika x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-oregano">
         <span class="qty">7g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">1 tsp dried oregano (Beef Ragu, Double Batch)<br>1 tsp dried oregano (Minestrone)<br>1 tsp dried oregano x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li></ul></section></div>
       <div class="cycle-body" data-group="b4" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-beef_mince_5">
         <span class="qty">2kg</span>
         <span class="food">beef mince 5</span></label>
+        
         <div class="uses">1kg 5% fat beef mince (Beef Ragu, Double Batch) - the double ragu - a second kilo goes in the meatballs<br>1kg 5% fat beef mince (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-beef_topside_roast">
         <span class="qty">1.5kg</span>
         <span class="food">beef topside roast</span></label>
+        
         <div class="uses">1.5kg beef topside (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-chicken_sausage">
         <span class="qty">360g</span>
         <span class="food">chicken sausage</span></label>
+        
         <div class="uses">6 chicken sausages, each cut into 3 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
+        
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pancetta">
         <span class="qty">100g</span>
         <span class="food">pancetta</span></label>
+        
         <div class="uses">100g pancetta or bacon lardons (optional) (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pepperoni">
         <span class="qty">40g</span>
         <span class="food">pepperoni</span></label>
+        
         <div class="uses">40g pepperoni (Pepperoni, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
+        
         <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-smoked_mackerel">
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
+        
         <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
+        
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-egg">
         <span class="qty">14</span>
         <span class="food">eggs</span></label>
+        
         <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-fresh_pasta">
         <span class="qty">500g</span>
         <span class="food">fresh pasta</span></label>
+        
         <div class="uses">500g fresh pasta (Ragu with Pasta)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-mozzarella">
         <span class="qty">435g</span>
         <span class="food">mozzarella</span></label>
+        
         <div class="uses">1 ball mozzarella, torn (Lasagne)<br>2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-ricotta">
         <span class="qty">240g</span>
         <span class="food">ricotta</span></label>
+        
         <div class="uses">16 tbsp ricotta (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-parmesan">
         <span class="qty">200g</span>
         <span class="food">parmesan</span></label>
+        
         <div class="uses">100g parmesan (Meatball &amp; Ricotta Al Forno, Doubled)<br>60g parmesan (Ragu with Pasta)<br>40g parmesan (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-cheddar">
         <span class="qty">160g</span>
         <span class="food">cheddar</span></label>
+        
         <div class="uses">100g cheddar, grated (Lasagne)<br>30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-mozzarella_pearls">
         <span class="qty">150g</span>
         <span class="food">mozzarella pearls</span></label>
+        
         <div class="uses">150g mozzarella pearls (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-butter">
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
+        
         <div class="uses">75g butter (Cocoa Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-greek_yoghurt">
         <span class="qty">30g</span>
         <span class="food">Greek yoghurt (full fat)</span></label>
+        
         <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
+        
         <div class="uses">2 slices wholemeal bread x2 (Saturday Sandwich, Adults')<br>2 slices wholemeal bread x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-breadcrumbs_wholemeal">
         <span class="qty">160g</span>
         <span class="food">breadcrumbs wholemeal</span></label>
+        
         <div class="uses">160g wholemeal breadcrumbs (Meatball &amp; Ricotta Al Forno, Doubled)</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-courgette">
         <span class="qty">1.1kg</span>
         <span class="food">courgette</span></label>
+        
         <div class="uses">2 courgettes, in chunks (Lunch Box Veg Tray)<br>1 courgette, diced (Minestrone)<br>2 courgettes, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 courgette, diced (or a handful of frozen peas) (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pepper">
         <span class="qty">1kg</span>
         <span class="food">pepper</span></label>
+        
         <div class="uses">2-3 peppers, chunked (Lunch Box Veg Tray)<br>2 red peppers, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 red and 1 yellow pepper, chunked (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-red_onion">
         <span class="qty">1kg</span>
         <span class="food">red onion</span></label>
+        
         <div class="uses">1 large red onion (Lunch Box Veg Tray)<br>A spoonful of pickled onions x10 (Lunch Box, Week 4)<br>2 red onions, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>Pickled onions (Tomato &amp; Mozzarella Salad)<br>Pickled onions x2 (Saturday Sandwich, Adults')<br>2 red onions, sliced thin (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-carrot">
         <span class="qty">900g</span>
         <span class="food">carrot</span></label>
+        
         <div class="uses">2 carrots, finely diced (Beef Ragu, Double Batch)<br>2 carrots, diced (Minestrone)<br>500g carrots (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-baby_potato">
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
+        
         <div class="uses">800g potatoes for roasting (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
+        
         <div class="uses">150g tomatoes (Tomato &amp; Mozzarella Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-broccoli">
         <span class="qty">1</span>
         <span class="food">head of broccoli</span></label>
+        
         <div class="uses">1 head broccoli (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-salad_leaves">
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
+        
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 4)<br>A bag of leaves (Tomato &amp; Mozzarella Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-cucumber">
         <span class="qty">1</span>
         <span class="food">cucumber</span></label>
+        
         <div class="uses">Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-celery">
         <span class="qty">200g</span>
         <span class="food">celery</span></label>
+        
         <div class="uses">2 celery sticks, finely diced (Beef Ragu, Double Batch)<br>2 celery sticks, diced (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-cherry_tomatoes">
         <span class="qty">150g</span>
         <span class="food">cherry tomatoes</span></label>
+        
         <div class="uses">150g cherry tomatoes (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-banana">
         <span class="qty">1</span>
         <span class="food">banana</span></label>
+        
         <div class="uses">1 ripe banana, mashed (Cocoa Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-fresh_herbs">
         <span class="qty">55g</span>
         <span class="food">fresh herbs</span></label>
+        
         <div class="uses">2 bunches fresh basil (Meatball &amp; Ricotta Al Forno, Doubled)<br>Basil (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-lemon_juice">
         <span class="qty">2</span>
         <span class="food">lemons</span></label>
+        
         <div class="uses">Zest of 2 lemons (Meatball &amp; Ricotta Al Forno, Doubled)<br>Zest of a lemon (Beef &amp; Tomato Orzo)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-garlic">
         <span class="qty">33g</span>
         <span class="food">garlic</span></label>
+        
         <div class="uses">4 cloves garlic, crushed (Beef Ragu, Double Batch)<br>3 cloves garlic, crushed (Minestrone)<br>2 cloves garlic (Meatball &amp; Ricotta Al Forno, Doubled)<br>2 garlic cubes (Italian Sausage &amp; Pepper Freezer Bag)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-frozen_onion">
-        <span class="qty">750g</span>
-        <span class="food">frozen diced onion</span></label>
+        <span class="qty">4</span>
+        <span class="food">bags frozen diced onion</span></label>
+        
         <div class="uses">300g frozen diced onion (Beef Ragu, Double Batch)<br>300g frozen diced onion (Minestrone)<br>150g frozen onion (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pizza_dough">
         <span class="qty">3</span>
         <span class="food">dough balls</span></label>
+        
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-frozen_berries">
         <span class="qty">500g</span>
         <span class="food">frozen berries</span></label>
+        
         <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
+        <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
         <div class="uses">100g frozen spinach (Minestrone)<br>100g frozen spinach (optional layer) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-yorkshire_pudding">
         <span class="qty">8</span>
         <span class="food">Yorkshire puddings</span></label>
+        
         <div class="uses">8 Yorkshire puddings (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
+        
         <div class="uses">100g frozen peas (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Tinned</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-chopped_tomatoes">
         <span class="qty">6</span>
         <span class="food">tins chopped tomatoes</span></label>
+        
         <div class="uses">2 tins chopped tomatoes (Beef Ragu, Double Batch)<br>2 tins chopped tomatoes (Minestrone)<br>1 tin chopped tomatoes (Beef &amp; Tomato Orzo)<br>1 tin chopped tomatoes (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-passata">
         <span class="qty">1.8kg</span>
         <span class="food">passata</span></label>
+        
         <div class="uses">500g passata (Beef Ragu, Double Batch)<br>1kg passata (Meatball &amp; Ricotta Al Forno, Doubled)<br>200g passata (Margherita, the Boys')<br>80g passata (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-cannellini_drained">
         <span class="qty">6</span>
         <span class="food">tins cannellini</span></label>
+        
         <div class="uses">50g cannellini beans x10 (Lunch Box, Week 4)<br>2 tins cannellini beans, drained (Minestrone)<br>1 tin cannellini, drained (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-butter_beans_drained">
         <span class="qty">2</span>
         <span class="food">tins butter beans</span></label>
+        
         <div class="uses">2 tins butter beans, drained (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-tuna_drained">
         <span class="qty">4</span>
         <span class="food">tins tuna</span></label>
+        
         <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-stock_made">
         <span class="qty">2.4kg</span>
         <span class="food">stock - made up from cubes</span></label>
+        
         <div class="uses">500ml beef stock (2 cubes) (Beef Ragu, Double Batch)<br>1.4L vegetable stock (Minestrone)<br>500ml stock (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-grain_pouch">
         <span class="qty">5</span>
         <span class="food">rice pouches</span></label>
+        
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 4)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-oats">
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
+        
         <div class="uses">250g oats (Cocoa Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-white_sauce_jar">
         <span class="qty">500g</span>
         <span class="food">white sauce jar</span></label>
+        
         <div class="uses">500g white sauce (jar or made) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-gravy_made">
         <span class="qty">400g</span>
         <span class="food">gravy - made up</span></label>
+        
         <div class="uses">Gravy (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-olive_oil">
         <span class="qty">371g</span>
         <span class="food">olive oil</span></label>
+        
         <div class="uses">210ml olive oil (Balsamic Vinaigrette)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Beef Ragu, Double Batch)<br>1 tbsp oil (Minestrone)<br>2 tbsp olive oil (Meatball &amp; Ricotta Al Forno, Doubled)<br>2 tbsp oil (Roast Beef Topside)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
+        <p class="stock-note">A tub lasts weeks. Check before buying.</p>
         <div class="uses">60g protein powder (Cocoa Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pasta_dry">
         <span class="qty">250g</span>
         <span class="food">pasta dry</span></label>
+        
         <div class="uses">250g pasta (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-red_wine">
         <span class="qty">200g</span>
         <span class="food">red wine</span></label>
+        
         <div class="uses">200ml red wine (or 2 tbsp balsamic + extra stock) (Beef Ragu, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-lasagne_sheets">
         <span class="qty">200g</span>
         <span class="food">lasagne sheets</span></label>
+        
         <div class="uses">200g lasagne sheets (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-orzo_dry">
         <span class="qty">200g</span>
         <span class="food">orzo dry</span></label>
+        
         <div class="uses">200g orzo (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-peanut_butter">
         <span class="qty">150g</span>
         <span class="food">peanut butter</span></label>
+        
         <div class="uses">150g peanut butter (Cocoa Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-balsamic">
         <span class="qty">150g</span>
         <span class="food">balsamic</span></label>
+        
         <div class="uses">75ml balsamic (Balsamic Vinaigrette)<br>4 tbsp balsamic vinegar (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 tbsp balsamic (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-red_lentils_dry">
         <span class="qty">150g</span>
         <span class="food">red lentils dry</span></label>
-        <div class="uses">150g red lentils (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-vinegar">
+        
+        <div class="uses">150g red lentils (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-red_wine_vinegar">
         <span class="qty">150g</span>
-        <span class="food">vinegar</span></label>
+        <span class="food">red wine vinegar</span></label>
+        
         <div class="uses">150ml red wine vinegar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-chia_seeds">
         <span class="qty">120g</span>
         <span class="food">chia seeds</span></label>
+        <p class="stock-note">A 250g bag lasts 2-3 weeks. Check the level.</p>
         <div class="uses">12g chia seeds x10 (Overnight Oats Bag) - check level - a 250g bag lasts 2-3 weeks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-honey">
         <span class="qty">117g</span>
         <span class="food">honey</span></label>
+        
         <div class="uses">100g honey (Cocoa Flapjacks)<br>2 tsp honey (Balsamic Vinaigrette)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-seeds_nuts">
         <span class="qty">90g</span>
-        <span class="food">seeds nuts</span></label>
+        <span class="food">mixed seeds</span></label>
+        
         <div class="uses">50g mixed seeds (Cocoa Flapjacks)<br>20g seeds (Tomato &amp; Mozzarella Salad)<br>20g seeds (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-tomato_puree">
         <span class="qty">90g</span>
         <span class="food">tomato puree</span></label>
+        
         <div class="uses">2 tbsp tomato puree (Beef Ragu, Double Batch)<br>1 tbsp tomato puree (Minestrone)<br>2 tbsp tomato puree (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 tbsp tomato puree (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
+        <p class="stock-note">A tub lasts months. Check before buying.</p>
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-sun_dried_tomato_paste">
         <span class="qty">30g</span>
         <span class="food">sun dried tomato paste</span></label>
+        
         <div class="uses">2 tbsp sun-dried tomato paste (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-stock_cube">
         <span class="qty">3</span>
         <span class="food">stock cubes</span></label>
+        
         <div class="uses">2 chicken stock cubes (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 chicken stock cube, crumbled (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-cocoa">
         <span class="qty">25g</span>
         <span class="food">cocoa</span></label>
+        
         <div class="uses">25g cocoa powder (Cocoa Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-sugar">
         <span class="qty">22g</span>
         <span class="food">sugar</span></label>
+        
         <div class="uses">A pinch of sugar (Italian Sausage &amp; Pepper Freezer Bag)<br>1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-mustard">
         <span class="qty">12g</span>
         <span class="food">mustard</span></label>
+        
         <div class="uses">2 tsp Dijon mustard (Balsamic Vinaigrette)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-smoked_paprika">
         <span class="qty">8g</span>
         <span class="food">smoked paprika</span></label>
+        
         <div class="uses">2 tsp smoked paprika (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 tsp smoked paprika (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-oregano">
         <span class="qty">5g</span>
         <span class="food">oregano</span></label>
+        
         <div class="uses">1 tsp dried oregano (Beef Ragu, Double Batch)<br>1 tsp dried oregano (Minestrone)<br>1 tsp dried oregano (Italian Sausage &amp; Pepper Freezer Bag)</div></li></ul></section></div></div><div class="subpanel" data-sub="4-saturday"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="s4">Cycle 1</button>
         <button class="cyc" data-cycle="2" data-group="s4">Cycle 2+</button>
@@ -4475,7 +5014,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div>
 </div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-09-02 14:58</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-09-02 15:20</footer>
 <script>
 (function(){
   var SLOTS = ["fri","sat","sun","mon","tue","wed","thu"];            // day_order: slot 0 is delivery

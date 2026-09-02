@@ -300,6 +300,20 @@ const COUNTED = {
   // food now and stays a weight, because it is sold by the pack.
   cucumber:             [300, 'cucumber', 'cucumbers'],
   broccoli:             [350, 'head of broccoli', 'heads of broccoli'],
+
+  // Pack sizes the shop actually sells, from shopping the list for real.
+  spring_onion:         [100, 'bunch spring onions', 'bunches spring onions'],
+  frozen_onion:         [200, 'bag frozen diced onion', 'bags frozen diced onion'],
+};
+
+// Things bought far less often than weekly. Counting these would round a 200g
+// need up to a whole 900g bag every single week, so they stay as weights and
+// say what the pack is instead.
+const FOOD_NOTE = {
+  frozen_spinach: 'Sold in 900g bags - about a month of weeks. Check the freezer before buying.',
+  chia_seeds:     'A 250g bag lasts 2-3 weeks. Check the level.',
+  creatine:       'A tub lasts months. Check before buying.',
+  protein_powder: 'A tub lasts weeks. Check before buying.',
 };
 
 // Where the key does not read as a shopping label on its own - two kinds of
@@ -310,7 +324,12 @@ const FOOD_LABEL = {
   tenderstem_broccoli:  'tenderstem broccoli',
   cherry_tomatoes:      'cherry tomatoes',
   tomatoes:             'tomatoes (salad)',
-  frozen_onion:         'frozen diced onion',
+  soy_sauce:            'light soy sauce',
+  seeds_nuts:           'mixed seeds',
+  red_wine_vinegar:     'red wine vinegar',
+  white_wine_vinegar:   'white wine vinegar',
+  fajita_spice:         'fajita spice',
+  tandoori_spice:       'tandoori spice',
   stock_made:           'stock - made up from cubes',
   gravy_made:           'gravy - made up',
 };
@@ -342,6 +361,7 @@ function basketPanel(week, cycle) {
       return `<li class="basket-item"><label><input type="checkbox" data-basket="${esc(tickKey)}">
         <span class="qty">${esc(line.qty)}</span>
         <span class="food">${esc(line.label)}</span></label>
+        ${FOOD_NOTE[it.food] ? `<p class="stock-note">${esc(FOOD_NOTE[it.food])}</p>` : ''}
         <div class="uses">${uses}</div></li>`;
     }).join('');
     return `<section class="aisle"><h4>${label}</h4><ul>${lis}</ul></section>`;
@@ -795,6 +815,7 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .qty{font-weight:600;font-size:.9rem;flex:0 0 auto}
 .food{font-size:.9rem;text-transform:capitalize}
 .uses{font-size:.75rem;color:var(--text-light);margin-top:.35rem;padding-left:2.2rem;line-height:1.45}
+.stock-note{font-size:.75rem;color:var(--accent);margin-top:.35rem;padding-left:2.2rem;line-height:1.45;font-weight:500}
 .basket-item.done .qty,.basket-item.done .food{text-decoration:line-through;opacity:.45}
 .basket-item.done .uses{opacity:.4}
 .cook-through .step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
