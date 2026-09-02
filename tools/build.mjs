@@ -261,7 +261,22 @@ function buildBasket(week, cycle) {
   return items;
 }
 
-function quantity(grams) {
+// foods.json is per 100g "or per 100ml for liquids", so the data has always
+// known which of these are poured rather than weighed. The basket did not, and
+// asked for 600g of beef stock.
+const LIQUID = new Set([
+  'beef_stock', 'chicken_stock', 'vegetable_stock', 'gravy_made',
+  'olive_oil', 'sesame_oil', 'chilli_oil',
+  'red_wine_vinegar', 'white_wine_vinegar', 'cider_vinegar', 'rice_vinegar', 'balsamic',
+  'soy_sauce', 'worcestershire', 'mirin', 'red_wine', 'passata',
+  'milk_semi', 'coconut_milk', 'coconut_milk_light', 'jalapeno_brine',
+  'lemon_juice', 'lime_juice',
+]);
+
+function quantity(grams, food) {
+  if (LIQUID.has(food)) {
+    return grams >= 1000 ? `${Math.round(grams / 100) / 10}L` : `${Math.round(grams)}ml`;
+  }
   if (grams >= 1000) return `${Math.round(grams / 100) / 10}kg`;
   return `${Math.round(grams)}g`;
 }
@@ -343,7 +358,7 @@ const FOOD_LABEL = {
 function basketLine(it) {
   const c = COUNTED[it.food];
   const plain = FOOD_LABEL[it.food] ?? it.food.replace(/_/g, ' ');
-  if (!c) return { qty: quantity(it.grams), label: plain };
+  if (!c) return { qty: quantity(it.grams, it.food), label: plain };
   const n = Math.ceil(it.grams / c[0]);
   return { qty: String(n), label: n === 1 ? c[1] : c[2] };
 }
