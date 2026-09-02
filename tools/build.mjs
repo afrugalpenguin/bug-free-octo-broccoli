@@ -495,7 +495,7 @@ function bankPanel() {
   const waiting = entries.filter(([, r]) => r.incomplete).length;
 
   return `<div class="panel" data-tab="bank">
-  <section class="block"><h2>The bank</h2>
+  <section class="block"><h2>The recipe bank</h2>
     <p class="lede">Recipes graded and parked. Nothing here is in the weekly rhythm unless it says so, but they are the first place to look for a summer swap, a together night, or a day the schedule goes sideways.</p>
     ${waiting ? `<p class="callout">${waiting} of these have no ingredient list yet, so no macros. Add them to <code>data/recipes.json</code> with gram weights and <code>food</code> keys, drop the <code>incomplete</code> flag, and rebuild.</p>` : ''}
   </section>
@@ -732,7 +732,7 @@ const JS = `
 const tabs = [
   ['overview', 'Overview'],
   ...WEEKS.map(w => [`week-${w}`, `Week ${w}`]),
-  ['bank', 'Bank'],
+  ['bank', 'Recipe bank'],
 ];
 
 const html = `<!DOCTYPE html>
