@@ -427,7 +427,7 @@ function weekPanel(week) {
 </div>`;
 }
 
-// --------------------------------------------------------- overview + Fridays
+// ------------------------------------------------------------------ overview
 
 function overviewPanel() {
   const rhythm = scaffold.rhythm.map(r =>
@@ -500,26 +500,6 @@ function bankPanel() {
     ${waiting ? `<p class="callout">${waiting} of these have no ingredient list yet, so no macros. Add them to <code>data/recipes.json</code> with gram weights and <code>food</code> keys, drop the <code>incomplete</code> flag, and rebuild.</p>` : ''}
   </section>
   ${sections}
-</div>`;
-}
-
-function fridaysPanel() {
-  const weeks = WEEKS.map(w => {
-    const r = rotation.weeks[w];
-    return `<div class="day-group"><h3 class="day-head week${w}">Week ${w}: ${esc(r.theme)}</h3>
-      <div class="recipe-grid">
-        ${recipeCard(r.friday_pizza_topping, { level: 'h4' })}
-        ${recipeCard(r.friday_salad, { level: 'h4' })}
-      </div></div>`;
-  }).join('');
-
-  return `<div class="panel" data-tab="fridays">
-  <section class="block"><h2>Friday is pizza night</h2>
-    <p class="lede">Every week, no exceptions. Dough out of the freezer into the fridge on Thursday night.</p>
-    <p>${esc(scaffold.friday_pizza.adults.notes)}</p></section>
-  ${recipeCard(scaffold.friday_pizza.boys.recipe, { level: 'h3' })}
-  <h2 class="section-head">The adults' topping, by week</h2>
-  ${weeks}
 </div>`;
 }
 
@@ -751,7 +731,6 @@ const JS = `
 
 const tabs = [
   ['overview', 'Overview'],
-  ['fridays', 'Fridays'],
   ...WEEKS.map(w => [`week-${w}`, `Week ${w}`]),
   ['bank', 'Bank'],
 ];
@@ -778,7 +757,6 @@ const html = `<!DOCTYPE html>
 </nav>
 <main class="container">
 ${overviewPanel()}
-${fridaysPanel()}
 ${WEEKS.map(weekPanel).join('\n')}
 ${bankPanel()}
 </main>

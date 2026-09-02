@@ -472,7 +472,7 @@ Each step should include the full recipe (ingredients and method) inline so the 
 ### 4. Generate the HTML
 The output HTML should follow System A's design patterns:
 - Dark header with "Today" button that auto-detects which week/day it is
-- Tab navigation: Overview, Fridays, Week 1, Week 2, Week 3, Week 4
+- Tab navigation: Overview, Week 1, Week 2, Week 3, Week 4, Bank
 - Each week has sub-tabs: Menu, Basket, Saturday (cook-through), Recipes (per-day cards)
 - Each recipe card shows: name, ingredients, method, macros, serving suggestion
 - Basket items are tappable (checkbox to mark as added to trolley)
@@ -599,7 +599,7 @@ These should all be in `recipes.json` with full ingredient lists. They're availa
 - The Saturday cook-through must scroll vertically — no horizontal swiping while cooking
 
 ### Navigation
-- Top-level tabs: Overview | Fridays | Week 1 | Week 2 | Week 3 | Week 4
+- Top-level tabs: Overview | Week 1 | Week 2 | Week 3 | Week 4 | Bank
 - Within each week: Menu | Basket | Saturday | Recipes (sub-tabs per day)
 - "Today" button in the header — prominent, always visible, auto-navigates to the right week and day
 
