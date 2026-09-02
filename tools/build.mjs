@@ -266,6 +266,28 @@ function quantity(grams) {
   return `${Math.round(grams)}g`;
 }
 
+// Some things are sold and counted in units, not weighed, and a basket line
+// reading "1.2kg egg" is no use in a shop. Unit weights are the ones the
+// recipes already use - an egg is 58g everywhere in recipes.json, a dough ball
+// 250g - so these stay in step with the data rather than being a second
+// opinion about it. Counts round up: you cannot buy 0.7 of an egg.
+const COUNTED = {
+  egg:               [58,  'egg', 'eggs'],
+  pizza_dough:       [250, 'dough ball', 'dough balls'],
+  banana:            [100, 'banana', 'bananas'],
+  tortilla_wrap:     [30,  'tortilla wrap', 'tortilla wraps'],
+  yorkshire_pudding: [20,  'Yorkshire pudding', 'Yorkshire puddings'],
+  stock_cube:        [10,  'stock cube', 'stock cubes'],
+  lemon_juice:       [30,  'lemon', 'lemons'],
+};
+
+function basketLine(it) {
+  const c = COUNTED[it.food];
+  if (!c) return { qty: quantity(it.grams), label: it.food.replace(/_/g, ' ') };
+  const n = Math.ceil(it.grams / c[0]);
+  return { qty: String(n), label: n === 1 ? c[1] : c[2] };
+}
+
 function basketPanel(week, cycle) {
   const items = buildBasket(week, cycle);
   const byAisle = new Map(AISLES.map(([k]) => [k, []]));
@@ -281,9 +303,10 @@ function basketPanel(week, cycle) {
         return esc(`${u.display}${each} (${u.recipe})${note}`);
       }).join('<br>');
       const tickKey = `${week}-${cycle}-${it.food}`;
+      const line = basketLine(it);
       return `<li class="basket-item"><label><input type="checkbox" data-basket="${esc(tickKey)}">
-        <span class="qty">${esc(quantity(it.grams))}</span>
-        <span class="food">${esc(it.food.replace(/_/g, ' '))}</span></label>
+        <span class="qty">${esc(line.qty)}</span>
+        <span class="food">${esc(line.label)}</span></label>
         <div class="uses">${uses}</div></li>`;
     }).join('');
     return `<section class="aisle"><h4>${label}</h4><ul>${lis}</ul></section>`;
