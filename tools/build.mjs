@@ -577,7 +577,7 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .when{flex:0 0 5.5rem;font-weight:600;font-size:.85rem}
 .what{font-size:.9rem;color:var(--text-light)}
 .weeks{list-style:none;display:grid;gap:.6rem}
-.wk button{width:100%;text-align:left;border:0;border-radius:10px;padding:.9rem 1rem;color:#fff;font:inherit;cursor:pointer;display:grid;gap:.15rem;min-height:44px}
+.wk button{width:100%;text-align:left;border:0;border-radius:14px;padding:.9rem 1rem;color:#fff;font:inherit;cursor:pointer;display:grid;gap:.15rem;min-height:44px}
 .wk.week1 button{background:var(--week1)}.wk.week2 button{background:var(--week2)}
 .wk.week3 button{background:var(--week3)}.wk.week4 button{background:var(--week4)}
 .wk span{font-size:.85rem;opacity:.9}.wk em{font-size:.78rem;opacity:.75;font-style:normal}
