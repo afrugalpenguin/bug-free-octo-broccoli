@@ -85,6 +85,44 @@ export function finisherRange(id, base) {
   return { lo, hi };
 }
 
+// A lunch box is no longer one thing: the base is the same all week but the
+// protein changes by day, so a box has five figures rather than one. Base plus
+// that day's protein plus that day's finisher, per box.
+//
+// Monday and Tuesday take their protein from the week's roast tray; the other
+// three days each have their own little recipe. Both are per-portion figures,
+// because a tray that serves 4 boxes and a pack that serves 2 both divide down
+// to one box.
+export function lunchboxDay(weekId, day) {
+  const w = rotation.weeks[weekId];
+  const boxId = w.lunchbox;
+  const sched = scaffold.lunch_boxes.protein_schedule[day];
+  if (!sched) return null;
+
+  const out = perPortion(boxId);
+  const proteinId = sched.recipe === 'week' ? w.lunchbox_protein : sched.recipe;
+  const protein = perPortion(proteinId);
+  KEYS.forEach(k => { out[k] += protein[k]; });
+
+  const finisher = recipes[boxId].finishers?.[day] ?? {};
+  for (const [food, grams] of Object.entries(finisher)) addFood(out, food, grams, boxId);
+
+  return { macros: out, proteinId, source: sched.source, notes: sched.notes ?? null };
+}
+
+export function lunchboxDayLine(weekId, day, { separator = ' · ' } = {}) {
+  const d = lunchboxDay(weekId, day);
+  if (!d) return null;
+  const m = d.macros;
+  return [
+    `~${roundKcal(m.kcal)} kcal`,
+    `${roundG(m.protein)}g protein`,
+    `${roundG(m.carbs)}g carbs`,
+    `${roundG(m.fat)}g fat`,
+    `${roundG(m.fibre)}g fibre`,
+  ].join(separator);
+}
+
 // The per-portion figures for one recipe, as strings ready for a card. Recipes
 // in the bank with no ingredients yet return null rather than a row of zeroes.
 export function macrosFor(id) {

@@ -65,6 +65,13 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .wk.week3 button{background:var(--week3)}.wk.week4 button{background:var(--week4)}
 .wk span{font-size:.85rem;opacity:.9}.wk em{font-size:.78rem;opacity:.75;font-style:normal}
 .menu-list{list-style:none;display:grid;gap:.5rem;margin-bottom:1rem}
+.boxdays{list-style:none;display:grid;gap:.5rem;margin:.75rem 0}
+.boxday{display:grid;gap:.15rem;padding:.6rem .7rem;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.boxday-day{font-weight:600;font-size:.85rem}
+.boxday-protein{font-size:.85rem}
+.boxday-protein em{color:var(--text-light);font-style:normal;font-size:.78rem}
+.boxday-macro{font-size:.75rem;color:var(--text-light)}
+.omega{display:inline-block;margin-left:.4rem;font-size:.68rem;padding:.1rem .4rem;border-radius:3px;background:var(--accent);color:#fff;vertical-align:middle}
 .menu-row{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.75rem .9rem;box-shadow:var(--shadow)}
 .menu-row a{display:flex;gap:.75rem;align-items:baseline;text-decoration:none;color:inherit;min-height:32px}
 .menu-day{flex:0 0 4.5rem;font-weight:600;font-size:.85rem;color:var(--text-light)}
@@ -220,9 +227,29 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="menu-name">Paprika Chicken Traybake</span>
       </a><div class="menu-macro">~685 kcal · 41g protein · 41g carbs · 41g fat · 7g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
-    <p>10 boxes, 5 each.
-       Roast Paprika Chicken for the Boxes with house vinaigrette.</p>
-    <div class="macro" data-macro="lunchbox_w1">~655-780 kcal · 28-36g protein · 57-70g carbs · 35-45g fat · 8-10g fibre <em>per portion</em></div>
+    <p>10 boxes, 5 each. Same base every day -
+       house vinaigrette, rice, beans and roast veg. The protein changes.</p>
+    <ul class="boxdays"><li class="boxday">
+      <span class="boxday-day">Monday</span>
+      <span class="boxday-protein">80g Roast Paprika Chicken for the Boxes <em>in on Saturday</em></span>
+      <span class="boxday-macro">~755 kcal · 30g protein · 70g carbs · 39g fat · 9g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-protein">80g Roast Paprika Chicken for the Boxes <em>in on Saturday</em></span>
+      <span class="boxday-macro">~780 kcal · 36g protein · 57g carbs · 45g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
+      <span class="boxday-macro">~820 kcal · 27g protein · 67g carbs · 49g fat · 10g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Thursday</span>
+      <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~605 kcal · 28g protein · 58g carbs · 29g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Friday</span>
+      <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~820 kcal · 47g protein · 59g carbs · 44g fat · 8g fibre</span>
+    </li></ul>
     <p class="notes">Saturday is sandwiches. Sunday is the tuna pasta salad made the night before.</p></section>
 </div></div><div class="subpanel" data-sub="1-basket"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="b1">Cycle 1 <span>double bags</span></button>
@@ -233,9 +260,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">2.4kg</span>
         <span class="food">chicken roast meat</span></label>
         <div class="uses">2 whole chickens (~1.2kg each) (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chicken_thigh_boneless">
-        <span class="qty">2.2kg</span>
+        <span class="qty">1.6kg</span>
         <span class="food">chicken thigh boneless</span></label>
-        <div class="uses">1kg boneless chicken thighs (Roast Paprika Chicken for the Boxes) - 1kg for the lunch boxes, 600g more for Thursday's freezer bag<br>6 boneless chicken thighs (~600g) x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chicken_thigh_bonein">
+        <div class="uses">400g boneless chicken thighs (Roast Paprika Chicken for the Boxes) - 400g for Monday and Tuesday's boxes, 600g more for Thursday's freezer bag<br>6 boneless chicken thighs (~600g) x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chicken_thigh_bonein">
         <span class="qty">1.2kg</span>
         <span class="food">chicken thigh bonein</span></label>
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Paprika Chicken Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-beef_mince_5">
@@ -247,13 +274,19 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chorizo_cooking">
         <span class="qty">100g</span>
         <span class="food">chorizo cooking</span></label>
-        <div class="uses">100g cooking chorizo (Chorizo &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt_0">
+        <div class="uses">100g cooking chorizo (Chorizo &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-egg">
+        <span class="qty">1kg</span>
+        <span class="food">egg</span></label>
+        <div class="uses">4 boiled eggs (Chopped Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
-        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-egg">
-        <span class="qty">812g</span>
-        <span class="food">egg</span></label>
-        <div class="uses">4 boiled eggs (Chopped Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt">
+        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt">
         <span class="qty">510g</span>
         <span class="food">greek yoghurt</span></label>
         <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-mozzarella">
@@ -302,9 +335,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">100g</span>
         <span class="food">banana</span></label>
         <div class="uses">1 ripe banana, mashed (Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-lemon_juice">
-        <span class="qty">50g</span>
+        <span class="qty">60g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">1 lemon (Paprika Chicken Traybake)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-lime_juice">
+        <div class="uses">1 lemon (Paprika Chicken Traybake)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-lime_juice">
         <span class="qty">45g</span>
         <span class="food">lime juice</span></label>
         <div class="uses">2 limes, in wedges (Chicken Fajita Bowls)<br>Juice of a lime (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-garlic">
@@ -337,13 +370,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 1)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-kidney_beans_drained">
         <span class="qty">480g</span>
         <span class="food">kidney beans drained</span></label>
-        <div class="uses">2 tins kidney beans, drained (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-sweetcorn_drained">
+        <div class="uses">2 tins kidney beans, drained (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-tuna_drained">
+        <span class="qty">448g</span>
+        <span class="food">tuna drained</span></label>
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-sweetcorn_drained">
         <span class="qty">260g</span>
         <span class="food">sweetcorn drained</span></label>
-        <div class="uses">1 tin sweetcorn, drained (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-tuna_drained">
-        <span class="qty">224g</span>
-        <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-grain_pouch">
+        <div class="uses">1 tin sweetcorn, drained (Chopped Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-grain_pouch">
         <span class="qty">2.3kg</span>
         <span class="food">grain pouch</span></label>
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 1)<br>2 rice pouches (Chicken Fajita Bowls)<br>2 rice pouches (Chilli with Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-oats">
@@ -356,9 +389,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">400g</span>
         <span class="food">gravy made</span></label>
         <div class="uses">Gravy (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-olive_oil">
-        <span class="qty">385g</span>
+        <span class="qty">377g</span>
         <span class="food">olive oil</span></label>
-        <div class="uses">210ml olive oil (House Vinaigrette)<br>1 tbsp oil (Roast Paprika Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Mild Chilli, Double Batch)<br>2 tbsp oil (Paprika Chicken Traybake)<br>2 tbsp oil (Two Roast Chickens)<br>1 tbsp oil (Chicken Fajita Bowls)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-protein_powder">
+        <div class="uses">210ml olive oil (House Vinaigrette)<br>2 tsp oil (Roast Paprika Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Mild Chilli, Double Batch)<br>2 tbsp oil (Paprika Chicken Traybake)<br>2 tbsp oil (Two Roast Chickens)<br>1 tbsp oil (Chicken Fajita Bowls)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
         <div class="uses">60g protein powder (Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-pasta_dry">
@@ -395,9 +428,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">30g</span>
         <span class="food">tortilla chips</span></label>
         <div class="uses">30g tortilla chips, crushed (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-smoked_paprika">
-        <span class="qty">25g</span>
+        <span class="qty">22g</span>
         <span class="food">smoked paprika</span></label>
-        <div class="uses">2 tsp smoked paprika (Roast Paprika Chicken for the Boxes)<br>2 tsp smoked paprika (Mild Chilli, Double Batch)<br>2 tsp smoked paprika (Paprika Chicken Traybake)<br>2 tsp smoked paprika x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-stock_cube">
+        <div class="uses">1 tsp smoked paprika (Roast Paprika Chicken for the Boxes)<br>2 tsp smoked paprika (Mild Chilli, Double Batch)<br>2 tsp smoked paprika (Paprika Chicken Traybake)<br>2 tsp smoked paprika x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-stock_cube">
         <span class="qty">20g</span>
         <span class="food">stock cube</span></label>
         <div class="uses">1 chicken stock cube, crumbled x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-sugar">
@@ -428,13 +461,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
       <div class="cycle-body" data-group="b1" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_roast_meat">
         <span class="qty">2.4kg</span>
         <span class="food">chicken roast meat</span></label>
-        <div class="uses">2 whole chickens (~1.2kg each) (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_thigh_boneless">
-        <span class="qty">1.6kg</span>
-        <span class="food">chicken thigh boneless</span></label>
-        <div class="uses">1kg boneless chicken thighs (Roast Paprika Chicken for the Boxes) - 1kg for the lunch boxes, 600g more for Thursday's freezer bag<br>6 boneless chicken thighs (~600g) (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_thigh_bonein">
+        <div class="uses">2 whole chickens (~1.2kg each) (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_thigh_bonein">
         <span class="qty">1.2kg</span>
         <span class="food">chicken thigh bonein</span></label>
-        <div class="uses">8 bone-in chicken thighs (~1.2kg) (Paprika Chicken Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-beef_mince_5">
+        <div class="uses">8 bone-in chicken thighs (~1.2kg) (Paprika Chicken Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chicken_thigh_boneless">
+        <span class="qty">1kg</span>
+        <span class="food">chicken thigh boneless</span></label>
+        <div class="uses">400g boneless chicken thighs (Roast Paprika Chicken for the Boxes) - 400g for Monday and Tuesday's boxes, 600g more for Thursday's freezer bag<br>6 boneless chicken thighs (~600g) (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-beef_mince_5">
         <span class="qty">1kg</span>
         <span class="food">beef mince 5</span></label>
         <div class="uses">1kg 5% fat beef mince (Mild Chilli, Double Batch) - the double chilli</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-ham_sliced">
@@ -443,13 +476,19 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chorizo_cooking">
         <span class="qty">100g</span>
         <span class="food">chorizo cooking</span></label>
-        <div class="uses">100g cooking chorizo (Chorizo &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt_0">
+        <div class="uses">100g cooking chorizo (Chorizo &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-egg">
+        <span class="qty">1kg</span>
+        <span class="food">egg</span></label>
+        <div class="uses">4 boiled eggs (Chopped Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
-        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-egg">
-        <span class="qty">812g</span>
-        <span class="food">egg</span></label>
-        <div class="uses">4 boiled eggs (Chopped Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt">
+        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt">
         <span class="qty">510g</span>
         <span class="food">greek yoghurt</span></label>
         <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-mozzarella">
@@ -498,9 +537,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">100g</span>
         <span class="food">banana</span></label>
         <div class="uses">1 ripe banana, mashed (Seed Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-lemon_juice">
-        <span class="qty">50g</span>
+        <span class="qty">60g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">1 lemon (Paprika Chicken Traybake)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-lime_juice">
+        <div class="uses">1 lemon (Paprika Chicken Traybake)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-lime_juice">
         <span class="qty">45g</span>
         <span class="food">lime juice</span></label>
         <div class="uses">2 limes, in wedges (Chicken Fajita Bowls)<br>Juice of a lime (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-garlic">
@@ -533,13 +572,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">2 tins kidney beans, drained (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-passata">
         <span class="qty">480g</span>
         <span class="food">passata</span></label>
-        <div class="uses">200ml passata (Pulled Chicken Freezer Bag)<br>200g passata (Margherita, the Boys')<br>80g passata (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-sweetcorn_drained">
+        <div class="uses">200ml passata (Pulled Chicken Freezer Bag)<br>200g passata (Margherita, the Boys')<br>80g passata (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-tuna_drained">
+        <span class="qty">448g</span>
+        <span class="food">tuna drained</span></label>
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-sweetcorn_drained">
         <span class="qty">260g</span>
         <span class="food">sweetcorn drained</span></label>
-        <div class="uses">1 tin sweetcorn, drained (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-tuna_drained">
-        <span class="qty">224g</span>
-        <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-grain_pouch">
+        <div class="uses">1 tin sweetcorn, drained (Chopped Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-grain_pouch">
         <span class="qty">2.3kg</span>
         <span class="food">grain pouch</span></label>
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 1)<br>2 rice pouches (Chicken Fajita Bowls)<br>2 rice pouches (Chilli with Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-oats">
@@ -552,9 +591,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">400g</span>
         <span class="food">gravy made</span></label>
         <div class="uses">Gravy (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-olive_oil">
-        <span class="qty">385g</span>
+        <span class="qty">377g</span>
         <span class="food">olive oil</span></label>
-        <div class="uses">210ml olive oil (House Vinaigrette)<br>1 tbsp oil (Roast Paprika Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Mild Chilli, Double Batch)<br>2 tbsp oil (Paprika Chicken Traybake)<br>2 tbsp oil (Two Roast Chickens)<br>1 tbsp oil (Chicken Fajita Bowls)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-protein_powder">
+        <div class="uses">210ml olive oil (House Vinaigrette)<br>2 tsp oil (Roast Paprika Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (Mild Chilli, Double Batch)<br>2 tbsp oil (Paprika Chicken Traybake)<br>2 tbsp oil (Two Roast Chickens)<br>1 tbsp oil (Chicken Fajita Bowls)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
         <div class="uses">60g protein powder (Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-pasta_dry">
@@ -587,13 +626,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">2 tbsp tomato puree (Mild Chilli, Double Batch)<br>1 tbsp tomato puree (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-tortilla_chips">
         <span class="qty">30g</span>
         <span class="food">tortilla chips</span></label>
-        <div class="uses">30g tortilla chips, crushed (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-smoked_paprika">
-        <span class="qty">20g</span>
-        <span class="food">smoked paprika</span></label>
-        <div class="uses">2 tsp smoked paprika (Roast Paprika Chicken for the Boxes)<br>2 tsp smoked paprika (Mild Chilli, Double Batch)<br>2 tsp smoked paprika (Paprika Chicken Traybake)<br>2 tsp smoked paprika (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-sugar">
+        <div class="uses">30g tortilla chips, crushed (Chopped Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
-        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-worcestershire">
+        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-smoked_paprika">
+        <span class="qty">17g</span>
+        <span class="food">smoked paprika</span></label>
+        <div class="uses">1 tsp smoked paprika (Roast Paprika Chicken for the Boxes)<br>2 tsp smoked paprika (Mild Chilli, Double Batch)<br>2 tsp smoked paprika (Paprika Chicken Traybake)<br>2 tsp smoked paprika (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-worcestershire">
         <span class="qty">15g</span>
         <span class="food">worcestershire</span></label>
         <div class="uses">1 tbsp Worcestershire sauce (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-dark_chocolate">
@@ -656,14 +695,14 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Roast Paprika Chicken for the Boxes <span class="serves">Serves 10</span></h4>
+  <h4>Roast Paprika Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
-  <p class="notes">1kg of thighs roasts down to ~800g - 80g per box across 10 boxes. Goes in the oven with the veg tray.</p>
-  <ul class="ingredients"><li>1kg boneless chicken thighs</li><li>1 tbsp oil</li><li>2 tsp smoked paprika</li></ul>
+  <p class="notes">400g of thighs roasts down to ~320g - 80g per box across Monday and Tuesday's four boxes. Goes in the oven with the veg tray.</p>
+  <ul class="ingredients"><li>400g boneless chicken thighs</li><li>2 tsp oil</li><li>1 tsp smoked paprika</li></ul>
   <ol class="method"><li>Thighs tossed in oil and paprika, spread on a tray. 200C for 30-35 minutes. Cooled, then sliced or torn.</li></ol>
   
   
-  <div class="macro" data-macro="roast_chicken_stripped">~135 kcal · 19g protein · 0.3g carbs · 6g fat · 0.2g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="roast_chicken_stripped">~135 kcal · 19g protein · 0.3g carbs · 7g fat · 0.2g fibre <em>per portion</em></div>
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
@@ -693,12 +732,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -755,18 +794,18 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 1, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>House Vinaigrette</strong></li><li class="from">1 portion of <strong>Roast Paprika Chicken for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher goes on the day, not now - especially the crunchy ones and the boiled eggs.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>House Vinaigrette</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w1">~655-780 kcal · 28-36g protein · 57-70g carbs · 35-45g fat · 8-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w1">~520-645 kcal · 10-17g protein · 57-70g carbs · 28-39g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li><strong>Thursday</strong> A boiled egg with smoked paprika</li><li><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li><strong>Thursday</strong> Smoked paprika and a squeeze of lime</li><li><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -774,7 +813,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s1" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -808,14 +847,14 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Roast Paprika Chicken for the Boxes <span class="serves">Serves 10</span></h4>
+  <h4>Roast Paprika Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
-  <p class="notes">1kg of thighs roasts down to ~800g - 80g per box across 10 boxes. Goes in the oven with the veg tray.</p>
-  <ul class="ingredients"><li>1kg boneless chicken thighs</li><li>1 tbsp oil</li><li>2 tsp smoked paprika</li></ul>
+  <p class="notes">400g of thighs roasts down to ~320g - 80g per box across Monday and Tuesday's four boxes. Goes in the oven with the veg tray.</p>
+  <ul class="ingredients"><li>400g boneless chicken thighs</li><li>2 tsp oil</li><li>1 tsp smoked paprika</li></ul>
   <ol class="method"><li>Thighs tossed in oil and paprika, spread on a tray. 200C for 30-35 minutes. Cooled, then sliced or torn.</li></ol>
   
   
-  <div class="macro" data-macro="roast_chicken_stripped">~135 kcal · 19g protein · 0.3g carbs · 6g fat · 0.2g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="roast_chicken_stripped">~135 kcal · 19g protein · 0.3g carbs · 7g fat · 0.2g fibre <em>per portion</em></div>
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
@@ -845,12 +884,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -907,18 +946,18 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 1, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>House Vinaigrette</strong></li><li class="from">1 portion of <strong>Roast Paprika Chicken for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher goes on the day, not now - especially the crunchy ones and the boiled eggs.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>House Vinaigrette</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w1">~655-780 kcal · 28-36g protein · 57-70g carbs · 35-45g fat · 8-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w1">~520-645 kcal · 10-17g protein · 57-70g carbs · 28-39g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li><strong>Thursday</strong> A boiled egg with smoked paprika</li><li><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li><strong>Thursday</strong> Smoked paprika and a squeeze of lime</li><li><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -926,7 +965,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="1-recipes"><div class="recipes"><div id="w1-sun" class="day-group">
       <h3 class="day-head">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -1056,12 +1095,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article><article class="card">
   <h4 class="card-title">Roast Paprika Chicken for the Boxes</h4>
   
-  <p class="servings">Serves 10 · 5 min hands-on · 35 min waiting</p>
+  <p class="servings">Serves 4 · 5 min hands-on · 35 min waiting</p>
   
-  <p class="card-notes">1kg of thighs roasts down to ~800g - 80g per box across 10 boxes. Goes in the oven with the veg tray.</p>
-  <p class="ingredients-preview">1kg boneless chicken thighs · 1 tbsp oil · 2 tsp smoked paprika</p>
-  <div class="macro" data-macro="roast_chicken_stripped">~135 kcal · 19g protein · 0.3g carbs · 6g fat · 0.2g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>1kg boneless chicken thighs</li><li>1 tbsp oil</li><li>2 tsp smoked paprika</li></ul><ol class="method"><li>Thighs tossed in oil and paprika, spread on a tray. 200C for 30-35 minutes. Cooled, then sliced or torn.</li></ol>
+  <p class="card-notes">400g of thighs roasts down to ~320g - 80g per box across Monday and Tuesday's four boxes. Goes in the oven with the veg tray.</p>
+  <p class="ingredients-preview">400g boneless chicken thighs · 2 tsp oil · 1 tsp smoked paprika</p>
+  <div class="macro" data-macro="roast_chicken_stripped">~135 kcal · 19g protein · 0.3g carbs · 7g fat · 0.2g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>400g boneless chicken thighs</li><li>2 tsp oil</li><li>1 tsp smoked paprika</li></ul><ol class="method"><li>Thighs tossed in oil and paprika, spread on a tray. 200C for 30-35 minutes. Cooled, then sliced or torn.</li></ol>
     
     </details>
 </article><article class="card">
@@ -1091,10 +1130,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <p class="servings">Serves 1 · 3 min hands-on</p>
   
-  <p class="card-notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing.</p>
-  <p class="ingredients-preview">1 portions of house vinaigrette · 1 portions of roast paprika chicken for the boxes · 1 portions of lunch box veg tray · Half a rice pouch · 50g tinned beans +2 more</p>
-  <div class="macro" data-macro="lunchbox_w1">~655-780 kcal · 28-36g protein · 57-70g carbs · 35-45g fat · 8-10g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>House Vinaigrette</strong></li><li class="from">1 portion of <strong>Roast Paprika Chicken for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher goes on the day, not now - especially the crunchy ones and the boiled eggs.</li></ol>
+  <p class="card-notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <p class="ingredients-preview">1 portions of house vinaigrette · 1 portions of lunch box veg tray · Half a rice pouch · 50g tinned beans · A spoonful of pickled onions +1 more</p>
+  <div class="macro" data-macro="lunchbox_w1">~520-645 kcal · 10-17g protein · 57-70g carbs · 28-39g fat · 8-10g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>House Vinaigrette</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
     
     </details>
 </article><article class="card">
@@ -1106,6 +1145,41 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="ingredients-preview">250g oats · 60g protein powder · 150g peanut butter · 100g honey · 75g butter +2 more</p>
   <div class="macro" data-macro="flapjack_plain_seed">~290 kcal · 12g protein · 24g carbs · 17g fat · 4g fibre <em>per portion</em></div>
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>250g oats</li><li>60g protein powder</li><li>150g peanut butter</li><li>100g honey</li><li>75g butter</li><li>1 ripe banana, mashed</li><li>80g mixed seeds</li></ul><ol class="method"><li>Butter, peanut butter and honey melted together in a pan.</li><li>Off the heat, everything else stirred in.</li><li>Pressed hard into a lined tin - hard, or they crumble.</li><li>180C for 22-25 minutes. Cool completely in the tin before cutting into 12.</li></ol>
+    
+    </details>
+</article></div></div>
+  <div class="day-group"><h3 class="day-head">Into the boxes on the day</h3>
+    <div class="recipe-grid"><article class="card">
+  <h4 class="card-title">Smoked Mackerel for Wednesday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Skin off, flaked straight into the box on Wednesday morning.</p>
+  <p class="ingredients-preview">2 smoked mackerel fillets (~160g) · A squeeze of lemon</p>
+  <div class="macro" data-macro="lunchbox_mackerel">~245 kcal · 15g protein · 0.3g carbs · 20g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>2 smoked mackerel fillets (~160g)</li><li>A squeeze of lemon</li></ul><ol class="method"><li>Skin off, flaked into the box on the day. Squeeze of lemon over.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Prawns for Thursday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 1 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Straight from the pack into the box on Thursday morning.</p>
+  <p class="ingredients-preview">160g cooked peeled prawns</p>
+  <div class="macro" data-macro="lunchbox_prawns">~80 kcal · 18g protein · 0g carbs · 0.7g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>160g cooked peeled prawns</li></ul><ol class="method"><li>Into the box on the day, on top of the leaves.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Tuna and Egg for Friday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Tuna and two halved eggs into the box on Friday morning.</p>
+  <p class="ingredients-preview">4 portions of boiled eggs · 160g tinned tuna in spring water, drained · Rounds the tuna up to 2 whole tins</p>
+  <div class="macro" data-macro="lunchbox_tuna_egg">~250 kcal · 35g protein · 0.8g carbs · 12g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Boiled Eggs</strong></li><li>160g tinned tuna in spring water, drained</li><li class="basket-only">Rounds the tuna up to 2 whole tins</li></ul><ol class="method"><li>Tuna drained and forked in, two boiled eggs halved on top.</li></ol>
     
     </details>
 </article></div></div></div></div>
@@ -1145,9 +1219,29 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="menu-name">Glazed Salmon Traybake</span>
       </a><div class="menu-macro">~485 kcal · 32g protein · 34g carbs · 25g fat · 6g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
-    <p>10 boxes, 5 each.
-       Tandoori Thighs for the Boxes with mint yoghurt.</p>
-    <div class="macro" data-macro="lunchbox_w2">~480-600 kcal · 32-39g protein · 52-64g carbs · 16-26g fat · 8-10g fibre <em>per portion</em></div>
+    <p>10 boxes, 5 each. Same base every day -
+       mint yoghurt, rice, beans and roast veg. The protein changes.</p>
+    <ul class="boxdays"><li class="boxday">
+      <span class="boxday-day">Monday</span>
+      <span class="boxday-protein">80g Tandoori Thighs for the Boxes <em>in on Saturday</em></span>
+      <span class="boxday-macro">~535 kcal · 32g protein · 64g carbs · 16g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-protein">80g Tandoori Thighs for the Boxes <em>in on Saturday</em></span>
+      <span class="boxday-macro">~575 kcal · 39g protein · 53g carbs · 22g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
+      <span class="boxday-macro">~700 kcal · 32g protein · 54g carbs · 40g fat · 10g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Thursday</span>
+      <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~445 kcal · 30g protein · 52g carbs · 13g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Friday</span>
+      <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~635 kcal · 49g protein · 54g carbs · 25g fat · 8g fibre</span>
+    </li></ul>
     <p class="notes">Saturday is sandwiches. Sunday is the tuna pasta salad made the night before.</p></section>
 </div></div><div class="subpanel" data-sub="2-basket"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="b2">Cycle 1 <span>double bags</span></button>
@@ -1155,9 +1249,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
       </div>
       <p class="notes">Double the freezer bags - 2 per week instead of 1. Batch pots bank 1 bag each on top. Goal is ~9 dinners banked by the end of the month.</p>
       <div class="cycle-body" data-group="b2" data-cycle="1"><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-chicken_thigh_boneless">
-        <span class="qty">3kg</span>
+        <span class="qty">2.4kg</span>
         <span class="food">chicken thigh boneless</span></label>
-        <div class="uses">1kg boneless chicken thighs (Tandoori Thighs for the Boxes)<br>600g tandoori thighs from Saturday (Tandoori Chicken Bowls)<br>6 boneless chicken thighs (~600g) x2 (Chicken &amp; Chickpea Korma Freezer Bag)<br>200g chicken thigh (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-pork_shoulder_roast">
+        <div class="uses">400g boneless chicken thighs (Tandoori Thighs for the Boxes)<br>600g tandoori thighs from Saturday (Tandoori Chicken Bowls)<br>6 boneless chicken thighs (~600g) x2 (Chicken &amp; Chickpea Korma Freezer Bag)<br>200g chicken thigh (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-pork_shoulder_roast">
         <span class="qty">2kg</span>
         <span class="food">pork shoulder roast</span></label>
         <div class="uses">2kg pork shoulder, skin scored (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-ham_sliced">
@@ -1166,16 +1260,22 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-salmon_fillet">
         <span class="qty">520g</span>
         <span class="food">salmon fillet</span></label>
-        <div class="uses">4 salmon fillets (Glazed Salmon Traybake)</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt_0">
+        <div class="uses">4 salmon fillets (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-egg">
+        <span class="qty">1.2kg</span>
+        <span class="food">egg</span></label>
+        <div class="uses">3 eggs (Pork Fried Rice)<br>4 boiled eggs (Cucumber &amp; Tomato Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
-        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-egg">
-        <span class="qty">986g</span>
-        <span class="food">egg</span></label>
-        <div class="uses">3 eggs (Pork Fried Rice)<br>4 boiled eggs (Cucumber &amp; Tomato Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt">
-        <span class="qty">750g</span>
+        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt">
+        <span class="qty">660g</span>
         <span class="food">greek yoghurt</span></label>
-        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>150g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mozzarella">
+        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-butter">
@@ -1215,9 +1315,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">300g</span>
         <span class="food">onion</span></label>
         <div class="uses">2 onions, diced (or 200g frozen) (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-lemon_juice">
-        <span class="qty">130g</span>
+        <span class="qty">131g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">Juice of 1 lemon (Mint Yoghurt)<br>Juice of half a lemon (Tandoori Thighs for the Boxes)<br>Juice of half a lemon (Dal)<br>1 lemon (Glazed Salmon Traybake)<br>A lemon, in wedges (Tandoori Chicken Bowls)<br>A squeeze of lemon (Cucumber &amp; Tomato Salad)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-banana">
+        <div class="uses">Juice of 1 lemon (Mint Yoghurt)<br>Squeeze of lemon (Tandoori Thighs for the Boxes)<br>Juice of half a lemon (Dal)<br>1 lemon (Glazed Salmon Traybake)<br>A lemon, in wedges (Tandoori Chicken Bowls)<br>A squeeze of lemon (Cucumber &amp; Tomato Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-banana">
         <span class="qty">100g</span>
         <span class="food">banana</span></label>
         <div class="uses">1 ripe banana, mashed (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-spring_onion">
@@ -1259,16 +1359,16 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">1 tin chickpeas, drained (Dal)<br>1 tin chickpeas, drained x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mixed_beans_drained">
         <span class="qty">500g</span>
         <span class="food">mixed beans drained</span></label>
-        <div class="uses">50g tinned beans x10 (Lunch Box, Week 2)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-chopped_tomatoes">
+        <div class="uses">50g tinned beans x10 (Lunch Box, Week 2)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-tuna_drained">
+        <span class="qty">448g</span>
+        <span class="food">tuna drained</span></label>
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-chopped_tomatoes">
         <span class="qty">400g</span>
         <span class="food">chopped tomatoes</span></label>
         <div class="uses">1 tin chopped tomatoes (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
-        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-tuna_drained">
-        <span class="qty">224g</span>
-        <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-grain_pouch">
+        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Tandoori Chicken, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-grain_pouch">
         <span class="qty">2.8kg</span>
         <span class="food">grain pouch</span></label>
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 2)<br>2 rice pouches (Tandoori Chicken Bowls)<br>2 rice pouches (Dal with Rice)<br>2 rice pouches (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-stock_made">
@@ -1325,13 +1425,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-soy_sauce">
         <span class="qty">45g</span>
         <span class="food">soy sauce</span></label>
-        <div class="uses">1 tbsp soy sauce (glaze) (Glazed Salmon Traybake)<br>2 tbsp soy sauce (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-spice_mix">
-        <span class="qty">26g</span>
-        <span class="food">spice mix</span></label>
-        <div class="uses">2 tbsp tandoori spice (Tandoori Thighs for the Boxes)<br>2 tsp tandoori spice (Tandoori Chicken Bowls)<br>1 tsp tandoori spice (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-sugar">
+        <div class="uses">1 tbsp soy sauce (glaze) (Glazed Salmon Traybake)<br>2 tbsp soy sauce (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
-        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-garam_masala">
+        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-spice_mix">
+        <span class="qty">17g</span>
+        <span class="food">spice mix</span></label>
+        <div class="uses">2 tsp tandoori spice (Tandoori Thighs for the Boxes)<br>2 tsp tandoori spice (Tandoori Chicken Bowls)<br>1 tsp tandoori spice (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-garam_masala">
         <span class="qty">8g</span>
         <span class="food">garam masala</span></label>
         <div class="uses">1 tsp garam masala (Dal)<br>1 tsp garam masala x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-turmeric">
@@ -1347,28 +1447,34 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">1g</span>
         <span class="food">oregano</span></label>
         <div class="uses">Dried herbs (Glazed Salmon Traybake)</div></li></ul></section></div>
-      <div class="cycle-body" data-group="b2" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chicken_thigh_boneless">
-        <span class="qty">2.4kg</span>
-        <span class="food">chicken thigh boneless</span></label>
-        <div class="uses">1kg boneless chicken thighs (Tandoori Thighs for the Boxes)<br>600g tandoori thighs from Saturday (Tandoori Chicken Bowls)<br>6 boneless chicken thighs (~600g) (Chicken &amp; Chickpea Korma Freezer Bag)<br>200g chicken thigh (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-pork_shoulder_roast">
+      <div class="cycle-body" data-group="b2" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-pork_shoulder_roast">
         <span class="qty">2kg</span>
         <span class="food">pork shoulder roast</span></label>
-        <div class="uses">2kg pork shoulder, skin scored (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-ham_sliced">
+        <div class="uses">2kg pork shoulder, skin scored (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chicken_thigh_boneless">
+        <span class="qty">1.8kg</span>
+        <span class="food">chicken thigh boneless</span></label>
+        <div class="uses">400g boneless chicken thighs (Tandoori Thighs for the Boxes)<br>600g tandoori thighs from Saturday (Tandoori Chicken Bowls)<br>6 boneless chicken thighs (~600g) (Chicken &amp; Chickpea Korma Freezer Bag)<br>200g chicken thigh (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
         <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-salmon_fillet">
         <span class="qty">520g</span>
         <span class="food">salmon fillet</span></label>
-        <div class="uses">4 salmon fillets (Glazed Salmon Traybake)</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt_0">
+        <div class="uses">4 salmon fillets (Glazed Salmon Traybake)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-egg">
+        <span class="qty">1.2kg</span>
+        <span class="food">egg</span></label>
+        <div class="uses">3 eggs (Pork Fried Rice)<br>4 boiled eggs (Cucumber &amp; Tomato Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
-        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-egg">
-        <span class="qty">986g</span>
-        <span class="food">egg</span></label>
-        <div class="uses">3 eggs (Pork Fried Rice)<br>4 boiled eggs (Cucumber &amp; Tomato Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt">
-        <span class="qty">750g</span>
+        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt">
+        <span class="qty">660g</span>
         <span class="food">greek yoghurt</span></label>
-        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>150g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-mozzarella">
+        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella</span></label>
         <div class="uses">2 balls mozzarella (Margherita, the Boys')<br>60g mozzarella (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-butter">
@@ -1408,9 +1514,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">300g</span>
         <span class="food">onion</span></label>
         <div class="uses">2 onions, diced (or 200g frozen) (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-lemon_juice">
-        <span class="qty">130g</span>
+        <span class="qty">131g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">Juice of 1 lemon (Mint Yoghurt)<br>Juice of half a lemon (Tandoori Thighs for the Boxes)<br>Juice of half a lemon (Dal)<br>1 lemon (Glazed Salmon Traybake)<br>A lemon, in wedges (Tandoori Chicken Bowls)<br>A squeeze of lemon (Cucumber &amp; Tomato Salad)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-banana">
+        <div class="uses">Juice of 1 lemon (Mint Yoghurt)<br>Squeeze of lemon (Tandoori Thighs for the Boxes)<br>Juice of half a lemon (Dal)<br>1 lemon (Glazed Salmon Traybake)<br>A lemon, in wedges (Tandoori Chicken Bowls)<br>A squeeze of lemon (Cucumber &amp; Tomato Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-banana">
         <span class="qty">100g</span>
         <span class="food">banana</span></label>
         <div class="uses">1 ripe banana, mashed (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-spring_onion">
@@ -1452,16 +1558,16 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">50g tinned beans x10 (Lunch Box, Week 2)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chickpeas_drained">
         <span class="qty">480g</span>
         <span class="food">chickpeas drained</span></label>
-        <div class="uses">1 tin chickpeas, drained (Dal)<br>1 tin chickpeas, drained (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chopped_tomatoes">
+        <div class="uses">1 tin chickpeas, drained (Dal)<br>1 tin chickpeas, drained (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-tuna_drained">
+        <span class="qty">448g</span>
+        <span class="food">tuna drained</span></label>
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-chopped_tomatoes">
         <span class="qty">400g</span>
         <span class="food">chopped tomatoes</span></label>
         <div class="uses">1 tin chopped tomatoes (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
-        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-tuna_drained">
-        <span class="qty">224g</span>
-        <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-grain_pouch">
+        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Tandoori Chicken, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-grain_pouch">
         <span class="qty">2.8kg</span>
         <span class="food">grain pouch</span></label>
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 2)<br>2 rice pouches (Tandoori Chicken Bowls)<br>2 rice pouches (Dal with Rice)<br>2 rice pouches (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-stock_made">
@@ -1518,13 +1624,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">5g creatine - in a glass of water, separate from breakfast x10 (Overnight Oats Bag) - 5g in water each morning, separate from breakfast</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-soy_sauce">
         <span class="qty">45g</span>
         <span class="food">soy sauce</span></label>
-        <div class="uses">1 tbsp soy sauce (glaze) (Glazed Salmon Traybake)<br>2 tbsp soy sauce (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-spice_mix">
-        <span class="qty">26g</span>
-        <span class="food">spice mix</span></label>
-        <div class="uses">2 tbsp tandoori spice (Tandoori Thighs for the Boxes)<br>2 tsp tandoori spice (Tandoori Chicken Bowls)<br>1 tsp tandoori spice (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-sugar">
+        <div class="uses">1 tbsp soy sauce (glaze) (Glazed Salmon Traybake)<br>2 tbsp soy sauce (Pork Fried Rice)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-sugar">
         <span class="qty">20g</span>
         <span class="food">sugar</span></label>
-        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-turmeric">
+        <div class="uses">1 tbsp sugar (Quick Pickled Red Onions)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-spice_mix">
+        <span class="qty">17g</span>
+        <span class="food">spice mix</span></label>
+        <div class="uses">2 tsp tandoori spice (Tandoori Thighs for the Boxes)<br>2 tsp tandoori spice (Tandoori Chicken Bowls)<br>1 tsp tandoori spice (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-turmeric">
         <span class="qty">5g</span>
         <span class="food">turmeric</span></label>
         <div class="uses">2 tsp turmeric (Dal)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cumin">
@@ -1575,10 +1681,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Tandoori Thighs for the Boxes <span class="serves">Serves 10</span></h4>
+  <h4>Tandoori Thighs for the Boxes <span class="serves">Serves 4</span></h4>
   <p class="callout">Cook 1.6kg of thighs, not 1kg - 600g of it is Monday night.</p>
-  <p class="notes">Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1.6kg total.</p>
-  <ul class="ingredients"><li>1kg boneless chicken thighs</li><li>150g Greek yoghurt</li><li>2 tbsp tandoori spice</li><li>Juice of half a lemon</li></ul>
+  <p class="notes">Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1kg total.</p>
+  <ul class="ingredients"><li>400g boneless chicken thighs</li><li>60g Greek yoghurt</li><li>2 tsp tandoori spice</li><li>Squeeze of lemon</li></ul>
   <ol class="method"><li>Yoghurt, spice and lemon mixed, thighs turned through it. 200C for 30-35 minutes until the edges char.</li></ol>
   
   
@@ -1612,12 +1718,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -1674,16 +1780,16 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 2, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>Mint Yoghurt</strong></li><li class="from">1 portion of <strong>Tandoori Thighs for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Mint yoghurt in the bottom.</li><li>Rice, then beans, then tandoori chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>Mint Yoghurt</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w2">~480-600 kcal · 32-39g protein · 52-64g carbs · 16-26g fat · 8-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
      <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
@@ -1693,7 +1799,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s2" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -1727,10 +1833,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Tandoori Thighs for the Boxes <span class="serves">Serves 10</span></h4>
+  <h4>Tandoori Thighs for the Boxes <span class="serves">Serves 4</span></h4>
   <p class="callout">Cook 1.6kg of thighs, not 1kg - 600g of it is Monday night.</p>
-  <p class="notes">Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1.6kg total.</p>
-  <ul class="ingredients"><li>1kg boneless chicken thighs</li><li>150g Greek yoghurt</li><li>2 tbsp tandoori spice</li><li>Juice of half a lemon</li></ul>
+  <p class="notes">Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1kg total.</p>
+  <ul class="ingredients"><li>400g boneless chicken thighs</li><li>60g Greek yoghurt</li><li>2 tsp tandoori spice</li><li>Squeeze of lemon</li></ul>
   <ol class="method"><li>Yoghurt, spice and lemon mixed, thighs turned through it. 200C for 30-35 minutes until the edges char.</li></ol>
   
   
@@ -1764,12 +1870,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -1826,16 +1932,16 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 2, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>Mint Yoghurt</strong></li><li class="from">1 portion of <strong>Tandoori Thighs for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Mint yoghurt in the bottom.</li><li>Rice, then beans, then tandoori chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>Mint Yoghurt</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w2">~480-600 kcal · 32-39g protein · 52-64g carbs · 16-26g fat · 8-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
      <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
@@ -1845,7 +1951,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="2-recipes"><div class="recipes"><div id="w2-sun" class="day-group">
       <h3 class="day-head">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -1975,12 +2081,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article><article class="card">
   <h4 class="card-title">Tandoori Thighs for the Boxes</h4>
   
-  <p class="servings">Serves 10 · 10 min hands-on · 35 min waiting</p>
+  <p class="servings">Serves 4 · 10 min hands-on · 35 min waiting</p>
   
-  <p class="card-notes">Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1.6kg total.</p>
-  <p class="ingredients-preview">1kg boneless chicken thighs · 150g Greek yoghurt · 2 tbsp tandoori spice · Juice of half a lemon</p>
+  <p class="card-notes">Marinate first thing, roast when the oven frees up. Monday's bowls come off the same tray - cook 1kg total.</p>
+  <p class="ingredients-preview">400g boneless chicken thighs · 60g Greek yoghurt · 2 tsp tandoori spice · Squeeze of lemon</p>
   <div class="macro" data-macro="tandoori_thighs">~145 kcal · 20g protein · 1g carbs · 6g fat · 0.4g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>1kg boneless chicken thighs</li><li>150g Greek yoghurt</li><li>2 tbsp tandoori spice</li><li>Juice of half a lemon</li></ul><ol class="method"><li>Yoghurt, spice and lemon mixed, thighs turned through it. 200C for 30-35 minutes until the edges char.</li></ol>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>400g boneless chicken thighs</li><li>60g Greek yoghurt</li><li>2 tsp tandoori spice</li><li>Squeeze of lemon</li></ul><ol class="method"><li>Yoghurt, spice and lemon mixed, thighs turned through it. 200C for 30-35 minutes until the edges char.</li></ol>
     
     </details>
 </article><article class="card">
@@ -2010,10 +2116,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <p class="servings">Serves 1 · 3 min hands-on</p>
   
-  <p class="card-notes">Ten of these - five each.</p>
-  <p class="ingredients-preview">1 portions of mint yoghurt · 1 portions of tandoori thighs for the boxes · 1 portions of lunch box veg tray · Half a rice pouch · 50g tinned beans +2 more</p>
-  <div class="macro" data-macro="lunchbox_w2">~480-600 kcal · 32-39g protein · 52-64g carbs · 16-26g fat · 8-10g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>Mint Yoghurt</strong></li><li class="from">1 portion of <strong>Tandoori Thighs for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Mint yoghurt in the bottom.</li><li>Rice, then beans, then tandoori chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="card-notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <p class="ingredients-preview">1 portions of mint yoghurt · 1 portions of lunch box veg tray · Half a rice pouch · 50g tinned beans · A spoonful of pickled onions +1 more</p>
+  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>Mint Yoghurt</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
     
     </details>
 </article><article class="card">
@@ -2025,6 +2131,41 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="ingredients-preview">250g oats · 60g protein powder · 150g peanut butter · 100g honey · 75g butter +3 more</p>
   <div class="macro" data-macro="flapjack_cinnamon_raisin">~300 kcal · 11g protein · 29g carbs · 16g fat · 4g fibre <em>per portion</em></div>
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>250g oats</li><li>60g protein powder</li><li>150g peanut butter</li><li>100g honey</li><li>75g butter</li><li>1 ripe banana, mashed</li><li>50g mixed seeds</li><li>80g raisins, plus 2 tsp cinnamon</li></ul><ol class="method"><li>Butter, peanut butter and honey melted together in a pan.</li><li>Off the heat, everything else stirred in.</li><li>Pressed hard into a lined tin.</li><li>180C for 22-25 minutes. Cool completely before cutting into 12.</li></ol>
+    
+    </details>
+</article></div></div>
+  <div class="day-group"><h3 class="day-head">Into the boxes on the day</h3>
+    <div class="recipe-grid"><article class="card">
+  <h4 class="card-title">Smoked Mackerel for Wednesday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Skin off, flaked straight into the box on Wednesday morning.</p>
+  <p class="ingredients-preview">2 smoked mackerel fillets (~160g) · A squeeze of lemon</p>
+  <div class="macro" data-macro="lunchbox_mackerel">~245 kcal · 15g protein · 0.3g carbs · 20g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>2 smoked mackerel fillets (~160g)</li><li>A squeeze of lemon</li></ul><ol class="method"><li>Skin off, flaked into the box on the day. Squeeze of lemon over.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Prawns for Thursday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 1 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Straight from the pack into the box on Thursday morning.</p>
+  <p class="ingredients-preview">160g cooked peeled prawns</p>
+  <div class="macro" data-macro="lunchbox_prawns">~80 kcal · 18g protein · 0g carbs · 0.7g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>160g cooked peeled prawns</li></ul><ol class="method"><li>Into the box on the day, on top of the leaves.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Tuna and Egg for Friday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Tuna and two halved eggs into the box on Friday morning.</p>
+  <p class="ingredients-preview">4 portions of boiled eggs · 160g tinned tuna in spring water, drained · Rounds the tuna up to 2 whole tins</p>
+  <div class="macro" data-macro="lunchbox_tuna_egg">~250 kcal · 35g protein · 0.8g carbs · 12g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Boiled Eggs</strong></li><li>160g tinned tuna in spring water, drained</li><li class="basket-only">Rounds the tuna up to 2 whole tins</li></ul><ol class="method"><li>Tuna drained and forked in, two boiled eggs halved on top.</li></ol>
     
     </details>
 </article></div></div></div></div>
@@ -2064,9 +2205,29 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="menu-name">Harissa Chicken with Squash &amp; Chickpeas</span>
       </a><div class="menu-macro">~700 kcal · 44g protein · 40g carbs · 43g fat · 9g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
-    <p>10 boxes, 5 each.
-       Lemon Chicken for the Boxes with lemon dressing.</p>
-    <div class="macro" data-macro="lunchbox_w3">~695-835 kcal · 36-46g protein · 56-61g carbs · 36-47g fat · 8-10g fibre <em>per portion</em></div>
+    <p>10 boxes, 5 each. Same base every day -
+       lemon dressing, rice, beans and roast veg. The protein changes.</p>
+    <ul class="boxdays"><li class="boxday">
+      <span class="boxday-day">Monday</span>
+      <span class="boxday-protein">80g Lemon Chicken for the Boxes <em>in on Saturday</em></span>
+      <span class="boxday-macro">~730 kcal · 33g protein · 57g carbs · 41g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-protein">80g Lemon Chicken for the Boxes <em>in on Saturday</em></span>
+      <span class="boxday-macro">~680 kcal · 28g protein · 57g carbs · 38g fat · 9g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
+      <span class="boxday-macro">~880 kcal · 28g protein · 61g carbs · 58g fat · 10g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Thursday</span>
+      <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~650 kcal · 30g protein · 57g carbs · 34g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Friday</span>
+      <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~865 kcal · 45g protein · 59g carbs · 50g fat · 8g fibre</span>
+    </li></ul>
     <p class="notes">Saturday is sandwiches. Sunday is the tuna pasta salad made the night before.</p></section>
 </div></div><div class="subpanel" data-sub="3-basket"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="b3">Cycle 1 <span>double bags</span></button>
@@ -2074,9 +2235,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
       </div>
       <p class="notes">Double the freezer bags - 2 per week instead of 1. Batch pots bank 1 bag each on top. Goal is ~9 dinners banked by the end of the month.</p>
       <div class="cycle-body" data-group="b3" data-cycle="1"><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-chicken_thigh_boneless">
-        <span class="qty">2.6kg</span>
+        <span class="qty">2kg</span>
         <span class="food">chicken thigh boneless</span></label>
-        <div class="uses">1.4kg boneless chicken thighs (Lemon Chicken for the Boxes)<br>6 boneless chicken thighs (~600g) x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-gammon_cooked">
+        <div class="uses">400g boneless chicken thighs (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>350g more on the same tray for Monday's wraps (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>6 boneless chicken thighs (~600g) x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-gammon_cooked">
         <span class="qty">1.8kg</span>
         <span class="food">gammon cooked</span></label>
         <div class="uses">1.8kg gammon joint (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-chicken_thigh_bonein">
@@ -2085,10 +2246,16 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-egg">
-        <span class="qty">1.1kg</span>
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-egg">
+        <span class="qty">1.3kg</span>
         <span class="food">egg</span></label>
-        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>4 boiled eggs (Greek Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-greek_yoghurt_0">
+        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>4 boiled eggs (Greek Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-mozzarella">
@@ -2152,9 +2319,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 3)<br>A bag of leaves (Chicken Wraps)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-lemon_juice">
-        <span class="qty">245g</span>
+        <span class="qty">237g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">Zest and juice of a lemon (Lemon &amp; Seed Flapjacks)<br>Juice of 3-4 lemons (Lemon Dressing)<br>Juice of 1 lemon (Lemon Chicken for the Boxes)<br>Juice of 1 lemon (North African Chickpea &amp; Sweet Potato Stew)<br>A squeeze of lemon x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>Juice of half a lemon (Greek Salad)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-courgette">
+        <div class="uses">Zest and juice of a lemon (Lemon &amp; Seed Flapjacks)<br>Juice of 3-4 lemons (Lemon Dressing)<br>Juice of half a lemon (Lemon Chicken for the Boxes)<br>Juice of 1 lemon (North African Chickpea &amp; Sweet Potato Stew)<br>A squeeze of lemon x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>Juice of half a lemon (Greek Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-courgette">
         <span class="qty">200g</span>
         <span class="food">courgette</span></label>
         <div class="uses">1 courgette, in chunks (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-banana">
@@ -2190,13 +2357,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">2 tins chickpeas, drained (North African Chickpea &amp; Sweet Potato Stew)<br>1 tin chickpeas, drained (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-mixed_beans_drained">
         <span class="qty">500g</span>
         <span class="food">mixed beans drained</span></label>
-        <div class="uses">50g tinned beans x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-passata">
+        <div class="uses">50g tinned beans x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-tuna_drained">
+        <span class="qty">448g</span>
+        <span class="food">tuna drained</span></label>
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
-        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-tuna_drained">
-        <span class="qty">224g</span>
-        <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-grain_pouch">
+        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Halloumi &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-grain_pouch">
         <span class="qty">1.3kg</span>
         <span class="food">grain pouch</span></label>
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-oats">
@@ -2206,9 +2373,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">500g</span>
         <span class="food">stock made</span></label>
         <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-olive_oil">
-        <span class="qty">377g</span>
+        <span class="qty">369g</span>
         <span class="food">olive oil</span></label>
-        <div class="uses">210ml olive oil (Lemon Dressing)<br>1 tbsp oil (Lemon Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (North African Chickpea &amp; Sweet Potato Stew)<br>2 tbsp oil (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp oil (Gammon Joint)<br>1.5 tbsp oil (Gammon, Eggs &amp; Sweet Potato Chips)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-protein_powder">
+        <div class="uses">210ml olive oil (Lemon Dressing)<br>2 tsp oil (Lemon Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (North African Chickpea &amp; Sweet Potato Stew)<br>2 tbsp oil (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp oil (Gammon Joint)<br>1.5 tbsp oil (Gammon, Eggs &amp; Sweet Potato Chips)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
         <div class="uses">60g protein powder (Lemon &amp; Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-pasta_dry">
@@ -2263,22 +2430,28 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">3g</span>
         <span class="food">ground coriander</span></label>
         <div class="uses">1 tsp ground coriander (North African Chickpea &amp; Sweet Potato Stew)</div></li></ul></section></div>
-      <div class="cycle-body" data-group="b3" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chicken_thigh_boneless">
-        <span class="qty">2kg</span>
-        <span class="food">chicken thigh boneless</span></label>
-        <div class="uses">1.4kg boneless chicken thighs (Lemon Chicken for the Boxes)<br>6 boneless chicken thighs (~600g) (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-gammon_cooked">
+      <div class="cycle-body" data-group="b3" data-cycle="2" hidden><section class="aisle"><h4>Meat</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-gammon_cooked">
         <span class="qty">1.8kg</span>
         <span class="food">gammon cooked</span></label>
-        <div class="uses">1.8kg gammon joint (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chicken_thigh_bonein">
+        <div class="uses">1.8kg gammon joint (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chicken_thigh_boneless">
+        <span class="qty">1.4kg</span>
+        <span class="food">chicken thigh boneless</span></label>
+        <div class="uses">400g boneless chicken thighs (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>350g more on the same tray for Monday's wraps (Lemon Chicken for the Boxes) - 400g for the boxes, 350g on the same tray for Monday's wraps<br>6 boneless chicken thighs (~600g) (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-chicken_thigh_bonein">
         <span class="qty">1.2kg</span>
         <span class="food">chicken thigh bonein</span></label>
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-ham_sliced">
         <span class="qty">180g</span>
         <span class="food">ham sliced</span></label>
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-egg">
-        <span class="qty">1.1kg</span>
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-egg">
+        <span class="qty">1.3kg</span>
         <span class="food">egg</span></label>
-        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>4 boiled eggs (Greek Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-greek_yoghurt_0">
+        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>4 boiled eggs (Greek Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
         <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-mozzarella">
@@ -2342,9 +2515,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
         <div class="uses">A handful of leaves x10 (Lunch Box, Week 3)<br>A bag of leaves (Chicken Wraps)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-lemon_juice">
-        <span class="qty">235g</span>
+        <span class="qty">227g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">Zest and juice of a lemon (Lemon &amp; Seed Flapjacks)<br>Juice of 3-4 lemons (Lemon Dressing)<br>Juice of 1 lemon (Lemon Chicken for the Boxes)<br>Juice of 1 lemon (North African Chickpea &amp; Sweet Potato Stew)<br>A squeeze of lemon (Chicken, Olive &amp; Tomato Freezer Bag)<br>Juice of half a lemon (Greek Salad)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-courgette">
+        <div class="uses">Zest and juice of a lemon (Lemon &amp; Seed Flapjacks)<br>Juice of 3-4 lemons (Lemon Dressing)<br>Juice of half a lemon (Lemon Chicken for the Boxes)<br>Juice of 1 lemon (North African Chickpea &amp; Sweet Potato Stew)<br>A squeeze of lemon (Chicken, Olive &amp; Tomato Freezer Bag)<br>Juice of half a lemon (Greek Salad)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-courgette">
         <span class="qty">200g</span>
         <span class="food">courgette</span></label>
         <div class="uses">1 courgette, in chunks (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-banana">
@@ -2380,13 +2553,13 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">2 tins chickpeas, drained (North African Chickpea &amp; Sweet Potato Stew)<br>1 tin chickpeas, drained (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-mixed_beans_drained">
         <span class="qty">500g</span>
         <span class="food">mixed beans drained</span></label>
-        <div class="uses">50g tinned beans x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-passata">
+        <div class="uses">50g tinned beans x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-tuna_drained">
+        <span class="qty">448g</span>
+        <span class="food">tuna drained</span></label>
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-passata">
         <span class="qty">280g</span>
         <span class="food">passata</span></label>
-        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-tuna_drained">
-        <span class="qty">224g</span>
-        <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-grain_pouch">
+        <div class="uses">200g passata (Margherita, the Boys')<br>80g passata (Halloumi &amp; Pepper, the Adults')</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-grain_pouch">
         <span class="qty">1.3kg</span>
         <span class="food">grain pouch</span></label>
         <div class="uses">Half a rice pouch x10 (Lunch Box, Week 3)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-oats">
@@ -2396,9 +2569,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">500g</span>
         <span class="food">stock made</span></label>
         <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-olive_oil">
-        <span class="qty">377g</span>
+        <span class="qty">369g</span>
         <span class="food">olive oil</span></label>
-        <div class="uses">210ml olive oil (Lemon Dressing)<br>1 tbsp oil (Lemon Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (North African Chickpea &amp; Sweet Potato Stew)<br>2 tbsp oil (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp oil (Gammon Joint)<br>1.5 tbsp oil (Gammon, Eggs &amp; Sweet Potato Chips)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-protein_powder">
+        <div class="uses">210ml olive oil (Lemon Dressing)<br>2 tsp oil (Lemon Chicken for the Boxes)<br>1.5 tbsp oil (Lunch Box Veg Tray)<br>1 tbsp oil (North African Chickpea &amp; Sweet Potato Stew)<br>2 tbsp oil (Harissa Chicken with Squash &amp; Chickpeas)<br>1 tbsp oil (Gammon Joint)<br>1.5 tbsp oil (Gammon, Eggs &amp; Sweet Potato Chips)<br>1 tbsp oil (Margherita, the Boys')<br>3 tbsp oil (Greek Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-protein_powder">
         <span class="qty">310g</span>
         <span class="food">protein powder</span></label>
         <div class="uses">60g protein powder (Lemon &amp; Seed Flapjacks)<br>1 scoop (25g) protein powder x10 (Overnight Oats Bag) - 10 scoops for the bags</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-pasta_dry">
@@ -2488,14 +2661,14 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Lemon Chicken for the Boxes <span class="serves">Serves 10</span></h4>
+  <h4>Lemon Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
-  <p class="notes">Cook 1.4kg - 1kg for the boxes and 350g for Monday's wraps.</p>
-  <ul class="ingredients"><li>1.4kg boneless chicken thighs</li><li>1 tbsp oil</li><li>Juice of 1 lemon</li><li>2 tsp dried oregano</li></ul>
+  <p class="notes">400g for Monday and Tuesday's boxes. The 350g for Monday's wraps is on the same tray but is not box food.</p>
+  <ul class="ingredients"><li>400g boneless chicken thighs</li><li>2 tsp oil</li><li>Juice of half a lemon</li><li>2 tsp dried oregano</li><li class="basket-only">350g more on the same tray for Monday's wraps</li></ul>
   <ol class="method"><li>Oil, lemon and oregano over the thighs. 200C for 30-35 minutes. 1kg cooled for the boxes, 350g in a tub for Monday.</li></ol>
   
   
-  <div class="macro" data-macro="roast_chicken_lemon">~185 kcal · 26g protein · 0.3g carbs · 8g fat · 0.1g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="roast_chicken_lemon">~135 kcal · 19g protein · 0.6g carbs · 7g fat · 0.2g fibre <em>per portion</em></div>
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
@@ -2525,12 +2698,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -2596,18 +2769,18 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 3, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>Lemon Dressing</strong></li><li class="from">1 portion of <strong>Lemon Chicken for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Lemon dressing in the bottom.</li><li>Rice, then beans, then lemon chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>Lemon Dressing</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w3">~695-835 kcal · 36-46g protein · 56-61g carbs · 36-47g fat · 8-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w3">~515-635 kcal · 10-14g protein · 56-61g carbs · 28-38g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g feta and oregano</li><li><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li><strong>Thursday</strong> A boiled egg with toasted seeds</li><li><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g feta and oregano</li><li><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li><strong>Thursday</strong> Toasted seeds</li><li><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -2615,7 +2788,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s3" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -2649,14 +2822,14 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Lemon Chicken for the Boxes <span class="serves">Serves 10</span></h4>
+  <h4>Lemon Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
-  <p class="notes">Cook 1.4kg - 1kg for the boxes and 350g for Monday's wraps.</p>
-  <ul class="ingredients"><li>1.4kg boneless chicken thighs</li><li>1 tbsp oil</li><li>Juice of 1 lemon</li><li>2 tsp dried oregano</li></ul>
+  <p class="notes">400g for Monday and Tuesday's boxes. The 350g for Monday's wraps is on the same tray but is not box food.</p>
+  <ul class="ingredients"><li>400g boneless chicken thighs</li><li>2 tsp oil</li><li>Juice of half a lemon</li><li>2 tsp dried oregano</li><li class="basket-only">350g more on the same tray for Monday's wraps</li></ul>
   <ol class="method"><li>Oil, lemon and oregano over the thighs. 200C for 30-35 minutes. 1kg cooled for the boxes, 350g in a tub for Monday.</li></ol>
   
   
-  <div class="macro" data-macro="roast_chicken_lemon">~185 kcal · 26g protein · 0.3g carbs · 8g fat · 0.1g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="roast_chicken_lemon">~135 kcal · 19g protein · 0.6g carbs · 7g fat · 0.2g fibre <em>per portion</em></div>
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
@@ -2686,12 +2859,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -2757,18 +2930,18 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 3, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>Lemon Dressing</strong></li><li class="from">1 portion of <strong>Lemon Chicken for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Lemon dressing in the bottom.</li><li>Rice, then beans, then lemon chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>Lemon Dressing</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w3">~695-835 kcal · 36-46g protein · 56-61g carbs · 36-47g fat · 8-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w3">~515-635 kcal · 10-14g protein · 56-61g carbs · 28-38g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g feta and oregano</li><li><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li><strong>Thursday</strong> A boiled egg with toasted seeds</li><li><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g feta and oregano</li><li><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li><strong>Thursday</strong> Toasted seeds</li><li><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -2776,7 +2949,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="3-recipes"><div class="recipes"><div id="w3-sun" class="day-group">
       <h3 class="day-head">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -2906,12 +3079,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article><article class="card">
   <h4 class="card-title">Lemon Chicken for the Boxes</h4>
   
-  <p class="servings">Serves 10 · 5 min hands-on · 35 min waiting</p>
+  <p class="servings">Serves 4 · 5 min hands-on · 35 min waiting</p>
   
-  <p class="card-notes">Cook 1.4kg - 1kg for the boxes and 350g for Monday's wraps.</p>
-  <p class="ingredients-preview">1.4kg boneless chicken thighs · 1 tbsp oil · Juice of 1 lemon · 2 tsp dried oregano</p>
-  <div class="macro" data-macro="roast_chicken_lemon">~185 kcal · 26g protein · 0.3g carbs · 8g fat · 0.1g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>1.4kg boneless chicken thighs</li><li>1 tbsp oil</li><li>Juice of 1 lemon</li><li>2 tsp dried oregano</li></ul><ol class="method"><li>Oil, lemon and oregano over the thighs. 200C for 30-35 minutes. 1kg cooled for the boxes, 350g in a tub for Monday.</li></ol>
+  <p class="card-notes">400g for Monday and Tuesday's boxes. The 350g for Monday's wraps is on the same tray but is not box food.</p>
+  <p class="ingredients-preview">400g boneless chicken thighs · 2 tsp oil · Juice of half a lemon · 2 tsp dried oregano · 350g more on the same tray for Monday's wraps</p>
+  <div class="macro" data-macro="roast_chicken_lemon">~135 kcal · 19g protein · 0.6g carbs · 7g fat · 0.2g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>400g boneless chicken thighs</li><li>2 tsp oil</li><li>Juice of half a lemon</li><li>2 tsp dried oregano</li><li class="basket-only">350g more on the same tray for Monday's wraps</li></ul><ol class="method"><li>Oil, lemon and oregano over the thighs. 200C for 30-35 minutes. 1kg cooled for the boxes, 350g in a tub for Monday.</li></ol>
     
     </details>
 </article><article class="card">
@@ -2941,10 +3114,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <p class="servings">Serves 1 · 3 min hands-on</p>
   
-  <p class="card-notes">Ten of these - five each.</p>
-  <p class="ingredients-preview">1 portions of lemon dressing · 1 portions of lemon chicken for the boxes · 1 portions of lunch box veg tray · Half a rice pouch · 50g tinned beans +2 more</p>
-  <div class="macro" data-macro="lunchbox_w3">~695-835 kcal · 36-46g protein · 56-61g carbs · 36-47g fat · 8-10g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>Lemon Dressing</strong></li><li class="from">1 portion of <strong>Lemon Chicken for the Boxes</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Lemon dressing in the bottom.</li><li>Rice, then beans, then lemon chicken, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="card-notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <p class="ingredients-preview">1 portions of lemon dressing · 1 portions of lunch box veg tray · Half a rice pouch · 50g tinned beans · A spoonful of pickled onions +1 more</p>
+  <div class="macro" data-macro="lunchbox_w3">~515-635 kcal · 10-14g protein · 56-61g carbs · 28-38g fat · 8-10g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>Lemon Dressing</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
     
     </details>
 </article><article class="card">
@@ -2956,6 +3129,41 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="ingredients-preview">250g oats · 60g protein powder · 150g peanut butter · 100g honey · 75g butter +3 more</p>
   <div class="macro" data-macro="flapjack_lemon_seed">~290 kcal · 12g protein · 24g carbs · 17g fat · 4g fibre <em>per portion</em></div>
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>250g oats</li><li>60g protein powder</li><li>150g peanut butter</li><li>100g honey</li><li>75g butter</li><li>1 ripe banana, mashed</li><li>80g mixed seeds</li><li>Zest and juice of a lemon</li></ul><ol class="method"><li>Butter, peanut butter and honey melted together in a pan.</li><li>Off the heat, everything else stirred in.</li><li>Pressed hard into a lined tin.</li><li>180C for 22-25 minutes. Cool completely before cutting into 12.</li></ol>
+    
+    </details>
+</article></div></div>
+  <div class="day-group"><h3 class="day-head">Into the boxes on the day</h3>
+    <div class="recipe-grid"><article class="card">
+  <h4 class="card-title">Smoked Mackerel for Wednesday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Skin off, flaked straight into the box on Wednesday morning.</p>
+  <p class="ingredients-preview">2 smoked mackerel fillets (~160g) · A squeeze of lemon</p>
+  <div class="macro" data-macro="lunchbox_mackerel">~245 kcal · 15g protein · 0.3g carbs · 20g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>2 smoked mackerel fillets (~160g)</li><li>A squeeze of lemon</li></ul><ol class="method"><li>Skin off, flaked into the box on the day. Squeeze of lemon over.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Prawns for Thursday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 1 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Straight from the pack into the box on Thursday morning.</p>
+  <p class="ingredients-preview">160g cooked peeled prawns</p>
+  <div class="macro" data-macro="lunchbox_prawns">~80 kcal · 18g protein · 0g carbs · 0.7g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>160g cooked peeled prawns</li></ul><ol class="method"><li>Into the box on the day, on top of the leaves.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Tuna and Egg for Friday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Tuna and two halved eggs into the box on Friday morning.</p>
+  <p class="ingredients-preview">4 portions of boiled eggs · 160g tinned tuna in spring water, drained · Rounds the tuna up to 2 whole tins</p>
+  <div class="macro" data-macro="lunchbox_tuna_egg">~250 kcal · 35g protein · 0.8g carbs · 12g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Boiled Eggs</strong></li><li>160g tinned tuna in spring water, drained</li><li class="basket-only">Rounds the tuna up to 2 whole tins</li></ul><ol class="method"><li>Tuna drained and forked in, two boiled eggs halved on top.</li></ol>
     
     </details>
 </article></div></div></div></div>
@@ -2995,9 +3203,29 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="menu-name">Meatball &amp; Ricotta Al Forno, Doubled</span>
       </a><div class="menu-macro">~535 kcal · 46g protein · 36g carbs · 22g fat · 9g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
-    <p>10 boxes, 5 each.
-       Meatballs from the Al Forno Tray with balsamic vinaigrette.</p>
-    <div class="macro" data-macro="lunchbox_w4">~605-745 kcal · 19-28g protein · 57-59g carbs · 33-46g fat · 9-10g fibre <em>per portion</em></div>
+    <p>10 boxes, 5 each. Same base every day -
+       balsamic vinaigrette, rice, beans and roast veg. The protein changes.</p>
+    <ul class="boxdays"><li class="boxday">
+      <span class="boxday-day">Monday</span>
+      <span class="boxday-protein">80g Meatballs from the Al Forno Tray <em>in on Saturday</em></span>
+      <span class="boxday-macro">~680 kcal · 24g protein · 58g carbs · 38g fat · 9g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-protein">80g Meatballs from the Al Forno Tray <em>in on Saturday</em></span>
+      <span class="boxday-macro">~670 kcal · 24g protein · 58g carbs · 37g fat · 9g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
+      <span class="boxday-macro">~885 kcal · 29g protein · 51g carbs · 62g fat · 7g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Thursday</span>
+      <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~635 kcal · 30g protein · 52g carbs · 34g fat · 8g fibre</span>
+    </li><li class="boxday">
+      <span class="boxday-day">Friday</span>
+      <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
+      <span class="boxday-macro">~800 kcal · 48g protein · 53g carbs · 43g fat · 8g fibre</span>
+    </li></ul>
     <p class="notes">Saturday is sandwiches. Sunday is the tuna pasta salad made the night before.</p></section>
 </div></div><div class="subpanel" data-sub="4-basket"><div class="cycle-switch">
         <button class="cyc active" data-cycle="1" data-group="b4">Cycle 1 <span>double bags</span></button>
@@ -3022,13 +3250,19 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">100g pancetta or bacon lardons (optional) (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pepperoni">
         <span class="qty">40g</span>
         <span class="food">pepperoni</span></label>
-        <div class="uses">40g pepperoni (Pepperoni, the Adults')</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-greek_yoghurt_0">
+        <div class="uses">40g pepperoni (Pepperoni, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-egg">
+        <span class="qty">1.2kg</span>
+        <span class="food">egg</span></label>
+        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>4 boiled eggs (Tomato &amp; Mozzarella Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
-        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-egg">
-        <span class="qty">928g</span>
-        <span class="food">egg</span></label>
-        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>4 boiled eggs (Tomato &amp; Mozzarella Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-fresh_pasta">
+        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-fresh_pasta">
         <span class="qty">500g</span>
         <span class="food">fresh pasta</span></label>
         <div class="uses">500g fresh pasta (Ragu with Pasta)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-mozzarella">
@@ -3098,9 +3332,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">55g</span>
         <span class="food">fresh herbs</span></label>
         <div class="uses">2 bunches fresh basil (Meatball &amp; Ricotta Al Forno, Doubled)<br>Basil (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-lemon_juice">
-        <span class="qty">40g</span>
+        <span class="qty">50g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">Zest of 2 lemons (Meatball &amp; Ricotta Al Forno, Doubled)<br>Zest of a lemon (Beef &amp; Tomato Orzo)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-garlic">
+        <div class="uses">Zest of 2 lemons (Meatball &amp; Ricotta Al Forno, Doubled)<br>Zest of a lemon (Beef &amp; Tomato Orzo)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-garlic">
         <span class="qty">39g</span>
         <span class="food">garlic</span></label>
         <div class="uses">4 cloves garlic, crushed (Beef Ragu, Double Batch)<br>3 cloves garlic, crushed (Minestrone)<br>2 cloves garlic (Meatball &amp; Ricotta Al Forno, Doubled)<br>2 garlic cubes x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pizza_dough">
@@ -3134,9 +3368,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">480g</span>
         <span class="food">butter beans drained</span></label>
         <div class="uses">2 tins butter beans, drained (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-tuna_drained">
-        <span class="qty">224g</span>
+        <span class="qty">448g</span>
         <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-stock_made">
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-stock_made">
         <span class="qty">2.4kg</span>
         <span class="food">stock made</span></label>
         <div class="uses">500ml beef stock (2 cubes) (Beef Ragu, Double Batch)<br>1.4L vegetable stock (Minestrone)<br>500ml stock (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-grain_pouch">
@@ -3236,13 +3470,19 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <div class="uses">100g pancetta or bacon lardons (optional) (Minestrone)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pepperoni">
         <span class="qty">40g</span>
         <span class="food">pepperoni</span></label>
-        <div class="uses">40g pepperoni (Pepperoni, the Adults')</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-greek_yoghurt_0">
+        <div class="uses">40g pepperoni (Pepperoni, the Adults')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-smoked_mackerel">
+        <span class="qty">160g</span>
+        <span class="food">smoked mackerel</span></label>
+        <div class="uses">2 smoked mackerel fillets (~160g) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-prawns_cooked">
+        <span class="qty">160g</span>
+        <span class="food">prawns cooked</span></label>
+        <div class="uses">160g cooked peeled prawns (Prawns for Thursday's Boxes) - Thursday lunch boxes</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-egg">
+        <span class="qty">1.2kg</span>
+        <span class="food">egg</span></label>
+        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>4 boiled eggs (Tomato &amp; Mozzarella Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">greek yoghurt 0</span></label>
-        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-egg">
-        <span class="qty">928g</span>
-        <span class="food">egg</span></label>
-        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>4 boiled eggs (Tomato &amp; Mozzarella Salad)<br>2 boiled eggs (Tuna Pasta Salad)<br>8 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-fresh_pasta">
+        <div class="uses">100g 0% Greek yoghurt x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-fresh_pasta">
         <span class="qty">500g</span>
         <span class="food">fresh pasta</span></label>
         <div class="uses">500g fresh pasta (Ragu with Pasta)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-mozzarella">
@@ -3312,9 +3552,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">55g</span>
         <span class="food">fresh herbs</span></label>
         <div class="uses">2 bunches fresh basil (Meatball &amp; Ricotta Al Forno, Doubled)<br>Basil (Tomato &amp; Mozzarella Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-lemon_juice">
-        <span class="qty">40g</span>
+        <span class="qty">50g</span>
         <span class="food">lemon juice</span></label>
-        <div class="uses">Zest of 2 lemons (Meatball &amp; Ricotta Al Forno, Doubled)<br>Zest of a lemon (Beef &amp; Tomato Orzo)<br>Juice of half a lemon (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-garlic">
+        <div class="uses">Zest of 2 lemons (Meatball &amp; Ricotta Al Forno, Doubled)<br>Zest of a lemon (Beef &amp; Tomato Orzo)<br>Juice of half a lemon (Tuna Pasta Salad)<br>A squeeze of lemon (Smoked Mackerel for Wednesday's Boxes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-garlic">
         <span class="qty">33g</span>
         <span class="food">garlic</span></label>
         <div class="uses">4 cloves garlic, crushed (Beef Ragu, Double Batch)<br>3 cloves garlic, crushed (Minestrone)<br>2 cloves garlic (Meatball &amp; Ricotta Al Forno, Doubled)<br>2 garlic cubes (Italian Sausage &amp; Pepper Freezer Bag)</div></li></ul></section><section class="aisle"><h4>Frozen</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pizza_dough">
@@ -3348,9 +3588,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">480g</span>
         <span class="food">butter beans drained</span></label>
         <div class="uses">2 tins butter beans, drained (Meatball &amp; Ricotta Al Forno, Doubled)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-tuna_drained">
-        <span class="qty">224g</span>
+        <span class="qty">448g</span>
         <span class="food">tuna drained</span></label>
-        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-stock_made">
+        <div class="uses">2 tins tuna, drained (Tuna Pasta Salad)<br>160g tinned tuna in spring water, drained (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes<br>Rounds the tuna up to 2 whole tins (Tuna and Egg for Friday's Boxes) - 4 tins - 2 for the tuna pasta salad, 2 for Friday's lunch boxes</div></li></ul></section><section class="aisle"><h4>Cupboard</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-stock_made">
         <span class="qty">2.4kg</span>
         <span class="food">stock made</span></label>
         <div class="uses">500ml beef stock (2 cubes) (Beef Ragu, Double Batch)<br>1.4L vegetable stock (Minestrone)<br>500ml stock (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-grain_pouch">
@@ -3467,10 +3707,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Meatballs from the Al Forno Tray <span class="serves">Serves 10</span></h4>
+  <h4>Meatballs from the Al Forno Tray <span class="serves">Serves 4</span></h4>
   
-  <p class="notes">No extra cooking - two portions off the second tray, split across the ten boxes.</p>
-  <ul class="ingredients"><li class="from">2 portions of <strong>Meatball &amp; Ricotta Al Forno, Doubled</strong></li></ul>
+  <p class="notes">No extra cooking - four fifths of a portion off the second tray, split across Monday and Tuesday's four boxes.</p>
+  <ul class="ingredients"><li class="from">0.8 portions of <strong>Meatball &amp; Ricotta Al Forno, Doubled</strong></li></ul>
   <ol class="method"><li>Once the second tray has cooled, lift out the meatballs for the boxes. A spoon of the tray sauce goes in with them.</li></ol>
   
   
@@ -3513,12 +3753,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -3584,18 +3824,18 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 4, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each. The protein comes off the second al forno tray.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>Balsamic Vinaigrette</strong></li><li class="from">1 portion of <strong>Meatballs from the Al Forno Tray</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g cannellini beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Balsamic vinaigrette in the bottom.</li><li>Rice, then beans, then meatballs, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>Balsamic Vinaigrette</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g cannellini beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w4">~605-745 kcal · 19-28g protein · 57-59g carbs · 33-46g fat · 9-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w4">~495-640 kcal · 10-15g protein · 50-52g carbs · 28-42g fat · 7-8g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li><strong>Thursday</strong> A boiled egg with toasted seeds</li><li><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li><strong>Thursday</strong> Toasted seeds and torn basil</li><li><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -3603,7 +3843,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s4" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -3637,10 +3877,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3><span class="step-n">3</span>Lunch box protein</h3>
   <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
-  <h4>Meatballs from the Al Forno Tray <span class="serves">Serves 10</span></h4>
+  <h4>Meatballs from the Al Forno Tray <span class="serves">Serves 4</span></h4>
   
-  <p class="notes">No extra cooking - two portions off the second tray, split across the ten boxes.</p>
-  <ul class="ingredients"><li class="from">2 portions of <strong>Meatball &amp; Ricotta Al Forno, Doubled</strong></li></ul>
+  <p class="notes">No extra cooking - four fifths of a portion off the second tray, split across Monday and Tuesday's four boxes.</p>
+  <ul class="ingredients"><li class="from">0.8 portions of <strong>Meatball &amp; Ricotta Al Forno, Doubled</strong></li></ul>
   <ol class="method"><li>Once the second tray has cooled, lift out the meatballs for the boxes. A spoon of the tray sauce goes in with them.</li></ol>
   
   
@@ -3683,12 +3923,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
+  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
-  <h4>Boiled Eggs <span class="serves">Serves 8</span></h4>
+  <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
   <p class="notes">2 in the tuna pasta salad, 4 in Friday's salad, 1 in Thursday's lunch box, 1 spare.</p>
-  <ul class="ingredients"><li>8 eggs</li></ul>
+  <ul class="ingredients"><li>12 eggs</li></ul>
   <ol class="method"><li>Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge.</li></ol>
   
   
@@ -3754,18 +3994,18 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Bottom-to-top so the leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not into the box on Saturday.</p>
+  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 4, build 10 <span class="serves">Serves 1</span></h4>
   
-  <p class="notes">Ten of these - five each. The protein comes off the second al forno tray.</p>
-  <ul class="ingredients"><li class="from">1 portion of <strong>Balsamic Vinaigrette</strong></li><li class="from">1 portion of <strong>Meatballs from the Al Forno Tray</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g cannellini beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
-  <ol class="method"><li>Balsamic vinaigrette in the bottom.</li><li>Rice, then beans, then meatballs, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <ul class="ingredients"><li class="from">1 portion of <strong>Balsamic Vinaigrette</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g cannellini beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul>
+  <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w4">~605-745 kcal · 19-28g protein · 57-59g carbs · 33-46g fat · 9-10g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w4">~495-640 kcal · 10-15g protein · 50-52g carbs · 28-42g fat · 7-8g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li><strong>Thursday</strong> A boiled egg with toasted seeds</li><li><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li><strong>Thursday</strong> Toasted seeds and torn basil</li><li><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -3773,7 +4013,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li></ul></section>
+    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="4-recipes"><div class="recipes"><div id="w4-sun" class="day-group">
       <h3 class="day-head">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -3914,12 +4154,12 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article><article class="card">
   <h4 class="card-title">Meatballs from the Al Forno Tray</h4>
   
-  <p class="servings">Serves 10 · 5 min hands-on</p>
+  <p class="servings">Serves 4 · 5 min hands-on</p>
   
-  <p class="card-notes">No extra cooking - two portions off the second tray, split across the ten boxes.</p>
-  <p class="ingredients-preview">2 portions of meatball &amp; ricotta al forno, doubled</p>
+  <p class="card-notes">No extra cooking - four fifths of a portion off the second tray, split across Monday and Tuesday's four boxes.</p>
+  <p class="ingredients-preview">0.8 portions of meatball &amp; ricotta al forno, doubled</p>
   <div class="macro" data-macro="meatballs_from_traybake">~105 kcal · 9g protein · 7g carbs · 4g fat · 2g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">2 portions of <strong>Meatball &amp; Ricotta Al Forno, Doubled</strong></li></ul><ol class="method"><li>Once the second tray has cooled, lift out the meatballs for the boxes. A spoon of the tray sauce goes in with them.</li></ol>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">0.8 portions of <strong>Meatball &amp; Ricotta Al Forno, Doubled</strong></li></ul><ol class="method"><li>Once the second tray has cooled, lift out the meatballs for the boxes. A spoon of the tray sauce goes in with them.</li></ol>
     
     </details>
 </article><article class="card">
@@ -3949,10 +4189,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <p class="servings">Serves 1 · 3 min hands-on</p>
   
-  <p class="card-notes">Ten of these - five each. The protein comes off the second al forno tray.</p>
-  <p class="ingredients-preview">1 portions of balsamic vinaigrette · 1 portions of meatballs from the al forno tray · 1 portions of lunch box veg tray · Half a rice pouch · 50g cannellini beans +2 more</p>
-  <div class="macro" data-macro="lunchbox_w4">~605-745 kcal · 19-28g protein · 57-59g carbs · 33-46g fat · 9-10g fibre <em>per portion</em></div>
-  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>Balsamic Vinaigrette</strong></li><li class="from">1 portion of <strong>Meatballs from the Al Forno Tray</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g cannellini beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Balsamic vinaigrette in the bottom.</li><li>Rice, then beans, then meatballs, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Finisher on the day.</li></ol>
+  <p class="card-notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
+  <p class="ingredients-preview">1 portions of balsamic vinaigrette · 1 portions of lunch box veg tray · Half a rice pouch · 50g cannellini beans · A spoonful of pickled onions +1 more</p>
+  <div class="macro" data-macro="lunchbox_w4">~495-640 kcal · 10-15g protein · 50-52g carbs · 28-42g fat · 7-8g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>Balsamic Vinaigrette</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g cannellini beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
     
     </details>
 </article><article class="card">
@@ -3964,6 +4204,41 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="ingredients-preview">250g oats · 60g protein powder · 150g peanut butter · 100g honey · 75g butter +3 more</p>
   <div class="macro" data-macro="flapjack_cocoa">~285 kcal · 11g protein · 24g carbs · 16g fat · 4g fibre <em>per portion</em></div>
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>250g oats</li><li>60g protein powder</li><li>150g peanut butter</li><li>100g honey</li><li>75g butter</li><li>1 ripe banana, mashed</li><li>50g mixed seeds</li><li>25g cocoa powder</li></ul><ol class="method"><li>Butter, peanut butter and honey melted together in a pan.</li><li>Off the heat, everything else stirred in. The cocoa wants sifting or it clumps.</li><li>Pressed hard into a lined tin.</li><li>180C for 22-25 minutes. Cool completely before cutting into 12.</li></ol>
+    
+    </details>
+</article></div></div>
+  <div class="day-group"><h3 class="day-head">Into the boxes on the day</h3>
+    <div class="recipe-grid"><article class="card">
+  <h4 class="card-title">Smoked Mackerel for Wednesday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Skin off, flaked straight into the box on Wednesday morning.</p>
+  <p class="ingredients-preview">2 smoked mackerel fillets (~160g) · A squeeze of lemon</p>
+  <div class="macro" data-macro="lunchbox_mackerel">~245 kcal · 15g protein · 0.3g carbs · 20g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>2 smoked mackerel fillets (~160g)</li><li>A squeeze of lemon</li></ul><ol class="method"><li>Skin off, flaked into the box on the day. Squeeze of lemon over.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Prawns for Thursday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 1 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Straight from the pack into the box on Thursday morning.</p>
+  <p class="ingredients-preview">160g cooked peeled prawns</p>
+  <div class="macro" data-macro="lunchbox_prawns">~80 kcal · 18g protein · 0g carbs · 0.7g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>160g cooked peeled prawns</li></ul><ol class="method"><li>Into the box on the day, on top of the leaves.</li></ol>
+    
+    </details>
+</article><article class="card">
+  <h4 class="card-title">Tuna and Egg for Friday's Boxes</h4>
+  
+  <p class="servings">Serves 2 · 2 min hands-on</p>
+  
+  <p class="card-notes">Not made Saturday. Tuna and two halved eggs into the box on Friday morning.</p>
+  <p class="ingredients-preview">4 portions of boiled eggs · 160g tinned tuna in spring water, drained · Rounds the tuna up to 2 whole tins</p>
+  <div class="macro" data-macro="lunchbox_tuna_egg">~250 kcal · 35g protein · 0.8g carbs · 12g fat · 0g fibre <em>per portion</em></div>
+  <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Boiled Eggs</strong></li><li>160g tinned tuna in spring water, drained</li><li class="basket-only">Rounds the tuna up to 2 whole tins</li></ul><ol class="method"><li>Tuna drained and forked in, two boiled eggs halved on top.</li></ol>
     
     </details>
 </article></div></div></div></div>
@@ -4145,7 +4420,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div>
 </div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-09-02 11:33</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-09-02 11:38</footer>
 <script>
 (function(){
   var anchor = "2026-08-28";

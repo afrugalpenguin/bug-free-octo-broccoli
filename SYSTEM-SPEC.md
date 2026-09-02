@@ -32,6 +32,22 @@ GitHub Pages should serve from the `docs/` folder on the `main` branch.
 
 ## The weekly rhythm
 
+### Lunch box protein
+
+The base of a box is identical all week - dressing, rice, beans, roast veg, pickled onions, leaves. The protein is not part of it and changes by day, the same five-day rotation in every rotation week:
+
+| Day | Protein | Built |
+|---|---|---|
+| Mon | 80g that week's roast tray | Saturday |
+| Tue | 80g that week's roast tray | Saturday |
+| Wed | 80g smoked mackerel | on the day |
+| Thu | 80g cooked prawns | on the day |
+| Fri | 80g tuna + 2 boiled eggs | on the day |
+
+So the roast tray feeds four boxes, not ten. Only Monday and Tuesday's boxes are complete when they leave the Saturday session; the other six carry the base and get their protein added that morning.
+
+A box therefore has five macro figures rather than one - `lunchboxDay(week, day)` in `calc.mjs` returns base + that day's protein + that day's finisher. Wednesday runs high on fat because oily fish is the point of that day, and the page labels it rather than leaving the number looking like an error.
+
 The week runs **Friday (delivery) through Thursday**, anchored to delivery day. This is critical — `rotation.day_order` is Fri, Sat, Sun, Mon, Tue, Wed, Thu, and the basket, the cycle maths and the today button all count from it.
 
 The week **tabs render** Sun, Mon, Tue, Wed, Thu, Fri, Sat, from `rotation.display_order`, because a list that starts on Friday and ends on Thursday reads oddly. Same seven days, same content, reading order only. Change `day_order` and you change the system; change `display_order` and you change what the page looks like.
@@ -399,10 +415,18 @@ Things that happen every single week regardless of which rotation week it is.
       "dressing": "2 tbsp (that week's dressing)",
       "grains": "half a rice pouch (125g)",
       "beans": "50g tinned beans, drained",
-      "protein": "80g (that week's protein)",
       "roast_veg": "100g from Saturday's veg tray",
       "pickled_onions": "a spoonful",
       "leaves": "a handful (~15g)"
+    },
+    // The protein is NOT part of the base - it changes by day. "week" means
+    // that week's roast tray; anything else is a recipe id of its own.
+    "protein_schedule": {
+      "mon": { "source": "roast",         "grams": 80, "recipe": "week" },
+      "tue": { "source": "roast",         "grams": 80, "recipe": "week" },
+      "wed": { "source": "smoked_mackerel","grams": 80, "recipe": "lunchbox_mackerel" },
+      "thu": { "source": "prawns",        "grams": 80, "recipe": "lunchbox_prawns" },
+      "fri": { "source": "tuna_and_eggs", "grams": 80, "recipe": "lunchbox_tuna_egg" }
     },
     "finishers": "See rotation.json — different every day, the variety comes from these",
     "build_notes": "Bottom-to-top so leaves stay out of the dressing. Finisher last. Crunchy ones and boiled eggs go on the day, not in the box Saturday."
