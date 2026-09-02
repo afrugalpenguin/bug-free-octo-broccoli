@@ -1668,7 +1668,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "spice_mix",
+        "food": "fajita_spice",
         "grams": 8,
         "display": "1 sachet fajita spice",
         "aisle": "cupboard"
@@ -1858,7 +1858,7 @@
         "aisle": "dairy"
       },
       {
-        "food": "spice_mix",
+        "food": "tandoori_spice",
         "grams": 8,
         "display": "2 tsp tandoori spice",
         "aisle": "cupboard"
@@ -2512,7 +2512,7 @@
         "aisle": "meat"
       },
       {
-        "food": "spice_mix",
+        "food": "tandoori_spice",
         "grams": 3,
         "display": "1 tsp tandoori spice",
         "aisle": "cupboard"
@@ -2729,9 +2729,9 @@
         "aisle": "cupboard"
       },
       {
-        "food": "vinegar",
+        "food": "red_wine_vinegar",
         "grams": 15,
-        "display": "1 tbsp vinegar",
+        "display": "1 tbsp red wine vinegar",
         "aisle": "cupboard"
       },
       {
@@ -3071,7 +3071,7 @@
         "aisle": "dairy"
       },
       {
-        "food": "spice_mix",
+        "food": "tandoori_spice",
         "grams": 6,
         "display": "2 tsp tandoori spice",
         "aisle": "cupboard"
@@ -3410,7 +3410,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "vinegar",
+        "food": "red_wine_vinegar",
         "grams": 75,
         "display": "75ml red wine vinegar",
         "aisle": "cupboard"
@@ -4285,7 +4285,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "vinegar",
+        "food": "red_wine_vinegar",
         "grams": 150,
         "display": "150ml red wine vinegar",
         "aisle": "cupboard"
@@ -5103,7 +5103,7 @@
         "aisle": "fresh"
       },
       {
-        "food": "vinegar",
+        "food": "red_wine_vinegar",
         "grams": 22,
         "display": "1.5 tbsp red wine vinegar",
         "aisle": "cupboard"
@@ -6019,7 +6019,7 @@
         "aisle": "cupboard"
       },
       {
-        "food": "vinegar",
+        "food": "white_wine_vinegar",
         "grams": 10,
         "display": "2 tsp white wine vinegar",
         "aisle": "cupboard"
