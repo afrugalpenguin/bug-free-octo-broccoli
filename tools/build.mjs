@@ -51,6 +51,10 @@ const SETTINGS_SCHEMA = [
 
 const SETTINGS_KEY = 'ffs-settings';
 
+// A hand-written page that sits beside the generated one for a single week.
+// Nothing else knows about it - set this to null and the link is gone.
+const ONE_OFF = { label: 'Use up week', href: 'week2-freezer.html' };
+
 // The same slot maths the client does, run at build time against the defaults.
 // Without this the page is briefly - or permanently, with JS off - missing every
 // computed day name.
@@ -623,6 +627,8 @@ header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans
 .tab{padding:.85rem 1.1rem;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:.9rem;font-weight:500;color:var(--text-light);white-space:nowrap;cursor:pointer;min-height:44px}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .tab[data-tab="bank"]{margin-left:auto;color:var(--text-light);opacity:.85}
+.tab-link{text-decoration:none;display:grid;place-items:center;color:var(--accent);opacity:.9}
+.tab-link:hover{opacity:1}
 .tab[data-tab="bank"].active{opacity:1}
 .tab[data-tab="week-1"].active{color:var(--week1);border-bottom-color:var(--week1)}
 .tab[data-tab="week-2"].active{color:var(--week2);border-bottom-color:var(--week2)}
@@ -1108,6 +1114,7 @@ const html = `<!DOCTYPE html>
 ${settingsPanel}
 <nav class="tabs">
   ${tabs.map(([k, label], i) => `<button class="tab${i === 0 ? ' active' : ''}" data-tab="${k}">${label}</button>`).join('\n  ')}
+  ${ONE_OFF ? `<a class="tab tab-link" href="${esc(ONE_OFF.href)}">${esc(ONE_OFF.label)}</a>` : ''}
 </nav>
 <main class="container">
 ${overviewPanel()}

@@ -52,6 +52,8 @@ header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans
 .tab{padding:.85rem 1.1rem;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:.9rem;font-weight:500;color:var(--text-light);white-space:nowrap;cursor:pointer;min-height:44px}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .tab[data-tab="bank"]{margin-left:auto;color:var(--text-light);opacity:.85}
+.tab-link{text-decoration:none;display:grid;place-items:center;color:var(--accent);opacity:.9}
+.tab-link:hover{opacity:1}
 .tab[data-tab="bank"].active{opacity:1}
 .tab[data-tab="week-1"].active{color:var(--week1);border-bottom-color:var(--week1)}
 .tab[data-tab="week-2"].active{color:var(--week2);border-bottom-color:var(--week2)}
@@ -209,6 +211,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <button class="tab" data-tab="week-3">Week 3</button>
   <button class="tab" data-tab="week-4">Week 4</button>
   <button class="tab" data-tab="bank">Recipe bank</button>
+  <a class="tab tab-link" href="week2-freezer.html">Use up week</a>
 </nav>
 <main class="container">
 <div class="panel active" data-tab="overview">
@@ -4474,7 +4477,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div>
 </div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-09-02 13:13</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-09-02 13:48</footer>
 <script>
 (function(){
   var SLOTS = ["fri","sat","sun","mon","tue","wed","thu"];            // day_order: slot 0 is delivery
