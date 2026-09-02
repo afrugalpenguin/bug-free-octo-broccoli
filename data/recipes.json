@@ -1347,7 +1347,7 @@
       "passiveMinutes": 90,
       "source": "system"
     },
-    "notes": "Two birds, because Monday and the lunch boxes both live off the leftovers. Strip both carcasses the same evening.",
+    "notes": "Two birds, because Sunday's dinner and Monday's leftovers both come off them. The lunch boxes do not - they have their own tray on Saturday. Strip both carcasses the same evening.",
     "ingredients": [
       {
         "food": "chicken_roast_meat",
@@ -2048,7 +2048,7 @@
     "notes": "Together night. Same idea as the other Mondays, but wrapped instead of over rice.",
     "ingredients": [
       {
-        "food": "chicken_roast_meat",
+        "food": "chicken_thigh_boneless",
         "grams": 350,
         "display": "350g lemon chicken from Saturday",
         "aisle": "meat",
