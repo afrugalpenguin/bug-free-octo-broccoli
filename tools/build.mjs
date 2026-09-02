@@ -1203,7 +1203,7 @@ const html = `<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2C2416">
-<title>Family Food System</title>
+<title>Family Food Diary</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1211,7 +1211,7 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
 <header>
-  <h1>Family Food System<span class="sub">Friday to Thursday, four week rotation</span></h1>
+  <h1>Family Food Diary<span class="sub">Friday to Thursday, four week rotation</span></h1>
   <div class="header-actions">
   <button id="today" type="button">Today</button>
   <button id="settings-open" type="button" aria-label="Settings" title="Settings">
