@@ -671,15 +671,15 @@
   },
   "grain_pouch": {
     "per_100g": {
-      "kcal": 146,
-      "protein": 3.0,
-      "carbs": 34.7,
-      "fat": 0.4,
-      "fibre": 0.7
+      "kcal": 142,
+      "protein": 4.7,
+      "carbs": 20.4,
+      "fat": 3.6,
+      "fibre": 4.8
     },
-    "source": "mw:11-864",
-    "mw_name": "Rice, white, long grain, easy cook, boiled in unsalted water",
-    "basis": "bought as a cooked pouch"
+    "source": "pack",
+    "mw_name": "the rice pouch I actually buy",
+    "note": "off the pack - a wholegrain mix, so higher fibre and lower carbs than the M&W white rice entry"
   },
   "gravy_made": {
     "per_100g": {
@@ -951,14 +951,15 @@
   },
   "oats": {
     "per_100g": {
-      "kcal": 381,
-      "protein": 10.9,
-      "carbs": 70.7,
-      "fat": 8.1,
-      "fibre": 7.8
+      "kcal": 362,
+      "protein": 11.0,
+      "carbs": 59.9,
+      "fat": 6.6,
+      "fibre": 9.6
     },
-    "source": "mw:11-788",
-    "mw_name": "Porridge oats, unfortified"
+    "source": "pack",
+    "mw_name": "the porridge oats I actually buy",
+    "note": "off the pack"
   },
   "olive_oil": {
     "per_100g": {
