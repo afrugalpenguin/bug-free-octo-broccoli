@@ -25,6 +25,41 @@ const WEEKS = ['1', '2', '3', '4'];
 // week tabs use it and nothing else does.
 const DAYS = rotation.day_order;
 const DISPLAY_DAYS = rotation.display_order ?? rotation.day_order;
+
+// Every setting the panel offers, in render order. Adding one is a new entry
+// here plus a case in applySettings() on the client - nothing else. `key` is
+// both the localStorage field and the input id.
+const WEEKDAYS = [
+  ['mon', 'Monday'], ['tue', 'Tuesday'], ['wed', 'Wednesday'], ['thu', 'Thursday'],
+  ['fri', 'Friday'], ['sat', 'Saturday'], ['sun', 'Sunday'],
+];
+
+const SETTINGS_SCHEMA = [
+  { key: 'delivery_day', label: 'Delivery day', type: 'select', options: WEEKDAYS,
+    default: scaffold.defaults.delivery_day },
+  { key: 'week_start_day', label: 'Week starts on', type: 'select', options: WEEKDAYS,
+    default: scaffold.defaults.week_start_day, note: 'Usually the same as delivery day.' },
+  { key: 'anchor_date', label: 'Cycle 1 anchor date', type: 'date',
+    default: scaffold.defaults.anchor_date,
+    note: 'The first delivery day of cycle 1.' },
+  { key: 'current_cycle', label: 'Current cycle', type: 'segmented',
+    default: scaffold.defaults.current_cycle,
+    options: [['auto', 'Auto'], ['1', 'Cycle 1 (double freezer bags)'], ['2', 'Cycle 2+ (single bags)']] },
+];
+
+const SETTINGS_KEY = 'ffs-settings';
+
+// The same slot maths the client does, run at build time against the defaults.
+// Without this the page is briefly - or permanently, with JS off - missing every
+// computed day name.
+const WEEKDAY_IDS = WEEKDAYS.map(([id]) => id);
+const WEEKDAY_NAME = Object.fromEntries(WEEKDAYS);
+const weekdayAtOffset = (n, delivery = scaffold.defaults.delivery_day) =>
+  WEEKDAY_IDS[(((WEEKDAY_IDS.indexOf(delivery) + n) % 7) + 7) % 7];
+const slotLabel = slot => WEEKDAY_NAME[weekdayAtOffset(DAYS.indexOf(slot))];
+const fillTpl = (text, ownSlot = null) => text
+  .split('{{day}}').join(ownSlot ? slotLabel(ownSlot) : '')
+  .replace(/\{\{d\+(-?\d+)\}\}/g, (_, n) => WEEKDAY_NAME[weekdayAtOffset(parseInt(n, 10))]);
 const DAY_NAME = rotation.day_names;
 
 const AISLES = [
@@ -254,7 +289,7 @@ function basketPanel(week, cycle) {
 function cookStep(n, title, detail, body) {
   return `<section class="step">
   <h3><span class="step-n">${n}</span>${esc(title)}</h3>
-  ${detail ? `<p class="step-detail">${esc(detail)}</p>` : ''}
+  ${detail ? `<p class="step-detail" data-tpl="${esc(detail)}">${esc(fillTpl(detail))}</p>` : ''}
   ${body}
 </section>`;
 }
@@ -311,7 +346,7 @@ function saturdayPanel(week, cycle) {
   step(order[6].step, order[6].detail, cold);
 
   const finishers = DISPLAY_DAYS.filter(d => w.lunchbox_finishers[d])
-    .map(d => `<li><strong>${esc(DAY_NAME[d])}</strong> ${esc(w.lunchbox_finishers[d])}</li>`).join('');
+    .map(d => `<li data-day="${esc(d)}"><strong data-daylabel="${esc(d)}">${esc(DAY_NAME[d])}</strong> ${esc(w.lunchbox_finishers[d])}</li>`).join('');
   step(order[7].step, `${order[7].detail} ${scaffold.lunch_boxes.build_notes}`,
     `${inlineRecipe(w.lunchbox, `${recipes[w.lunchbox].name}, build ${scaffold.lunch_boxes.total}`)}
      <div class="finishers"><h4>Finishers, added on the day</h4><ul>${finishers}</ul></div>`);
@@ -333,7 +368,8 @@ function saturdayPanel(week, cycle) {
   }
   step(order[8].step, order[8].detail, dests.join('') || '<p class="notes">Nothing to divide this week.</p>');
 
-  const notMade = scaffold.not_made_saturday.map(x => `<li>${esc(x)}</li>`).join('');
+  const notMade = scaffold.not_made_saturday.map(x =>
+    `<li${x.day ? ` data-day="${esc(x.day)}"` : ''} data-tpl="${esc(x.what)}">${esc(fillTpl(x.what, x.day))}</li>`).join('');
 
   return `<div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -358,7 +394,7 @@ function lunchboxDays(week) {
       ? '<span class="omega">omega-3 day</span>' : '';
     const when = spec.recipe === 'week' ? 'in on Saturday' : 'in on the day';
     return `<li class="boxday">
-      <span class="boxday-day">${esc(DAY_NAME[day])}</span>
+      <span class="boxday-day" data-daylabel="${esc(day)}">${esc(DAY_NAME[day])}</span>
       <span class="boxday-protein">${esc(spec.grams)}g ${esc(name)} <em>${esc(when)}</em>${flag}</span>
       <span class="boxday-macro">${esc(lunchboxDayLine(week, day))}</span>
     </li>`;
@@ -377,9 +413,9 @@ function menuPanel(week) {
       .filter(([, m]) => m[day])
       .map(([season, m]) => `<div class="swap">${esc(season)}: ${esc(recipes[m[day]]?.name ?? m[day])}</div>`).join('');
     const macro = isPizza || !macroLine(id) ? '' : `<div class="menu-macro">${esc(macroLine(id))}</div>`;
-    return `<li class="menu-row">
+    return `<li class="menu-row" data-day="${esc(day)}">
       <a href="#w${esc(week)}-${esc(day)}">
-        <span class="menu-day">${esc(DAY_NAME[day])}</span>
+        <span class="menu-day" data-daylabel="${esc(day)}">${esc(DAY_NAME[day])}</span>
         <span class="menu-name">${name}</span>
       </a>${macro}${swap}</li>`;
   }).join('');
@@ -404,8 +440,8 @@ function recipesPanel(week) {
         + recipeCard(w.friday_pizza_topping, { level: 'h4' })
         + recipeCard(w.friday_salad, { level: 'h4' })
       : recipeCard(id, { level: 'h4' });
-    return `<div id="w${week}-${day}" class="day-group">
-      <h3 class="day-head">${esc(DAY_NAME[day])}</h3>
+    return `<div id="w${week}-${day}" class="day-group" data-day="${esc(day)}">
+      <h3 class="day-head" data-daylabel="${esc(day)}">${esc(DAY_NAME[day])}</h3>
       <div class="recipe-grid">${inner}</div></div>`;
   }).join('');
 
@@ -463,8 +499,11 @@ function weekPanel(week) {
 // ------------------------------------------------------------------ overview
 
 function overviewPanel() {
+  // The when column and any {{d+N}} in the what are filled in by the client from
+  // the delivery day, so both move when the setting moves.
   const rhythm = scaffold.rhythm.map(r =>
-    `<li><span class="when">${esc(r.when)}</span><span class="what">${esc(r.what)}</span></li>`).join('');
+    `<li data-offset="${r.offset}"${r.to != null ? ` data-to="${r.to}"` : ''}${r.at ? ` data-at="${esc(r.at)}"` : ''}>
+      <span class="when">${esc(rhythmWhen(r))}</span><span class="what" data-tpl="${esc(r.what)}">${esc(fillTpl(r.what))}</span></li>`).join('');
 
   const weeks = WEEKS.map(w => {
     const r = rotation.weeks[w];
@@ -554,6 +593,27 @@ header{background:var(--text);color:var(--bg);padding:1rem 1.25rem;display:flex;
 header h1{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;font-weight:400;line-height:1.2}
 header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans-serif}
 #today{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.45rem 1.1rem;font:inherit;cursor:pointer;white-space:nowrap;min-height:44px;display:grid;gap:0;line-height:1.25;text-align:center}
+#settings-open{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;width:44px;height:44px;min-height:44px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;box-shadow:var(--shadow)}
+#settings-open:hover{box-shadow:var(--shadow-lg)}
+.header-actions{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
+.scrim{position:fixed;inset:0;background:rgba(44,36,22,.4);opacity:0;visibility:hidden;transition:opacity .25s ease-out,visibility .25s ease-out;z-index:30}
+.scrim.open{opacity:1;visibility:visible}
+.settings{position:fixed;top:0;right:0;bottom:0;width:320px;max-width:100%;background:var(--bg);border-left:1px solid var(--border);box-shadow:-4px 0 16px rgba(44,36,22,.12);transform:translateX(100%);transition:transform .25s ease-out;z-index:31;display:flex;flex-direction:column;overflow-y:auto}
+.settings.open{transform:translateX(0)}
+.settings-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.1rem .6rem}
+.settings-head h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;font-weight:400}
+#settings-close{background:none;border:0;font:inherit;font-size:1.6rem;line-height:1;color:var(--text-light);cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border-radius:8px}
+#settings-close:hover{background:var(--card);color:var(--text)}
+.settings-body{padding:.4rem 1.1rem 1rem;display:grid;gap:1.1rem}
+.set-field{display:grid;gap:.35rem}
+.set-field label,.set-label{font-size:.85rem;font-weight:600}
+.set-field select,.set-field input[type=date]{font:inherit;font-size:.9rem;color:var(--text);background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.55rem .6rem;min-height:44px;width:100%}
+.set-note{font-size:.75rem;color:var(--text-light)}
+.segmented{display:grid;gap:.35rem}
+.seg{font:inherit;font-size:.82rem;text-align:left;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.55rem .6rem;min-height:44px;cursor:pointer}
+.seg.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.settings-foot{padding:0 1.1rem 1.1rem;font-size:.72rem;color:var(--text-light)}
+@media(max-width:420px){.settings{width:100%}}
 #today .t-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
 #today .t-slot{font-size:.85rem;font-weight:600}
 #today:active{transform:scale(.97)}
@@ -683,10 +743,173 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 
 const JS = `
 (function(){
-  var anchor = ${JSON.stringify(scaffold.today_button.anchor_friday)};
-  var cycleLen = ${scaffold.today_button.cycle_length_days};
-  var days = ${JSON.stringify(DAYS)};
-  var dayNames = ${JSON.stringify(DAY_NAME)};
+  var SLOTS = ${JSON.stringify(DAYS)};            // day_order: slot 0 is delivery
+  var WEEKDAY_IDS = ${JSON.stringify(WEEKDAYS.map(w => w[0]))};
+  var WEEKDAY_NAMES = ${JSON.stringify(Object.fromEntries(WEEKDAYS))};
+  var SCHEMA = ${JSON.stringify(SETTINGS_SCHEMA.map(f => ({ key: f.key, type: f.type, def: f.default })))};
+  var SETTINGS_KEY = ${JSON.stringify(SETTINGS_KEY)};
+  var cycleLen = ${scaffold.defaults.cycle_length_days};
+
+  // ---------------------------------------------------------------- settings
+  var store = null;
+  try { store = window.localStorage; } catch(err) { store = null; }
+
+  var settings = (function(){
+    var out = {};
+    SCHEMA.forEach(function(f){ out[f.key] = f.def; });
+    try {
+      var raw = store && store.getItem(SETTINGS_KEY);
+      if(raw){
+        var saved = JSON.parse(raw);
+        SCHEMA.forEach(function(f){
+          if(saved[f.key] !== undefined && saved[f.key] !== null) out[f.key] = saved[f.key];
+        });
+      }
+    } catch(err){}
+    return out;
+  })();
+
+  function saveSettings(){
+    try { if(store) store.setItem(SETTINGS_KEY, JSON.stringify(settings)); } catch(err){}
+  }
+
+  // Monday=0 .. Sunday=6, matching WEEKDAY_IDS.
+  function weekdayIndex(id){ var i = WEEKDAY_IDS.indexOf(id); return i < 0 ? 4 : i; }
+
+  // A slot is a fixed number of days after delivery. Slot 0 is delivery day, so
+  // prep is always delivery+1 and the roast delivery+2, whatever weekday
+  // delivery happens to be.
+  function slotOffset(slot){ var i = SLOTS.indexOf(slot); return i < 0 ? 0 : i; }
+  function weekdayAtOffset(n){
+    var base = weekdayIndex(settings.delivery_day);
+    return WEEKDAY_IDS[(((base + n) % 7) + 7) % 7];
+  }
+  function slotName(slot){ return WEEKDAY_NAMES[weekdayAtOffset(slotOffset(slot))]; }
+
+  // {{day}} is this element's own slot; {{d+N}} is delivery + N days.
+  //
+  // Scanned by hand rather than with a regex on purpose: this whole block is
+  // emitted through a template literal in build.mjs, which silently eats the
+  // backslashes, so /\d/ arrives in the page as /d/ and matches nothing.
+  function fillTemplate(text, ownSlot){
+    var out = '', i = 0;
+    while(i < text.length){
+      var a = text.indexOf('{{', i);
+      if(a < 0){ out += text.slice(i); break; }
+      var b = text.indexOf('}}', a);
+      if(b < 0){ out += text.slice(i); break; }
+      out += text.slice(i, a);
+      var token = text.slice(a + 2, b);
+      if(token === 'day'){
+        out += ownSlot ? slotName(ownSlot) : '';
+      } else if(token.slice(0, 2) === 'd+'){
+        out += WEEKDAY_NAMES[weekdayAtOffset(parseInt(token.slice(2), 10))];
+      } else {
+        out += '{{' + token + '}}';
+      }
+      i = b + 2;
+    }
+    return out;
+  }
+
+  // ------------------------------------------------------------ apply
+  // Everything the settings touch is re-derived here, so a change is: write the
+  // value, call applySettings(). Adding a setting means adding a case, not
+  // rewiring anything.
+
+  function applyDayLabels(){
+    document.querySelectorAll('[data-daylabel]').forEach(function(el){
+      el.textContent = slotName(el.dataset.daylabel);
+    });
+  }
+
+  // Display order only - the slots themselves never move.
+  function orderedSlots(){
+    var startIdx = weekdayIndex(settings.week_start_day);
+    return SLOTS.slice().sort(function(a, b){
+      var ai = (((weekdayIndex(weekdayAtOffset(slotOffset(a))) - startIdx) % 7) + 7) % 7;
+      var bi = (((weekdayIndex(weekdayAtOffset(slotOffset(b))) - startIdx) % 7) + 7) % 7;
+      return ai - bi;
+    });
+  }
+
+  function applyDayOrder(){
+    var order = orderedSlots();
+    document.querySelectorAll('.menu-list, .recipes, .finishers ul').forEach(function(list){
+      var kids = Array.prototype.slice.call(list.children).filter(function(el){ return el.dataset.day; });
+      if(!kids.length) return;
+      order.forEach(function(slot){
+        kids.forEach(function(el){ if(el.dataset.day === slot) list.appendChild(el); });
+      });
+      // anything without a slot (Made on Saturday, Into the boxes) stays last
+      Array.prototype.slice.call(list.children).forEach(function(el){
+        if(!el.dataset.day) list.appendChild(el);
+      });
+    });
+  }
+
+  function applyTemplates(){
+    document.querySelectorAll('[data-tpl]').forEach(function(el){
+      el.textContent = fillTemplate(el.dataset.tpl, el.dataset.day || (el.closest('[data-day]') || {dataset:{}}).dataset.day);
+    });
+  }
+
+  function applyRhythm(){
+    document.querySelectorAll('.rhythm li[data-offset]').forEach(function(li){
+      var from = parseInt(li.dataset.offset, 10);
+      var to = li.dataset.to != null ? parseInt(li.dataset.to, 10) : null;
+      var name = function(n){ return WEEKDAY_NAMES[weekdayAtOffset(n)]; };
+      var label = to != null ? name(from).slice(0,3) + '-' + name(to).slice(0,3) : name(from);
+      if(li.dataset.at === 'bed') label += ', bed';
+      li.querySelector('.when').textContent = label;
+    });
+  }
+
+  function todaySlot(){
+    var a = new Date(settings.anchor_date + 'T00:00:00');
+    var now = new Date(); now.setHours(0,0,0,0);
+    var diff = Math.floor((now - a) / 86400000);
+    var into = ((diff % cycleLen) + cycleLen) % cycleLen;
+    return { week: String(Math.floor(into/7)+1), day: SLOTS[into%7], weeksIn: Math.floor(diff/7) };
+  }
+
+  function activeCycle(){
+    if(settings.current_cycle === '1') return '1';
+    if(settings.current_cycle === '2') return '2';
+    var a = new Date(settings.anchor_date + 'T00:00:00');
+    var now = new Date(); now.setHours(0,0,0,0);
+    var diff = Math.floor((now - a) / 86400000);
+    return diff >= 0 && diff < cycleLen ? '1' : '2';
+  }
+
+  function applyCycle(){
+    var c = activeCycle();
+    document.querySelectorAll('.cyc').forEach(function(b){
+      b.classList.toggle('active', b.dataset.cycle === c);
+    });
+    document.querySelectorAll('.cycle-body').forEach(function(d){
+      d.hidden = d.dataset.cycle !== c;
+    });
+  }
+
+  var todayBtn = document.getElementById('today');
+  function applyToday(){
+    var slot = todaySlot();
+    todayBtn.innerHTML = '<span class="t-label">Today</span><span class="t-slot">'
+      + slotName(slot.day).slice(0,3) + ', wk ' + slot.week + '</span>';
+    todayBtn.setAttribute('aria-label', 'Go to today: ' + slotName(slot.day) + ' of week ' + slot.week);
+    todayBtn.dataset.week = slot.week;
+    todayBtn.dataset.day = slot.day;
+  }
+
+  function applySettings(){
+    applyDayLabels();
+    applyTemplates();
+    applyRhythm();
+    applyDayOrder();
+    applyCycle();
+    applyToday();
+  }
 
   function show(tab){
     document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab===tab); });
@@ -727,8 +950,6 @@ const JS = `
   });
 
   // Basket ticks survive a reload, because a shop takes more than one sitting.
-  var store = null;
-  try { store = window.localStorage; } catch(err) { store = null; }
   document.addEventListener('change', function(e){
     var box = e.target.closest('[data-basket]');
     if(!box) return;
@@ -742,32 +963,103 @@ const JS = `
     box.closest('.basket-item').classList.toggle('done', !!on);
   });
 
-  // Which week and which day is it? Counted forward from the anchor Friday.
-  function todaySlot(){
-    var a = new Date(anchor + 'T00:00:00');
-    var now = new Date(); now.setHours(0,0,0,0);
-    var diff = Math.floor((now - a) / 86400000);
-    var into = ((diff % cycleLen) + cycleLen) % cycleLen;
-    return { week: String(Math.floor(into/7)+1), day: days[into%7] };
-  }
-
-  var btn = document.getElementById('today');
-  var slot = todaySlot();
-  btn.innerHTML = '<span class="t-label">Today</span><span class="t-slot">'
-    + dayNames[slot.day].slice(0,3) + ', wk ' + slot.week + '</span>';
-  btn.setAttribute('aria-label', 'Go to today: ' + dayNames[slot.day] + ' of week ' + slot.week);
-  btn.addEventListener('click', function(){
-    show('week-'+slot.week);
-    showSub(slot.week+'-recipes');
-    var target = document.getElementById('w'+slot.week+'-'+slot.day);
+  todayBtn.addEventListener('click', function(){
+    var week = todayBtn.dataset.week, day = todayBtn.dataset.day;
+    show('week-'+week);
+    showSub(week+'-recipes');
+    var target = document.getElementById('w'+week+'-'+day);
     if(target){
       target.scrollIntoView({behavior:'smooth', block:'start'});
       var card = target.querySelector('.card');
       if(card){ card.classList.add('flash'); setTimeout(function(){ card.classList.remove('flash'); }, 1800); }
     }
   });
+
+  // ------------------------------------------------------------ settings panel
+  var panel = document.getElementById('settings-panel');
+  var scrim = document.getElementById('settings-scrim');
+  function openSettings(){
+    panel.classList.add('open'); scrim.classList.add('open');
+    panel.setAttribute('aria-hidden', 'false');
+  }
+  function closeSettings(){
+    panel.classList.remove('open'); scrim.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+  }
+  document.getElementById('settings-open').addEventListener('click', openSettings);
+  document.getElementById('settings-close').addEventListener('click', closeSettings);
+  scrim.addEventListener('click', closeSettings);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeSettings(); });
+
+  // Fill the controls from the stored settings, then keep them in step.
+  SCHEMA.forEach(function(f){
+    if(f.type === 'segmented'){
+      panel.querySelectorAll('[data-seg="'+f.key+'"]').forEach(function(b){
+        b.classList.toggle('active', b.dataset.value === String(settings[f.key]));
+        b.addEventListener('click', function(){
+          settings[f.key] = b.dataset.value;
+          panel.querySelectorAll('[data-seg="'+f.key+'"]').forEach(function(o){
+            o.classList.toggle('active', o === b);
+          });
+          saveSettings(); applySettings();
+        });
+      });
+      return;
+    }
+    var input = document.getElementById('set-'+f.key);
+    if(!input) return;
+    input.value = settings[f.key];
+    input.addEventListener('change', function(){
+      settings[f.key] = input.value;
+      saveSettings(); applySettings();
+    });
+  });
+
+  applySettings();
 })();
 `;
+
+function rhythmWhen(r){
+  const name = n => WEEKDAY_NAME[weekdayAtOffset(n)];
+  let label = r.to != null ? `${name(r.offset).slice(0,3)}-${name(r.to).slice(0,3)}` : name(r.offset);
+  if (r.at === 'bed') label += ', bed';
+  return label;
+}
+
+function settingsField(f){
+  const note = f.note ? `<p class="set-note">${esc(f.note)}</p>` : '';
+  if (f.type === 'select') {
+    const opts = f.options.map(([v, label]) =>
+      `<option value="${esc(v)}"${v === f.default ? ' selected' : ''}>${esc(label)}</option>`).join('');
+    return `<div class="set-field">
+      <label for="set-${esc(f.key)}">${esc(f.label)}</label>
+      <select id="set-${esc(f.key)}">${opts}</select>${note}</div>`;
+  }
+  if (f.type === 'date') {
+    return `<div class="set-field">
+      <label for="set-${esc(f.key)}">${esc(f.label)}</label>
+      <input type="date" id="set-${esc(f.key)}" value="${esc(f.default)}">${note}</div>`;
+  }
+  if (f.type === 'segmented') {
+    const btns = f.options.map(([v, label]) =>
+      `<button type="button" class="seg${v === f.default ? ' active' : ''}" data-seg="${esc(f.key)}" data-value="${esc(v)}">${esc(label)}</button>`).join('');
+    return `<div class="set-field">
+      <span class="set-label">${esc(f.label)}</span>
+      <div class="segmented">${btns}</div>${note}</div>`;
+  }
+  return '';
+}
+
+const settingsPanel = `
+<div id="settings-scrim" class="scrim"></div>
+<aside id="settings-panel" class="settings" aria-hidden="true" aria-label="Settings">
+  <div class="settings-head">
+    <h2>Settings</h2>
+    <button id="settings-close" type="button" aria-label="Close settings">&times;</button>
+  </div>
+  <div class="settings-body">${SETTINGS_SCHEMA.map(settingsField).join('')}</div>
+  <p class="settings-foot">Saved in this browser only.</p>
+</aside>`;
 
 const tabs = [
   ['overview', 'Overview'],
@@ -790,8 +1082,16 @@ const html = `<!DOCTYPE html>
 <body>
 <header>
   <h1>Family Food System<span class="sub">Friday to Thursday, four week rotation</span></h1>
+  <div class="header-actions">
   <button id="today" type="button">Today</button>
+  <button id="settings-open" type="button" aria-label="Settings" title="Settings">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12 15.5A3.5 3.5 0 1 1 15.5 12 3.5 3.5 0 0 1 12 15.5Zm7.4-2.1a7.6 7.6 0 0 0 0-2.8l2-1.5a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.3.9a7.3 7.3 0 0 0-2.4-1.4l-.4-2.5a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.5a7.3 7.3 0 0 0-2.4 1.4l-2.3-.9a.5.5 0 0 0-.6.2L1.5 8.5a.5.5 0 0 0 .1.6l2 1.5a7.6 7.6 0 0 0 0 2.8l-2 1.5a.5.5 0 0 0-.1.6l1.9 3.3a.5.5 0 0 0 .6.2l2.3-.9a7.3 7.3 0 0 0 2.4 1.4l.4 2.5a.5.5 0 0 0 .5.4h3.8a.5.5 0 0 0 .5-.4l.4-2.5a7.3 7.3 0 0 0 2.4-1.4l2.3.9a.5.5 0 0 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6Z"/>
+    </svg>
+  </button>
+  </div>
 </header>
+${settingsPanel}
 <nav class="tabs">
   ${tabs.map(([k, label], i) => `<button class="tab${i === 0 ? ' active' : ''}" data-tab="${k}">${label}</button>`).join('\n  ')}
 </nav>

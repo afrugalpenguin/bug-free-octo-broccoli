@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2C2416">
-<title>Food Diary</title>
+<title>Family Food System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +24,27 @@ header{background:var(--text);color:var(--bg);padding:1rem 1.25rem;display:flex;
 header h1{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;font-weight:400;line-height:1.2}
 header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans-serif}
 #today{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.45rem 1.1rem;font:inherit;cursor:pointer;white-space:nowrap;min-height:44px;display:grid;gap:0;line-height:1.25;text-align:center}
+#settings-open{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;width:44px;height:44px;min-height:44px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;box-shadow:var(--shadow)}
+#settings-open:hover{box-shadow:var(--shadow-lg)}
+.header-actions{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
+.scrim{position:fixed;inset:0;background:rgba(44,36,22,.4);opacity:0;visibility:hidden;transition:opacity .25s ease-out,visibility .25s ease-out;z-index:30}
+.scrim.open{opacity:1;visibility:visible}
+.settings{position:fixed;top:0;right:0;bottom:0;width:320px;max-width:100%;background:var(--bg);border-left:1px solid var(--border);box-shadow:-4px 0 16px rgba(44,36,22,.12);transform:translateX(100%);transition:transform .25s ease-out;z-index:31;display:flex;flex-direction:column;overflow-y:auto}
+.settings.open{transform:translateX(0)}
+.settings-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.1rem .6rem}
+.settings-head h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;font-weight:400}
+#settings-close{background:none;border:0;font:inherit;font-size:1.6rem;line-height:1;color:var(--text-light);cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border-radius:8px}
+#settings-close:hover{background:var(--card);color:var(--text)}
+.settings-body{padding:.4rem 1.1rem 1rem;display:grid;gap:1.1rem}
+.set-field{display:grid;gap:.35rem}
+.set-field label,.set-label{font-size:.85rem;font-weight:600}
+.set-field select,.set-field input[type=date]{font:inherit;font-size:.9rem;color:var(--text);background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.55rem .6rem;min-height:44px;width:100%}
+.set-note{font-size:.75rem;color:var(--text-light)}
+.segmented{display:grid;gap:.35rem}
+.seg{font:inherit;font-size:.82rem;text-align:left;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.55rem .6rem;min-height:44px;cursor:pointer}
+.seg.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.settings-foot{padding:0 1.1rem 1.1rem;font-size:.72rem;color:var(--text-light)}
+@media(max-width:420px){.settings{width:100%}}
 #today .t-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
 #today .t-slot{font-size:.85rem;font-weight:600}
 #today:active{transform:scale(.97)}
@@ -154,8 +175,33 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 <body>
 <header>
   <h1>Family Food System<span class="sub">Friday to Thursday, four week rotation</span></h1>
+  <div class="header-actions">
   <button id="today" type="button">Today</button>
+  <button id="settings-open" type="button" aria-label="Settings" title="Settings">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12 15.5A3.5 3.5 0 1 1 15.5 12 3.5 3.5 0 0 1 12 15.5Zm7.4-2.1a7.6 7.6 0 0 0 0-2.8l2-1.5a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.3.9a7.3 7.3 0 0 0-2.4-1.4l-.4-2.5a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.5a7.3 7.3 0 0 0-2.4 1.4l-2.3-.9a.5.5 0 0 0-.6.2L1.5 8.5a.5.5 0 0 0 .1.6l2 1.5a7.6 7.6 0 0 0 0 2.8l-2 1.5a.5.5 0 0 0-.1.6l1.9 3.3a.5.5 0 0 0 .6.2l2.3-.9a7.3 7.3 0 0 0 2.4 1.4l.4 2.5a.5.5 0 0 0 .5.4h3.8a.5.5 0 0 0 .5-.4l.4-2.5a7.3 7.3 0 0 0 2.4-1.4l2.3.9a.5.5 0 0 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6Z"/>
+    </svg>
+  </button>
+  </div>
 </header>
+
+<div id="settings-scrim" class="scrim"></div>
+<aside id="settings-panel" class="settings" aria-hidden="true" aria-label="Settings">
+  <div class="settings-head">
+    <h2>Settings</h2>
+    <button id="settings-close" type="button" aria-label="Close settings">&times;</button>
+  </div>
+  <div class="settings-body"><div class="set-field">
+      <label for="set-delivery_day">Delivery day</label>
+      <select id="set-delivery_day"><option value="mon">Monday</option><option value="tue">Tuesday</option><option value="wed">Wednesday</option><option value="thu">Thursday</option><option value="fri" selected>Friday</option><option value="sat">Saturday</option><option value="sun">Sunday</option></select></div><div class="set-field">
+      <label for="set-week_start_day">Week starts on</label>
+      <select id="set-week_start_day"><option value="mon">Monday</option><option value="tue">Tuesday</option><option value="wed">Wednesday</option><option value="thu">Thursday</option><option value="fri">Friday</option><option value="sat">Saturday</option><option value="sun" selected>Sunday</option></select><p class="set-note">Usually the same as delivery day.</p></div><div class="set-field">
+      <label for="set-anchor_date">Cycle 1 anchor date</label>
+      <input type="date" id="set-anchor_date" value="2026-08-28"><p class="set-note">The first delivery day of cycle 1.</p></div><div class="set-field">
+      <span class="set-label">Current cycle</span>
+      <div class="segmented"><button type="button" class="seg active" data-seg="current_cycle" data-value="auto">Auto</button><button type="button" class="seg" data-seg="current_cycle" data-value="1">Cycle 1 (double freezer bags)</button><button type="button" class="seg" data-seg="current_cycle" data-value="2">Cycle 2+ (single bags)</button></div></div></div>
+  <p class="settings-foot">Saved in this browser only.</p>
+</aside>
 <nav class="tabs">
   <button class="tab active" data-tab="overview">Overview</button>
   <button class="tab" data-tab="week-1">Week 1</button>
@@ -168,7 +214,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 <div class="panel active" data-tab="overview">
   <section class="block"><h2>The week</h2>
     <p class="lede">Friday to Thursday, anchored to delivery day. One prep session on Saturday night produces almost everything.</p>
-    <ul class="rhythm"><li><span class="when">Wed/Thu</span><span class="what">Order online. Open the basket, add to the trolley, book the slot.</span></li><li><span class="when">Thu, bed</span><span class="what">Pizza dough out of the freezer into the fridge.</span></li><li><span class="when">Friday</span><span class="what">Delivery. Pizza night - every week, no exceptions.</span></li><li><span class="when">Saturday</span><span class="what">Sandwiches for lunch. Prep session in the evening, 2-3 hours. That night's dinner is the traybake, cooked during the session.</span></li><li><span class="when">Sunday</span><span class="what">Tuna pasta salad for lunch, made Saturday. Roast for dinner.</span></li><li><span class="when">Monday</span><span class="what">Leftovers from the roast, build-your-own. Together night.</span></li><li><span class="when">Tue-Thu</span><span class="what">Shift dinners - reheats, slow cooker, oven timers. Nothing over 15 minutes' active effort.</span></li><li><span class="when">Wed, bed</span><span class="what">Thursday's freezer bag out of the freezer into the fridge.</span></li></ul></section>
+    <ul class="rhythm"><li data-offset="-2">
+      <span class="when">Wednesday</span><span class="what" data-tpl="Order online. Open the basket, add to the trolley, book the slot.">Order online. Open the basket, add to the trolley, book the slot.</span></li><li data-offset="-1" data-at="bed">
+      <span class="when">Thursday, bed</span><span class="what" data-tpl="Pizza dough out of the freezer into the fridge.">Pizza dough out of the freezer into the fridge.</span></li><li data-offset="0">
+      <span class="when">Friday</span><span class="what" data-tpl="Delivery. Pizza night - every week, no exceptions.">Delivery. Pizza night - every week, no exceptions.</span></li><li data-offset="1">
+      <span class="when">Saturday</span><span class="what" data-tpl="Sandwiches for lunch. Prep session in the evening, 2-3 hours. That night's dinner is the traybake, cooked during the session.">Sandwiches for lunch. Prep session in the evening, 2-3 hours. That night's dinner is the traybake, cooked during the session.</span></li><li data-offset="2">
+      <span class="when">Sunday</span><span class="what" data-tpl="Tuna pasta salad for lunch, made {{d+1}}. Roast for dinner.">Tuna pasta salad for lunch, made Saturday. Roast for dinner.</span></li><li data-offset="3">
+      <span class="when">Monday</span><span class="what" data-tpl="Leftovers from the roast, build-your-own. Together night.">Leftovers from the roast, build-your-own. Together night.</span></li><li data-offset="4" data-to="6">
+      <span class="when">Tue-Thu</span><span class="what" data-tpl="Shift dinners - reheats, slow cooker, oven timers. Nothing over 15 minutes' active effort.">Shift dinners - reheats, slow cooker, oven timers. Nothing over 15 minutes' active effort.</span></li><li data-offset="5" data-at="bed">
+      <span class="when">Wednesday, bed</span><span class="what" data-tpl="{{d+6}}'s freezer bag out of the freezer into the fridge.">Thursday's freezer bag out of the freezer into the fridge.</span></li></ul></section>
 
   <section class="block"><h2>The rotation</h2><ul class="weeks"><li class="wk week1"><button data-goto="week-1"><strong>Week 1</strong>
       <span>Mexican / Chicken</span>
@@ -197,56 +251,56 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <div class="subtabs"><button class="subtab active" data-sub="1-menu">Menu</button><button class="subtab" data-sub="1-basket">Basket</button><button class="subtab" data-sub="1-saturday">Saturday</button><button class="subtab" data-sub="1-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="1-menu"><div class="menu">
   <p class="theme">Mexican / Chicken</p>
-  <ul class="menu-list"><li class="menu-row">
+  <ul class="menu-list"><li class="menu-row" data-day="sun">
       <a href="#w1-sun">
-        <span class="menu-day">Sunday</span>
+        <span class="menu-day" data-daylabel="sun">Sunday</span>
         <span class="menu-name">Two Roast Chickens</span>
-      </a><div class="menu-macro">~675 kcal · 58g protein · 55g carbs · 25g fat · 10g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~675 kcal · 58g protein · 55g carbs · 25g fat · 10g fibre</div></li><li class="menu-row" data-day="mon">
       <a href="#w1-mon">
-        <span class="menu-day">Monday</span>
+        <span class="menu-day" data-daylabel="mon">Monday</span>
         <span class="menu-name">Chicken Fajita Bowls</span>
-      </a><div class="menu-macro">~490 kcal · 33g protein · 43g carbs · 21g fat · 5g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~490 kcal · 33g protein · 43g carbs · 21g fat · 5g fibre</div></li><li class="menu-row" data-day="tue">
       <a href="#w1-tue">
-        <span class="menu-day">Tuesday</span>
+        <span class="menu-day" data-daylabel="tue">Tuesday</span>
         <span class="menu-name">Chilli with Rice</span>
-      </a><div class="menu-macro">~480 kcal · 31g protein · 55g carbs · 14g fat · 8g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~480 kcal · 31g protein · 55g carbs · 14g fat · 8g fibre</div></li><li class="menu-row" data-day="wed">
       <a href="#w1-wed">
-        <span class="menu-day">Wednesday</span>
+        <span class="menu-day" data-daylabel="wed">Wednesday</span>
         <span class="menu-name">Chilli-Loaded Sweet Potatoes</span>
-      </a><div class="menu-macro">~600 kcal · 36g protein · 73g carbs · 18g fat · 14g fibre</div><div class="swap">summer: Rainbow Couscous</div></li><li class="menu-row">
+      </a><div class="menu-macro">~600 kcal · 36g protein · 73g carbs · 18g fat · 14g fibre</div><div class="swap">summer: Rainbow Couscous</div></li><li class="menu-row" data-day="thu">
       <a href="#w1-thu">
-        <span class="menu-day">Thursday</span>
+        <span class="menu-day" data-daylabel="thu">Thursday</span>
         <span class="menu-name">Pulled Chicken Freezer Bag</span>
-      </a><div class="menu-macro">~245 kcal · 30g protein · 13g carbs · 8g fat · 2g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~245 kcal · 30g protein · 13g carbs · 8g fat · 2g fibre</div></li><li class="menu-row" data-day="fri">
       <a href="#w1-fri">
-        <span class="menu-day">Friday</span>
+        <span class="menu-day" data-daylabel="fri">Friday</span>
         <span class="menu-name">Pizza night: Chorizo &amp; Pepper and margherita</span>
-      </a></li><li class="menu-row">
+      </a></li><li class="menu-row" data-day="sat">
       <a href="#w1-sat">
-        <span class="menu-day">Saturday</span>
+        <span class="menu-day" data-daylabel="sat">Saturday</span>
         <span class="menu-name">Paprika Chicken Traybake</span>
       </a><div class="menu-macro">~685 kcal · 41g protein · 41g carbs · 41g fat · 7g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        house vinaigrette, rice, beans and roast veg. The protein changes.</p>
     <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day">Monday</span>
+      <span class="boxday-day" data-daylabel="mon">Monday</span>
       <span class="boxday-protein">80g Roast Paprika Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~755 kcal · 30g protein · 70g carbs · 39g fat · 9g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
       <span class="boxday-protein">80g Roast Paprika Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~780 kcal · 36g protein · 57g carbs · 45g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~820 kcal · 27g protein · 67g carbs · 49g fat · 10g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Thursday</span>
+      <span class="boxday-day" data-daylabel="thu">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~605 kcal · 28g protein · 58g carbs · 29g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Friday</span>
+      <span class="boxday-day" data-daylabel="fri">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~820 kcal · 47g protein · 59g carbs · 44g fat · 8g fibre</span>
     </li></ul>
@@ -667,7 +721,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Seed Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -680,7 +734,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -693,7 +747,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Roast Paprika Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
@@ -706,7 +760,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Paprika Chicken Traybake <span class="serves">Serves 4</span></h4>
   
@@ -719,7 +773,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>Mild Chilli, Double Batch <span class="serves">Serves 12</span></h4>
   
@@ -732,7 +786,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -745,7 +799,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Pulled Chicken Freezer Bag, make 2 <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 1: make two of these. One is Thursday, one goes straight into the bank.</p>
@@ -794,7 +848,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 1, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -805,21 +859,21 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w1">~520-645 kcal · 10-17g protein · 57-70g carbs · 28-39g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li><strong>Thursday</strong> Smoked paprika and a squeeze of lime</li><li><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 60g sweetcorn and chopped coriander</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Smoked paprika and a squeeze of lime</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>Mild Chilli, Double Batch</h4><ul><li>4 portions to a tub for Tuesday</li><li>4 portions to a tub for Wednesday</li><li>4 portions to a bag for the freezer, labelled MILD CHILLI + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s1" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Seed Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -832,7 +886,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -845,7 +899,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Roast Paprika Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
@@ -858,7 +912,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Paprika Chicken Traybake <span class="serves">Serves 4</span></h4>
   
@@ -871,7 +925,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>Mild Chilli, Double Batch <span class="serves">Serves 12</span></h4>
   
@@ -884,7 +938,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -897,7 +951,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Pulled Chicken Freezer Bag <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 2 onwards: one bag. That is Thursday.</p>
@@ -946,7 +1000,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 1, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -957,17 +1011,17 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w1">~520-645 kcal · 10-17g protein · 57-70g carbs · 28-39g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li><strong>Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li><strong>Wednesday</strong> 60g sweetcorn and chopped coriander</li><li><strong>Thursday</strong> Smoked paprika and a squeeze of lime</li><li><strong>Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 20g tortilla chips crushed, squeeze of lime</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 30g cheddar cubed, chilli flakes</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 60g sweetcorn and chopped coriander</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Smoked paprika and a squeeze of lime</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 40g Greek yoghurt with chipotle or paprika</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>Mild Chilli, Double Batch</h4><ul><li>4 portions to a tub for Tuesday</li><li>4 portions to a tub for Wednesday</li><li>4 portions to a bag for the freezer, labelled MILD CHILLI + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
-</div></div></div><div class="subpanel" data-sub="1-recipes"><div class="recipes"><div id="w1-sun" class="day-group">
-      <h3 class="day-head">Sunday</h3>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+</div></div></div><div class="subpanel" data-sub="1-recipes"><div class="recipes"><div id="w1-sun" class="day-group" data-day="sun">
+      <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Two Roast Chickens</h4>
   <div class="tag-row"><span class="meal-tag dinner">Roast</span></div>
@@ -979,8 +1033,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="basket-only">2 whole chickens (~1.2kg each)</li><li class="macro-only">Sunday's share of the meat</li><li>800g potatoes for roasting</li><li>500g carrots</li><li>1 head broccoli</li><li>2 tbsp oil</li><li>Gravy</li></ul><ol class="method"><li>Oven 190C. Both birds in together, roughly 20 minutes per 500g plus 20.</li><li>Potatoes in oil and salt for the last hour, turned once.</li><li>Carrots and broccoli in the last 20 minutes.</li><li>Rest 15 minutes while the gravy comes together.</li><li>After dinner, strip both carcasses. ~350g goes in a tub for Monday, ~400g in a tub for the lunch box protein. Carcasses into the freezer for stock, or the bin.</li></ol>
     
     </details>
-</article></div></div><div id="w1-mon" class="day-group">
-      <h3 class="day-head">Monday</h3>
+</article></div></div><div id="w1-mon" class="day-group" data-day="mon">
+      <h3 class="day-head" data-daylabel="mon">Monday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Chicken Fajita Bowls</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -992,8 +1046,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="macro-only">350g shredded roast chicken from Sunday</li><li>2 peppers, sliced</li><li>1 sachet fajita spice</li><li>1 tbsp oil</li><li>2 rice pouches</li><li>Half a cucumber, diced</li><li>A bag of leaves</li><li>200g Greek yoghurt</li><li>Pickled onions from the jar</li><li>2 limes, in wedges</li><li>Coriander</li></ul><ol class="method"><li>Peppers fried hard with the fajita spice, 5 minutes.</li><li>Rice pouches in the microwave.</li><li>Chicken warmed through, or straight from the fridge cold - either works.</li><li>Everything in bowls in the middle of the table.</li></ol>
     
     <p class="adults"><strong>Adults:</strong> Hot sauce and extra lime.</p></details>
-</article></div></div><div id="w1-tue" class="day-group">
-      <h3 class="day-head">Tuesday</h3>
+</article></div></div><div id="w1-tue" class="day-group" data-day="tue">
+      <h3 class="day-head" data-daylabel="tue">Tuesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Chilli with Rice</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -1005,8 +1059,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Mild Chilli, Double Batch</strong></li><li>2 rice pouches</li><li>Greek yoghurt</li></ul><ol class="method"><li>Chilli into a pan on a low heat, 10 minutes, or the microwave in bowls.</li><li>Rice pouches at the last minute.</li><li>Yoghurt on top.</li></ol>
     
     <p class="adults"><strong>Adults:</strong> Chilli flakes.</p></details>
-</article></div></div><div id="w1-wed" class="day-group">
-      <h3 class="day-head">Wednesday</h3>
+</article></div></div><div id="w1-wed" class="day-group" data-day="wed">
+      <h3 class="day-head" data-daylabel="wed">Wednesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Chilli-Loaded Sweet Potatoes</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -1018,8 +1072,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Mild Chilli, Double Batch</strong></li><li>4 sweet potatoes</li><li>80g cheddar</li><li>160g Greek yoghurt</li></ul><ol class="method"><li>Sweet potatoes pricked, oven timer 200C for 45 minutes.</li><li>Chilli reheated while they finish.</li><li>Split, loaded, cheese and yoghurt on top.</li></ol>
     
     <p class="adults"><strong>Adults:</strong> Chilli flakes.</p></details>
-</article></div></div><div id="w1-thu" class="day-group">
-      <h3 class="day-head">Thursday</h3>
+</article></div></div><div id="w1-thu" class="day-group" data-day="thu">
+      <h3 class="day-head" data-daylabel="thu">Thursday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Pulled Chicken Freezer Bag</h4>
   <div class="tag-row"><span class="meal-tag freezer">Freezer bag</span></div>
@@ -1031,8 +1085,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>6 boneless chicken thighs (~600g)</li><li>150g frozen onion</li><li>2 garlic cubes</li><li>2 tsp smoked paprika</li><li>1 tsp ground cumin</li><li>1 tbsp honey</li><li>1 tbsp tomato puree</li><li>1 tbsp cider vinegar</li><li>200ml passata</li><li>1 chicken stock cube, crumbled</li></ul><ol class="method"><li>Everything into a freezer bag, raw. Squeeze the air out, seal, label PULLED CHICKEN + the month.</li><li>Freeze flat so it stacks.</li><li>Wednesday bedtime: bag out of the freezer into the fridge.</li><li>Thursday morning: contents into the slow cooker on low. Shred with two forks before serving.</li></ol>
     <p class="serving">In wraps with slaw and yoghurt, or over rice pouches.</p>
     </details>
-</article></div></div><div id="w1-fri" class="day-group">
-      <h3 class="day-head">Friday</h3>
+</article></div></div><div id="w1-fri" class="day-group" data-day="fri">
+      <h3 class="day-head" data-daylabel="fri">Friday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Margherita, the Boys'</h4>
   
@@ -1066,8 +1120,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>A bag of leaves</li><li>150g tomatoes</li><li>1 tin sweetcorn, drained</li><li>Half a cucumber</li><li>4 boiled eggs</li><li>50g cheddar, cubed</li><li>Pickled onions</li><li>20g seeds</li><li>30g tortilla chips, crushed</li><li>3 tbsp oil</li><li>1 tbsp vinegar</li><li>Juice of a lime</li></ul><ol class="method"><li>Everything chopped small, dressed at the last minute so the chips stay crunchy.</li></ol>
     
     </details>
-</article></div></div><div id="w1-sat" class="day-group">
-      <h3 class="day-head">Saturday</h3>
+</article></div></div><div id="w1-sat" class="day-group" data-day="sat">
+      <h3 class="day-head" data-daylabel="sat">Saturday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Paprika Chicken Traybake</h4>
   <div class="tag-row"><span class="meal-tag dinner">Traybake</span></div>
@@ -1189,56 +1243,56 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <div class="subtabs"><button class="subtab active" data-sub="2-menu">Menu</button><button class="subtab" data-sub="2-basket">Basket</button><button class="subtab" data-sub="2-saturday">Saturday</button><button class="subtab" data-sub="2-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="2-menu"><div class="menu">
   <p class="theme">Curry / Pork</p>
-  <ul class="menu-list"><li class="menu-row">
+  <ul class="menu-list"><li class="menu-row" data-day="sun">
       <a href="#w2-sun">
-        <span class="menu-day">Sunday</span>
+        <span class="menu-day" data-daylabel="sun">Sunday</span>
         <span class="menu-name">Slow Roast Pork Shoulder</span>
-      </a><div class="menu-macro">~885 kcal · 60g protein · 60g carbs · 45g fat · 10g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~885 kcal · 60g protein · 60g carbs · 45g fat · 10g fibre</div></li><li class="menu-row" data-day="mon">
       <a href="#w2-mon">
-        <span class="menu-day">Monday</span>
+        <span class="menu-day" data-daylabel="mon">Monday</span>
         <span class="menu-name">Tandoori Chicken Bowls</span>
-      </a><div class="menu-macro">~465 kcal · 35g protein · 47g carbs · 15g fat · 3g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~465 kcal · 35g protein · 47g carbs · 15g fat · 3g fibre</div></li><li class="menu-row" data-day="tue">
       <a href="#w2-tue">
-        <span class="menu-day">Tuesday</span>
+        <span class="menu-day" data-daylabel="tue">Tuesday</span>
         <span class="menu-name">Dal with Rice</span>
-      </a><div class="menu-macro">~575 kcal · 25g protein · 78g carbs · 16g fat · 12g fibre</div><div class="swap">summer: Toasted Sesame &amp; Ginger Chicken Salad</div></li><li class="menu-row">
+      </a><div class="menu-macro">~575 kcal · 25g protein · 78g carbs · 16g fat · 12g fibre</div><div class="swap">summer: Toasted Sesame &amp; Ginger Chicken Salad</div></li><li class="menu-row" data-day="wed">
       <a href="#w2-wed">
-        <span class="menu-day">Wednesday</span>
+        <span class="menu-day" data-daylabel="wed">Wednesday</span>
         <span class="menu-name">Pork Fried Rice</span>
-      </a><div class="menu-macro">~545 kcal · 32g protein · 38g carbs · 29g fat · 4g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~545 kcal · 32g protein · 38g carbs · 29g fat · 4g fibre</div></li><li class="menu-row" data-day="thu">
       <a href="#w2-thu">
-        <span class="menu-day">Thursday</span>
+        <span class="menu-day" data-daylabel="thu">Thursday</span>
         <span class="menu-name">Chicken &amp; Chickpea Korma Freezer Bag</span>
-      </a><div class="menu-macro">~435 kcal · 35g protein · 19g carbs · 24g fat · 5g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~435 kcal · 35g protein · 19g carbs · 24g fat · 5g fibre</div></li><li class="menu-row" data-day="fri">
       <a href="#w2-fri">
-        <span class="menu-day">Friday</span>
+        <span class="menu-day" data-daylabel="fri">Friday</span>
         <span class="menu-name">Pizza night: Tandoori Chicken and margherita</span>
-      </a></li><li class="menu-row">
+      </a></li><li class="menu-row" data-day="sat">
       <a href="#w2-sat">
-        <span class="menu-day">Saturday</span>
+        <span class="menu-day" data-daylabel="sat">Saturday</span>
         <span class="menu-name">Glazed Salmon Traybake</span>
       </a><div class="menu-macro">~485 kcal · 32g protein · 34g carbs · 25g fat · 6g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        mint yoghurt, rice, beans and roast veg. The protein changes.</p>
     <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day">Monday</span>
+      <span class="boxday-day" data-daylabel="mon">Monday</span>
       <span class="boxday-protein">80g Tandoori Thighs for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~535 kcal · 32g protein · 64g carbs · 16g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
       <span class="boxday-protein">80g Tandoori Thighs for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~575 kcal · 39g protein · 53g carbs · 22g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~700 kcal · 32g protein · 54g carbs · 40g fat · 10g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Thursday</span>
+      <span class="boxday-day" data-daylabel="thu">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~445 kcal · 30g protein · 52g carbs · 13g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Friday</span>
+      <span class="boxday-day" data-daylabel="fri">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~635 kcal · 49g protein · 54g carbs · 25g fat · 8g fibre</span>
     </li></ul>
@@ -1653,7 +1707,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Cinnamon &amp; Raisin Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -1666,7 +1720,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -1679,7 +1733,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Tandoori Thighs for the Boxes <span class="serves">Serves 4</span></h4>
   <p class="callout">Cook 1.6kg of thighs, not 1kg - 600g of it is Monday night.</p>
@@ -1692,7 +1746,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Glazed Salmon Traybake <span class="serves">Serves 4</span></h4>
   
@@ -1705,7 +1759,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>Dal <span class="serves">Serves 8</span></h4>
   
@@ -1718,7 +1772,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -1731,7 +1785,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Chicken &amp; Chickpea Korma Freezer Bag, make 2 <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 1: make two of these. One is Thursday, one goes straight into the bank.</p>
@@ -1780,7 +1834,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 2, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -1791,21 +1845,21 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 1 tbsp mango chutney and coriander</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>Dal</h4><ul><li>4 portions to a tub for Tuesday</li><li>4 portions to a bag for the freezer, labelled DAL + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s2" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Cinnamon &amp; Raisin Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -1818,7 +1872,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -1831,7 +1885,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Tandoori Thighs for the Boxes <span class="serves">Serves 4</span></h4>
   <p class="callout">Cook 1.6kg of thighs, not 1kg - 600g of it is Monday night.</p>
@@ -1844,7 +1898,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Glazed Salmon Traybake <span class="serves">Serves 4</span></h4>
   
@@ -1857,7 +1911,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>Dal <span class="serves">Serves 8</span></h4>
   
@@ -1870,7 +1924,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -1883,7 +1937,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Chicken &amp; Chickpea Korma Freezer Bag <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 2 onwards: one bag. That is Thursday.</p>
@@ -1932,7 +1986,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 2, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -1943,17 +1997,17 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 1 tbsp mango chutney and coriander</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>Dal</h4><ul><li>4 portions to a tub for Tuesday</li><li>4 portions to a bag for the freezer, labelled DAL + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
-</div></div></div><div class="subpanel" data-sub="2-recipes"><div class="recipes"><div id="w2-sun" class="day-group">
-      <h3 class="day-head">Sunday</h3>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+</div></div></div><div class="subpanel" data-sub="2-recipes"><div class="recipes"><div id="w2-sun" class="day-group" data-day="sun">
+      <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Slow Roast Pork Shoulder</h4>
   <div class="tag-row"><span class="meal-tag dinner">Roast</span></div>
@@ -1965,8 +2019,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="basket-only">2kg pork shoulder, skin scored</li><li class="macro-only">Sunday's share of the pork</li><li>800g potatoes for roasting</li><li>500g carrots</li><li>1 head broccoli</li><li>1 tbsp oil</li><li>Apple sauce</li><li>Gravy</li></ul><ol class="method"><li>Skin scored, salted hard, left uncovered in the fridge overnight if you remember.</li><li>Oven 220C for 30 minutes to start the crackling, then down to 150C for 4-5 hours.</li><li>Potatoes and veg in for the last hour, oven back up to 200C for the final 20 minutes.</li><li>Rest 20 minutes. Pull or slice.</li><li>Set aside ~300g diced for Wednesday's fried rice before it all disappears.</li></ol>
     
     </details>
-</article></div></div><div id="w2-mon" class="day-group">
-      <h3 class="day-head">Monday</h3>
+</article></div></div><div id="w2-mon" class="day-group" data-day="mon">
+      <h3 class="day-head" data-daylabel="mon">Monday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Tandoori Chicken Bowls</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -1978,8 +2032,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>600g tandoori thighs from Saturday</li><li>125g yoghurt for the marinade</li><li>2 tsp tandoori spice</li><li>2 rice pouches</li><li>1 cucumber, in ribbons</li><li>A bag of leaves</li><li>Mango chutney</li><li>A lemon, in wedges</li></ul><ol class="method"><li>Rice pouches in the microwave.</li><li>Thighs sliced, warmed 2 minutes or served cold.</li><li>Mint yoghurt from the fridge, chutney, cucumber and leaves on the table. Build your own.</li></ol>
     
     <p class="adults"><strong>Adults:</strong> Lime pickle.</p></details>
-</article></div></div><div id="w2-tue" class="day-group">
-      <h3 class="day-head">Tuesday</h3>
+</article></div></div><div id="w2-tue" class="day-group" data-day="tue">
+      <h3 class="day-head" data-daylabel="tue">Tuesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Dal with Rice</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -1991,8 +2045,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Dal</strong></li><li>2 rice pouches</li><li>Greek yoghurt</li></ul><ol class="method"><li>Dal into a pan on low, 10 minutes. It thickens - loosen with a splash of water.</li><li>Rice pouches at the last minute.</li></ol>
     
     <p class="adults"><strong>Adults:</strong> The tarka, made fresh: 1 tbsp oil, 1 tsp mustard seeds, 1 tsp cumin seeds, pinch of chilli flakes, 30 seconds in the pan, poured over.</p></details>
-</article></div></div><div id="w2-wed" class="day-group">
-      <h3 class="day-head">Wednesday</h3>
+</article></div></div><div id="w2-wed" class="day-group" data-day="wed">
+      <h3 class="day-head" data-daylabel="wed">Wednesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Pork Fried Rice</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -2004,8 +2058,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="macro-only">300g leftover pork, diced</li><li>2 rice pouches</li><li>300g frozen stir fry veg</li><li>3 eggs</li><li>2 tbsp soy sauce</li><li>1 garlic cube</li><li>1 tsp sesame oil</li><li>1 tbsp oil</li><li>Spring onions, sliced</li></ul><ol class="method"><li>Pork crisped in a hot pan, 3 minutes.</li><li>Frozen veg and garlic in, 4 minutes.</li><li>Rice pouches broken in, soy over, tossed 3 minutes.</li><li>Eggs scrambled into a gap in the pan, then stirred through.</li><li>Sesame oil off the heat. Spring onions on top.</li></ol>
     
     </details>
-</article></div></div><div id="w2-thu" class="day-group">
-      <h3 class="day-head">Thursday</h3>
+</article></div></div><div id="w2-thu" class="day-group" data-day="thu">
+      <h3 class="day-head" data-daylabel="thu">Thursday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Chicken &amp; Chickpea Korma Freezer Bag</h4>
   <div class="tag-row"><span class="meal-tag freezer">Freezer bag</span></div>
@@ -2017,8 +2071,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>6 boneless chicken thighs (~600g)</li><li>Half a jar of korma paste</li><li>1 tin chickpeas, drained</li><li>150g frozen onion</li><li>1 tin light coconut milk</li><li>1 tsp garam masala</li><li>A handful of frozen spinach</li></ul><ol class="method"><li>Everything into a freezer bag, raw. Seal, label KORMA + the month, freeze flat.</li><li>Wednesday bedtime: into the fridge.</li><li>Thursday morning: into the slow cooker on low.</li></ol>
     <p class="serving">Rice pouches, yoghurt on the side, mango chutney.</p>
     </details>
-</article></div></div><div id="w2-fri" class="day-group">
-      <h3 class="day-head">Friday</h3>
+</article></div></div><div id="w2-fri" class="day-group" data-day="fri">
+      <h3 class="day-head" data-daylabel="fri">Friday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Margherita, the Boys'</h4>
   
@@ -2052,8 +2106,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>A bag of leaves</li><li>1 cucumber</li><li>150g tomatoes</li><li>Pickled onions</li><li>4 boiled eggs</li><li>20g seeds</li><li>Mint yoghurt from the jar</li><li>A little chutney</li><li>A squeeze of lemon</li></ul><ol class="method"><li>Cucumber in half-moons, tomatoes in wedges. Mint yoghurt loosened with lemon, spooned over.</li></ol>
     
     </details>
-</article></div></div><div id="w2-sat" class="day-group">
-      <h3 class="day-head">Saturday</h3>
+</article></div></div><div id="w2-sat" class="day-group" data-day="sat">
+      <h3 class="day-head" data-daylabel="sat">Saturday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Glazed Salmon Traybake</h4>
   <div class="tag-row"><span class="meal-tag dinner">Traybake</span></div>
@@ -2175,56 +2229,56 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <div class="subtabs"><button class="subtab active" data-sub="3-menu">Menu</button><button class="subtab" data-sub="3-basket">Basket</button><button class="subtab" data-sub="3-saturday">Saturday</button><button class="subtab" data-sub="3-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="3-menu"><div class="menu">
   <p class="theme">North African / Gammon</p>
-  <ul class="menu-list"><li class="menu-row">
+  <ul class="menu-list"><li class="menu-row" data-day="sun">
       <a href="#w3-sun">
-        <span class="menu-day">Sunday</span>
+        <span class="menu-day" data-daylabel="sun">Sunday</span>
         <span class="menu-name">Gammon Joint</span>
-      </a><div class="menu-macro">~550 kcal · 46g protein · 56g carbs · 17g fat · 10g fibre</div><div class="swap">summer: Salmon and Sexy Veg</div></li><li class="menu-row">
+      </a><div class="menu-macro">~550 kcal · 46g protein · 56g carbs · 17g fat · 10g fibre</div><div class="swap">summer: Salmon and Sexy Veg</div></li><li class="menu-row" data-day="mon">
       <a href="#w3-mon">
-        <span class="menu-day">Monday</span>
+        <span class="menu-day" data-daylabel="mon">Monday</span>
         <span class="menu-name">Chicken Wraps</span>
-      </a><div class="menu-macro">~480 kcal · 32g protein · 38g carbs · 21g fat · 5g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~480 kcal · 32g protein · 38g carbs · 21g fat · 5g fibre</div></li><li class="menu-row" data-day="tue">
       <a href="#w3-tue">
-        <span class="menu-day">Tuesday</span>
+        <span class="menu-day" data-daylabel="tue">Tuesday</span>
         <span class="menu-name">Chickpea Stew with Couscous</span>
-      </a><div class="menu-macro">~380 kcal · 15g protein · 69g carbs · 5g fat · 11g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~380 kcal · 15g protein · 69g carbs · 5g fat · 11g fibre</div></li><li class="menu-row" data-day="wed">
       <a href="#w3-wed">
-        <span class="menu-day">Wednesday</span>
+        <span class="menu-day" data-daylabel="wed">Wednesday</span>
         <span class="menu-name">Gammon, Eggs &amp; Sweet Potato Chips</span>
-      </a><div class="menu-macro">~530 kcal · 37g protein · 51g carbs · 20g fat · 8g fibre</div><div class="swap">summer: Sticky Peanut Stir Fry</div></li><li class="menu-row">
+      </a><div class="menu-macro">~530 kcal · 37g protein · 51g carbs · 20g fat · 8g fibre</div><div class="swap">summer: Sticky Peanut Stir Fry</div></li><li class="menu-row" data-day="thu">
       <a href="#w3-thu">
-        <span class="menu-day">Thursday</span>
+        <span class="menu-day" data-daylabel="thu">Thursday</span>
         <span class="menu-name">Chicken, Olive &amp; Tomato Freezer Bag</span>
-      </a><div class="menu-macro">~275 kcal · 31g protein · 12g carbs · 12g fat · 4g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~275 kcal · 31g protein · 12g carbs · 12g fat · 4g fibre</div></li><li class="menu-row" data-day="fri">
       <a href="#w3-fri">
-        <span class="menu-day">Friday</span>
+        <span class="menu-day" data-daylabel="fri">Friday</span>
         <span class="menu-name">Pizza night: Halloumi &amp; Pepper and margherita</span>
-      </a></li><li class="menu-row">
+      </a></li><li class="menu-row" data-day="sat">
       <a href="#w3-sat">
-        <span class="menu-day">Saturday</span>
+        <span class="menu-day" data-daylabel="sat">Saturday</span>
         <span class="menu-name">Harissa Chicken with Squash &amp; Chickpeas</span>
       </a><div class="menu-macro">~700 kcal · 44g protein · 40g carbs · 43g fat · 9g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        lemon dressing, rice, beans and roast veg. The protein changes.</p>
     <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day">Monday</span>
+      <span class="boxday-day" data-daylabel="mon">Monday</span>
       <span class="boxday-protein">80g Lemon Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~730 kcal · 33g protein · 57g carbs · 41g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
       <span class="boxday-protein">80g Lemon Chicken for the Boxes <em>in on Saturday</em></span>
       <span class="boxday-macro">~680 kcal · 28g protein · 57g carbs · 38g fat · 9g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~880 kcal · 28g protein · 61g carbs · 58g fat · 10g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Thursday</span>
+      <span class="boxday-day" data-daylabel="thu">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~650 kcal · 30g protein · 57g carbs · 34g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Friday</span>
+      <span class="boxday-day" data-daylabel="fri">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~865 kcal · 45g protein · 59g carbs · 50g fat · 8g fibre</span>
     </li></ul>
@@ -2633,7 +2687,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Lemon &amp; Seed Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -2646,7 +2700,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -2659,7 +2713,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Lemon Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
@@ -2672,7 +2726,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Harissa Chicken with Squash &amp; Chickpeas <span class="serves">Serves 4</span></h4>
   
@@ -2685,7 +2739,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>North African Chickpea &amp; Sweet Potato Stew <span class="serves">Serves 8</span></h4>
   
@@ -2698,7 +2752,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -2711,7 +2765,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Chicken, Olive &amp; Tomato Freezer Bag, make 2 <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 1: make two of these. One is Thursday, one goes straight into the bank.</p>
@@ -2769,7 +2823,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 3, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -2780,21 +2834,21 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w3">~515-635 kcal · 10-14g protein · 56-61g carbs · 28-38g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g feta and oregano</li><li><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li><strong>Thursday</strong> Toasted seeds</li><li><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g feta and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 20g olives halved, and lemon zest</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 40g hummus with smoked paprika</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>North African Chickpea &amp; Sweet Potato Stew</h4><ul><li>4 portions to a tub for Tuesday</li><li>4 portions to a bag for the freezer, labelled NORTH AFRICAN CHICKPEA &amp; SWEET POTATO STEW + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s3" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Lemon &amp; Seed Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -2807,7 +2861,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -2820,7 +2874,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Lemon Chicken for the Boxes <span class="serves">Serves 4</span></h4>
   
@@ -2833,7 +2887,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Harissa Chicken with Squash &amp; Chickpeas <span class="serves">Serves 4</span></h4>
   
@@ -2846,7 +2900,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>North African Chickpea &amp; Sweet Potato Stew <span class="serves">Serves 8</span></h4>
   
@@ -2859,7 +2913,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -2872,7 +2926,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Chicken, Olive &amp; Tomato Freezer Bag <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 2 onwards: one bag. That is Thursday.</p>
@@ -2930,7 +2984,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 3, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -2941,17 +2995,17 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w3">~515-635 kcal · 10-14g protein · 56-61g carbs · 28-38g fat · 8-10g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g feta and oregano</li><li><strong>Tuesday</strong> 20g olives halved, and lemon zest</li><li><strong>Wednesday</strong> 40g hummus with smoked paprika</li><li><strong>Thursday</strong> Toasted seeds</li><li><strong>Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g feta and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 20g olives halved, and lemon zest</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 40g hummus with smoked paprika</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 60g cucumber and extra lemon dressing</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>North African Chickpea &amp; Sweet Potato Stew</h4><ul><li>4 portions to a tub for Tuesday</li><li>4 portions to a bag for the freezer, labelled NORTH AFRICAN CHICKPEA &amp; SWEET POTATO STEW + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
-</div></div></div><div class="subpanel" data-sub="3-recipes"><div class="recipes"><div id="w3-sun" class="day-group">
-      <h3 class="day-head">Sunday</h3>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+</div></div></div><div class="subpanel" data-sub="3-recipes"><div class="recipes"><div id="w3-sun" class="day-group" data-day="sun">
+      <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Gammon Joint</h4>
   <div class="tag-row"><span class="meal-tag dinner">Roast</span></div>
@@ -2963,8 +3017,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="basket-only">1.8kg gammon joint</li><li class="macro-only">Sunday's share of the joint</li><li>1 tbsp honey for the glaze</li><li>1 tsp mustard for the glaze</li><li>800g potatoes for roasting</li><li>500g carrots</li><li>1 head broccoli</li><li>1 tbsp oil</li></ul><ol class="method"><li>Gammon simmered in water 1.5-2 hours, or slow cooker on low all afternoon.</li><li>Skin off, fat scored, honey and mustard glaze on. 200C for 20 minutes to colour.</li><li>Potatoes and veg roasted alongside.</li><li>Rest 15 minutes. Slice ~400g into a tub for Wednesday before serving.</li></ol>
     
     </details>
-</article></div></div><div id="w3-mon" class="day-group">
-      <h3 class="day-head">Monday</h3>
+</article></div></div><div id="w3-mon" class="day-group" data-day="mon">
+      <h3 class="day-head" data-daylabel="mon">Monday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Chicken Wraps</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -2976,8 +3030,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="macro-only">350g lemon chicken from Saturday</li><li>8 tortilla wraps</li><li>A bag of leaves</li><li>Cucumber, in batons</li><li>Tomatoes, sliced</li><li>150g hummus</li><li>Pickled onions from the jar</li></ul><ol class="method"><li>Wraps warmed 20 seconds in the microwave under a damp cloth, or 2 minutes in a dry pan.</li><li>Everything on the table. Lemon dressing from the jar.</li><li>Build your own.</li></ol>
     
     </details>
-</article></div></div><div id="w3-tue" class="day-group">
-      <h3 class="day-head">Tuesday</h3>
+</article></div></div><div id="w3-tue" class="day-group" data-day="tue">
+      <h3 class="day-head" data-daylabel="tue">Tuesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Chickpea Stew with Couscous</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -2989,8 +3043,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>North African Chickpea &amp; Sweet Potato Stew</strong></li><li>200g couscous</li><li>Coriander</li></ul><ol class="method"><li>Stew into a pan on low, 10 minutes.</li><li>Couscous in a bowl, boiling water just over the top, plate on, 5 minutes. Fork through.</li><li>Coriander over.</li></ol>
     
     <p class="adults"><strong>Adults:</strong> Harissa stirred into the bowl.</p></details>
-</article></div></div><div id="w3-wed" class="day-group">
-      <h3 class="day-head">Wednesday</h3>
+</article></div></div><div id="w3-wed" class="day-group" data-day="wed">
+      <h3 class="day-head" data-daylabel="wed">Wednesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Gammon, Eggs &amp; Sweet Potato Chips</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -3002,8 +3056,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="macro-only">400g leftover gammon, sliced</li><li>1kg sweet potato, cut for chips</li><li>1.5 tbsp oil</li><li>5 eggs</li></ul><ol class="method"><li>Chips out of the fridge, oven timer 200C for 20 minutes.</li><li>Gammon slices warmed in a dry pan, 2 minutes a side.</li><li>Eggs fried on the day, one each and one spare.</li></ol>
     
     </details>
-</article></div></div><div id="w3-thu" class="day-group">
-      <h3 class="day-head">Thursday</h3>
+</article></div></div><div id="w3-thu" class="day-group" data-day="thu">
+      <h3 class="day-head" data-daylabel="thu">Thursday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Chicken, Olive &amp; Tomato Freezer Bag</h4>
   <div class="tag-row"><span class="meal-tag freezer">Freezer bag</span></div>
@@ -3015,8 +3069,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>6 boneless chicken thighs (~600g)</li><li>80g olives</li><li>1 tin chopped tomatoes</li><li>150g frozen onion</li><li>2 garlic cubes</li><li>1 tsp dried oregano</li><li>1 tbsp sun-dried tomato paste</li><li>1 red pepper, chunked</li><li>1 chicken stock cube</li><li>A squeeze of lemon</li></ul><ol class="method"><li>Everything into a freezer bag, raw. Seal, label CHICKEN OLIVE + the month, freeze flat.</li><li>Wednesday bedtime: into the fridge.</li><li>Thursday morning: into the slow cooker on low. Basil torn over at the table.</li></ol>
     <p class="serving">Rice pouches or pasta cooked on the day.</p>
     </details>
-</article></div></div><div id="w3-fri" class="day-group">
-      <h3 class="day-head">Friday</h3>
+</article></div></div><div id="w3-fri" class="day-group" data-day="fri">
+      <h3 class="day-head" data-daylabel="fri">Friday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Margherita, the Boys'</h4>
   
@@ -3050,8 +3104,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>400g tomatoes, in chunks</li><li>1 cucumber, in chunks</li><li>100g feta</li><li>60g olives</li><li>Pickled onions</li><li>4 boiled eggs</li><li>20g seeds</li><li>3 tbsp oil</li><li>Juice of half a lemon</li><li>Dried oregano</li></ul><ol class="method"><li>Chunks, not slices. Feta in a slab on top. Oil, lemon and oregano over.</li></ol>
     
     </details>
-</article></div></div><div id="w3-sat" class="day-group">
-      <h3 class="day-head">Saturday</h3>
+</article></div></div><div id="w3-sat" class="day-group" data-day="sat">
+      <h3 class="day-head" data-daylabel="sat">Saturday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Harissa Chicken with Squash &amp; Chickpeas</h4>
   <div class="tag-row"><span class="meal-tag dinner">Traybake</span></div>
@@ -3173,56 +3227,56 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <div class="subtabs"><button class="subtab active" data-sub="4-menu">Menu</button><button class="subtab" data-sub="4-basket">Basket</button><button class="subtab" data-sub="4-saturday">Saturday</button><button class="subtab" data-sub="4-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="4-menu"><div class="menu">
   <p class="theme">Italian / Beef</p>
-  <ul class="menu-list"><li class="menu-row">
+  <ul class="menu-list"><li class="menu-row" data-day="sun">
       <a href="#w4-sun">
-        <span class="menu-day">Sunday</span>
+        <span class="menu-day" data-daylabel="sun">Sunday</span>
         <span class="menu-name">Roast Beef Topside</span>
-      </a><div class="menu-macro">~720 kcal · 61g protein · 70g carbs · 23g fat · 10g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~720 kcal · 61g protein · 70g carbs · 23g fat · 10g fibre</div></li><li class="menu-row" data-day="mon">
       <a href="#w4-mon">
-        <span class="menu-day">Monday</span>
+        <span class="menu-day" data-daylabel="mon">Monday</span>
         <span class="menu-name">Lasagne</span>
-      </a><div class="menu-macro">~655 kcal · 41g protein · 55g carbs · 28g fat · 5g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~655 kcal · 41g protein · 55g carbs · 28g fat · 5g fibre</div></li><li class="menu-row" data-day="tue">
       <a href="#w4-tue">
-        <span class="menu-day">Tuesday</span>
+        <span class="menu-day" data-daylabel="tue">Tuesday</span>
         <span class="menu-name">Ragu with Pasta</span>
-      </a><div class="menu-macro">~595 kcal · 39g protein · 73g carbs · 14g fat · 6g fibre</div><div class="swap">summer: Pesto Prawn Courgetti Linguine</div></li><li class="menu-row">
+      </a><div class="menu-macro">~595 kcal · 39g protein · 73g carbs · 14g fat · 6g fibre</div><div class="swap">summer: Pesto Prawn Courgetti Linguine</div></li><li class="menu-row" data-day="wed">
       <a href="#w4-wed">
-        <span class="menu-day">Wednesday</span>
+        <span class="menu-day" data-daylabel="wed">Wednesday</span>
         <span class="menu-name">Beef &amp; Tomato Orzo</span>
-      </a><div class="menu-macro">~380 kcal · 35g protein · 41g carbs · 9g fat · 3g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~380 kcal · 35g protein · 41g carbs · 9g fat · 3g fibre</div></li><li class="menu-row" data-day="thu">
       <a href="#w4-thu">
-        <span class="menu-day">Thursday</span>
+        <span class="menu-day" data-daylabel="thu">Thursday</span>
         <span class="menu-name">Italian Sausage &amp; Pepper Freezer Bag</span>
-      </a><div class="menu-macro">~195 kcal · 19g protein · 17g carbs · 5g fat · 4g fibre</div></li><li class="menu-row">
+      </a><div class="menu-macro">~195 kcal · 19g protein · 17g carbs · 5g fat · 4g fibre</div></li><li class="menu-row" data-day="fri">
       <a href="#w4-fri">
-        <span class="menu-day">Friday</span>
+        <span class="menu-day" data-daylabel="fri">Friday</span>
         <span class="menu-name">Pizza night: Pepperoni and margherita</span>
-      </a></li><li class="menu-row">
+      </a></li><li class="menu-row" data-day="sat">
       <a href="#w4-sat">
-        <span class="menu-day">Saturday</span>
+        <span class="menu-day" data-daylabel="sat">Saturday</span>
         <span class="menu-name">Meatball &amp; Ricotta Al Forno, Doubled</span>
       </a><div class="menu-macro">~535 kcal · 46g protein · 36g carbs · 22g fat · 9g fibre</div></li></ul>
   <section class="block"><h3>Lunches</h3>
     <p>10 boxes, 5 each. Same base every day -
        balsamic vinaigrette, rice, beans and roast veg. The protein changes.</p>
     <ul class="boxdays"><li class="boxday">
-      <span class="boxday-day">Monday</span>
+      <span class="boxday-day" data-daylabel="mon">Monday</span>
       <span class="boxday-protein">80g Meatballs from the Al Forno Tray <em>in on Saturday</em></span>
       <span class="boxday-macro">~680 kcal · 24g protein · 58g carbs · 38g fat · 9g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Tuesday</span>
+      <span class="boxday-day" data-daylabel="tue">Tuesday</span>
       <span class="boxday-protein">80g Meatballs from the Al Forno Tray <em>in on Saturday</em></span>
       <span class="boxday-macro">~670 kcal · 24g protein · 58g carbs · 37g fat · 9g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Wednesday</span>
+      <span class="boxday-day" data-daylabel="wed">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
       <span class="boxday-macro">~885 kcal · 29g protein · 51g carbs · 62g fat · 7g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Thursday</span>
+      <span class="boxday-day" data-daylabel="thu">Thursday</span>
       <span class="boxday-protein">80g Prawns for Thursday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~635 kcal · 30g protein · 52g carbs · 34g fat · 8g fibre</span>
     </li><li class="boxday">
-      <span class="boxday-day">Friday</span>
+      <span class="boxday-day" data-daylabel="fri">Friday</span>
       <span class="boxday-protein">80g Tuna and Egg for Friday's Boxes <em>in on the day</em></span>
       <span class="boxday-macro">~800 kcal · 48g protein · 53g carbs · 43g fat · 8g fibre</span>
     </li></ul>
@@ -3679,7 +3733,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Cocoa Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -3692,7 +3746,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -3705,7 +3759,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Meatballs from the Al Forno Tray <span class="serves">Serves 4</span></h4>
   
@@ -3718,7 +3772,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Meatball &amp; Ricotta Al Forno, Doubled <span class="serves">Serves 8</span></h4>
   
@@ -3731,7 +3785,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>Beef Ragu, Double Batch <span class="serves">Serves 12</span></h4>
   
@@ -3753,7 +3807,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -3766,7 +3820,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Italian Sausage &amp; Pepper Freezer Bag, make 2 <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 1: make two of these. One is Thursday, one goes straight into the bank.</p>
@@ -3824,7 +3878,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 4, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -3835,21 +3889,21 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w4">~495-640 kcal · 10-15g protein · 50-52g carbs · 28-42g fat · 7-8g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li><strong>Thursday</strong> Toasted seeds and torn basil</li><li><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g mozzarella pearls and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 15g parmesan and a splash of balsamic</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g pepperoni and chilli oil</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds and torn basil</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>Beef Ragu, Double Batch</h4><ul><li>4 portions to a tub for Monday</li><li>4 portions to a tub for Tuesday</li><li>4 portions to a bag for the freezer, labelled BEEF RAGU + the month</li></ul></div><div class="split"><h4>Minestrone</h4><ul><li>4 portions to a tub for the fridge</li><li>4 portions to a bag for the freezer, labelled MINESTRONE + the month</li></ul></div><div class="split"><h4>Meatball &amp; Ricotta Al Forno, Doubled</h4><ul><li>4 portions to a tub for Saturday</li><li>2 portions to a set aside for the lunch boxes</li><li>2 portions to a bag for the freezer, labelled MEATBALL &amp; RICOTTA AL FORNO + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s4" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
   <section class="step">
   <h3><span class="step-n">1</span>Flapjacks</h3>
-  <p class="step-detail">First in the oven, 180C. They cool while everything else cooks.</p>
+  <p class="step-detail" data-tpl="First in the oven, 180C. They cool while everything else cooks.">First in the oven, 180C. They cool while everything else cooks.</p>
   <div class="inline-recipe">
   <h4>Cocoa Flapjacks <span class="serves">Serves 12</span></h4>
   
@@ -3862,7 +3916,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">2</span>Veg tray</h3>
-  <p class="step-detail">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
+  <p class="step-detail" data-tpl="Oven up to 200C once the flapjacks are out. The lunch box veg goes in.">Oven up to 200C once the flapjacks are out. The lunch box veg goes in.</p>
   <div class="inline-recipe">
   <h4>Lunch Box Veg Tray <span class="serves">Serves 10</span></h4>
   
@@ -3875,7 +3929,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">3</span>Lunch box protein</h3>
-  <p class="step-detail">Marinated or oiled, on a second tray alongside the veg.</p>
+  <p class="step-detail" data-tpl="Marinated or oiled, on a second tray alongside the veg.">Marinated or oiled, on a second tray alongside the veg.</p>
   <div class="inline-recipe">
   <h4>Meatballs from the Al Forno Tray <span class="serves">Serves 4</span></h4>
   
@@ -3888,7 +3942,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">4</span>Traybake</h3>
-  <p class="step-detail">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
+  <p class="step-detail" data-tpl="Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.">Tonight's dinner. In alongside or straight after the veg. This is what you are all eating tonight.</p>
   <div class="inline-recipe">
   <h4>Meatball &amp; Ricotta Al Forno, Doubled <span class="serves">Serves 8</span></h4>
   
@@ -3901,7 +3955,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">5</span>Batch pot</h3>
-  <p class="step-detail">On the hob, simmering through all of the oven work.</p>
+  <p class="step-detail" data-tpl="On the hob, simmering through all of the oven work.">On the hob, simmering through all of the oven work.</p>
   <div class="inline-recipe">
   <h4>Beef Ragu, Double Batch <span class="serves">Serves 12</span></h4>
   
@@ -3923,7 +3977,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">6</span>Boiled eggs</h3>
-  <p class="step-detail">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
+  <p class="step-detail" data-tpl="While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.">While the pot simmers. 8 minutes, then cold water. 2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare.</p>
   <div class="inline-recipe">
   <h4>Boiled Eggs <span class="serves">Serves 12</span></h4>
   
@@ -3936,7 +3990,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">7</span>Cold work</h3>
-  <p class="step-detail">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
+  <p class="step-detail" data-tpl="Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.">Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made.</p>
   <div class="inline-recipe">
   <h4>Italian Sausage &amp; Pepper Freezer Bag <span class="serves">Serves 4</span></h4>
   <p class="callout">Cycle 2 onwards: one bag. That is Thursday.</p>
@@ -3994,7 +4048,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </div>
 </section><section class="step">
   <h3><span class="step-n">8</span>Build the boxes</h3>
-  <p class="step-detail">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
+  <p class="step-detail" data-tpl="Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.">Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day. Bottom-to-top so the leaves stay out of the dressing. Finisher last, and on the day - crunchy things and boiled eggs never go in on Saturday.</p>
   <div class="inline-recipe">
   <h4>Lunch Box, Week 4, build 10 <span class="serves">Serves 1</span></h4>
   
@@ -4005,17 +4059,17 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <div class="macro" data-macro="lunchbox_w4">~495-640 kcal · 10-15g protein · 50-52g carbs · 28-42g fat · 7-8g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li><strong>Monday</strong> 30g mozzarella pearls and oregano</li><li><strong>Tuesday</strong> 15g parmesan and a splash of balsamic</li><li><strong>Wednesday</strong> 20g pepperoni and chilli oil</li><li><strong>Thursday</strong> Toasted seeds and torn basil</li><li><strong>Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-day="mon"><strong data-daylabel="mon">Monday</strong> 30g mozzarella pearls and oregano</li><li data-day="tue"><strong data-daylabel="tue">Tuesday</strong> 15g parmesan and a splash of balsamic</li><li data-day="wed"><strong data-daylabel="wed">Wednesday</strong> 20g pepperoni and chilli oil</li><li data-day="thu"><strong data-daylabel="thu">Thursday</strong> Toasted seeds and torn basil</li><li data-day="fri"><strong data-daylabel="fri">Friday</strong> 2 tbsp meatball tray sauce, with parmesan</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
-  <p class="step-detail">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
+  <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
   <div class="split"><h4>Beef Ragu, Double Batch</h4><ul><li>4 portions to a tub for Monday</li><li>4 portions to a tub for Tuesday</li><li>4 portions to a bag for the freezer, labelled BEEF RAGU + the month</li></ul></div><div class="split"><h4>Minestrone</h4><ul><li>4 portions to a tub for the fridge</li><li>4 portions to a bag for the freezer, labelled MINESTRONE + the month</li></ul></div><div class="split"><h4>Meatball &amp; Ricotta Al Forno, Doubled</h4><ul><li>4 portions to a tub for Saturday</li><li>2 portions to a set aside for the lunch boxes</li><li>2 portions to a bag for the freezer, labelled MEATBALL &amp; RICOTTA AL FORNO + the month</li></ul></div>
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li>All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li>Fried eggs and anything crunchy for the lunch boxes.</li><li>Sunday's roast.</li><li>Monday's peppers and anything else that wants to be hot.</li><li>The tarka, if it is a dal week.</li><li>Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li>Thursday's lunch box prawns - straight from the pack on the day.</li><li>Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
-</div></div></div><div class="subpanel" data-sub="4-recipes"><div class="recipes"><div id="w4-sun" class="day-group">
-      <h3 class="day-head">Sunday</h3>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-day="wed" data-tpl="{{day}}'s lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-day="thu" data-tpl="{{day}}'s lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-day="fri" data-tpl="{{day}}'s lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+</div></div></div><div class="subpanel" data-sub="4-recipes"><div class="recipes"><div id="w4-sun" class="day-group" data-day="sun">
+      <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Roast Beef Topside</h4>
   <div class="tag-row"><span class="meal-tag dinner">Roast</span></div>
@@ -4027,8 +4081,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="basket-only">1.5kg beef topside</li><li class="macro-only">Sunday's share of the joint</li><li>800g potatoes for roasting</li><li>500g carrots</li><li>1 head broccoli</li><li>8 Yorkshire puddings</li><li>2 tbsp oil</li><li>Gravy</li></ul><ol class="method"><li>Oven 220C for 20 minutes, then 180C - 15 minutes per 500g for pink, 20 for done.</li><li>Potatoes in oil and salt for the last hour.</li><li>Rest 20 minutes under foil - this matters more than the timing.</li><li>Yorkshires and veg while it rests.</li><li>Set aside ~300g for Wednesday's orzo.</li></ol>
     
     </details>
-</article></div></div><div id="w4-mon" class="day-group">
-      <h3 class="day-head">Monday</h3>
+</article></div></div><div id="w4-mon" class="day-group" data-day="mon">
+      <h3 class="day-head" data-daylabel="mon">Monday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Lasagne</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -4040,8 +4094,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Beef Ragu, Double Batch</strong></li><li>200g lasagne sheets</li><li>500g white sauce (jar or made)</li><li>1 ball mozzarella, torn</li><li>100g cheddar, grated</li><li>100g frozen spinach (optional layer)</li></ul><ol class="method"><li>Saturday: ragu, sheets, white sauce, repeat. Spinach layer if you want it. Cheese on top. Cover, fridge.</li><li>Monday: oven timer 190C, 40 minutes from the fridge.</li><li>Stand 10 minutes before cutting or it slides.</li></ol>
     <p class="serving">Green salad and garlic bread.</p>
     </details>
-</article></div></div><div id="w4-tue" class="day-group">
-      <h3 class="day-head">Tuesday</h3>
+</article></div></div><div id="w4-tue" class="day-group" data-day="tue">
+      <h3 class="day-head" data-daylabel="tue">Tuesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Ragu with Pasta</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -4053,8 +4107,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">4 portions of <strong>Beef Ragu, Double Batch</strong></li><li>500g fresh pasta</li><li>60g parmesan</li></ul><ol class="method"><li>Ragu into a pan on low while the water comes up.</li><li>Fresh pasta 3 minutes.</li><li>Pasta into the sauce, not the other way round. Splash of pasta water. Parmesan over.</li></ol>
     
     </details>
-</article></div></div><div id="w4-wed" class="day-group">
-      <h3 class="day-head">Wednesday</h3>
+</article></div></div><div id="w4-wed" class="day-group" data-day="wed">
+      <h3 class="day-head" data-daylabel="wed">Wednesday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Beef &amp; Tomato Orzo</h4>
   <div class="tag-row"><span class="meal-tag dinner">Leftovers</span></div>
@@ -4066,8 +4120,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="macro-only">300g leftover roast beef, shredded</li><li>200g orzo</li><li>500ml stock</li><li>1 tin chopped tomatoes</li><li>1 courgette, diced (or a handful of frozen peas)</li><li>40g parmesan</li><li>Zest of a lemon</li></ul><ol class="method"><li>Orzo, stock and tomatoes into a pan. Simmer 10-12 minutes, stirring so it doesn't catch.</li><li>Courgette in for the last 3 minutes.</li><li>Beef in for the last 2 minutes only, just to warm.</li><li>Lemon zest and parmesan over.</li></ol>
     
     </details>
-</article></div></div><div id="w4-thu" class="day-group">
-      <h3 class="day-head">Thursday</h3>
+</article></div></div><div id="w4-thu" class="day-group" data-day="thu">
+      <h3 class="day-head" data-daylabel="thu">Thursday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Italian Sausage &amp; Pepper Freezer Bag</h4>
   <div class="tag-row"><span class="meal-tag freezer">Freezer bag</span></div>
@@ -4079,8 +4133,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>6 chicken sausages, each cut into 3</li><li>1 tin chopped tomatoes</li><li>150g frozen onion</li><li>2 garlic cubes</li><li>1 red and 1 yellow pepper, chunked</li><li>1 tsp dried oregano</li><li>1 tsp smoked paprika</li><li>1 tbsp tomato puree</li><li>1 chicken stock cube, crumbled</li><li>A pinch of sugar</li></ul><ol class="method"><li>Everything into a freezer bag, raw. Seal, label SAUSAGE PEPPER + the month, freeze flat.</li><li>Wednesday bedtime: into the fridge.</li><li>Thursday morning: into the slow cooker on low.</li></ol>
     <p class="serving">Pasta cooked on the day, or crusty bread.</p>
     </details>
-</article></div></div><div id="w4-fri" class="day-group">
-      <h3 class="day-head">Friday</h3>
+</article></div></div><div id="w4-fri" class="day-group" data-day="fri">
+      <h3 class="day-head" data-daylabel="fri">Friday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Margherita, the Boys'</h4>
   
@@ -4114,8 +4168,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li>A bag of leaves</li><li>150g tomatoes</li><li>150g mozzarella pearls</li><li>1 tin cannellini, drained</li><li>Pickled onions</li><li>4 boiled eggs</li><li>20g seeds</li><li>Basil</li><li>3 tbsp oil</li><li>1 tbsp balsamic</li></ul><ol class="method"><li>Beans dressed first so they take the flavour, then everything else folded through.</li></ol>
     
     </details>
-</article></div></div><div id="w4-sat" class="day-group">
-      <h3 class="day-head">Saturday</h3>
+</article></div></div><div id="w4-sat" class="day-group" data-day="sat">
+      <h3 class="day-head" data-daylabel="sat">Saturday</h3>
       <div class="recipe-grid"><article class="card">
   <h4 class="card-title">Meatball &amp; Ricotta Al Forno, Doubled</h4>
   <div class="tag-row"><span class="book-ref">Emily English, p.122</span><span class="meal-tag dinner">Traybake</span></div>
@@ -4420,13 +4474,176 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div>
 </div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-09-02 11:38</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-09-02 12:26</footer>
 <script>
 (function(){
-  var anchor = "2026-08-28";
+  var SLOTS = ["fri","sat","sun","mon","tue","wed","thu"];            // day_order: slot 0 is delivery
+  var WEEKDAY_IDS = ["mon","tue","wed","thu","fri","sat","sun"];
+  var WEEKDAY_NAMES = {"mon":"Monday","tue":"Tuesday","wed":"Wednesday","thu":"Thursday","fri":"Friday","sat":"Saturday","sun":"Sunday"};
+  var SCHEMA = [{"key":"delivery_day","type":"select","def":"fri"},{"key":"week_start_day","type":"select","def":"sun"},{"key":"anchor_date","type":"date","def":"2026-08-28"},{"key":"current_cycle","type":"segmented","def":"auto"}];
+  var SETTINGS_KEY = "ffs-settings";
   var cycleLen = 28;
-  var days = ["fri","sat","sun","mon","tue","wed","thu"];
-  var dayNames = {"fri":"Friday","sat":"Saturday","sun":"Sunday","mon":"Monday","tue":"Tuesday","wed":"Wednesday","thu":"Thursday"};
+
+  // ---------------------------------------------------------------- settings
+  var store = null;
+  try { store = window.localStorage; } catch(err) { store = null; }
+
+  var settings = (function(){
+    var out = {};
+    SCHEMA.forEach(function(f){ out[f.key] = f.def; });
+    try {
+      var raw = store && store.getItem(SETTINGS_KEY);
+      if(raw){
+        var saved = JSON.parse(raw);
+        SCHEMA.forEach(function(f){
+          if(saved[f.key] !== undefined && saved[f.key] !== null) out[f.key] = saved[f.key];
+        });
+      }
+    } catch(err){}
+    return out;
+  })();
+
+  function saveSettings(){
+    try { if(store) store.setItem(SETTINGS_KEY, JSON.stringify(settings)); } catch(err){}
+  }
+
+  // Monday=0 .. Sunday=6, matching WEEKDAY_IDS.
+  function weekdayIndex(id){ var i = WEEKDAY_IDS.indexOf(id); return i < 0 ? 4 : i; }
+
+  // A slot is a fixed number of days after delivery. Slot 0 is delivery day, so
+  // prep is always delivery+1 and the roast delivery+2, whatever weekday
+  // delivery happens to be.
+  function slotOffset(slot){ var i = SLOTS.indexOf(slot); return i < 0 ? 0 : i; }
+  function weekdayAtOffset(n){
+    var base = weekdayIndex(settings.delivery_day);
+    return WEEKDAY_IDS[(((base + n) % 7) + 7) % 7];
+  }
+  function slotName(slot){ return WEEKDAY_NAMES[weekdayAtOffset(slotOffset(slot))]; }
+
+  // {{day}} is this element's own slot; {{d+N}} is delivery + N days.
+  //
+  // Scanned by hand rather than with a regex on purpose: this whole block is
+  // emitted through a template literal in build.mjs, which silently eats the
+  // backslashes, so /d/ arrives in the page as /d/ and matches nothing.
+  function fillTemplate(text, ownSlot){
+    var out = '', i = 0;
+    while(i < text.length){
+      var a = text.indexOf('{{', i);
+      if(a < 0){ out += text.slice(i); break; }
+      var b = text.indexOf('}}', a);
+      if(b < 0){ out += text.slice(i); break; }
+      out += text.slice(i, a);
+      var token = text.slice(a + 2, b);
+      if(token === 'day'){
+        out += ownSlot ? slotName(ownSlot) : '';
+      } else if(token.slice(0, 2) === 'd+'){
+        out += WEEKDAY_NAMES[weekdayAtOffset(parseInt(token.slice(2), 10))];
+      } else {
+        out += '{{' + token + '}}';
+      }
+      i = b + 2;
+    }
+    return out;
+  }
+
+  // ------------------------------------------------------------ apply
+  // Everything the settings touch is re-derived here, so a change is: write the
+  // value, call applySettings(). Adding a setting means adding a case, not
+  // rewiring anything.
+
+  function applyDayLabels(){
+    document.querySelectorAll('[data-daylabel]').forEach(function(el){
+      el.textContent = slotName(el.dataset.daylabel);
+    });
+  }
+
+  // Display order only - the slots themselves never move.
+  function orderedSlots(){
+    var startIdx = weekdayIndex(settings.week_start_day);
+    return SLOTS.slice().sort(function(a, b){
+      var ai = (((weekdayIndex(weekdayAtOffset(slotOffset(a))) - startIdx) % 7) + 7) % 7;
+      var bi = (((weekdayIndex(weekdayAtOffset(slotOffset(b))) - startIdx) % 7) + 7) % 7;
+      return ai - bi;
+    });
+  }
+
+  function applyDayOrder(){
+    var order = orderedSlots();
+    document.querySelectorAll('.menu-list, .recipes, .finishers ul').forEach(function(list){
+      var kids = Array.prototype.slice.call(list.children).filter(function(el){ return el.dataset.day; });
+      if(!kids.length) return;
+      order.forEach(function(slot){
+        kids.forEach(function(el){ if(el.dataset.day === slot) list.appendChild(el); });
+      });
+      // anything without a slot (Made on Saturday, Into the boxes) stays last
+      Array.prototype.slice.call(list.children).forEach(function(el){
+        if(!el.dataset.day) list.appendChild(el);
+      });
+    });
+  }
+
+  function applyTemplates(){
+    document.querySelectorAll('[data-tpl]').forEach(function(el){
+      el.textContent = fillTemplate(el.dataset.tpl, el.dataset.day || (el.closest('[data-day]') || {dataset:{}}).dataset.day);
+    });
+  }
+
+  function applyRhythm(){
+    document.querySelectorAll('.rhythm li[data-offset]').forEach(function(li){
+      var from = parseInt(li.dataset.offset, 10);
+      var to = li.dataset.to != null ? parseInt(li.dataset.to, 10) : null;
+      var name = function(n){ return WEEKDAY_NAMES[weekdayAtOffset(n)]; };
+      var label = to != null ? name(from).slice(0,3) + '-' + name(to).slice(0,3) : name(from);
+      if(li.dataset.at === 'bed') label += ', bed';
+      li.querySelector('.when').textContent = label;
+    });
+  }
+
+  function todaySlot(){
+    var a = new Date(settings.anchor_date + 'T00:00:00');
+    var now = new Date(); now.setHours(0,0,0,0);
+    var diff = Math.floor((now - a) / 86400000);
+    var into = ((diff % cycleLen) + cycleLen) % cycleLen;
+    return { week: String(Math.floor(into/7)+1), day: SLOTS[into%7], weeksIn: Math.floor(diff/7) };
+  }
+
+  function activeCycle(){
+    if(settings.current_cycle === '1') return '1';
+    if(settings.current_cycle === '2') return '2';
+    var a = new Date(settings.anchor_date + 'T00:00:00');
+    var now = new Date(); now.setHours(0,0,0,0);
+    var diff = Math.floor((now - a) / 86400000);
+    return diff >= 0 && diff < cycleLen ? '1' : '2';
+  }
+
+  function applyCycle(){
+    var c = activeCycle();
+    document.querySelectorAll('.cyc').forEach(function(b){
+      b.classList.toggle('active', b.dataset.cycle === c);
+    });
+    document.querySelectorAll('.cycle-body').forEach(function(d){
+      d.hidden = d.dataset.cycle !== c;
+    });
+  }
+
+  var todayBtn = document.getElementById('today');
+  function applyToday(){
+    var slot = todaySlot();
+    todayBtn.innerHTML = '<span class="t-label">Today</span><span class="t-slot">'
+      + slotName(slot.day).slice(0,3) + ', wk ' + slot.week + '</span>';
+    todayBtn.setAttribute('aria-label', 'Go to today: ' + slotName(slot.day) + ' of week ' + slot.week);
+    todayBtn.dataset.week = slot.week;
+    todayBtn.dataset.day = slot.day;
+  }
+
+  function applySettings(){
+    applyDayLabels();
+    applyTemplates();
+    applyRhythm();
+    applyDayOrder();
+    applyCycle();
+    applyToday();
+  }
 
   function show(tab){
     document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab===tab); });
@@ -4467,8 +4684,6 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   });
 
   // Basket ticks survive a reload, because a shop takes more than one sitting.
-  var store = null;
-  try { store = window.localStorage; } catch(err) { store = null; }
   document.addEventListener('change', function(e){
     var box = e.target.closest('[data-basket]');
     if(!box) return;
@@ -4482,30 +4697,59 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
     box.closest('.basket-item').classList.toggle('done', !!on);
   });
 
-  // Which week and which day is it? Counted forward from the anchor Friday.
-  function todaySlot(){
-    var a = new Date(anchor + 'T00:00:00');
-    var now = new Date(); now.setHours(0,0,0,0);
-    var diff = Math.floor((now - a) / 86400000);
-    var into = ((diff % cycleLen) + cycleLen) % cycleLen;
-    return { week: String(Math.floor(into/7)+1), day: days[into%7] };
-  }
-
-  var btn = document.getElementById('today');
-  var slot = todaySlot();
-  btn.innerHTML = '<span class="t-label">Today</span><span class="t-slot">'
-    + dayNames[slot.day].slice(0,3) + ', wk ' + slot.week + '</span>';
-  btn.setAttribute('aria-label', 'Go to today: ' + dayNames[slot.day] + ' of week ' + slot.week);
-  btn.addEventListener('click', function(){
-    show('week-'+slot.week);
-    showSub(slot.week+'-recipes');
-    var target = document.getElementById('w'+slot.week+'-'+slot.day);
+  todayBtn.addEventListener('click', function(){
+    var week = todayBtn.dataset.week, day = todayBtn.dataset.day;
+    show('week-'+week);
+    showSub(week+'-recipes');
+    var target = document.getElementById('w'+week+'-'+day);
     if(target){
       target.scrollIntoView({behavior:'smooth', block:'start'});
       var card = target.querySelector('.card');
       if(card){ card.classList.add('flash'); setTimeout(function(){ card.classList.remove('flash'); }, 1800); }
     }
   });
+
+  // ------------------------------------------------------------ settings panel
+  var panel = document.getElementById('settings-panel');
+  var scrim = document.getElementById('settings-scrim');
+  function openSettings(){
+    panel.classList.add('open'); scrim.classList.add('open');
+    panel.setAttribute('aria-hidden', 'false');
+  }
+  function closeSettings(){
+    panel.classList.remove('open'); scrim.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+  }
+  document.getElementById('settings-open').addEventListener('click', openSettings);
+  document.getElementById('settings-close').addEventListener('click', closeSettings);
+  scrim.addEventListener('click', closeSettings);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeSettings(); });
+
+  // Fill the controls from the stored settings, then keep them in step.
+  SCHEMA.forEach(function(f){
+    if(f.type === 'segmented'){
+      panel.querySelectorAll('[data-seg="'+f.key+'"]').forEach(function(b){
+        b.classList.toggle('active', b.dataset.value === String(settings[f.key]));
+        b.addEventListener('click', function(){
+          settings[f.key] = b.dataset.value;
+          panel.querySelectorAll('[data-seg="'+f.key+'"]').forEach(function(o){
+            o.classList.toggle('active', o === b);
+          });
+          saveSettings(); applySettings();
+        });
+      });
+      return;
+    }
+    var input = document.getElementById('set-'+f.key);
+    if(!input) return;
+    input.value = settings[f.key];
+    input.addEventListener('change', function(){
+      settings[f.key] = input.value;
+      saveSettings(); applySettings();
+    });
+  });
+
+  applySettings();
 })();
 </script>
 </body>
