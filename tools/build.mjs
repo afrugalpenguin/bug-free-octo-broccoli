@@ -294,11 +294,31 @@ const COUNTED = {
   mixed_beans_drained:  [240, 'tin mixed beans', 'tins mixed beans'],
   sweetcorn_drained:    [260, 'tin sweetcorn', 'tins sweetcorn'],
   tuna_drained:         [112, 'tin tuna', 'tins tuna'],
+
+  // Sold as whole things. A head of broccoli is 300-400g across the recipes,
+  // so 350g is the middle of what they already assume. Tenderstem is its own
+  // food now and stays a weight, because it is sold by the pack.
+  cucumber:             [300, 'cucumber', 'cucumbers'],
+  broccoli:             [350, 'head of broccoli', 'heads of broccoli'],
+};
+
+// Where the key does not read as a shopping label on its own - two kinds of
+// Greek yoghurt sitting next to each other in Dairy being the obvious one.
+const FOOD_LABEL = {
+  greek_yoghurt:        'Greek yoghurt (full fat)',
+  greek_yoghurt_0:      '0% Greek yoghurt',
+  tenderstem_broccoli:  'tenderstem broccoli',
+  cherry_tomatoes:      'cherry tomatoes',
+  tomatoes:             'tomatoes (salad)',
+  frozen_onion:         'frozen diced onion',
+  stock_made:           'stock - made up from cubes',
+  gravy_made:           'gravy - made up',
 };
 
 function basketLine(it) {
   const c = COUNTED[it.food];
-  if (!c) return { qty: quantity(it.grams), label: it.food.replace(/_/g, ' ') };
+  const plain = FOOD_LABEL[it.food] ?? it.food.replace(/_/g, ' ');
+  if (!c) return { qty: quantity(it.grams), label: plain };
   const n = Math.ceil(it.grams / c[0]);
   return { qty: String(n), label: n === 1 ? c[1] : c[2] };
 }
@@ -411,6 +431,16 @@ function saturdayPanel(week, cycle) {
     dests.push(`<div class="split"><h4>${esc(r.name)}</h4><ul>${parts}</ul></div>`);
   }
   step(order[8].step, order[8].detail, dests.join('') || '<p class="notes">Nothing to divide this week.</p>');
+
+  // Some roasts want a job doing the night before - the pork wants its skin
+  // scored and salted and left uncovered. It lived as step one of Sunday's
+  // method, which is the wrong day to be reading it.
+  const nightBefore = recipes[w.roast]?.night_before;
+  if (nightBefore && order[9]) {
+    step(order[9].step, order[9].detail,
+      `<div class="inline-recipe"><h4>${esc(recipes[w.roast].name)}</h4>
+        <p class="callout">${esc(nightBefore)}</p></div>`);
+  }
 
   const notMade = scaffold.not_made_saturday.map(x =>
     `<li${x.day ? ` data-day="${esc(x.day)}"` : ''} data-tpl="${esc(x.what)}">${esc(fillTpl(x.what, x.day))}</li>`).join('');

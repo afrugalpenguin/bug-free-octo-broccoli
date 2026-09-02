@@ -114,9 +114,9 @@
       },
       "wed": {
         "source": "smoked_mackerel",
-        "grams": 80,
+        "grams": 70,
         "recipe": "lunchbox_mackerel",
-        "notes": "Flaked in on the day, skin off. Squeeze of lemon. The oily-fish day."
+        "notes": "Flaked in on the day, skin off. A 140g pack is 70g a box. The oily-fish day."
       },
       "thu": {
         "source": "prawns",
@@ -192,6 +192,10 @@
     {
       "step": "Divide and label",
       "detail": "Tubs to the fridge, bags to the freezer, everything labelled with the month."
+    },
+    {
+      "step": "Before bed",
+      "detail": "Anything tomorrow's roast wants doing the night before."
     }
   ],
   "not_made_saturday": [
