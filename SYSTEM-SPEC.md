@@ -622,7 +622,7 @@ A cog beside the Today button opens a right-hand panel. Four settings, stored as
 
 | Setting | Type | Default | Affects |
 |---|---|---|---|
-| `delivery_day` | Mon-Sun | `fri` | every slot label, the rhythm reminders, prep and roast days |
+| `delivery_day` | Thu-Sat | `fri` | every slot label, the rhythm reminders, prep and roast days |
 | `week_start_day` | Mon-Sun | `sun` | reading order of the day cards, menu list and finishers. Independent of delivery day - it moves nothing |
 | `anchor_date` | date | `2026-08-28` | the Today button, the auto cycle |
 | `current_cycle` | auto / 1 / 2 | `auto` | which basket variant opens by default |
@@ -632,6 +632,21 @@ A cog beside the Today button opens a right-hand panel. Four settings, stored as
 `rotation.day_order` is a list of **slots**, not weekday names. Slot 0 is delivery day and every other slot is a fixed number of days after it, so prep is always delivery+1 and the roast delivery+2. Move delivery to Thursday and prep becomes Friday, the roast Saturday - the data does not change, only the labels.
 
 The keys are still spelled `fri`, `sat`, `sun`... because that is where the defaults put them. Read them as slot ids.
+
+### Two kinds of day
+
+Not everything moves with delivery, and conflating the two is a bug:
+
+| | Moves with delivery | Examples |
+|---|---|---|
+| **Slot** (`data-day`) | yes | delivery, prep, the roast, the dinner rota, the freezer bag |
+| **Absolute weekday** (`data-wday`) | no | the lunch boxes and their finishers |
+
+Lunch boxes are 2 adults x 5 **working** days. Monday's box is Monday's whatever day the van comes, so those labels are literal and never templated. Treating them as slots put packed work lunches on Saturday and Sunday.
+
+### Why delivery is Thu-Sat
+
+The prep session is delivery+1 and it cooks the roast protein for Monday and Tuesday's boxes, so prep has to land before the working week. Thursday, Friday or Saturday delivery gives prep on Friday, Saturday or Sunday. Any other delivery day and Monday's box needs protein cooked the previous week. The dropdown only offers the three that work, and `defaults.delivery_days_allowed` holds the list.
 
 ### Computed day names in prose
 

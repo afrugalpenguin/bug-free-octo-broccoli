@@ -187,7 +187,7 @@
     },
     {
       "step": "Build the boxes",
-      "detail": "Last, once the veg and protein have cooled enough. {{d+3}} and {{d+4}}'s four get the roast protein now; the other six get the base only and a label saying add protein on the day."
+      "detail": "Last, once the veg and protein have cooled enough. Monday and Tuesday's four get the roast protein now; the other six get the base only and a label saying add protein on the day."
     },
     {
       "step": "Divide and label",
@@ -213,16 +213,13 @@
       "what": "The tarka, if it is a dal week."
     },
     {
-      "day": "wed",
-      "what": "{{day}}'s lunch box mackerel - flaked in on the day, skin off."
+      "what": "Wednesday's lunch box mackerel - flaked in on the day, skin off."
     },
     {
-      "day": "thu",
-      "what": "{{day}}'s lunch box prawns - straight from the pack on the day."
+      "what": "Thursday's lunch box prawns - straight from the pack on the day."
     },
     {
-      "day": "fri",
-      "what": "{{day}}'s lunch box tuna and boiled eggs - in on the day."
+      "what": "Friday's lunch box tuna and boiled eggs - in on the day."
     }
   ],
   "defaults": {
@@ -231,6 +228,11 @@
     "anchor_date": "2026-08-28",
     "current_cycle": "auto",
     "cycle_length_days": 28,
-    "notes": "Defaults for the settings panel, and what the build falls back to. delivery_day is slot 0 of day_order in rotation.json - every other slot is counted from it, so prep is delivery+1 and the roast is delivery+2 whatever weekday delivery lands on. anchor_date is the first delivery day of cycle 1, not a planned start. current_cycle 'auto' works it out from the anchor; '1' or '2' pin it. week_start_day is display order only and does not move any slot."
+    "notes": "Defaults for the settings panel, and what the build falls back to. delivery_day is slot 0 of day_order in rotation.json - every other slot is counted from it, so prep is delivery+1 and the roast is delivery+2 whatever weekday delivery lands on. Lunch boxes are the exception: they are absolute working weekdays, Monday to Friday, and do not move with delivery. delivery_days_allowed is Thu-Sat because the prep session that cooks Monday and Tuesday's box protein has to fall before the working week. anchor_date is the first delivery day of cycle 1. current_cycle 'auto' works it out from the anchor; '1' or '2' pin it. week_start_day is reading order only and moves nothing.",
+    "delivery_days_allowed": [
+      "thu",
+      "fri",
+      "sat"
+    ]
   }
 }
