@@ -583,7 +583,7 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .menu-macro{font-size:.75rem;color:var(--text-light);margin-top:.3rem;padding-left:5.25rem}
 .swap{font-size:.75rem;color:var(--accent);margin-top:.25rem;padding-left:5.25rem;font-style:italic}
 .theme{font-size:.9rem;color:var(--text-light);margin-bottom:.75rem}
-.recipe-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;align-items:start}
+.recipe-grid{display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
 .card,.inline-recipe{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.2rem;margin-bottom:1rem;box-shadow:var(--shadow)}
 .card{transition:box-shadow .2s}
 .card:hover{box-shadow:var(--shadow-lg)}
