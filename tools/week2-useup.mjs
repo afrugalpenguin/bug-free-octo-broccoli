@@ -222,6 +222,26 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const qty = g => (g >= 1000 ? `${Math.round(g / 100) / 10}kg` : `${Math.round(g)}g`);
 const foodLabel = f => f.replace(/_/g, ' ');
 
+// Counted, not weighed - "1.2kg egg" is no use in a shop. Unit weights match
+// the ones the recipes use, so they cannot drift from the data. Same map as
+// build.mjs; duplicated because this script is throwaway and should not make
+// the real build depend on it.
+const COUNTED = {
+  egg:               [58,  'egg', 'eggs'],
+  pizza_dough:       [250, 'dough ball', 'dough balls'],
+  banana:            [100, 'banana', 'bananas'],
+  tortilla_wrap:     [30,  'tortilla wrap', 'tortilla wraps'],
+  yorkshire_pudding: [20,  'Yorkshire pudding', 'Yorkshire puddings'],
+  stock_cube:        [10,  'stock cube', 'stock cubes'],
+  lemon_juice:       [30,  'lemon', 'lemons'],
+};
+const line = (food, grams) => {
+  const c = COUNTED[food];
+  if (!c) return { q: qty(grams), label: foodLabel(food) };
+  const n = Math.ceil(grams / c[0]);
+  return { q: String(n), label: n === 1 ? c[1] : c[2] };
+};
+
 function recipeCard(id, heading = null) {
   const r = R(id);
   if (!r) return '';
@@ -280,14 +300,14 @@ const basket = AISLES.map(([key, label]) => {
   return `<div class="aisle"><h4>${label}</h4><ul>${rows.map(it => `
     <li class="basket-item"><label>
       <input type="checkbox" data-tick="b-${esc(it.food)}">
-      <span class="qty">${esc(qty(it.grams))}</span><span class="food">${esc(foodLabel(it.food))}</span>
+      <span class="qty">${esc(line(it.food, it.grams).q)}</span><span class="food">${esc(line(it.food, it.grams).label)}</span>
     </label>${it.fromFreezer ? `<p class="uses">${esc(qty(it.fromFreezer))} of this comes out of the freezer - buy the rest</p>` : ''}</li>`).join('')}</ul></div>`;
 }).join('');
 
 const freezerList = fromFreezer.sort((a, b) => b.grams - a.grams).map(f =>
   `<li class="basket-item"><label>
     <input type="checkbox" data-tick="f-${esc(f.food)}">
-    <span class="qty">${esc(qty(f.grams))}</span><span class="food">${esc(foodLabel(f.food))}</span>
+    <span class="qty">${esc(line(f.food, f.grams).q)}</span><span class="food">${esc(line(f.food, f.grams).label)}</span>
   </label>${f.grams < f.was ? `<p class="uses">of ${esc(qty(f.was))} needed - the rest is on the basket</p>` : ''}</li>`).join('');
 
 const swapRows = SWAPS.map(([where, what]) =>
