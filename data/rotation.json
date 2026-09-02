@@ -1,5 +1,15 @@
 {
   "_note": "Which recipes fill which slot in which week. Day order is Fri->Thu, anchored to delivery day. Ids are keys in recipes.json; 'scaffold:pizza' means the Friday pizza pair defined in scaffold.json.",
+  "_display_note": "day_order is the logic: the week is anchored to Friday delivery, and the basket, the cycle maths and the today button all count from it. display_order is what the week tabs render, Sunday first, because a list that starts on Friday and ends on Thursday reads oddly. Same seven days either way. Change day_order and you change the system; change display_order and you change the reading order only.",
+  "display_order": [
+    "sun",
+    "mon",
+    "tue",
+    "wed",
+    "thu",
+    "fri",
+    "sat"
+  ],
   "day_order": [
     "fri",
     "sat",
