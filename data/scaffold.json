@@ -132,6 +132,20 @@
       }
     }
   },
+  "packed_lunch": {
+    "who": "eldest",
+    "days": 5,
+    "made": "each evening, not Saturday",
+    "recipe": "packed_lunch",
+    "per_day": {
+      "roll": "1 wholemeal roll, sliced ham",
+      "yoghurt": "Small pot of full-fat Greek yoghurt with a few frozen berries",
+      "veg": "Cucumber sticks and pepper sticks",
+      "raisins": "Small pot of raisins",
+      "drink": "Water bottle"
+    },
+    "notes": "Made the night before, fridge overnight. Frozen berries thaw by lunch. Ham filling for now - branch out later."
+  },
   "dressings": {
     "monthly_batch": [
       "house_vinaigrette",
@@ -224,6 +238,9 @@
     },
     {
       "what": "Friday's lunch box tuna and boiled eggs - in on the day."
+    },
+    {
+      "what": "Eldest's packed lunch - made each evening."
     }
   ],
   "defaults": {

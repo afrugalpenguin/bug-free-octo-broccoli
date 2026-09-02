@@ -90,6 +90,9 @@ h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#f
 .callout{background:var(--accent-light);border-left:3px solid var(--accent);padding:.6rem .8rem;border-radius:0 6px 6px 0;margin:.6rem 0;font-size:.9rem}
 .rhythm{list-style:none}
 .rhythm li{display:flex;gap:.75rem;padding:.5rem 0;border-bottom:1px solid var(--border)}
+.packed{list-style:none;display:grid;gap:.35rem;margin:.2rem 0 .6rem}
+.packed li{font-size:.9rem;padding-left:1rem;position:relative}
+.packed li:before{content:'';position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
 .rhythm li:last-child{border:0}
 .when{flex:0 0 5.5rem;font-weight:600;font-size:.85rem}
 .what{font-size:.9rem;color:var(--text-light)}
@@ -258,6 +261,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
     <p>Single freezer bags only. Batch pots still bank 1 bag each. The freezer grows slowly.</p>
     <p class="callout">When the tub holds 8+ bags, skip a cook session. Shop only fresh things. Eat 5 bags that week, oldest first.</p></section>
 
+  <section class="block"><h2>Packed lunch</h2>
+    <p class="lede">Eldest, 5 days. Made each evening, not Saturday.</p>
+    <ul class="packed"><li>1 wholemeal roll, sliced ham</li><li>Small pot of full-fat Greek yoghurt with a few frozen berries</li><li>Cucumber sticks and pepper sticks</li><li>Small pot of raisins</li><li>Water bottle</li></ul>
+    <p class="notes">Made the night before, fridge overnight. Frozen berries thaw by lunch. Ham filling for now - branch out later.</p></section>
+
   <section class="block"><h2>Dressings</h2>
     <p>Make the three oil-based dressings in jars on day 1 of the cycle. They keep 3-4 weeks. Mint yoghurt is weekly and only needed in week 2.</p></section>
 </div>
@@ -342,10 +350,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">beef mince 5</span></label>
         
         <div class="uses">1kg 5% fat beef mince (Mild Chilli, Double Batch) - the double chilli</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-ham_sliced">
-        <span class="qty">180g</span>
+        <span class="qty">380g</span>
         <span class="food">ham sliced</span></label>
         
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chorizo_cooking">
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-chorizo_cooking">
         <span class="qty">100g</span>
         <span class="food">chorizo cooking</span></label>
         
@@ -357,7 +365,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
         
-        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt_0">
+        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt">
+        <span class="qty">1kg</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
         
@@ -365,11 +377,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">12</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-greek_yoghurt">
-        <span class="qty">510g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
-        
-        <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-mozzarella">
+        <div class="uses">12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella balls</span></label>
         
@@ -381,7 +389,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
         
-        <div class="uses">75g butter (Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-bread_wholemeal">
+        <div class="uses">75g butter (Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-1-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
+        
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -390,10 +402,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">sweet potato</span></label>
         
         <div class="uses">500g sweet potato, cubed (Lunch Box Veg Tray)<br>600g sweet potato, chunked (Paprika Chicken Traybake)<br>4 sweet potatoes (Chilli-Loaded Sweet Potatoes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-pepper">
-        <span class="qty">1.2kg</span>
-        <span class="food">pepper</span></label>
+        <span class="qty">9</span>
+        <span class="food">peppers</span></label>
         
-        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, diced (Mild Chilli, Double Batch)<br>2 red peppers, chunked (Paprika Chicken Traybake)<br>2 peppers, sliced (Chicken Fajita Bowls)<br>Half a red pepper (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-red_onion">
+        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, diced (Mild Chilli, Double Batch)<br>2 red peppers, chunked (Paprika Chicken Traybake)<br>2 peppers, sliced (Chicken Fajita Bowls)<br>Half a red pepper (Chorizo &amp; Pepper, the Adults')<br>1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-red_onion">
         <span class="qty">880g</span>
         <span class="food">red onion</span></label>
         
@@ -401,15 +413,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">800g potatoes for roasting (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-carrot">
+        <div class="uses">800g potatoes for roasting (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-cucumber">
+        <span class="qty">3</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">Half a cucumber, diced (Chicken Fajita Bowls)<br>Half a cucumber (Chopped Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-carrot">
         <span class="qty">600g</span>
         <span class="food">carrot</span></label>
         
-        <div class="uses">1 large carrot, grated (Mild Chilli, Double Batch)<br>500g carrots (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-cucumber">
-        <span class="qty">2</span>
-        <span class="food">cucumbers</span></label>
-        
-        <div class="uses">Half a cucumber, diced (Chicken Fajita Bowls)<br>Half a cucumber (Chopped Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-salad_leaves">
+        <div class="uses">1 large carrot, grated (Mild Chilli, Double Batch)<br>500g carrots (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-salad_leaves">
         <span class="qty">390g</span>
         <span class="food">salad leaves</span></label>
         
@@ -450,10 +462,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">bags frozen diced onion</span></label>
         
         <div class="uses">300g frozen diced onion (Mild Chilli, Double Batch)<br>150g frozen onion x2 (Pulled Chicken Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-frozen_peas">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-frozen_peas">
         <span class="qty">100g</span>
         <span class="food">frozen peas</span></label>
         
@@ -493,7 +505,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">600ml</span>
         <span class="food">beef stock - made up from cubes</span></label>
         
-        <div class="uses">600ml beef stock (2 cubes) (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-gravy_made">
+        <div class="uses">600ml beef stock (2 cubes) (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-raisins">
+        <span class="qty">500g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-1-gravy_made">
         <span class="qty">400ml</span>
         <span class="food">gravy - made up</span></label>
         
@@ -607,10 +623,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">beef mince 5</span></label>
         
         <div class="uses">1kg 5% fat beef mince (Mild Chilli, Double Batch) - the double chilli</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-ham_sliced">
-        <span class="qty">180g</span>
+        <span class="qty">380g</span>
         <span class="food">ham sliced</span></label>
         
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chorizo_cooking">
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-chorizo_cooking">
         <span class="qty">100g</span>
         <span class="food">chorizo cooking</span></label>
         
@@ -622,7 +638,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
         
-        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt_0">
+        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt">
+        <span class="qty">1kg</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
         
@@ -630,11 +650,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">12</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-greek_yoghurt">
-        <span class="qty">510g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
-        
-        <div class="uses">200g Greek yoghurt (Chicken Fajita Bowls)<br>Greek yoghurt (Chilli with Rice)<br>160g Greek yoghurt (Chilli-Loaded Sweet Potatoes)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-mozzarella">
+        <div class="uses">12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella balls</span></label>
         
@@ -646,7 +662,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
         
-        <div class="uses">75g butter (Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-bread_wholemeal">
+        <div class="uses">75g butter (Seed Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="1-2-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
+        
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -655,10 +675,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">sweet potato</span></label>
         
         <div class="uses">500g sweet potato, cubed (Lunch Box Veg Tray)<br>600g sweet potato, chunked (Paprika Chicken Traybake)<br>4 sweet potatoes (Chilli-Loaded Sweet Potatoes)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-pepper">
-        <span class="qty">1.2kg</span>
-        <span class="food">pepper</span></label>
+        <span class="qty">9</span>
+        <span class="food">peppers</span></label>
         
-        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, diced (Mild Chilli, Double Batch)<br>2 red peppers, chunked (Paprika Chicken Traybake)<br>2 peppers, sliced (Chicken Fajita Bowls)<br>Half a red pepper (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-red_onion">
+        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, diced (Mild Chilli, Double Batch)<br>2 red peppers, chunked (Paprika Chicken Traybake)<br>2 peppers, sliced (Chicken Fajita Bowls)<br>Half a red pepper (Chorizo &amp; Pepper, the Adults')<br>1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-red_onion">
         <span class="qty">880g</span>
         <span class="food">red onion</span></label>
         
@@ -666,15 +686,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">800g potatoes for roasting (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-carrot">
+        <div class="uses">800g potatoes for roasting (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-cucumber">
+        <span class="qty">3</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">Half a cucumber, diced (Chicken Fajita Bowls)<br>Half a cucumber (Chopped Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-carrot">
         <span class="qty">600g</span>
         <span class="food">carrot</span></label>
         
-        <div class="uses">1 large carrot, grated (Mild Chilli, Double Batch)<br>500g carrots (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-cucumber">
-        <span class="qty">2</span>
-        <span class="food">cucumbers</span></label>
-        
-        <div class="uses">Half a cucumber, diced (Chicken Fajita Bowls)<br>Half a cucumber (Chopped Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-salad_leaves">
+        <div class="uses">1 large carrot, grated (Mild Chilli, Double Batch)<br>500g carrots (Two Roast Chickens)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-salad_leaves">
         <span class="qty">390g</span>
         <span class="food">salad leaves</span></label>
         
@@ -711,10 +731,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">dough balls</span></label>
         
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Chorizo &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-frozen_onion">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-frozen_onion">
         <span class="qty">3</span>
         <span class="food">bags frozen diced onion</span></label>
         
@@ -758,7 +778,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">600ml</span>
         <span class="food">beef stock - made up from cubes</span></label>
         
-        <div class="uses">600ml beef stock (2 cubes) (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-gravy_made">
+        <div class="uses">600ml beef stock (2 cubes) (Mild Chilli, Double Batch)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-raisins">
+        <span class="qty">500g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="1-2-gravy_made">
         <span class="qty">400ml</span>
         <span class="food">gravy - made up</span></label>
         
@@ -1008,7 +1032,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s1" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -1160,7 +1184,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="1-recipes"><div class="recipes"><div id="w1-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -1452,10 +1476,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">pork shoulder roast</span></label>
         
         <div class="uses">2kg pork shoulder, skin scored (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-ham_sliced">
-        <span class="qty">180g</span>
+        <span class="qty">380g</span>
         <span class="food">ham sliced</span></label>
         
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-salmon_fillet">
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-salmon_fillet">
         <span class="qty">520g</span>
         <span class="food">salmon fillet</span></label>
         
@@ -1467,7 +1491,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
         
-        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt_0">
+        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt">
+        <span class="qty">1.2kg</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
         
@@ -1475,11 +1503,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">15</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">3 eggs (Pork Fried Rice)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-greek_yoghurt">
-        <span class="qty">660g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
-        
-        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mozzarella">
+        <div class="uses">3 eggs (Pork Fried Rice)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella balls</span></label>
         
@@ -1491,7 +1515,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
         
-        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-bread_wholemeal">
+        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-1-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
+        
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -1499,15 +1527,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">1.3kg</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">500g baby potatoes, halved (Glazed Salmon Traybake)<br>800g potatoes for roasting (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-broccoli">
+        <div class="uses">500g baby potatoes, halved (Glazed Salmon Traybake)<br>800g potatoes for roasting (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cucumber">
+        <span class="qty">4</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">1 cucumber, in ribbons (Tandoori Chicken Bowls)<br>1 cucumber (Cucumber &amp; Tomato Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-broccoli">
         <span class="qty">3</span>
         <span class="food">heads of broccoli</span></label>
         
-        <div class="uses">1 head broccoli, in florets (Lunch Box Veg Tray)<br>1 head broccoli, in florets (Glazed Salmon Traybake)<br>1 head broccoli (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cucumber">
-        <span class="qty">3</span>
-        <span class="food">cucumbers</span></label>
-        
-        <div class="uses">1 cucumber, in ribbons (Tandoori Chicken Bowls)<br>1 cucumber (Cucumber &amp; Tomato Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-carrot">
+        <div class="uses">1 head broccoli, in florets (Lunch Box Veg Tray)<br>1 head broccoli, in florets (Glazed Salmon Traybake)<br>1 head broccoli (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-carrot">
         <span class="qty">650g</span>
         <span class="food">carrot</span></label>
         
@@ -1527,7 +1555,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">300g</span>
         <span class="food">cauliflower</span></label>
         
-        <div class="uses">Half a cauliflower (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cherry_tomatoes">
+        <div class="uses">Half a cauliflower (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-pepper">
+        <span class="qty">1</span>
+        <span class="food">pepper</span></label>
+        
+        <div class="uses">1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-cherry_tomatoes">
         <span class="qty">150g</span>
         <span class="food">cherry tomatoes</span></label>
         
@@ -1564,10 +1596,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">bags frozen diced onion</span></label>
         
         <div class="uses">300g frozen diced onion (Dal)<br>150g frozen onion x2 (Chicken &amp; Chickpea Korma Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-stir_fry_veg">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-stir_fry_veg">
         <span class="qty">300g</span>
         <span class="food">stir fry veg</span></label>
         
@@ -1615,7 +1647,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
         
-        <div class="uses">250g oats (Cinnamon &amp; Raisin Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-red_lentils_dry">
+        <div class="uses">250g oats (Cinnamon &amp; Raisin Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-raisins">
+        <span class="qty">580g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">80g raisins, plus 2 tsp cinnamon (Cinnamon &amp; Raisin Flapjacks)<br>500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-red_lentils_dry">
         <span class="qty">500g</span>
         <span class="food">red lentils dry</span></label>
         
@@ -1667,11 +1703,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">87g</span>
         <span class="food">mango chutney</span></label>
         
-        <div class="uses">Mango chutney (Tandoori Chicken Bowls)<br>Mango chutney, after (Tandoori Chicken, the Adults')<br>A little chutney (Cucumber &amp; Tomato Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-raisins">
-        <span class="qty">80g</span>
-        <span class="food">raisins</span></label>
-        
-        <div class="uses">80g raisins, plus 2 tsp cinnamon (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-creatine">
+        <div class="uses">Mango chutney (Tandoori Chicken Bowls)<br>Mango chutney, after (Tandoori Chicken, the Adults')<br>A little chutney (Cucumber &amp; Tomato Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-1-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
         <p class="stock-note">A tub lasts months. Check before buying.</p>
@@ -1717,10 +1749,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">chicken thigh boneless</span></label>
         
         <div class="uses">400g boneless chicken thighs (Tandoori Thighs for the Boxes)<br>600g tandoori thighs from Saturday (Tandoori Chicken Bowls)<br>6 boneless chicken thighs (~600g) (Chicken &amp; Chickpea Korma Freezer Bag)<br>200g chicken thigh (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-ham_sliced">
-        <span class="qty">180g</span>
+        <span class="qty">380g</span>
         <span class="food">ham sliced</span></label>
         
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-salmon_fillet">
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-salmon_fillet">
         <span class="qty">520g</span>
         <span class="food">salmon fillet</span></label>
         
@@ -1732,7 +1764,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">140g</span>
         <span class="food">smoked mackerel</span></label>
         
-        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt_0">
+        <div class="uses">2 smoked mackerel fillets (140g pack) (Smoked Mackerel for Wednesday's Boxes) - Wednesday lunch boxes, both adults</div></li></ul></section><section class="aisle"><h4>Dairy</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt">
+        <span class="qty">1.2kg</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt_0">
         <span class="qty">1kg</span>
         <span class="food">0% Greek yoghurt</span></label>
         
@@ -1740,11 +1776,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">15</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">3 eggs (Pork Fried Rice)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-greek_yoghurt">
-        <span class="qty">660g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
-        
-        <div class="uses">300g Greek yoghurt (Mint Yoghurt)<br>60g Greek yoghurt (Tandoori Thighs for the Boxes)<br>125g yoghurt for the marinade (Tandoori Chicken Bowls)<br>Greek yoghurt (Dal with Rice)<br>Mint yoghurt from the jar (Cucumber &amp; Tomato Salad)<br>Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-mozzarella">
+        <div class="uses">3 eggs (Pork Fried Rice)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella balls</span></label>
         
@@ -1756,7 +1788,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
         
-        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-bread_wholemeal">
+        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="2-2-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
+        
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -1764,15 +1800,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">1.3kg</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">500g baby potatoes, halved (Glazed Salmon Traybake)<br>800g potatoes for roasting (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-broccoli">
+        <div class="uses">500g baby potatoes, halved (Glazed Salmon Traybake)<br>800g potatoes for roasting (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cucumber">
+        <span class="qty">4</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">1 cucumber, in ribbons (Tandoori Chicken Bowls)<br>1 cucumber (Cucumber &amp; Tomato Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-broccoli">
         <span class="qty">3</span>
         <span class="food">heads of broccoli</span></label>
         
-        <div class="uses">1 head broccoli, in florets (Lunch Box Veg Tray)<br>1 head broccoli, in florets (Glazed Salmon Traybake)<br>1 head broccoli (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cucumber">
-        <span class="qty">3</span>
-        <span class="food">cucumbers</span></label>
-        
-        <div class="uses">1 cucumber, in ribbons (Tandoori Chicken Bowls)<br>1 cucumber (Cucumber &amp; Tomato Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-carrot">
+        <div class="uses">1 head broccoli, in florets (Lunch Box Veg Tray)<br>1 head broccoli, in florets (Glazed Salmon Traybake)<br>1 head broccoli (Slow Roast Pork Shoulder)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-carrot">
         <span class="qty">650g</span>
         <span class="food">carrot</span></label>
         
@@ -1792,7 +1828,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">300g</span>
         <span class="food">cauliflower</span></label>
         
-        <div class="uses">Half a cauliflower (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cherry_tomatoes">
+        <div class="uses">Half a cauliflower (Lunch Box Veg Tray)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-pepper">
+        <span class="qty">1</span>
+        <span class="food">pepper</span></label>
+        
+        <div class="uses">1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-cherry_tomatoes">
         <span class="qty">150g</span>
         <span class="food">cherry tomatoes</span></label>
         
@@ -1825,10 +1865,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">dough balls</span></label>
         
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Tandoori Chicken, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-frozen_onion">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-frozen_onion">
         <span class="qty">3</span>
         <span class="food">bags frozen diced onion</span></label>
         
@@ -1880,7 +1920,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">650g</span>
         <span class="food">oats</span></label>
         
-        <div class="uses">250g oats (Cinnamon &amp; Raisin Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-red_lentils_dry">
+        <div class="uses">250g oats (Cinnamon &amp; Raisin Flapjacks)<br>40g oats x10 (Overnight Oats Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-raisins">
+        <span class="qty">580g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">80g raisins, plus 2 tsp cinnamon (Cinnamon &amp; Raisin Flapjacks)<br>500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-red_lentils_dry">
         <span class="qty">500g</span>
         <span class="food">red lentils dry</span></label>
         
@@ -1932,11 +1976,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">87g</span>
         <span class="food">mango chutney</span></label>
         
-        <div class="uses">Mango chutney (Tandoori Chicken Bowls)<br>Mango chutney, after (Tandoori Chicken, the Adults')<br>A little chutney (Cucumber &amp; Tomato Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-raisins">
-        <span class="qty">80g</span>
-        <span class="food">raisins</span></label>
-        
-        <div class="uses">80g raisins, plus 2 tsp cinnamon (Cinnamon &amp; Raisin Flapjacks)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-creatine">
+        <div class="uses">Mango chutney (Tandoori Chicken Bowls)<br>Mango chutney, after (Tandoori Chicken, the Adults')<br>A little chutney (Cucumber &amp; Tomato Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="2-2-creatine">
         <span class="qty">50g</span>
         <span class="food">creatine</span></label>
         <p class="stock-note">A tub lasts months. Check before buying.</p>
@@ -2131,7 +2171,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s2" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -2288,7 +2328,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="2-recipes"><div class="recipes"><div id="w2-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -2584,10 +2624,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">chicken thigh bonein</span></label>
         
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-ham_sliced">
-        <span class="qty">180g</span>
+        <span class="qty">380g</span>
         <span class="food">ham sliced</span></label>
         
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-prawns_cooked">
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
         
@@ -2603,7 +2643,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">17</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-mozzarella">
+        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-greek_yoghurt">
+        <span class="qty">530g</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella balls</span></label>
         
@@ -2627,11 +2671,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
         
-        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-greek_yoghurt">
-        <span class="qty">30g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
+        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
         
-        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-1-bread_wholemeal">
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -2643,7 +2687,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">1.9kg</span>
         <span class="food">sweet potato</span></label>
         
-        <div class="uses">400g sweet potato, cubed (Lunch Box Veg Tray)<br>1 large sweet potato, cubed (North African Chickpea &amp; Sweet Potato Stew)<br>1kg sweet potato, cut for chips (Gammon, Eggs &amp; Sweet Potato Chips)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-red_onion">
+        <div class="uses">400g sweet potato, cubed (Lunch Box Veg Tray)<br>1 large sweet potato, cubed (North African Chickpea &amp; Sweet Potato Stew)<br>1kg sweet potato, cut for chips (Gammon, Eggs &amp; Sweet Potato Chips)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-cucumber">
+        <span class="qty">4</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">Cucumber, in batons (Chicken Wraps)<br>1 cucumber, in chunks (Greek Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-pepper">
+        <span class="qty">6</span>
+        <span class="food">peppers</span></label>
+        
+        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, chunked x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>Half a red pepper (Halloumi &amp; Pepper, the Adults')<br>1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-red_onion">
         <span class="qty">870g</span>
         <span class="food">red onion</span></label>
         
@@ -2655,19 +2707,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">800g potatoes for roasting (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-cucumber">
-        <span class="qty">3</span>
-        <span class="food">cucumbers</span></label>
-        
-        <div class="uses">Cucumber, in batons (Chicken Wraps)<br>1 cucumber, in chunks (Greek Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-tomatoes">
+        <div class="uses">800g potatoes for roasting (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-tomatoes">
         <span class="qty">770g</span>
         <span class="food">tomatoes (salad)</span></label>
         
-        <div class="uses">Tomatoes, sliced (Chicken Wraps)<br>400g tomatoes, in chunks (Greek Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-pepper">
-        <span class="qty">720g</span>
-        <span class="food">pepper</span></label>
-        
-        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, chunked x2 (Chicken, Olive &amp; Tomato Freezer Bag)<br>Half a red pepper (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-carrot">
+        <div class="uses">Tomatoes, sliced (Chicken Wraps)<br>400g tomatoes, in chunks (Greek Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-carrot">
         <span class="qty">500g</span>
         <span class="food">carrot</span></label>
         
@@ -2708,10 +2752,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">bags frozen diced onion</span></label>
         
         <div class="uses">300g frozen diced onion (North African Chickpea &amp; Sweet Potato Stew)<br>150g frozen onion x2 (Chicken, Olive &amp; Tomato Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-frozen_spinach">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
         <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
@@ -2751,7 +2795,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">500ml</span>
         <span class="food">vegetable stock - made up from cubes</span></label>
         
-        <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-olive_oil">
+        <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-raisins">
+        <span class="qty">500g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-1-olive_oil">
         <span class="qty">369ml</span>
         <span class="food">olive oil</span></label>
         
@@ -2841,10 +2889,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">chicken thigh bonein</span></label>
         
         <div class="uses">8 bone-in chicken thighs (~1.2kg) (Harissa Chicken with Squash &amp; Chickpeas)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-ham_sliced">
-        <span class="qty">180g</span>
+        <span class="qty">380g</span>
         <span class="food">ham sliced</span></label>
         
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-prawns_cooked">
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li></ul></section><section class="aisle"><h4>Fish</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-prawns_cooked">
         <span class="qty">160g</span>
         <span class="food">prawns cooked</span></label>
         
@@ -2860,7 +2908,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">17</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-mozzarella">
+        <div class="uses">5 eggs (Gammon, Eggs &amp; Sweet Potato Chips)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-greek_yoghurt">
+        <span class="qty">530g</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-mozzarella">
         <span class="qty">310g</span>
         <span class="food">mozzarella balls</span></label>
         
@@ -2884,11 +2936,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">60g</span>
         <span class="food">cheddar</span></label>
         
-        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-greek_yoghurt">
-        <span class="qty">30g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
+        <div class="uses">30g cheddar x2 (Saturday Sandwich, Adults')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
         
-        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="3-2-bread_wholemeal">
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -2900,7 +2952,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">1.9kg</span>
         <span class="food">sweet potato</span></label>
         
-        <div class="uses">400g sweet potato, cubed (Lunch Box Veg Tray)<br>1 large sweet potato, cubed (North African Chickpea &amp; Sweet Potato Stew)<br>1kg sweet potato, cut for chips (Gammon, Eggs &amp; Sweet Potato Chips)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-red_onion">
+        <div class="uses">400g sweet potato, cubed (Lunch Box Veg Tray)<br>1 large sweet potato, cubed (North African Chickpea &amp; Sweet Potato Stew)<br>1kg sweet potato, cut for chips (Gammon, Eggs &amp; Sweet Potato Chips)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-cucumber">
+        <span class="qty">4</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">Cucumber, in batons (Chicken Wraps)<br>1 cucumber, in chunks (Greek Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-red_onion">
         <span class="qty">870g</span>
         <span class="food">red onion</span></label>
         
@@ -2912,19 +2968,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">800g potatoes for roasting (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-cucumber">
-        <span class="qty">3</span>
-        <span class="food">cucumbers</span></label>
-        
-        <div class="uses">Cucumber, in batons (Chicken Wraps)<br>1 cucumber, in chunks (Greek Salad)<br>Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-tomatoes">
+        <div class="uses">800g potatoes for roasting (Gammon Joint)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-tomatoes">
         <span class="qty">770g</span>
         <span class="food">tomatoes (salad)</span></label>
         
         <div class="uses">Tomatoes, sliced (Chicken Wraps)<br>400g tomatoes, in chunks (Greek Salad)<br>Tomato x2 (Saturday Sandwich, Adults')<br>Tomato x2 (Saturday Sandwich, Boys')<br>100g tomatoes (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-pepper">
-        <span class="qty">560g</span>
-        <span class="food">pepper</span></label>
+        <span class="qty">5</span>
+        <span class="food">peppers</span></label>
         
-        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, chunked (Chicken, Olive &amp; Tomato Freezer Bag)<br>Half a red pepper (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-carrot">
+        <div class="uses">2 peppers, chunked (Lunch Box Veg Tray)<br>1 red pepper, chunked (Chicken, Olive &amp; Tomato Freezer Bag)<br>Half a red pepper (Halloumi &amp; Pepper, the Adults')<br>1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-carrot">
         <span class="qty">500g</span>
         <span class="food">carrot</span></label>
         
@@ -2961,10 +3013,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">dough balls</span></label>
         
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Halloumi &amp; Pepper, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-frozen_onion">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-frozen_onion">
         <span class="qty">3</span>
         <span class="food">bags frozen diced onion</span></label>
         
@@ -3008,7 +3060,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">500ml</span>
         <span class="food">vegetable stock - made up from cubes</span></label>
         
-        <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-olive_oil">
+        <div class="uses">500ml vegetable stock (North African Chickpea &amp; Sweet Potato Stew)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-raisins">
+        <span class="qty">500g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="3-2-olive_oil">
         <span class="qty">369ml</span>
         <span class="food">olive oil</span></label>
         
@@ -3247,7 +3303,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s3" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -3408,7 +3464,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="3-recipes"><div class="recipes"><div id="w3-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -3704,10 +3760,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">chicken sausage</span></label>
         
         <div class="uses">6 chicken sausages, each cut into 3 x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-ham_sliced">
-        <span class="qty">180g</span>
+        <span class="qty">380g</span>
         <span class="food">ham sliced</span></label>
         
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pancetta">
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pancetta">
         <span class="qty">100g</span>
         <span class="food">pancetta</span></label>
         
@@ -3731,7 +3787,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">14</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-fresh_pasta">
+        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-greek_yoghurt">
+        <span class="qty">530g</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-fresh_pasta">
         <span class="qty">500g</span>
         <span class="food">fresh pasta</span></label>
         
@@ -3759,11 +3819,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
         
-        <div class="uses">75g butter (Cocoa Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-greek_yoghurt">
-        <span class="qty">30g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
+        <div class="uses">75g butter (Cocoa Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
         
-        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-bread_wholemeal">
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -3772,10 +3832,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">breadcrumbs wholemeal</span></label>
         
         <div class="uses">160g wholemeal breadcrumbs (Meatball &amp; Ricotta Al Forno, Doubled)</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-1-pepper">
-        <span class="qty">1.4kg</span>
-        <span class="food">pepper</span></label>
+        <span class="qty">10</span>
+        <span class="food">peppers</span></label>
         
-        <div class="uses">2-3 peppers, chunked (Lunch Box Veg Tray)<br>2 red peppers, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 red and 1 yellow pepper, chunked x2 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-courgette">
+        <div class="uses">2-3 peppers, chunked (Lunch Box Veg Tray)<br>2 red peppers, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 red and 1 yellow pepper, chunked x2 (Italian Sausage &amp; Pepper Freezer Bag)<br>1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-courgette">
         <span class="qty">1.1kg</span>
         <span class="food">courgette</span></label>
         
@@ -3791,7 +3851,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">800g potatoes for roasting (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-tomatoes">
+        <div class="uses">800g potatoes for roasting (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-cucumber">
+        <span class="qty">2</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
         
@@ -3803,11 +3867,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
         
-        <div class="uses">A handful of leaves x10 (Lunch Box, Week 4)<br>A bag of leaves (Tomato &amp; Mozzarella Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-cucumber">
-        <span class="qty">1</span>
-        <span class="food">cucumber</span></label>
-        
-        <div class="uses">Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-celery">
+        <div class="uses">A handful of leaves x10 (Lunch Box, Week 4)<br>A bag of leaves (Tomato &amp; Mozzarella Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-celery">
         <span class="qty">200g</span>
         <span class="food">celery</span></label>
         
@@ -3840,10 +3900,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">dough balls</span></label>
         
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-frozen_spinach">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
         <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
@@ -3895,7 +3955,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">500g</span>
         <span class="food">white sauce jar</span></label>
         
-        <div class="uses">500g white sauce (jar or made) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-gravy_made">
+        <div class="uses">500g white sauce (jar or made) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-raisins">
+        <span class="qty">500g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-1-gravy_made">
         <span class="qty">400ml</span>
         <span class="food">gravy - made up</span></label>
         
@@ -3996,15 +4060,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">1.5kg</span>
         <span class="food">beef topside roast</span></label>
         
-        <div class="uses">1.5kg beef topside (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-chicken_sausage">
+        <div class="uses">1.5kg beef topside (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-ham_sliced">
+        <span class="qty">380g</span>
+        <span class="food">ham sliced</span></label>
+        
+        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')<br>200g sliced ham (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-chicken_sausage">
         <span class="qty">360g</span>
         <span class="food">chicken sausage</span></label>
         
-        <div class="uses">6 chicken sausages, each cut into 3 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-ham_sliced">
-        <span class="qty">180g</span>
-        <span class="food">ham sliced</span></label>
-        
-        <div class="uses">60g ham x2 (Saturday Sandwich, Adults')<br>30g ham x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pancetta">
+        <div class="uses">6 chicken sausages, each cut into 3 (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pancetta">
         <span class="qty">100g</span>
         <span class="food">pancetta</span></label>
         
@@ -4028,7 +4092,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">14</span>
         <span class="food">eggs</span></label>
         
-        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-fresh_pasta">
+        <div class="uses">2 eggs (Meatball &amp; Ricotta Al Forno, Doubled)<br>12 eggs (Boiled Eggs)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-greek_yoghurt">
+        <span class="qty">530g</span>
+        <span class="food">Greek yoghurt (full fat)</span></label>
+        
+        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)<br>1 tub full-fat Greek yoghurt (500g) (Eldest's Packed Lunch) - eldest's packed lunch - separate from the adults' 0% tub</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-fresh_pasta">
         <span class="qty">500g</span>
         <span class="food">fresh pasta</span></label>
         
@@ -4056,11 +4124,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">115g</span>
         <span class="food">butter</span></label>
         
-        <div class="uses">75g butter (Cocoa Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-greek_yoghurt">
-        <span class="qty">30g</span>
-        <span class="food">Greek yoghurt (full fat)</span></label>
+        <div class="uses">75g butter (Cocoa Flapjacks)<br>Butter x2 (Saturday Sandwich, Adults')<br>Butter x2 (Saturday Sandwich, Boys')</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-wholemeal_roll">
+        <span class="qty">6</span>
+        <span class="food">wholemeal rolls</span></label>
         
-        <div class="uses">Greek yoghurt (Sunday) (Tuna Pasta Salad)</div></li></ul></section><section class="aisle"><h4>Bakery</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-bread_wholemeal">
+        <div class="uses">6 wholemeal rolls (Eldest's Packed Lunch) - eldest's packed lunch, 5 used, 1 spare</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-bread_wholemeal">
         <span class="qty">320g</span>
         <span class="food">bread wholemeal</span></label>
         
@@ -4068,15 +4136,15 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">160g</span>
         <span class="food">breadcrumbs wholemeal</span></label>
         
-        <div class="uses">160g wholemeal breadcrumbs (Meatball &amp; Ricotta Al Forno, Doubled)</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-courgette">
+        <div class="uses">160g wholemeal breadcrumbs (Meatball &amp; Ricotta Al Forno, Doubled)</div></li></ul></section><section class="aisle"><h4>Fruit &amp; Veg</h4><ul><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pepper">
+        <span class="qty">8</span>
+        <span class="food">peppers</span></label>
+        
+        <div class="uses">2-3 peppers, chunked (Lunch Box Veg Tray)<br>2 red peppers, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 red and 1 yellow pepper, chunked (Italian Sausage &amp; Pepper Freezer Bag)<br>1 pepper, in sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-courgette">
         <span class="qty">1.1kg</span>
         <span class="food">courgette</span></label>
         
-        <div class="uses">2 courgettes, in chunks (Lunch Box Veg Tray)<br>1 courgette, diced (Minestrone)<br>2 courgettes, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 courgette, diced (or a handful of frozen peas) (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-pepper">
-        <span class="qty">1kg</span>
-        <span class="food">pepper</span></label>
-        
-        <div class="uses">2-3 peppers, chunked (Lunch Box Veg Tray)<br>2 red peppers, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 red and 1 yellow pepper, chunked (Italian Sausage &amp; Pepper Freezer Bag)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-red_onion">
+        <div class="uses">2 courgettes, in chunks (Lunch Box Veg Tray)<br>1 courgette, diced (Minestrone)<br>2 courgettes, diced (Meatball &amp; Ricotta Al Forno, Doubled)<br>1 courgette, diced (or a handful of frozen peas) (Beef &amp; Tomato Orzo)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-red_onion">
         <span class="qty">1kg</span>
         <span class="food">red onion</span></label>
         
@@ -4088,7 +4156,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">800g</span>
         <span class="food">baby potato</span></label>
         
-        <div class="uses">800g potatoes for roasting (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-tomatoes">
+        <div class="uses">800g potatoes for roasting (Roast Beef Topside)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-cucumber">
+        <span class="qty">2</span>
+        <span class="food">cucumbers</span></label>
+        
+        <div class="uses">Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)<br>Cucumber sticks (Eldest's Packed Lunch) - + packed lunch sticks</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-tomatoes">
         <span class="qty">370g</span>
         <span class="food">tomatoes (salad)</span></label>
         
@@ -4100,11 +4172,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">290g</span>
         <span class="food">salad leaves</span></label>
         
-        <div class="uses">A handful of leaves x10 (Lunch Box, Week 4)<br>A bag of leaves (Tomato &amp; Mozzarella Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-cucumber">
-        <span class="qty">1</span>
-        <span class="food">cucumber</span></label>
-        
-        <div class="uses">Cucumber x2 (Saturday Sandwich, Adults')<br>Cucumber x2 (Saturday Sandwich, Boys')<br>Half a cucumber, diced (Tuna Pasta Salad)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-celery">
+        <div class="uses">A handful of leaves x10 (Lunch Box, Week 4)<br>A bag of leaves (Tomato &amp; Mozzarella Salad)<br>Leaves x2 (Saturday Sandwich, Adults')<br>Leaves x2 (Saturday Sandwich, Boys')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-celery">
         <span class="qty">200g</span>
         <span class="food">celery</span></label>
         
@@ -4137,10 +4205,10 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="food">dough balls</span></label>
         
         <div class="uses">2 dough balls (Margherita, the Boys')<br>1 dough ball (Pepperoni, the Adults')</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-frozen_berries">
-        <span class="qty">500g</span>
+        <span class="qty">600g</span>
         <span class="food">frozen berries</span></label>
         
-        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-frozen_spinach">
+        <div class="uses">50g frozen berries - on top in the morning, not in the bag x10 (Overnight Oats Bag) - on top in the morning, not in the bag<br>A few frozen berries a day (Eldest's Packed Lunch) - + a few for eldest's yoghurt</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-frozen_spinach">
         <span class="qty">200g</span>
         <span class="food">frozen spinach</span></label>
         <p class="stock-note">Sold in 900g bags - about a month of weeks. Check the freezer before buying.</p>
@@ -4192,7 +4260,11 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
         <span class="qty">500g</span>
         <span class="food">white sauce jar</span></label>
         
-        <div class="uses">500g white sauce (jar or made) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-gravy_made">
+        <div class="uses">500g white sauce (jar or made) (Lasagne)</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-raisins">
+        <span class="qty">500g</span>
+        <span class="food">raisins</span></label>
+        
+        <div class="uses">500g bag raisins (Eldest's Packed Lunch) - eldest's packed lunch</div></li><li class="basket-item"><label><input type="checkbox" data-basket="4-2-gravy_made">
         <span class="qty">400ml</span>
         <span class="food">gravy - made up</span></label>
         
@@ -4456,7 +4528,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div>
       <div class="cycle-body" data-group="s4" data-cycle="2" hidden><div class="cook-through">
   <p class="lede">Top to bottom, in order. Everything you need is on this page, so you should never have to leave it.</p>
@@ -4626,7 +4698,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </section>
   <section class="step not-made"><h3>Not made tonight</h3>
     <p class="step-detail">Still to do during the week.</p>
-    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li></ul></section>
+    <ul><li data-tpl="All pasta, rice, orzo and couscous - cooked fresh on the day, every time.">All pasta, rice, orzo and couscous - cooked fresh on the day, every time.</li><li data-tpl="Fried eggs and anything crunchy for the lunch boxes.">Fried eggs and anything crunchy for the lunch boxes.</li><li data-day="sun" data-tpl="{{day}}'s roast.">Sunday's roast.</li><li data-day="mon" data-tpl="{{day}}'s peppers and anything else that wants to be hot.">Monday's peppers and anything else that wants to be hot.</li><li data-tpl="The tarka, if it is a dal week.">The tarka, if it is a dal week.</li><li data-tpl="Wednesday's lunch box mackerel - flaked in on the day, skin off.">Wednesday's lunch box mackerel - flaked in on the day, skin off.</li><li data-tpl="Thursday's lunch box prawns - straight from the pack on the day.">Thursday's lunch box prawns - straight from the pack on the day.</li><li data-tpl="Friday's lunch box tuna and boiled eggs - in on the day.">Friday's lunch box tuna and boiled eggs - in on the day.</li><li data-tpl="Eldest's packed lunch - made each evening.">Eldest's packed lunch - made each evening.</li></ul></section>
 </div></div></div><div class="subpanel" data-sub="4-recipes"><div class="recipes"><div id="w4-sun" class="day-group" data-day="sun">
       <h3 class="day-head" data-daylabel="sun">Sunday</h3>
       <div class="recipe-grid"><article class="card">
@@ -5033,7 +5105,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div>
 </div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-09-02 15:57</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-09-02 16:03</footer>
 <script>
 (function(){
   var SLOTS = ["fri","sat","sun","mon","tue","wed","thu"];            // day_order: slot 0 is delivery

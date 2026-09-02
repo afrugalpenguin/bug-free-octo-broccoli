@@ -4141,6 +4141,78 @@
       "Into boiling water, 8 minutes, straight into cold. Keep them in their shells in the fridge."
     ]
   },
+  "packed_lunch": {
+    "name": "Eldest's Packed Lunch",
+    "category": "scaffold",
+    "week": null,
+    "day": null,
+    "serves": 5,
+    "tags": {
+      "prepStyle": "assemble",
+      "freezerSafe": false,
+      "reheatable": false,
+      "slowCooker": false,
+      "ovenTimer": false,
+      "season": "all-year",
+      "activeMinutes": 5,
+      "passiveMinutes": 0,
+      "source": "system"
+    },
+    "notes": "Basket only. The contents are on the overview, and it is made each evening rather than on Saturday.",
+    "ingredients": [
+      {
+        "food": "wholemeal_roll",
+        "grams": 360,
+        "display": "6 wholemeal rolls",
+        "aisle": "bakery"
+      },
+      {
+        "food": "ham_sliced",
+        "grams": 200,
+        "display": "200g sliced ham",
+        "aisle": "meat"
+      },
+      {
+        "food": "greek_yoghurt",
+        "grams": 500,
+        "display": "1 tub full-fat Greek yoghurt (500g)",
+        "aisle": "dairy"
+      },
+      {
+        "food": "raisins",
+        "grams": 500,
+        "display": "500g bag raisins",
+        "aisle": "cupboard"
+      },
+      {
+        "food": "cucumber",
+        "grams": 200,
+        "display": "Cucumber sticks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "pepper",
+        "grams": 160,
+        "display": "1 pepper, in sticks",
+        "aisle": "fresh"
+      },
+      {
+        "food": "frozen_berries",
+        "grams": 100,
+        "display": "A few frozen berries a day",
+        "aisle": "frozen"
+      }
+    ],
+    "basket_notes": {
+      "wholemeal_roll": "eldest's packed lunch, 5 used, 1 spare",
+      "ham_sliced": "eldest's packed lunch",
+      "greek_yoghurt": "eldest's packed lunch - separate from the adults' 0% tub",
+      "raisins": "eldest's packed lunch",
+      "cucumber": "+ packed lunch sticks",
+      "pepper": "+ packed lunch sticks",
+      "frozen_berries": "+ a few for eldest's yoghurt"
+    }
+  },
   "lunchbox_mackerel": {
     "name": "Smoked Mackerel for Wednesday's Boxes",
     "category": "lunchbox",
