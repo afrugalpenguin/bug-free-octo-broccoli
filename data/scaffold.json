@@ -55,16 +55,20 @@
     "recipe": "tuna_pasta_salad",
     "notes": "Made Saturday. Yoghurt and seeds added on Sunday."
   },
-  "smoothie_bags": {
-    "recipe": "smoothie_bag",
+  "breakfast_bags": {
     "count": 10,
-    "added_morning": {
-      "protein_powder": "30g (unflavoured, vanilla or chocolate)",
-      "milk": "250ml semi-skimmed",
-      "creatine": "5g"
+    "recipe": "overnight_oats_bag",
+    "per_bag_frozen": {
+      "oats": 40,
+      "chia_seeds": 12,
+      "protein_powder": 25,
+      "greek_yoghurt_0": 100
     },
-    "notes": "Fill all bags one ingredient at a time. Back in the freezer standing in a tub.",
-    "banana_note": "Buy 3 × 300g bags PACK'D frozen banana slices (or equivalent). Add ~100g to each shake bag on Saturday."
+    "added_morning": {
+      "water_or_milk": 100,
+      "frozen_berries": 50
+    },
+    "notes": "Fill all bags one ingredient at a time, standing open in a tub. Seal, squish to mix, freeze flat. One bag from freezer to fridge each night. Morning: tip into bowl, add 100ml water or milk, stir. Berries on top. Banana on the side on training days. 5g creatine in a glass of water separately."
   },
   "boiled_eggs": {
     "recipe": "boiled_eggs",
@@ -145,7 +149,7 @@
     },
     {
       "step": "Cold work",
-      "detail": "Freezer bags assembled, smoothie bags filled, dressings made, pickles done, tuna pasta salad made."
+      "detail": "Freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made."
     },
     {
       "step": "Build the boxes",

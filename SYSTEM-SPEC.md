@@ -16,7 +16,7 @@ family-food-system/
 │   ├── recipes.json          # Every recipe in the system
 │   ├── foods.json            # Nutritional composition table (per 100g)
 │   ├── rotation.json         # Which recipes go in which week/day/slot
-│   └── scaffold.json         # Weekly constants (pizza, flapjacks, smoothies, etc.)
+│   └── scaffold.json         # Weekly constants (pizza, flapjacks, breakfast bags, etc.)
 ├── tools/
 │   ├── calc.mjs              # Macro calculator
 │   └── build.mjs             # Generates the HTML output from data
@@ -357,22 +357,20 @@ Things that happen every single week regardless of which rotation week it is.
     "recipe": "tuna_pasta_salad",
     "notes": "Made Saturday. Yoghurt and seeds added on Sunday."
   },
-  "smoothie_bags": {
+  "breakfast_bags": {
     "count": 10,
+    "recipe": "overnight_oats_bag",
     "per_bag_frozen": {
-      "banana": 100,
-      "frozen_berries": 80,
-      "frozen_spinach": 30,
-      "oats": 15,
-      "seeds_or_peanut_butter": "1 tbsp"
+      "oats": 40,
+      "chia_seeds": 12,
+      "protein_powder": 25,
+      "greek_yoghurt_0": 100
     },
     "added_morning": {
-      "protein_powder": 30,
-      "milk": 250,
-      "creatine": 5
+      "water_or_milk": 100,
+      "frozen_berries": 50
     },
-    "notes": "Fill all bags one ingredient at a time. Back in the freezer standing in a tub.",
-    "banana_note": "Buy 3 × 300g bags PACK'D frozen banana slices (or equivalent). Add ~100g to each shake bag on Saturday."
+    "notes": "Fill all bags one ingredient at a time, standing open in a tub. Seal, squish to mix, freeze flat. One bag from freezer to fridge each night. Morning: tip into bowl, add 100ml water or milk, stir. Berries on top. Banana on the side on training days. 5g creatine in a glass of water separately."
   },
   "boiled_eggs": {
     "count": 8,
@@ -444,7 +442,7 @@ For recipes with `splits` (like the chilli), also compute per-portion values for
 ### 2. Generate shopping baskets
 For each week (1-4), aggregate all ingredients across:
 - That week's dinners (from rotation.json)
-- The scaffold items (pizza, smoothies, flapjacks, eggs, lunch boxes, dressings, sandwiches, tuna pasta salad)
+- The scaffold items (pizza, breakfast bags, flapjacks, eggs, lunch boxes, dressings, sandwiches, tuna pasta salad)
 - The freezer bags (doubled in cycle 1 — generate both a cycle-1 and cycle-2 basket)
 
 Group by aisle: Meat & Fish, Dairy, Fruit & Veg, Frozen, Tinned, Cupboard.
@@ -459,7 +457,7 @@ For each week, produce an ordered sequence of steps for the Saturday session. Th
 4. The traybake — tonight's dinner (200°C, goes in alongside or after the veg)
 5. The batch pot (on the hob, simmering while oven work runs)
 6. Boiled eggs (while the pot simmers)
-7. Cold work: freezer bags assembled, smoothie bags filled, dressings made, pickles done, tuna pasta salad made
+7. Cold work: freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made
 8. Build the lunch boxes (last step, once everything has cooled enough)
 9. Divide and label: which tubs go in the fridge, which bags go in the freezer
 

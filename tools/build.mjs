@@ -183,7 +183,7 @@ function weekBasketPlan(week, cycle) {
   add('tuna_pasta_salad');
   add('boiled_eggs');
   add('quick_pickled_red_onions');
-  add('smoothie_bag', scaffold.smoothie_bags.count);
+  add(scaffold.breakfast_bags.recipe, scaffold.breakfast_bags.count);
   return plan;
 }
 
@@ -258,6 +258,7 @@ function inlineRecipe(id, heading = null, extraNote = null) {
   ${r.notes ? `<p class="notes">${esc(r.notes)}</p>` : ''}
   ${ingredientList(id)}
   ${methodList(id)}
+  ${r.serving_suggestion ? `<p class="serving">${esc(r.serving_suggestion)}</p>` : ''}
   ${r.adults ? `<p class="adults"><strong>Adults:</strong> ${esc(r.adults)}</p>` : ''}
   ${macroEl(id)}
 </div>`;
@@ -290,8 +291,8 @@ function saturdayPanel(week, cycle) {
     : 'Cycle 2 onwards: one bag. That is Thursday.';
   const cold = [
     inlineRecipe(w.freezer_bag, bagHeading, bagNote),
-    inlineRecipe('smoothie_bag', `Smoothie bags, make ${scaffold.smoothie_bags.count}`,
-      `${scaffold.smoothie_bags.notes} ${scaffold.smoothie_bags.banana_note}`),
+    inlineRecipe(scaffold.breakfast_bags.recipe, `Breakfast bags, make ${scaffold.breakfast_bags.count}`,
+      scaffold.breakfast_bags.notes),
     inlineRecipe(w.lunchbox_dressing),
     inlineRecipe('quick_pickled_red_onions', null, scaffold.pickled_onions.frequency),
     inlineRecipe('tuna_pasta_salad'),

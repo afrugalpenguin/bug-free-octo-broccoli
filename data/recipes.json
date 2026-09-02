@@ -4180,8 +4180,8 @@
       "Onions into a jar. Vinegar, sugar and a good pinch of salt warmed until dissolved, poured over. Lid on, 30 minutes minimum."
     ]
   },
-  "smoothie_bag": {
-    "name": "Smoothie Bag",
+  "overnight_oats_bag": {
+    "name": "Overnight Oats Bag",
     "category": "scaffold",
     "week": null,
     "day": "sat",
@@ -4197,54 +4197,59 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Ten bags. Fill them all one ingredient at a time - banana in all ten, then berries in all ten, and so on. Back in the freezer standing in a tub.",
+    "notes": "Ten bags, filled one ingredient at a time with the bags standing open in a tub. Freezer to fridge the night before.",
+    "serving_suggestion": "100ml water or milk stirred in the morning. 50g frozen berries on top.",
     "ingredients": [
       {
-        "food": "banana",
-        "grams": 100,
-        "display": "1 frozen banana, sliced (~100g)",
-        "aisle": "frozen"
-      },
-      {
-        "food": "frozen_berries",
-        "grams": 80,
-        "display": "80g frozen berries",
-        "aisle": "frozen"
-      },
-      {
-        "food": "frozen_spinach",
-        "grams": 30,
-        "display": "30g frozen spinach",
-        "aisle": "frozen"
-      },
-      {
         "food": "oats",
-        "grams": 15,
-        "display": "15g oats",
+        "grams": 40,
+        "display": "40g oats",
         "aisle": "cupboard"
       },
       {
-        "food": "seeds_nuts",
-        "grams": 15,
-        "display": "1 tbsp peanut butter or 1 tbsp seeds",
+        "food": "chia_seeds",
+        "grams": 12,
+        "display": "12g chia seeds",
         "aisle": "cupboard"
       },
       {
         "food": "protein_powder",
-        "grams": 30,
-        "display": "30g protein powder - unflavoured, vanilla or chocolate (added in the morning)",
+        "grams": 25,
+        "display": "1 scoop (25g) protein powder",
         "aisle": "cupboard"
       },
       {
-        "food": "milk_semi",
-        "grams": 250,
-        "display": "250ml semi-skimmed milk (added in the morning)",
+        "food": "greek_yoghurt_0",
+        "grams": 100,
+        "display": "100g 0% Greek yoghurt",
         "aisle": "dairy"
+      },
+      {
+        "food": "frozen_berries",
+        "grams": 50,
+        "display": "50g frozen berries - on top in the morning, not in the bag",
+        "aisle": "frozen",
+        "basketOnly": true
+      },
+      {
+        "food": "creatine",
+        "grams": 5,
+        "display": "5g creatine - in a glass of water, separate from breakfast",
+        "aisle": "cupboard",
+        "basketOnly": true
       }
     ],
+    "basket_notes": {
+      "chia_seeds": "check level - a 250g bag lasts 2-3 weeks",
+      "protein_powder": "10 scoops for the bags",
+      "creatine": "5g in water each morning, separate from breakfast",
+      "frozen_berries": "on top in the morning, not in the bag"
+    },
     "method": [
-      "Frozen things into the bag Saturday - banana, berries, spinach, oats, peanut butter or seeds. Bag flat in the freezer.",
-      "In the morning: bag into the blender with 30g protein powder, 250ml semi-skimmed milk and 5g creatine."
+      "Ten bags standing open in a tub. Fill them one ingredient at a time - oats in all ten, then chia in all ten, then a scoop of protein powder in all ten, then the yoghurt.",
+      "Seal, squish to mix, freeze flat.",
+      "One bag out of the freezer into the fridge each night.",
+      "Morning: tip into a bowl, add 100ml water or milk, stir. Berries on top. Banana on the side on training days. 5g creatine in a glass of water, separately."
     ]
   },
   "flapjack_plain_seed": {
