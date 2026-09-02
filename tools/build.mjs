@@ -279,6 +279,21 @@ const COUNTED = {
   yorkshire_pudding: [20,  'Yorkshire pudding', 'Yorkshire puddings'],
   stock_cube:        [10,  'stock cube', 'stock cubes'],
   lemon_juice:       [30,  'lemon', 'lemons'],
+
+  // Tins and pouches. Sizes are the ones the recipes state - "400g = 1 tin
+  // chopped tomatoes", "224g = 2 tins tuna", "500g = 2 rice pouches" - so
+  // these stay tied to the data rather than to what I think a tin holds.
+  grain_pouch:          [250, 'rice pouch', 'rice pouches'],
+  chopped_tomatoes:     [400, 'tin chopped tomatoes', 'tins chopped tomatoes'],
+  coconut_milk_light:   [400, 'tin light coconut milk', 'tins light coconut milk'],
+  coconut_milk:         [400, 'tin coconut milk', 'tins coconut milk'],
+  chickpeas_drained:    [240, 'tin chickpeas', 'tins chickpeas'],
+  kidney_beans_drained: [240, 'tin kidney beans', 'tins kidney beans'],
+  butter_beans_drained: [240, 'tin butter beans', 'tins butter beans'],
+  cannellini_drained:   [240, 'tin cannellini', 'tins cannellini'],
+  mixed_beans_drained:  [240, 'tin mixed beans', 'tins mixed beans'],
+  sweetcorn_drained:    [260, 'tin sweetcorn', 'tins sweetcorn'],
+  tuna_drained:         [112, 'tin tuna', 'tins tuna'],
 };
 
 function basketLine(it) {
