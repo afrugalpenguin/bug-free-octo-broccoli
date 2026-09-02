@@ -121,7 +121,35 @@ A flat object keyed by recipe ID. Every recipe that the system uses — dinners,
 
 ### foods.json
 
-Already exists in System A. Extend as needed for new ingredients. Per 100g values: `[kcal, protein, carbs, fat, fibre]`.
+Already exists in System A. Extend as needed for new ingredients. Per 100g values (per 100ml for liquids): `[kcal, protein, carbs, fat, fibre]`. Typical UK supermarket / CoFID figures.
+
+#### Conventions
+
+These are load-bearing. A number in this table means nothing without them, and the file carries them as `_convention_*` keys so they travel with the data. `calc.mjs` looks foods up by key and never iterates the table, so those keys are inert.
+
+**Raw weights go with raw values** — cooking loses water, not calories.
+
+**The basis lives in the key suffix.** Where a food is used on more than one basis it gets one key per basis, and the recipe picks the matching one:
+
+| Suffix | Means | Example |
+|---|---|---|
+| `_dry` | As weighed from the packet | `pasta_dry`, `brown_rice_dry`, `red_lentils_dry` |
+| `_cooked` | Weighed after cooking | `quinoa_cooked`, `green_lentils_cooked` |
+| `_raw` | Uncooked, where a cooked twin exists | `prawns_raw` vs `prawns_cooked` |
+| `_drained` | Tin drained — the weight on the can | `kidney_beans_drained`, `sweetcorn_drained` |
+| `_made` | Made up to drinking strength | `stock_made`, `gravy_made` |
+| `_oil` | Packed in oil, drained | `anchovies_oil`, `sun_dried_tomatoes_oil` |
+
+`pasta_dry` and `quinoa_cooked` sitting in one table on opposite bases is deliberate, not an inconsistency.
+
+**Values are for the edible portion** — root veg peeled, olives pitted, meat off the bone. Two consequences worth knowing:
+
+- `sweet_potato` `[86, 1.6, 20.0, 0.1, 3.0]` is flesh only, but Chilli-Loaded Sweet Potatoes is eaten skin and all, so that dish slightly **under**-counts fibre.
+- Recipe `grams` are bought/prepped weight as the thing hits the pan. Whole veg eaten skin-on therefore multiplies a bought weight by a flesh-only rate and **over**-counts by roughly the weight of the skin — 5-10% of that one ingredient. Left alone: it errs high, which is the safe direction for a lean-and-fit goal.
+
+**Bone is never counted as meat.** Either use a key that already prices the bone in (`chicken_thigh_bonein`), or split the ingredient into a `basketOnly` line for what is bought and a `macroOnly` line for what is eaten.
+
+When adding a food, if its basis is not obvious from the name, add the suffix rather than relying on the reader to guess.
 
 ```jsonc
 {
