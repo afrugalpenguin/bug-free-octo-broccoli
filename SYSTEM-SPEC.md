@@ -32,7 +32,9 @@ GitHub Pages should serve from the `docs/` folder on the `main` branch.
 
 ## The weekly rhythm
 
-The week runs **Friday (delivery) through Thursday**, anchored to delivery day. This is critical — days are ordered Fri, Sat, Sun, Mon, Tue, Wed, Thu.
+The week runs **Friday (delivery) through Thursday**, anchored to delivery day. This is critical — `rotation.day_order` is Fri, Sat, Sun, Mon, Tue, Wed, Thu, and the basket, the cycle maths and the today button all count from it.
+
+The week **tabs render** Sun, Mon, Tue, Wed, Thu, Fri, Sat, from `rotation.display_order`, because a list that starts on Friday and ends on Thursday reads oddly. Same seven days, same content, reading order only. Change `day_order` and you change the system; change `display_order` and you change what the page looks like.
 
 ```
 Wed/Thu    Order online (open basket, add to trolley, book slot)
@@ -192,6 +194,10 @@ Maps weeks to recipe IDs for every slot.
 
 ```jsonc
 {
+  // The logical week - anchored to Friday delivery. Do not reorder.
+  "day_order": ["fri", "sat", "sun", "mon", "tue", "wed", "thu"],
+  // The reading order used by the week tabs. Display only.
+  "display_order": ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
   "weeks": {
     "1": {
       "theme": "Mexican / Chicken",

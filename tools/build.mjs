@@ -19,7 +19,12 @@ const esc = s => String(s)
   .replace(/"/g, '&quot;');
 
 const WEEKS = ['1', '2', '3', '4'];
+// DAYS is the logical week, Friday first, anchored to delivery. The cycle
+// maths in the today button counts from it, so it must not be reordered.
+// DISPLAY_DAYS is the same seven days in reading order, Sunday first - the
+// week tabs use it and nothing else does.
 const DAYS = rotation.day_order;
+const DISPLAY_DAYS = rotation.display_order ?? rotation.day_order;
 const DAY_NAME = rotation.day_names;
 
 const AISLES = [
@@ -300,7 +305,7 @@ function saturdayPanel(week, cycle) {
   ].join('');
   step(order[6].step, order[6].detail, cold);
 
-  const finishers = DAYS.filter(d => w.lunchbox_finishers[d])
+  const finishers = DISPLAY_DAYS.filter(d => w.lunchbox_finishers[d])
     .map(d => `<li><strong>${esc(DAY_NAME[d])}</strong> ${esc(w.lunchbox_finishers[d])}</li>`).join('');
   step(order[7].step, `${order[7].detail} ${scaffold.lunch_boxes.build_notes}`,
     `${inlineRecipe(w.lunchbox, `${recipes[w.lunchbox].name}, build ${scaffold.lunch_boxes.total}`)}
@@ -338,7 +343,7 @@ function saturdayPanel(week, cycle) {
 
 function menuPanel(week) {
   const w = rotation.weeks[week];
-  const rows = DAYS.map(day => {
+  const rows = DISPLAY_DAYS.map(day => {
     const id = w.dinners[day];
     const isPizza = id === 'scaffold:pizza';
     const name = isPizza
@@ -368,7 +373,7 @@ function menuPanel(week) {
 
 function recipesPanel(week) {
   const w = rotation.weeks[week];
-  const cards = DAYS.map(day => {
+  const cards = DISPLAY_DAYS.map(day => {
     const id = w.dinners[day];
     const inner = id === 'scaffold:pizza'
       ? recipeCard(scaffold.friday_pizza.boys.recipe, { level: 'h4' })
