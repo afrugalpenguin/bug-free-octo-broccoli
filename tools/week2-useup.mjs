@@ -314,6 +314,17 @@ const swapRows = SWAPS.map(([where, what]) =>
   `<li class="swap"><span class="swap-where">${esc(where)}</span><span class="swap-what">${esc(what)}</span></li>`).join('');
 
 const html = `<!DOCTYPE html>
+<!--
+  GENERATED FILE - DO NOT EDIT.
+
+  Built from data/ by tools/week2-useup.mjs, which applies the freezer use-up
+  swaps on top of the real week 2. The next run overwrites whatever you change
+  here. Edit tools/week2-useup.mjs instead, then run:
+
+    node tools/week2-useup.mjs
+
+  One-off for week 2. Delete the script and this page when the week is done.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">

@@ -1198,6 +1198,17 @@ const tabs = [
 ];
 
 const html = `<!DOCTYPE html>
+<!--
+  GENERATED FILE - DO NOT EDIT.
+
+  Everything here is built from data/ by tools/build.mjs, and the next build
+  overwrites whatever you change. Edit the source instead:
+
+    a recipe, an ingredient, a quantity, a day    ->  data/*.json
+    the layout, a label, a unit, the wording      ->  tools/build.mjs
+
+  Then run:  node tools/build.mjs
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
