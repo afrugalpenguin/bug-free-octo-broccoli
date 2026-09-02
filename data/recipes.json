@@ -2695,7 +2695,8 @@
         "food": "egg",
         "grams": 232,
         "display": "4 boiled eggs",
-        "aisle": "dairy"
+        "aisle": "dairy",
+        "macroOnly": true
       },
       {
         "food": "cheddar",
@@ -2791,7 +2792,8 @@
         "food": "egg",
         "grams": 232,
         "display": "4 boiled eggs",
-        "aisle": "dairy"
+        "aisle": "dairy",
+        "macroOnly": true
       },
       {
         "food": "seeds_nuts",
@@ -2875,7 +2877,8 @@
         "food": "egg",
         "grams": 232,
         "display": "4 boiled eggs",
-        "aisle": "dairy"
+        "aisle": "dairy",
+        "macroOnly": true
       },
       {
         "food": "seeds_nuts",
@@ -2959,7 +2962,8 @@
         "food": "egg",
         "grams": 232,
         "display": "4 boiled eggs",
-        "aisle": "dairy"
+        "aisle": "dairy",
+        "macroOnly": true
       },
       {
         "food": "seeds_nuts",
@@ -4061,7 +4065,8 @@
         "food": "egg",
         "grams": 116,
         "display": "2 boiled eggs",
-        "aisle": "dairy"
+        "aisle": "dairy",
+        "macroOnly": true
       },
       {
         "food": "cucumber",
