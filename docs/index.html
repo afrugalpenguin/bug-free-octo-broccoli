@@ -52,6 +52,8 @@ header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans
 .tab{padding:.85rem 1.1rem;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:.9rem;font-weight:500;color:var(--text-light);white-space:nowrap;cursor:pointer;min-height:44px}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .tab[data-tab="bank"]{margin-left:auto;color:var(--text-light);opacity:.85}
+.tab-link{text-decoration:none;display:grid;place-items:center;color:var(--accent);opacity:.9}
+.tab-link:hover{opacity:1}
 .tab[data-tab="bank"].active{opacity:1}
 .tab[data-tab="week-1"].active{color:var(--week1);border-bottom-color:var(--week1)}
 .tab[data-tab="week-2"].active{color:var(--week2);border-bottom-color:var(--week2)}
@@ -209,6 +211,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <button class="tab" data-tab="week-3">Week 3</button>
   <button class="tab" data-tab="week-4">Week 4</button>
   <button class="tab" data-tab="bank">Recipe bank</button>
+  <a class="tab tab-link" href="week2-freezer.html">Use up week</a>
 </nav>
 <main class="container">
 <div class="panel active" data-tab="overview">
@@ -1282,7 +1285,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
     </li><li class="boxday" data-wday="tue">
       <span class="boxday-day">Tuesday</span>
       <span class="boxday-protein">80g Tandoori Thighs for the Boxes <em>in on Saturday</em></span>
-      <span class="boxday-macro">~575 kcal · 39g protein · 53g carbs · 22g fat · 8g fibre</span>
+      <span class="boxday-macro">~525 kcal · 34g protein · 55g carbs · 19g fat · 9g fibre</span>
     </li><li class="boxday" data-wday="wed">
       <span class="boxday-day">Wednesday</span>
       <span class="boxday-protein">80g Smoked Mackerel for Wednesday's Boxes <em>in on the day</em><span class="omega">omega-3 day</span></span>
@@ -1843,9 +1846,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-17g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li data-wday="tue"><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-wday="wed"><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-wday="thu"><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-wday="fri"><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li data-wday="tue"><strong>Tuesday</strong> 40g cucumber and a spoon of mint yoghurt with toasted cumin</li><li data-wday="wed"><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-wday="thu"><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-wday="fri"><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -1995,9 +1998,9 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
   
   
-  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-17g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
 </div>
-     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li data-wday="tue"><strong>Tuesday</strong> A boiled egg with toasted cumin seeds</li><li data-wday="wed"><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-wday="thu"><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-wday="fri"><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul><li data-wday="mon"><strong>Monday</strong> 1 tbsp mango chutney and coriander</li><li data-wday="tue"><strong>Tuesday</strong> 40g cucumber and a spoon of mint yoghurt with toasted cumin</li><li data-wday="wed"><strong>Wednesday</strong> 20g toasted seeds and nuts with garam masala</li><li data-wday="thu"><strong>Thursday</strong> Lime pickle, or more chutney for a milder one</li><li data-wday="fri"><strong>Friday</strong> 50g cucumber ribbons and extra mint yoghurt</li></ul></div>
 </section><section class="step">
   <h3><span class="step-n">9</span>Divide and label</h3>
   <p class="step-detail" data-tpl="Tubs to the fridge, bags to the freezer, everything labelled with the month.">Tubs to the fridge, bags to the freezer, everything labelled with the month.</p>
@@ -2172,7 +2175,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   
   <p class="card-notes">Ten of these - five each. Built bottom-to-top so the leaves stay out of the dressing. The protein changes by day and is not in this base.</p>
   <p class="ingredients-preview">1 portions of mint yoghurt · 1 portions of lunch box veg tray · Half a rice pouch · 50g tinned beans · A spoonful of pickled onions +1 more</p>
-  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-20g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
+  <div class="macro" data-macro="lunchbox_w2">~340-455 kcal · 12-17g protein · 50-63g carbs · 10-20g fat · 8-9g fibre <em>per portion</em></div>
   <details class="full"><summary>Full recipe</summary><ul class="ingredients"><li class="from">1 portion of <strong>Mint Yoghurt</strong></li><li class="from">1 portion of <strong>Lunch Box Veg Tray</strong></li><li>Half a rice pouch</li><li>50g tinned beans</li><li>A spoonful of pickled onions</li><li>A handful of leaves</li></ul><ol class="method"><li>Dressing in the bottom.</li><li>Rice, then beans, then roast veg.</li><li>Pickled onions, then leaves on top.</li><li>Protein goes in by day - roast Monday and Tuesday, then mackerel, prawns, tuna and egg. Only Monday and Tuesday's go in on Saturday.</li><li>Finisher goes on the day, not now - especially the crunchy ones.</li></ol>
     
     </details>
@@ -4474,7 +4477,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div>
 </div>
 </main>
-<footer>Generated from data/ by tools/build.mjs, 2026-09-02 14:12</footer>
+<footer>Generated from data/ by tools/build.mjs, 2026-09-02 14:23</footer>
 <script>
 (function(){
   var SLOTS = ["fri","sat","sun","mon","tue","wed","thu"];            // day_order: slot 0 is delivery
