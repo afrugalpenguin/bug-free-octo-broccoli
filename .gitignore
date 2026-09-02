@@ -1,0 +1,5 @@
+# The McCance and Widdowson composition dataset. It is a 4.6MB spreadsheet and
+# it is free from the government, so I download it rather than carry it here:
+# search for "McCance and Widdowson's Composition of Foods integrated dataset"
+# on gov.uk. tools/rebuild-foods-from-mw.py reads it from data/reference/.
+data/reference/*.xlsx

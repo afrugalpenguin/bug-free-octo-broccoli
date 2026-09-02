@@ -19,7 +19,13 @@ const dataDir = join(here, '..', 'data');
 
 const read = name => JSON.parse(readFileSync(join(dataDir, name), 'utf8'));
 
-export const foods = read('foods.json');
+// foods.json is sourced from McCance and Widdowson. products.json holds the
+// things M&W has no entry for - supplements, jarred pastes, branded products -
+// and those are still estimates until I put pack data in. I merge them into one
+// lookup, with foods.json winning if a key ever lands in both.
+const products = read('products.json');
+const sourced = read('foods.json');
+export const foods = { ...products, ...sourced };
 export const recipes = read('recipes.json');
 export const rotation = read('rotation.json');
 export const scaffold = read('scaffold.json');
@@ -29,8 +35,10 @@ const zero = () => ({ kcal: 0, protein: 0, carbs: 0, fat: 0, fibre: 0 });
 
 function addFood(acc, food, grams, where) {
   const row = foods[food];
-  if (!row) throw new Error(`${where}: no food called ${food} in foods.json`);
-  KEYS.forEach((k, i) => { acc[k] += (row[i] * grams) / 100; });
+  if (!row) throw new Error(`${where}: no food called ${food} in foods.json or products.json`);
+  const per = row.per_100g;
+  if (!per) throw new Error(`${where}: ${food} has no per_100g block`);
+  KEYS.forEach(k => { acc[k] += ((per[k] ?? 0) * grams) / 100; });
 }
 
 // Everything a recipe contains, before dividing by portions. Ingredients marked

@@ -1,189 +1,1625 @@
 {
-  "_comment": "Per 100g (or per 100ml for liquids). Typical UK supermarket / CoFID figures. Order: [kcal, protein, carbs, fat, fibre].",
-  "_convention_state": "Raw weights go with raw values - cooking loses water, not calories. Where a food is used on more than one basis, the basis lives in the key suffix, and the recipe must pick the matching key: _dry (pasta, rice, lentils as weighed from the packet), _cooked (weighed after), _raw, _drained (tin drained, the weight on the can), _made (stock and gravy at drinking strength), _oil (packed in oil, drained). pasta_dry and quinoa_cooked sit in this one table on opposite bases - that is deliberate, not an inconsistency.",
-  "_convention_edible": "Values are for the edible portion: root veg peeled, olives pitted, meat off the bone. sweet_potato is flesh only even though the loaded sweet potatoes are eaten skin and all, so that dish under-counts fibre slightly. Recipe grams are bought/prepped weight as the thing hits the pan, so whole veg eaten skin-on multiplies a bought weight by a flesh-only rate and over-counts by roughly the weight of the skin (5-10 percent of that one ingredient). Left as is: it errs high, which is the safe direction here.",
-  "_convention_bone": "Bone is never counted as meat. Either use a bone-in key that already prices the bone in (chicken_thigh_bonein), or split the ingredient into a basketOnly line for what is bought and a macroOnly line for what is eaten - see SYSTEM-SPEC.md.",
-
-  "chicken_roast_meat":       [190, 27.0, 0,     9.0,   0],
-  "chicken_thigh_boneless":   [121, 18.6, 0,     5.0,   0],
-  "chicken_thigh_bonein":     [211, 17.4, 0,     15.8,  0],
-  "chicken_sausage":          [130, 18.0, 3.0,   5.0,   0],
-  "beef_mince_5":             [137, 21.0, 0,     5.4,   0],
-  "beef_mince_12":            [205, 18.5, 0,     13.5,  0],
-  "beef_topside_roast":       [175, 31.0, 0,     5.5,   0],
-  "pork_shoulder_roast":      [289, 26.0, 0,     20.0,  0],
-  "gammon_cooked":            [165, 24.0, 0,     7.5,   0],
-  "pancetta":                 [393, 20.0, 0.5,   35.0,  0],
-  "salmon_fillet":            [208, 20.4, 0,     13.4,  0],
-  "prawns_raw":               [70,  15.0, 0,     1.0,   0],
-  "chorizo_cooking":          [375, 23.0, 2.0,   30.0,  0],
-  "pepperoni":                [490, 20.0, 2.0,   44.0,  0],
-  "ham_sliced":               [110, 18.0, 1.0,   3.5,   0],
-  "tuna_drained":             [108, 25.0, 0,     1.0,   0],
-  "stewing_steak":            [155, 21.0, 0,     8.0,   0],
-  "chicken_breast":           [106, 24.0, 0,     1.2,   0],
-  "smoked_salmon":            [180, 25.0, 0,     9.0,   0],
-  "smoked_mackerel":          [305, 19.0, 0,     25.0,  0],
-  "prawns_cooked":            [99,  22.8, 0,     0.9,   0],
-  "anchovies_oil":            [210, 24.0, 0,     12.0,  0],
-
-  "mozzarella":               [254, 18.0, 1.0,   19.9,  0],
-  "mozzarella_pearls":        [240, 17.0, 1.0,   18.0,  0],
-  "cheddar":                  [416, 25.0, 0.1,   34.9,  0],
-  "parmesan":                 [402, 35.0, 0.1,   29.0,  0],
-  "feta":                     [264, 14.0, 1.5,   21.0,  0],
-  "halloumi":                 [321, 22.0, 2.0,   25.0,  0],
-  "ricotta":                  [174, 11.0, 3.0,   13.0,  0],
-  "greek_yoghurt":            [120, 5.7,  4.7,   8.4,   0],
-  "greek_yoghurt_0":          [57,  10.0, 4.0,   0,     0],
-  "creme_fraiche":            [300, 2.4,  2.8,   30.0,  0],
-  "creme_fraiche_half":       [165, 3.0,  4.0,   15.0,  0],
-  "white_sauce_jar":          [80,  2.5,  7.0,   4.5,   0.3],
-  "butter":                   [744, 0.6,  0.6,   82.0,  0],
-  "milk_semi":                [50,  3.6,  4.8,   1.8,   0],
-  "egg":                      [143, 12.6, 0.7,   9.9,   0],
-  "feta_reduced_fat":         [180, 15.0, 2.0,   12.0,  0],
-
-  "pizza_dough":              [265, 8.5,  50.0,  2.5,   2.2],
-  "tortilla_wrap":            [300, 8.0,  48.0,  6.0,   3.0],
-  "grain_pouch":              [150, 3.5,  26.0,  3.5,   1.5],
-  "pasta_dry":                [350, 12.0, 70.0,  1.8,   3.0],
-  "fresh_pasta":              [275, 11.0, 50.0,  3.0,   2.5],
-  "lasagne_sheets":           [350, 12.0, 70.0,  1.8,   3.0],
-  "orzo_dry":                 [350, 12.0, 70.0,  1.8,   3.0],
-  "linguine_dry":             [350, 12.0, 70.0,  1.8,   3.0],
-  "couscous_dry":             [358, 13.0, 72.0,  1.5,   5.0],
-  "quinoa_cooked":            [120, 4.4,  21.3,  1.9,   2.8],
-  "oats":                     [379, 11.0, 60.0,  8.0,   9.0],
-  "bread_wholemeal":          [235, 9.5,  38.0,  2.5,   6.0],
-  "wholemeal_roll":           [250, 9.0,  45.0,  3.0,   6.0],
-  "bread_fresh":              [265, 9.0,  49.0,  2.5,   2.8],
-  "breadcrumbs_wholemeal":    [240, 10.0, 42.0,  3.0,   6.5],
-  "naan":                     [300, 8.0,  48.0,  8.0,   2.5],
-  "pitta_wholemeal":          [250, 9.0,  45.0,  1.5,   6.0],
-  "tortilla_chips":           [490, 7.0,  62.0,  23.0,  5.0],
-  "yorkshire_pudding":        [300, 8.0,  38.0,  13.0,  1.5],
-  "garlic_bread":             [350, 8.0,  40.0,  17.0,  2.5],
-  "red_lentils_dry":          [345, 24.0, 50.0,  1.5,   11.0],
-  "protein_powder":           [380, 80.0, 6.0,   5.0,   1.0],
-  "risotto_rice":             [349, 7.0,  77.0,  0.9,   1.4],
-  "brown_rice_dry":           [356, 7.9,  74.0,  2.8,   3.5],
-  "cornflour":                [354, 0.6,  86.0,  0.1,   0.9],
-  "nori":                     [350, 41.0, 5.0,   3.5,   35.0],
-  "frozen_gyoza":             [200, 7.0,  28.0,  6.5,   1.8],
-
-  "sweet_potato":             [86,  1.6,  20.0,  0.1,   3.0],
-  "baby_potato":              [77,  2.0,  17.0,  0.1,   2.2],
-  "butternut_squash":         [45,  1.0,  12.0,  0.1,   2.0],
-  "pepper":                   [31,  1.0,  6.0,   0.3,   2.1],
-  "onion":                    [40,  1.1,  9.0,   0.1,   1.7],
-  "red_onion":                [40,  1.1,  9.0,   0.1,   1.7],
-  "frozen_onion":             [40,  1.1,  9.0,   0.1,   1.7],
-  "spring_onion":             [32,  1.8,  7.3,   0.2,   2.6],
-  "garlic":                   [149, 6.4,  33.0,  0.5,   2.1],
-  "ginger":                   [80,  1.8,  18.0,  0.8,   2.0],
-  "celery":                   [16,  0.7,  3.0,   0.2,   1.6],
-  "courgette":                [17,  1.2,  3.1,   0.3,   1.0],
-  "carrot":                   [41,  0.9,  9.6,   0.2,   2.8],
-  "broccoli":                 [34,  2.8,  7.0,   0.4,   2.6],
-  "tenderstem_broccoli":      [35,  3.0,  5.0,   0.4,   2.8],
-  "tenderstem_broccoli":      [35,  3.0,  5.0,   0.4,   2.8],
-  "cauliflower":              [25,  1.9,  5.0,   0.3,   2.0],
-  "cucumber":                 [15,  0.7,  3.6,   0.1,   0.5],
-  "tomatoes":                 [18,  0.9,  3.9,   0.2,   1.2],
-  "cherry_tomatoes":          [18,  0.9,  3.9,   0.2,   1.2],
-  "cherry_tomatoes":          [18,  0.9,  3.9,   0.2,   1.2],
-  "chopped_tomatoes":         [20,  1.1,  3.6,   0.2,   1.1],
-  "passata":                  [33,  1.5,  6.0,   0.2,   1.5],
-  "tomato_puree":             [82,  4.5,  15.0,  0.5,   3.0],
-  "sun_dried_tomato_paste":   [213, 5.0,  20.0,  12.0,  5.0],
-  "salad_leaves":             [17,  1.5,  2.0,   0.3,   1.5],
-  "white_cabbage":            [25,  1.3,  5.0,   0.1,   2.5],
-  "fresh_herbs":              [30,  3.0,  5.0,   0.5,   3.0],
-  "frozen_spinach":           [25,  3.0,  1.5,   0.5,   2.0],
-  "frozen_peas":              [81,  5.4,  11.0,  0.6,   5.0],
-  "stir_fry_veg":             [35,  2.0,  5.0,   0.3,   2.0],
-  "sweetcorn_drained":        [86,  3.0,  16.0,  1.2,   2.5],
-  "olives_drained":           [145, 0.8,  1.0,   15.0,  3.3],
-  "roasting_veg":             [55,  1.2,  11.0,  0.4,   3.5],
-  "frozen_berries":           [45,  0.8,  8.0,   0.3,   3.0],
-  "banana":                   [89,  1.1,  23.0,  0.3,   2.6],
-  "mango":                    [60,  0.8,  15.0,  0.4,   1.6],
-  "avocado":                  [160, 2.0,  9.0,   15.0,  7.0],
-  "apple_sauce":              [80,  0.2,  20.0,  0.1,   1.0],
-  "lemon_juice":              [22,  0.4,  6.9,   0.2,   0.3],
-  "lime_juice":               [25,  0.4,  8.0,   0.1,   0.4],
-  "mushrooms":                [22,  3.1,  0.4,   0.5,   1.0],
-  "leek":                     [61,  1.5,  12.0,  0.3,   1.8],
-  "radish":                   [16,  0.7,  1.8,   0.1,   1.6],
-  "bok_choy":                 [13,  1.5,  1.2,   0.2,   1.0],
-  "red_chilli":               [40,  1.9,  8.8,   0.4,   1.5],
-  "shallot":                  [72,  2.5,  17.0,  0.1,   3.2],
-  "spinach_fresh":            [23,  2.9,  1.6,   0.4,   2.2],
-  "pomegranate_seeds":        [83,  1.7,  14.0,  1.2,   4.0],
-
-  "kidney_beans_drained":     [100, 6.9,  15.0,  0.5,   6.4],
-  "chickpeas_drained":        [119, 7.2,  16.0,  2.6,   6.0],
-  "cannellini_drained":       [110, 7.0,  15.0,  0.6,   6.0],
-  "butter_beans_drained":     [90,  6.0,  13.0,  0.5,   5.0],
-  "mixed_beans_drained":      [105, 7.0,  15.0,  0.6,   6.0],
-  "coconut_milk":             [197, 2.0,  3.0,   20.0,  0.5],
-  "coconut_milk_light":       [97,  1.0,  1.5,   10.0,  0],
-  "hummus":                   [300, 7.5,  12.0,  24.0,  5.0],
-  "green_lentils_cooked":     [116, 9.0,  17.0,  0.4,   7.9],
-
-  "olive_oil":                [884, 0,    0,     100.0, 0],
-  "sesame_oil":               [884, 0,    0,     100.0, 0],
-  "honey":                    [304, 0.3,  82.0,  0,     0],
-  "peanut_butter":            [615, 28.0, 10.0,  51.0,  7.5],
-  "seeds_nuts":               [570, 25.0, 15.0,  50.0,  7.5],
-  "chia_seeds":               [486, 17.0, 42.0,  31.0,  34.0],
-  "creatine":                 [0,   0,    0,     0,     0],
-  "raisins":                  [299, 3.0,  79.0,  0.5,   3.7],
-  "cocoa":                    [350, 20.0, 20.0,  14.0,  33.0],
-  "dark_chocolate":           [546, 5.0,  46.0,  31.0,  11.0],
-  "mango_chutney":            [250, 0.3,  60.0,  0.2,   1.0],
-  "korma_paste":              [250, 3.0,  15.0,  20.0,  3.0],
-  "gravy_made":               [25,  0.3,  4.0,   0.8,   0],
-  "beef_stock":               [4,   0.2,  0.5,   0.2,   0],
-  "chicken_stock":            [4,   0.2,  0.5,   0.2,   0],
-  "vegetable_stock":          [4,   0.2,  0.5,   0.2,   0],
-  "chicken_stock_cube":       [250, 10.0, 25.0,  12.0,  2.0],
-  "vegetable_stock_cube":     [250, 10.0, 25.0,  12.0,  2.0],
-  "soy_sauce":                [60,  8.0,  5.0,   0,     0],
-  "worcestershire":           [78,  1.0,  18.0,  0,     0],
-  "red_wine_vinegar":         [20,  0,    0.4,   0,     0],
-  "white_wine_vinegar":       [20,  0,    0.4,   0,     0],
-  "cider_vinegar":            [21,  0,    0.9,   0,     0],
-  "balsamic":                 [88,  0.5,  17.0,  0,     0],
-  "red_wine":                 [83,  0.1,  2.6,   0,     0],
-  "sugar":                    [400, 0,    100.0, 0,     0],
-  "mustard":                  [150, 7.0,  8.0,   9.0,   4.0],
-  "harissa":                  [180, 3.0,  8.0,   15.0,  4.0],
-  "lime_pickle":              [200, 1.0,  10.0,  16.0,  2.0],
-  "peanuts_roasted":          [600, 25.0, 12.0,  49.0,  8.0],
-  "tahini":                   [630, 17.0, 10.0,  58.0,  9.0],
-  "capers":                   [23,  2.4,  1.7,   0.9,   3.2],
-  "jalapenos_jarred":         [28,  0.9,  5.0,   0.4,   2.6],
-  "jalapeno_brine":           [5,   0,    1.0,   0,     0],
-  "wasabi_paste":             [265, 4.8,  40.0,  10.0,  8.0],
-  "mirin":                    [240, 0.3,  43.0,  0,     0],
-  "rice_vinegar":             [18,  0.1,  0.5,   0,     0],
-  "chilli_oil":               [800, 0.5,  2.0,   88.0,  1.0],
-  "miso_soup_sachet":         [175, 11.0, 20.0,  5.0,   3.0],
-  "sun_dried_tomatoes_oil":   [213, 5.0,  20.0,  12.0,  5.0],
-
-  "fajita_spice":             [350, 12.0, 40.0,  12.0,  25.0],
-  "tandoori_spice":           [350, 12.0, 40.0,  12.0,  25.0],
-  "smoked_paprika":           [282, 14.0, 54.0,  13.0,  35.0],
-  "cumin":                    [375, 18.0, 44.0,  22.0,  11.0],
-  "ground_coriander":         [298, 12.0, 55.0,  18.0,  42.0],
-  "turmeric":                 [312, 9.7,  67.0,  3.3,   21.0],
-  "garam_masala":             [379, 15.0, 45.0,  15.0,  25.0],
-  "oregano":                  [265, 9.0,  69.0,  4.0,   43.0],
-  "fennel_seeds":             [345, 16.0, 52.0,  15.0,  40.0],
-  "mustard_seeds":            [508, 26.0, 28.0,  36.0,  12.0],
-  "chilli_flakes":            [318, 12.0, 57.0,  17.0,  28.0],
-  "garlic_granules":          [330, 17.0, 63.0,  0.7,   9.0],
-  "allspice":                 [263, 6.1,  72.0,  8.7,   22.0]
+  "_comment": "Rebuilt from McCance and Widdowson's Composition of Foods Integrated Dataset 2021, sheet \"1.3 Proximates\". Values are per 100g (per 100ml for liquids). source is the M&W food code. Raw values, except where the recipe buys the thing already cooked. Tr in M&W becomes 0; N (not determined) becomes 0 and is noted. Anything with no sensible M&W match has no entry here and belongs in products.json.",
+  "allspice": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 6.1,
+      "carbs": 0.0,
+      "fat": 8.7,
+      "fibre": 0.0
+    },
+    "source": "mw:13-801",
+    "mw_name": "Allspice, ground",
+    "note": "kcal N in M&W, fibre N in M&W"
+  },
+  "anchovies_oil": {
+    "per_100g": {
+      "kcal": 191,
+      "protein": 25.2,
+      "carbs": 0.0,
+      "fat": 10.0,
+      "fibre": 0.0
+    },
+    "source": "mw:16-448",
+    "mw_name": "Anchovies, canned in oil, drained"
+  },
+  "apple_sauce": {
+    "per_100g": {
+      "kcal": 79,
+      "protein": 0.3,
+      "carbs": 20.2,
+      "fat": 0.2,
+      "fibre": 1.4
+    },
+    "source": "mw:17-851",
+    "mw_name": "Apple sauce, homemade"
+  },
+  "avocado": {
+    "per_100g": {
+      "kcal": 189,
+      "protein": 2.1,
+      "carbs": 1.9,
+      "fat": 19.3,
+      "fibre": 0.0
+    },
+    "source": "mw:14-039",
+    "mw_name": "Avocado, Fuerte, flesh only",
+    "note": "fibre N in M&W"
+  },
+  "baby_potato": {
+    "per_100g": {
+      "kcal": 68,
+      "protein": 1.7,
+      "carbs": 16.1,
+      "fat": 0.1,
+      "fibre": 1.8
+    },
+    "source": "mw:13-618",
+    "mw_name": "Potatoes, new and salad, flesh only, raw"
+  },
+  "balsamic": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 0.4,
+      "carbs": 0.6,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-339",
+    "mw_name": "Vinegar"
+  },
+  "banana": {
+    "per_100g": {
+      "kcal": 81,
+      "protein": 1.2,
+      "carbs": 20.3,
+      "fat": 0.1,
+      "fibre": 1.4
+    },
+    "source": "mw:14-318",
+    "mw_name": "Bananas, flesh only"
+  },
+  "beef_mince_5": {
+    "per_100g": {
+      "kcal": 130,
+      "protein": 21.9,
+      "carbs": 0.0,
+      "fat": 4.2,
+      "fibre": 0.0
+    },
+    "source": "mw:18-508",
+    "mw_name": "Beef, mince, raw, extra lean",
+    "note": "fibre N in M&W"
+  },
+  "beef_stock": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 0.5,
+      "carbs": 0.0,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "mw:17-774",
+    "mw_name": "Stock cubes, chicken, made up with water",
+    "note": "kcal N in M&W",
+    "proxy": "M&W only has chicken stock made up with water; stock is stock at this dilution"
+  },
+  "beef_topside_roast": {
+    "per_100g": {
+      "kcal": 198,
+      "protein": 20.4,
+      "carbs": 0.0,
+      "fat": 12.9,
+      "fibre": 0.0
+    },
+    "source": "mw:18-085",
+    "mw_name": "Beef, topside, raw, lean and fat",
+    "note": "fibre N in M&W"
+  },
+  "bok_choy": {
+    "per_100g": {
+      "kcal": 14,
+      "protein": 1.5,
+      "carbs": 1.9,
+      "fat": 0.1,
+      "fibre": 2.0
+    },
+    "source": "mw:13-516",
+    "mw_name": "Pak choi, steamed",
+    "proxy": "M&W only has pak choi steamed, not raw"
+  },
+  "bread_wholemeal": {
+    "per_100g": {
+      "kcal": 244,
+      "protein": 10.4,
+      "carbs": 46.1,
+      "fat": 3.3,
+      "fibre": 5.5
+    },
+    "source": "mw:11-986",
+    "mw_name": "Bread rolls, wholemeal"
+  },
+  "broccoli": {
+    "per_100g": {
+      "kcal": 34,
+      "protein": 4.3,
+      "carbs": 3.2,
+      "fat": 0.6,
+      "fibre": 4.0
+    },
+    "source": "mw:13-502",
+    "mw_name": "Broccoli, green, raw"
+  },
+  "brown_rice_dry": {
+    "per_100g": {
+      "kcal": 355,
+      "protein": 8.9,
+      "carbs": 77.6,
+      "fat": 3.1,
+      "fibre": 3.3
+    },
+    "source": "mw:11-866",
+    "mw_name": "Rice, brown, basmati, raw"
+  },
+  "butter": {
+    "per_100g": {
+      "kcal": 744,
+      "protein": 0.6,
+      "carbs": 0.6,
+      "fat": 82.2,
+      "fibre": 0.0
+    },
+    "source": "mw:17-685",
+    "mw_name": "Butter, salted"
+  },
+  "butter_beans_drained": {
+    "per_100g": {
+      "kcal": 77,
+      "protein": 5.9,
+      "carbs": 13.0,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "mw:13-559",
+    "mw_name": "Beans, butter, canned, re-heated, drained",
+    "note": "fibre N in M&W"
+  },
+  "butternut_squash": {
+    "per_100g": {
+      "kcal": 36,
+      "protein": 1.1,
+      "carbs": 8.3,
+      "fat": 0.1,
+      "fibre": 0.0
+    },
+    "source": "mw:13-355",
+    "mw_name": "Squash, butternut, raw",
+    "note": "fibre N in M&W"
+  },
+  "cannellini_drained": {
+    "per_100g": {
+      "kcal": 104,
+      "protein": 7.6,
+      "carbs": 15.9,
+      "fat": 1.6,
+      "fibre": 6.8
+    },
+    "source": "mw:13-666",
+    "mw_name": "Beans, cannellini, canned, re-heated, drained"
+  },
+  "carrot": {
+    "per_100g": {
+      "kcal": 34,
+      "protein": 0.5,
+      "carbs": 7.7,
+      "fat": 0.4,
+      "fibre": 3.9
+    },
+    "source": "mw:13-496",
+    "mw_name": "Carrots, old, raw"
+  },
+  "cauliflower": {
+    "per_100g": {
+      "kcal": 30,
+      "protein": 2.5,
+      "carbs": 4.4,
+      "fat": 0.4,
+      "fibre": 1.8
+    },
+    "source": "mw:13-512",
+    "mw_name": "Cauliflower, raw"
+  },
+  "celery": {
+    "per_100g": {
+      "kcal": 9,
+      "protein": 0.5,
+      "carbs": 1.4,
+      "fat": 0.1,
+      "fibre": 1.5
+    },
+    "source": "mw:13-636",
+    "mw_name": "Celery, raw"
+  },
+  "cheddar": {
+    "per_100g": {
+      "kcal": 416,
+      "protein": 25.4,
+      "carbs": 0.1,
+      "fat": 34.9,
+      "fibre": 0.0
+    },
+    "source": "mw:12-346",
+    "mw_name": "Cheese, Cheddar, English"
+  },
+  "cherry_tomatoes": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 1.1,
+      "carbs": 3.6,
+      "fat": 0.5,
+      "fibre": 1.3
+    },
+    "source": "mw:13-519",
+    "mw_name": "Tomatoes, cherry, raw",
+    "proxy": "cherry entry used; the salad tomato key points elsewhere"
+  },
+  "chicken_breast": {
+    "per_100g": {
+      "kcal": 106,
+      "protein": 24.0,
+      "carbs": 0.0,
+      "fat": 1.1,
+      "fibre": 0.0
+    },
+    "source": "mw:18-290",
+    "mw_name": "Chicken, light meat, raw"
+  },
+  "chicken_roast_meat": {
+    "per_100g": {
+      "kcal": 201,
+      "protein": 19.1,
+      "carbs": 0.0,
+      "fat": 13.8,
+      "fibre": 0.0
+    },
+    "source": "mw:18-297",
+    "mw_name": "Chicken, whole, raw, meat and skin",
+    "note": "fibre N in M&W",
+    "basis": "raw whole bird - the basketOnly/macroOnly pair handles the yield"
+  },
+  "chicken_stock": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 0.5,
+      "carbs": 0.0,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "mw:17-774",
+    "mw_name": "Stock cubes, chicken, made up with water",
+    "note": "kcal N in M&W",
+    "proxy": "made up with water, not the dry cube"
+  },
+  "chicken_stock_cube": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 15.4,
+      "carbs": 0.0,
+      "fat": 15.4,
+      "fibre": 0.6
+    },
+    "source": "mw:17-726",
+    "mw_name": "Stock cubes, chicken",
+    "note": "kcal N in M&W"
+  },
+  "chicken_thigh_bonein": {
+    "per_100g": {
+      "kcal": 131,
+      "protein": 12.4,
+      "carbs": 0.0,
+      "fat": 9.0,
+      "fibre": 0.0
+    },
+    "source": "mw:18-298",
+    "mw_name": "Chicken, whole, raw, meat and skin, weighed with bone",
+    "note": "fibre N in M&W"
+  },
+  "chicken_thigh_boneless": {
+    "per_100g": {
+      "kcal": 109,
+      "protein": 20.9,
+      "carbs": 0.0,
+      "fat": 2.8,
+      "fibre": 0.0
+    },
+    "source": "mw:18-289",
+    "mw_name": "Chicken, dark meat, raw"
+  },
+  "chickpeas_drained": {
+    "per_100g": {
+      "kcal": 129,
+      "protein": 8.4,
+      "carbs": 18.3,
+      "fat": 3.0,
+      "fibre": 7.1
+    },
+    "source": "mw:13-670",
+    "mw_name": "Beans, chick peas, canned, re-heated, drained"
+  },
+  "chilli_flakes": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 13.5,
+      "carbs": 0.0,
+      "fat": 14.3,
+      "fibre": 34.8
+    },
+    "source": "mw:13-873",
+    "mw_name": "Chilli powder",
+    "note": "kcal N in M&W"
+  },
+  "chilli_oil": {
+    "per_100g": {
+      "kcal": 899,
+      "protein": 0.0,
+      "carbs": 0.0,
+      "fat": 99.9,
+      "fibre": 0.0
+    },
+    "source": "mw:17-038",
+    "mw_name": "Oil, olive",
+    "proxy": "no chilli oil in M&W - olive oil, which is what it mostly is"
+  },
+  "chopped_tomatoes": {
+    "per_100g": {
+      "kcal": 19,
+      "protein": 1.1,
+      "carbs": 3.8,
+      "fat": 0.1,
+      "fibre": 0.8
+    },
+    "source": "mw:13-530",
+    "mw_name": "Tomatoes, canned, whole contents"
+  },
+  "chorizo_cooking": {
+    "per_100g": {
+      "kcal": 395,
+      "protein": 24.0,
+      "carbs": 2.4,
+      "fat": 32.2,
+      "fibre": 1.0
+    },
+    "source": "mw:19-516",
+    "mw_name": "Chorizo"
+  },
+  "cider_vinegar": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 0.4,
+      "carbs": 0.6,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-339",
+    "mw_name": "Vinegar"
+  },
+  "cocoa": {
+    "per_100g": {
+      "kcal": 312,
+      "protein": 18.5,
+      "carbs": 11.5,
+      "fat": 21.7,
+      "fibre": 0.0
+    },
+    "source": "mw:12-545",
+    "mw_name": "Cocoa powder",
+    "note": "fibre N in M&W"
+  },
+  "coconut_milk_light": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 0.3,
+      "carbs": 4.9,
+      "fat": 0.3,
+      "fibre": 0.0
+    },
+    "source": "mw:14-820",
+    "mw_name": "Coconut milk",
+    "note": "fibre N in M&W",
+    "proxy": "M&W has full fat only - overstates the light version"
+  },
+  "cornflour": {
+    "per_100g": {
+      "kcal": 354,
+      "protein": 0.6,
+      "carbs": 92.0,
+      "fat": 0.7,
+      "fibre": 0.0
+    },
+    "source": "mw:11-1045",
+    "mw_name": "Flour, corn",
+    "note": "fibre N in M&W"
+  },
+  "courgette": {
+    "per_100g": {
+      "kcal": 16,
+      "protein": 1.3,
+      "carbs": 2.3,
+      "fat": 0.2,
+      "fibre": 0.5
+    },
+    "source": "mw:13-627",
+    "mw_name": "Courgette, raw"
+  },
+  "couscous_dry": {
+    "per_100g": {
+      "kcal": 364,
+      "protein": 12.0,
+      "carbs": 79.2,
+      "fat": 2.1,
+      "fibre": 3.7
+    },
+    "source": "mw:11-901",
+    "mw_name": "Couscous, plain, raw"
+  },
+  "creme_fraiche_half": {
+    "per_100g": {
+      "kcal": 162,
+      "protein": 2.7,
+      "carbs": 4.4,
+      "fat": 15.0,
+      "fibre": 0.0
+    },
+    "source": "mw:12-336",
+    "mw_name": "Creme fraiche, half fat",
+    "proxy": "M&W half fat entry used for both"
+  },
+  "cucumber": {
+    "per_100g": {
+      "kcal": 14,
+      "protein": 1.0,
+      "carbs": 1.2,
+      "fat": 0.6,
+      "fibre": 0.7
+    },
+    "source": "mw:13-523",
+    "mw_name": "Cucumber, raw, flesh and skin"
+  },
+  "cumin": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 17.8,
+      "carbs": 0.0,
+      "fat": 22.3,
+      "fibre": 10.5
+    },
+    "source": "mw:13-889",
+    "mw_name": "Cumin seeds",
+    "note": "kcal N in M&W"
+  },
+  "dark_chocolate": {
+    "per_100g": {
+      "kcal": 510,
+      "protein": 5.0,
+      "carbs": 63.5,
+      "fat": 28.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-491",
+    "mw_name": "Chocolate, plain",
+    "note": "fibre N in M&W"
+  },
+  "egg": {
+    "per_100g": {
+      "kcal": 131,
+      "protein": 12.6,
+      "carbs": 0.0,
+      "fat": 9.0,
+      "fibre": 0.0
+    },
+    "source": "mw:12-937",
+    "mw_name": "Eggs, chicken, whole, raw"
+  },
+  "fennel_seeds": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 15.8,
+      "carbs": 0.0,
+      "fat": 14.9,
+      "fibre": 0.0
+    },
+    "source": "mw:13-827",
+    "mw_name": "Fennel seeds",
+    "note": "kcal N in M&W, fibre N in M&W"
+  },
+  "feta": {
+    "per_100g": {
+      "kcal": 250,
+      "protein": 15.6,
+      "carbs": 1.5,
+      "fat": 20.2,
+      "fibre": 0.0
+    },
+    "source": "mw:12-525",
+    "mw_name": "Cheese, Feta"
+  },
+  "fresh_herbs": {
+    "per_100g": {
+      "kcal": 18,
+      "protein": 2.1,
+      "carbs": 1.2,
+      "fat": 0.5,
+      "fibre": 2.8
+    },
+    "source": "mw:13-888",
+    "mw_name": "Coriander leaves, fresh"
+  },
+  "fresh_pasta": {
+    "per_100g": {
+      "kcal": 282,
+      "protein": 10.6,
+      "carbs": 57.0,
+      "fat": 2.9,
+      "fibre": 3.3
+    },
+    "source": "mw:11-726",
+    "mw_name": "Pasta, egg, fresh, raw"
+  },
+  "frozen_berries": {
+    "per_100g": {
+      "kcal": 25,
+      "protein": 0.8,
+      "carbs": 5.1,
+      "fat": 0.3,
+      "fibre": 3.7
+    },
+    "source": "mw:14-375",
+    "mw_name": "Raspberries, raw",
+    "proxy": "no mixed berry bag in M&W - raspberries as a stand-in"
+  },
+  "frozen_onion": {
+    "per_100g": {
+      "kcal": 35,
+      "protein": 1.0,
+      "carbs": 8.0,
+      "fat": 0.1,
+      "fibre": 2.2
+    },
+    "source": "mw:13-499",
+    "mw_name": "Onions, raw"
+  },
+  "frozen_peas": {
+    "per_100g": {
+      "kcal": 68,
+      "protein": 5.3,
+      "carbs": 10.7,
+      "fat": 0.7,
+      "fibre": 5.3
+    },
+    "source": "mw:13-527",
+    "mw_name": "Peas, frozen, raw"
+  },
+  "frozen_spinach": {
+    "per_100g": {
+      "kcal": 16,
+      "protein": 2.6,
+      "carbs": 0.2,
+      "fat": 0.6,
+      "fibre": 1.0
+    },
+    "source": "mw:13-521",
+    "mw_name": "Spinach, baby, raw"
+  },
+  "gammon_cooked": {
+    "per_100g": {
+      "kcal": 204,
+      "protein": 23.3,
+      "carbs": 0.0,
+      "fat": 12.3,
+      "fibre": 0.0
+    },
+    "source": "mw:19-021",
+    "mw_name": "Ham, gammon joint, boiled",
+    "basis": "bought cooked"
+  },
+  "garam_masala": {
+    "per_100g": {
+      "kcal": 379,
+      "protein": 15.6,
+      "carbs": 45.2,
+      "fat": 15.1,
+      "fibre": 0.0
+    },
+    "source": "mw:13-829",
+    "mw_name": "Garam masala",
+    "note": "fibre N in M&W"
+  },
+  "garlic": {
+    "per_100g": {
+      "kcal": 98,
+      "protein": 7.9,
+      "carbs": 16.3,
+      "fat": 0.6,
+      "fibre": 0.0
+    },
+    "source": "mw:13-244",
+    "mw_name": "Garlic, raw",
+    "note": "fibre N in M&W"
+  },
+  "garlic_granules": {
+    "per_100g": {
+      "kcal": 246,
+      "protein": 18.7,
+      "carbs": 42.7,
+      "fat": 1.2,
+      "fibre": 0.0
+    },
+    "source": "mw:13-830",
+    "mw_name": "Garlic powder",
+    "note": "fibre N in M&W"
+  },
+  "ginger": {
+    "per_100g": {
+      "kcal": 44,
+      "protein": 1.8,
+      "carbs": 8.1,
+      "fat": 0.8,
+      "fibre": 2.0
+    },
+    "source": "mw:13-890",
+    "mw_name": "Ginger, fresh"
+  },
+  "grain_pouch": {
+    "per_100g": {
+      "kcal": 146,
+      "protein": 3.0,
+      "carbs": 34.7,
+      "fat": 0.4,
+      "fibre": 0.7
+    },
+    "source": "mw:11-864",
+    "mw_name": "Rice, white, long grain, easy cook, boiled in unsalted water",
+    "basis": "bought as a cooked pouch"
+  },
+  "gravy_made": {
+    "per_100g": {
+      "kcal": 30,
+      "protein": 0.3,
+      "carbs": 4.7,
+      "fat": 1.2,
+      "fibre": 0.1
+    },
+    "source": "mw:17-725",
+    "mw_name": "Gravy instant granules, made up with water"
+  },
+  "greek_yoghurt": {
+    "per_100g": {
+      "kcal": 133,
+      "protein": 5.7,
+      "carbs": 4.8,
+      "fat": 10.2,
+      "fibre": 0.0
+    },
+    "source": "mw:12-555",
+    "mw_name": "Yogurt, Greek style, plain"
+  },
+  "greek_yoghurt_0": {
+    "per_100g": {
+      "kcal": 57,
+      "protein": 4.8,
+      "carbs": 7.8,
+      "fat": 1.0,
+      "fibre": 0.0
+    },
+    "source": "mw:12-379",
+    "mw_name": "Yogurt, low fat, plain",
+    "note": "fibre N in M&W"
+  },
+  "green_lentils_cooked": {
+    "per_100g": {
+      "kcal": 92,
+      "protein": 7.8,
+      "carbs": 14.5,
+      "fat": 0.7,
+      "fibre": 7.4
+    },
+    "source": "mw:13-661",
+    "mw_name": "Lentils, green and brown, whole, dried, boiled in unsalted water",
+    "basis": "bought cooked"
+  },
+  "ground_coriander": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 12.4,
+      "carbs": 0.0,
+      "fat": 17.8,
+      "fibre": 41.9
+    },
+    "source": "mw:13-875",
+    "mw_name": "Coriander seeds",
+    "note": "kcal N in M&W"
+  },
+  "halloumi": {
+    "per_100g": {
+      "kcal": 313,
+      "protein": 23.9,
+      "carbs": 1.7,
+      "fat": 23.5,
+      "fibre": 0.0
+    },
+    "source": "mw:12-496",
+    "mw_name": "Cheese, Halloumi"
+  },
+  "ham_sliced": {
+    "per_100g": {
+      "kcal": 107,
+      "protein": 18.4,
+      "carbs": 1.0,
+      "fat": 3.3,
+      "fibre": 0.1
+    },
+    "source": "mw:19-496",
+    "mw_name": "Ham",
+    "basis": "bought cooked"
+  },
+  "honey": {
+    "per_100g": {
+      "kcal": 288,
+      "protein": 0.4,
+      "carbs": 76.4,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-050",
+    "mw_name": "Honey"
+  },
+  "hummus": {
+    "per_100g": {
+      "kcal": 307,
+      "protein": 6.8,
+      "carbs": 10.5,
+      "fat": 26.7,
+      "fibre": 4.9
+    },
+    "source": "mw:13-556",
+    "mw_name": "Houmous"
+  },
+  "kidney_beans_drained": {
+    "per_100g": {
+      "kcal": 100,
+      "protein": 8.6,
+      "carbs": 15.1,
+      "fat": 1.0,
+      "fibre": 6.8
+    },
+    "source": "mw:13-660",
+    "mw_name": "Beans, red kidney, canned in water, re-heated, drained"
+  },
+  "lasagne_sheets": {
+    "per_100g": {
+      "kcal": 343,
+      "protein": 11.3,
+      "carbs": 75.6,
+      "fat": 1.6,
+      "fibre": 0.0
+    },
+    "source": "mw:11-716",
+    "mw_name": "Pasta, white, dried, raw",
+    "note": "fibre N in M&W"
+  },
+  "leek": {
+    "per_100g": {
+      "kcal": 23,
+      "protein": 1.5,
+      "carbs": 4.1,
+      "fat": 0.2,
+      "fibre": 2.8
+    },
+    "source": "mw:13-624",
+    "mw_name": "Leeks, raw"
+  },
+  "lemon_juice": {
+    "per_100g": {
+      "kcal": 7,
+      "protein": 0.3,
+      "carbs": 1.6,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:14-277",
+    "mw_name": "Lemon juice, fresh",
+    "note": "fibre N in M&W"
+  },
+  "lime_juice": {
+    "per_100g": {
+      "kcal": 9,
+      "protein": 0.4,
+      "carbs": 1.6,
+      "fat": 0.1,
+      "fibre": 0.0
+    },
+    "source": "mw:14-279",
+    "mw_name": "Lime juice, fresh",
+    "note": "fibre N in M&W"
+  },
+  "linguine_dry": {
+    "per_100g": {
+      "kcal": 343,
+      "protein": 11.3,
+      "carbs": 75.6,
+      "fat": 1.6,
+      "fibre": 0.0
+    },
+    "source": "mw:11-716",
+    "mw_name": "Pasta, white, dried, raw",
+    "note": "fibre N in M&W"
+  },
+  "mango": {
+    "per_100g": {
+      "kcal": 46,
+      "protein": 0.5,
+      "carbs": 11.2,
+      "fat": 0.2,
+      "fibre": 0.0
+    },
+    "source": "mw:13-273",
+    "mw_name": "Mango, unripe, green flesh, raw",
+    "note": "fibre N in M&W"
+  },
+  "mango_chutney": {
+    "per_100g": {
+      "kcal": 189,
+      "protein": 0.7,
+      "carbs": 48.3,
+      "fat": 0.1,
+      "fibre": 0.0
+    },
+    "source": "mw:17-343",
+    "mw_name": "Chutney, mango, sweet",
+    "note": "fibre N in M&W"
+  },
+  "mixed_beans_drained": {
+    "per_100g": {
+      "kcal": 100,
+      "protein": 8.6,
+      "carbs": 15.1,
+      "fat": 1.0,
+      "fibre": 6.8
+    },
+    "source": "mw:13-660",
+    "mw_name": "Beans, red kidney, canned in water, re-heated, drained",
+    "proxy": "no mixed bean tin in M&W - red kidney beans as the nearest"
+  },
+  "mozzarella": {
+    "per_100g": {
+      "kcal": 257,
+      "protein": 18.6,
+      "carbs": 0.0,
+      "fat": 20.3,
+      "fibre": 0.0
+    },
+    "source": "mw:12-360",
+    "mw_name": "Cheese, Mozzarella, fresh"
+  },
+  "mozzarella_pearls": {
+    "per_100g": {
+      "kcal": 257,
+      "protein": 18.6,
+      "carbs": 0.0,
+      "fat": 20.3,
+      "fibre": 0.0
+    },
+    "source": "mw:12-360",
+    "mw_name": "Cheese, Mozzarella, fresh",
+    "proxy": "same cheese as the block"
+  },
+  "mushrooms": {
+    "per_100g": {
+      "kcal": 8,
+      "protein": 1.6,
+      "carbs": 0.0,
+      "fat": 0.2,
+      "fibre": 0.0
+    },
+    "source": "mw:13-293",
+    "mw_name": "Mushrooms, oyster, raw",
+    "note": "fibre N in M&W"
+  },
+  "mustard": {
+    "per_100g": {
+      "kcal": 139,
+      "protein": 7.1,
+      "carbs": 9.7,
+      "fat": 8.2,
+      "fibre": 0.0
+    },
+    "source": "mw:17-364",
+    "mw_name": "Mustard, smooth",
+    "note": "fibre N in M&W"
+  },
+  "nori": {
+    "per_100g": {
+      "kcal": 136,
+      "protein": 30.7,
+      "carbs": 0.0,
+      "fat": 1.5,
+      "fibre": 0.0
+    },
+    "source": "mw:13-340",
+    "mw_name": "Seaweed, nori, dried, raw",
+    "note": "fibre N in M&W"
+  },
+  "oats": {
+    "per_100g": {
+      "kcal": 381,
+      "protein": 10.9,
+      "carbs": 70.7,
+      "fat": 8.1,
+      "fibre": 7.8
+    },
+    "source": "mw:11-788",
+    "mw_name": "Porridge oats, unfortified"
+  },
+  "olive_oil": {
+    "per_100g": {
+      "kcal": 899,
+      "protein": 0.0,
+      "carbs": 0.0,
+      "fat": 99.9,
+      "fibre": 0.0
+    },
+    "source": "mw:17-038",
+    "mw_name": "Oil, olive"
+  },
+  "olives_drained": {
+    "per_100g": {
+      "kcal": 103,
+      "protein": 0.9,
+      "carbs": 0.0,
+      "fat": 11.0,
+      "fibre": 0.0
+    },
+    "source": "mw:14-340",
+    "mw_name": "Olives, green, in brine, drained, flesh and skin",
+    "note": "fibre N in M&W"
+  },
+  "onion": {
+    "per_100g": {
+      "kcal": 35,
+      "protein": 1.0,
+      "carbs": 8.0,
+      "fat": 0.1,
+      "fibre": 2.2
+    },
+    "source": "mw:13-499",
+    "mw_name": "Onions, raw"
+  },
+  "oregano": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 9.0,
+      "carbs": 0.0,
+      "fat": 4.3,
+      "fibre": 42.5
+    },
+    "source": "mw:13-878",
+    "mw_name": "Oregano, dried, ground",
+    "note": "kcal N in M&W"
+  },
+  "orzo_dry": {
+    "per_100g": {
+      "kcal": 343,
+      "protein": 11.3,
+      "carbs": 75.6,
+      "fat": 1.6,
+      "fibre": 0.0
+    },
+    "source": "mw:11-716",
+    "mw_name": "Pasta, white, dried, raw",
+    "note": "fibre N in M&W"
+  },
+  "pancetta": {
+    "per_100g": {
+      "kcal": 215,
+      "protein": 16.5,
+      "carbs": 0.0,
+      "fat": 16.5,
+      "fibre": 0.0
+    },
+    "source": "mw:19-497",
+    "mw_name": "Bacon rashers, back, raw"
+  },
+  "parmesan": {
+    "per_100g": {
+      "kcal": 415,
+      "protein": 36.2,
+      "carbs": 0.9,
+      "fat": 29.7,
+      "fibre": 0.0
+    },
+    "source": "mw:12-526",
+    "mw_name": "Cheese, Parmesan, fresh"
+  },
+  "passata": {
+    "per_100g": {
+      "kcal": 19,
+      "protein": 1.1,
+      "carbs": 3.8,
+      "fat": 0.1,
+      "fibre": 0.8
+    },
+    "source": "mw:13-530",
+    "mw_name": "Tomatoes, canned, whole contents",
+    "proxy": "no passata in M&W - canned tomatoes as the nearest thing"
+  },
+  "pasta_dry": {
+    "per_100g": {
+      "kcal": 343,
+      "protein": 11.3,
+      "carbs": 75.6,
+      "fat": 1.6,
+      "fibre": 0.0
+    },
+    "source": "mw:11-716",
+    "mw_name": "Pasta, white, dried, raw",
+    "note": "fibre N in M&W"
+  },
+  "peanut_butter": {
+    "per_100g": {
+      "kcal": 607,
+      "protein": 22.8,
+      "carbs": 13.1,
+      "fat": 51.8,
+      "fibre": 6.6
+    },
+    "source": "mw:14-892",
+    "mw_name": "Peanut butter, smooth"
+  },
+  "peanuts_roasted": {
+    "per_100g": {
+      "kcal": 602,
+      "protein": 24.7,
+      "carbs": 7.1,
+      "fat": 53.0,
+      "fibre": 8.0
+    },
+    "source": "mw:14-834",
+    "mw_name": "Peanuts, roasted and salted"
+  },
+  "pepper": {
+    "per_100g": {
+      "kcal": 21,
+      "protein": 0.8,
+      "carbs": 4.3,
+      "fat": 0.2,
+      "fibre": 2.2
+    },
+    "source": "mw:13-524",
+    "mw_name": "Pepper, capsicum, red, raw"
+  },
+  "pepperoni": {
+    "per_100g": {
+      "kcal": 438,
+      "protein": 20.9,
+      "carbs": 0.5,
+      "fat": 39.2,
+      "fibre": 0.4
+    },
+    "source": "mw:19-517",
+    "mw_name": "Salami"
+  },
+  "pizza_dough": {
+    "per_100g": {
+      "kcal": 290,
+      "protein": 7.8,
+      "carbs": 57.5,
+      "fat": 4.8,
+      "fibre": 2.5
+    },
+    "source": "mw:11-1016",
+    "mw_name": "Pizza base, raw"
+  },
+  "pomegranate_seeds": {
+    "per_100g": {
+      "kcal": 51,
+      "protein": 1.3,
+      "carbs": 11.8,
+      "fat": 0.2,
+      "fibre": 0.0
+    },
+    "source": "mw:14-226",
+    "mw_name": "Pomegranate, flesh and pips",
+    "note": "fibre N in M&W"
+  },
+  "pork_shoulder_roast": {
+    "per_100g": {
+      "kcal": 218,
+      "protein": 18.1,
+      "carbs": 0.0,
+      "fat": 16.2,
+      "fibre": 0.0
+    },
+    "source": "mw:18-602",
+    "mw_name": "Pork, hand, shoulder joint, raw, lean and fat",
+    "note": "fibre N in M&W"
+  },
+  "prawns_cooked": {
+    "per_100g": {
+      "kcal": 68,
+      "protein": 16.2,
+      "carbs": 0.0,
+      "fat": 0.4,
+      "fibre": 0.0
+    },
+    "source": "mw:16-389",
+    "mw_name": "Prawns, king, purchased cooked",
+    "basis": "bought cooked"
+  },
+  "prawns_raw": {
+    "per_100g": {
+      "kcal": 77,
+      "protein": 17.6,
+      "carbs": 0.0,
+      "fat": 0.7,
+      "fibre": 0.0
+    },
+    "source": "mw:16-387",
+    "mw_name": "Prawns, king, raw"
+  },
+  "radish": {
+    "per_100g": {
+      "kcal": 12,
+      "protein": 0.7,
+      "carbs": 1.4,
+      "fat": 0.4,
+      "fibre": 1.1
+    },
+    "source": "mw:13-656",
+    "mw_name": "Radish, red, flesh and skin, raw"
+  },
+  "raisins": {
+    "per_100g": {
+      "kcal": 256,
+      "protein": 3.0,
+      "carbs": 62.6,
+      "fat": 1.0,
+      "fibre": 2.7
+    },
+    "source": "mw:14-393",
+    "mw_name": "Raisins, dried"
+  },
+  "red_chilli": {
+    "per_100g": {
+      "kcal": 26,
+      "protein": 1.8,
+      "carbs": 4.2,
+      "fat": 0.3,
+      "fibre": 0.0
+    },
+    "source": "mw:13-317",
+    "mw_name": "Peppers, capsicum, chilli, red, raw",
+    "note": "fibre N in M&W"
+  },
+  "red_lentils_dry": {
+    "per_100g": {
+      "kcal": 311,
+      "protein": 25.6,
+      "carbs": 51.2,
+      "fat": 1.8,
+      "fibre": 17.4
+    },
+    "source": "mw:13-657",
+    "mw_name": "Lentils, red, split, dried, raw"
+  },
+  "red_onion": {
+    "per_100g": {
+      "kcal": 35,
+      "protein": 1.0,
+      "carbs": 8.0,
+      "fat": 0.1,
+      "fibre": 2.2
+    },
+    "source": "mw:13-499",
+    "mw_name": "Onions, raw"
+  },
+  "red_wine": {
+    "per_100g": {
+      "kcal": 76,
+      "protein": 0.1,
+      "carbs": 0.2,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-752",
+    "mw_name": "Wine, red"
+  },
+  "red_wine_vinegar": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 0.4,
+      "carbs": 0.6,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-339",
+    "mw_name": "Vinegar"
+  },
+  "rice_vinegar": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 0.4,
+      "carbs": 0.6,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-339",
+    "mw_name": "Vinegar"
+  },
+  "ricotta": {
+    "per_100g": {
+      "kcal": 144,
+      "protein": 9.4,
+      "carbs": 2.0,
+      "fat": 11.0,
+      "fibre": 0.0
+    },
+    "source": "mw:12-176",
+    "mw_name": "Cheese, Ricotta",
+    "note": "fibre N in M&W"
+  },
+  "risotto_rice": {
+    "per_100g": {
+      "kcal": 354,
+      "protein": 6.4,
+      "carbs": 85.2,
+      "fat": 1.0,
+      "fibre": 1.4
+    },
+    "source": "mw:11-878",
+    "mw_name": "Rice, white, Italian Arborio risotto, raw"
+  },
+  "salad_leaves": {
+    "per_100g": {
+      "kcal": 11,
+      "protein": 1.2,
+      "carbs": 1.4,
+      "fat": 0.1,
+      "fibre": 1.5
+    },
+    "source": "mw:13-520",
+    "mw_name": "Lettuce, average, raw",
+    "proxy": "no bagged mixed leaf in M&W - average lettuce"
+  },
+  "salmon_fillet": {
+    "per_100g": {
+      "kcal": 217,
+      "protein": 20.4,
+      "carbs": 0.0,
+      "fat": 15.0,
+      "fibre": 0.2
+    },
+    "source": "mw:16-356",
+    "mw_name": "Salmon, farmed, flesh only, raw"
+  },
+  "seeds_nuts": {
+    "per_100g": {
+      "kcal": 576,
+      "protein": 19.8,
+      "carbs": 18.6,
+      "fat": 47.5,
+      "fibre": 0.0
+    },
+    "source": "mw:14-845",
+    "mw_name": "Sunflower seeds",
+    "note": "fibre N in M&W"
+  },
+  "sesame_oil": {
+    "per_100g": {
+      "kcal": 898,
+      "protein": 0.2,
+      "carbs": 0.0,
+      "fat": 99.7,
+      "fibre": 0.0
+    },
+    "source": "mw:17-043",
+    "mw_name": "Oil, sesame"
+  },
+  "shallot": {
+    "per_100g": {
+      "kcal": 20,
+      "protein": 1.5,
+      "carbs": 3.3,
+      "fat": 0.2,
+      "fibre": 0.0
+    },
+    "source": "mw:13-342",
+    "mw_name": "Shallots, raw",
+    "note": "fibre N in M&W"
+  },
+  "smoked_mackerel": {
+    "per_100g": {
+      "kcal": 301,
+      "protein": 21.1,
+      "carbs": 0.0,
+      "fat": 24.1,
+      "fibre": 0.0
+    },
+    "source": "mw:16-414",
+    "mw_name": "Mackerel, flesh only, smoked"
+  },
+  "smoked_paprika": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 14.1,
+      "carbs": 0.0,
+      "fat": 12.9,
+      "fibre": 34.9
+    },
+    "source": "mw:13-879",
+    "mw_name": "Paprika",
+    "note": "kcal N in M&W"
+  },
+  "smoked_salmon": {
+    "per_100g": {
+      "kcal": 184,
+      "protein": 22.8,
+      "carbs": 0.5,
+      "fat": 10.1,
+      "fibre": 0.0
+    },
+    "source": "mw:16-412",
+    "mw_name": "Salmon, smoked (cold-smoked)"
+  },
+  "soy_sauce": {
+    "per_100g": {
+      "kcal": 79,
+      "protein": 3.0,
+      "carbs": 17.9,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-721",
+    "mw_name": "Soy sauce, light and dark varieties"
+  },
+  "spinach_fresh": {
+    "per_100g": {
+      "kcal": 16,
+      "protein": 2.6,
+      "carbs": 0.2,
+      "fat": 0.6,
+      "fibre": 1.0
+    },
+    "source": "mw:13-521",
+    "mw_name": "Spinach, baby, raw"
+  },
+  "spring_onion": {
+    "per_100g": {
+      "kcal": 23,
+      "protein": 2.0,
+      "carbs": 3.0,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "mw:13-352",
+    "mw_name": "Spring onions, bulbs and tops, raw",
+    "note": "fibre N in M&W"
+  },
+  "stewing_steak": {
+    "per_100g": {
+      "kcal": 122,
+      "protein": 22.6,
+      "carbs": 0.0,
+      "fat": 3.5,
+      "fibre": 0.0
+    },
+    "source": "mw:18-076",
+    "mw_name": "Beef, stewing steak, raw, lean"
+  },
+  "stir_fry_veg": {
+    "per_100g": {
+      "kcal": 42,
+      "protein": 3.3,
+      "carbs": 6.6,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "mw:13-543",
+    "mw_name": "Vegetables, mixed, frozen, boiled in unsalted water",
+    "note": "fibre N in M&W",
+    "proxy": "no raw frozen stir fry mix in M&W - mixed frozen veg, boiled"
+  },
+  "sugar": {
+    "per_100g": {
+      "kcal": 394,
+      "protein": 0.0,
+      "carbs": 105.0,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-063",
+    "mw_name": "Sugar, white"
+  },
+  "sweet_potato": {
+    "per_100g": {
+      "kcal": 87,
+      "protein": 1.2,
+      "carbs": 21.3,
+      "fat": 0.3,
+      "fibre": 0.0
+    },
+    "source": "mw:13-463",
+    "mw_name": "Sweet potato, raw, flesh only",
+    "note": "fibre N in M&W"
+  },
+  "sweetcorn_drained": {
+    "per_100g": {
+      "kcal": 78,
+      "protein": 2.6,
+      "carbs": 13.9,
+      "fat": 1.7,
+      "fibre": 3.1
+    },
+    "source": "mw:13-529",
+    "mw_name": "Sweetcorn kernels, canned in water, drained"
+  },
+  "tahini": {
+    "per_100g": {
+      "kcal": 607,
+      "protein": 18.5,
+      "carbs": 0.9,
+      "fat": 58.9,
+      "fibre": 0.0
+    },
+    "source": "mw:14-847",
+    "mw_name": "Tahini paste",
+    "note": "fibre N in M&W"
+  },
+  "tenderstem_broccoli": {
+    "per_100g": {
+      "kcal": 34,
+      "protein": 4.3,
+      "carbs": 3.2,
+      "fat": 0.6,
+      "fibre": 4.0
+    },
+    "source": "mw:13-502",
+    "mw_name": "Broccoli, green, raw",
+    "proxy": "no tenderstem in M&W - green broccoli"
+  },
+  "tomato_puree": {
+    "per_100g": {
+      "kcal": 67,
+      "protein": 4.4,
+      "carbs": 12.9,
+      "fat": 0.2,
+      "fibre": 4.7
+    },
+    "source": "mw:13-531",
+    "mw_name": "Tomato puree"
+  },
+  "tomatoes": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 1.1,
+      "carbs": 3.6,
+      "fat": 0.5,
+      "fibre": 1.3
+    },
+    "source": "mw:13-519",
+    "mw_name": "Tomatoes, cherry, raw"
+  },
+  "tortilla_chips": {
+    "per_100g": {
+      "kcal": 504,
+      "protein": 7.2,
+      "carbs": 60.8,
+      "fat": 27.4,
+      "fibre": 5.9
+    },
+    "source": "mw:17-644",
+    "mw_name": "Tortilla chips fried in sunflower oil"
+  },
+  "tortilla_wrap": {
+    "per_100g": {
+      "kcal": 285,
+      "protein": 7.8,
+      "carbs": 53.9,
+      "fat": 5.7,
+      "fibre": 3.6
+    },
+    "source": "mw:11-925",
+    "mw_name": "Tortilla, wheat, soft"
+  },
+  "tuna_drained": {
+    "per_100g": {
+      "kcal": 109,
+      "protein": 24.9,
+      "carbs": 0.0,
+      "fat": 1.0,
+      "fibre": 0.0
+    },
+    "source": "mw:16-416",
+    "mw_name": "Tuna, canned in brine, drained"
+  },
+  "turmeric": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 6.7,
+      "carbs": 0.0,
+      "fat": 7.0,
+      "fibre": 0.0
+    },
+    "source": "mw:13-861",
+    "mw_name": "Turmeric, ground",
+    "note": "kcal N in M&W, fibre N in M&W"
+  },
+  "vegetable_stock": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 0.5,
+      "carbs": 0.0,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "mw:17-774",
+    "mw_name": "Stock cubes, chicken, made up with water",
+    "note": "kcal N in M&W",
+    "proxy": "M&W only has chicken stock made up with water; stock is stock at this dilution"
+  },
+  "vegetable_stock_cube": {
+    "per_100g": {
+      "kcal": 0,
+      "protein": 13.5,
+      "carbs": 0.0,
+      "fat": 17.3,
+      "fibre": 1.8
+    },
+    "source": "mw:17-727",
+    "mw_name": "Stock cubes, vegetable",
+    "note": "kcal N in M&W"
+  },
+  "white_wine_vinegar": {
+    "per_100g": {
+      "kcal": 22,
+      "protein": 0.4,
+      "carbs": 0.6,
+      "fat": 0.0,
+      "fibre": 0.0
+    },
+    "source": "mw:17-339",
+    "mw_name": "Vinegar"
+  },
+  "wholemeal_roll": {
+    "per_100g": {
+      "kcal": 244,
+      "protein": 10.4,
+      "carbs": 46.1,
+      "fat": 3.3,
+      "fibre": 5.5
+    },
+    "source": "mw:11-986",
+    "mw_name": "Bread rolls, wholemeal"
+  },
+  "worcestershire": {
+    "per_100g": {
+      "kcal": 113,
+      "protein": 1.4,
+      "carbs": 28.3,
+      "fat": 0.1,
+      "fibre": 0.0
+    },
+    "source": "mw:17-723",
+    "mw_name": "Worcestershire sauce"
+  },
+  "yorkshire_pudding": {
+    "per_100g": {
+      "kcal": 211,
+      "protein": 6.7,
+      "carbs": 25.8,
+      "fat": 9.8,
+      "fibre": 1.1
+    },
+    "source": "mw:11-1146",
+    "mw_name": "Yorkshire pudding, made with whole milk"
+  }
 }
