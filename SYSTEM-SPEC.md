@@ -623,7 +623,7 @@ A cog beside the Today button opens a right-hand panel. Four settings, stored as
 | Setting | Type | Default | Affects |
 |---|---|---|---|
 | `delivery_day` | Mon-Sun | `fri` | every slot label, the rhythm reminders, prep and roast days |
-| `week_start_day` | Mon-Sun | `sun` | display order of the day cards, menu list and finishers |
+| `week_start_day` | Mon-Sun | `sun` | reading order of the day cards, menu list and finishers. Independent of delivery day - it moves nothing |
 | `anchor_date` | date | `2026-08-28` | the Today button, the auto cycle |
 | `current_cycle` | auto / 1 / 2 | `auto` | which basket variant opens by default |
 

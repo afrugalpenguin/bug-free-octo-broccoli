@@ -38,7 +38,7 @@ const SETTINGS_SCHEMA = [
   { key: 'delivery_day', label: 'Delivery day', type: 'select', options: WEEKDAYS,
     default: scaffold.defaults.delivery_day },
   { key: 'week_start_day', label: 'Week starts on', type: 'select', options: WEEKDAYS,
-    default: scaffold.defaults.week_start_day, note: 'Usually the same as delivery day.' },
+    default: scaffold.defaults.week_start_day, note: 'Reading order only. Does not move delivery, prep or the roast.' },
   { key: 'anchor_date', label: 'Cycle 1 anchor date', type: 'date',
     default: scaffold.defaults.anchor_date,
     note: 'The first delivery day of cycle 1.' },
