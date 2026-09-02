@@ -1,4 +1,4 @@
-# Family Food System
+# Family Food Diary
 
 A four-week dinner rotation for a family of four, generated from JSON into
 a single phone-friendly page. One prep session on Saturday night produces almost
