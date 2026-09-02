@@ -18,7 +18,7 @@ import { dirname, join } from 'node:path';
 const dataDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'data');
 const read = f => JSON.parse(readFileSync(join(dataDir, f), 'utf8'));
 
-const foods     = read('foods.json');
+const foods     = { ...read('products.json'), ...read('foods.json') };
 const recipes   = read('recipes.json');
 const rotation  = read('rotation.json');
 const scaffold  = read('scaffold.json');
@@ -31,9 +31,9 @@ const CYCLE = 1;                       // double freezer bags this cycle
 // Foods that only exist for this week. Not added to foods.json - when the page
 // goes, they go with it.
 Object.assign(foods, {
-  basa_fillet: [90, 15.0, 0, 3.0, 0],
-  edamame:     [122, 11.0, 9.0, 5.0, 5.0],
-  mini_corn:   [30, 2.0, 5.0, 0.3, 2.0],
+  basa_fillet: { per_100g: { kcal: 90,  protein: 15.0, carbs: 0,   fat: 3.0, fibre: 0 }, source: 'estimate' },
+  edamame:     { per_100g: { kcal: 122, protein: 11.0, carbs: 9.0, fat: 5.0, fibre: 5.0 }, source: 'estimate' },
+  mini_corn:   { per_100g: { kcal: 30,  protein: 2.0,  carbs: 5.0, fat: 0.3, fibre: 2.0 }, source: 'estimate' },
 });
 
 // What I already have in the freezer, and how much. The basket subtracts these
@@ -115,7 +115,7 @@ const R = id => (OVERRIDES[id] ? OVERRIDES[id](recipes[id]) : recipes[id]);
 function addFood(acc, food, grams, where) {
   const row = foods[food];
   if (!row) throw new Error(`${where}: no food called ${food}`);
-  KEYS.forEach((k, i) => { acc[k] += (row[i] * grams) / 100; });
+  KEYS.forEach(k => { acc[k] += ((row.per_100g[k] ?? 0) * grams) / 100; });
 }
 
 function totals(id, seen = new Set()) {
