@@ -4381,7 +4381,7 @@
     "serves": 1,
     "tags": {
       "prepStyle": "assemble",
-      "freezerSafe": true,
+      "freezerSafe": false,
       "reheatable": false,
       "slowCooker": false,
       "ovenTimer": false,
@@ -4390,7 +4390,7 @@
       "passiveMinutes": 0,
       "source": "system"
     },
-    "notes": "Ten bags, filled one ingredient at a time with the bags standing open in a tub. Freezer to fridge the night before.",
+    "notes": "Ten bags, filled dry one ingredient at a time with the bags standing open in a tub. They keep in the cupboard - the yoghurt goes in the night before.",
     "serving_suggestion": "100ml water or milk stirred in the morning. 50g frozen berries on top.",
     "ingredients": [
       {
@@ -4414,7 +4414,7 @@
       {
         "food": "greek_yoghurt_0",
         "grams": 100,
-        "display": "100g 0% Greek yoghurt",
+        "display": "100g 0% Greek yoghurt - in the night before, not on Saturday",
         "aisle": "dairy"
       },
       {
@@ -4436,12 +4436,13 @@
       "chia_seeds": "check level - a 250g bag lasts 2-3 weeks",
       "protein_powder": "10 scoops for the bags",
       "creatine": "5g in water each morning, separate from breakfast",
-      "frozen_berries": "on top in the morning, not in the bag"
+      "frozen_berries": "on top in the morning, not in the bag",
+      "greek_yoghurt_0": "100g into a bag each evening, not on Saturday"
     },
     "method": [
-      "Ten bags standing open in a tub. Fill them one ingredient at a time - oats in all ten, then chia in all ten, then a scoop of protein powder in all ten, then the yoghurt.",
-      "Seal, squish to mix, freeze flat.",
-      "One bag out of the freezer into the fridge each night.",
+      "Ten bags standing open in a tub. Fill them one ingredient at a time - oats in all ten, then chia in all ten, then a scoop of protein powder in all ten. Dry, so no yoghurt yet.",
+      "Seal and put them in the cupboard. Nothing here needs the fridge or the freezer.",
+      "Each evening: 100g yoghurt into tomorrow's bag, squish to mix, into the fridge overnight.",
       "Morning: tip into a bowl, add 100ml water or milk, stir. Berries on top. Banana on the side on training days. 5g creatine in a glass of water, separately."
     ]
   },

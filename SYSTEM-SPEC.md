@@ -382,17 +382,19 @@ Things that happen every single week regardless of which rotation week it is.
   "breakfast_bags": {
     "count": 10,
     "recipe": "overnight_oats_bag",
-    "per_bag_frozen": {
+    "per_bag_dry": {
       "oats": 40,
       "chia_seeds": 12,
-      "protein_powder": 25,
+      "protein_powder": 25
+    },
+    "added_evening": {
       "greek_yoghurt_0": 100
     },
     "added_morning": {
       "water_or_milk": 100,
       "frozen_berries": 50
     },
-    "notes": "Fill all bags one ingredient at a time, standing open in a tub. Seal, squish to mix, freeze flat. One bag from freezer to fridge each night. Morning: tip into bowl, add 100ml water or milk, stir. Berries on top. Banana on the side on training days. 5g creatine in a glass of water separately."
+    "notes": "Fill all bags dry, one ingredient at a time, standing open in a tub - oats, chia, protein powder. Seal and put them in the cupboard. Each evening: 100g yoghurt into tomorrow's bag, squish to mix, into the fridge. Morning: tip into bowl, add 100ml water or milk, stir. Berries on top. Banana on the side on training days. 5g creatine in a glass of water separately."
   },
   "boiled_eggs": {
     "count": 8,
@@ -489,7 +491,7 @@ For each week, produce an ordered sequence of steps for the Saturday session. Th
 4. The traybake — tonight's dinner (200°C, goes in alongside or after the veg)
 5. The batch pot (on the hob, simmering while oven work runs)
 6. Boiled eggs (while the pot simmers)
-7. Cold work: freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made
+7. Cold work: freezer bags assembled, breakfast bags filled dry, dressings made, pickles done, tuna pasta salad made
 8. Build the lunch boxes (last step, once everything has cooled enough)
 9. Divide and label: which tubs go in the fridge, which bags go in the freezer
 
