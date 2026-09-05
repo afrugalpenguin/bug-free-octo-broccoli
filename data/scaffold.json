@@ -70,17 +70,14 @@
     "added_morning": {
       "water_or_milk": 100,
       "frozen_berries": 50
-    },
-    "notes": "Fill all bags one ingredient at a time, standing open in a tub. Seal, squish to mix, freeze flat. One bag from freezer to fridge each night. Morning: tip into bowl, add 100ml water or milk, stir. Berries on top. Banana on the side on training days. 5g creatine in a glass of water separately."
+    }
   },
   "boiled_eggs": {
     "recipe": "boiled_eggs",
-    "count": 12,
-    "usage": "2 in the tuna pasta salad, 4 in Friday's salad, 4 in Friday's lunch boxes, 2 spare"
+    "count": 12
   },
   "pickled_onions": {
-    "recipe": "quick_pickled_red_onions",
-    "frequency": "Every Saturday, or skip if the jar from last week is still good - they keep 4-6 weeks."
+    "recipe": "quick_pickled_red_onions"
   },
   "flapjacks": {
     "frequency": "Every Saturday, first thing in the oven at 180C",
