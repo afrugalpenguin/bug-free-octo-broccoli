@@ -50,6 +50,7 @@ const SETTINGS_SCHEMA = [
 ];
 
 const SETTINGS_KEY = 'ffs-settings';
+const COOK_KEY = 'ffs-recipe-mode';
 
 // A one-off page I keep beside the generated one for a single week. Nothing
 // else knows about it - I set this to null and the link is gone.
@@ -730,6 +731,10 @@ header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans
 #today{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.45rem 1.1rem;font:inherit;cursor:pointer;white-space:nowrap;min-height:44px;display:grid;gap:0;line-height:1.25;text-align:center}
 #settings-open{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;width:44px;height:44px;min-height:44px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;box-shadow:var(--shadow)}
 #settings-open:hover{box-shadow:var(--shadow-lg)}
+#recipe-mode{background:var(--card);color:var(--text-light);border:1px solid var(--border);border-radius:999px;width:44px;height:44px;min-height:44px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;box-shadow:var(--shadow)}
+#recipe-mode:hover{box-shadow:var(--shadow-lg)}
+#recipe-mode.on{background:var(--accent);border-color:var(--accent);color:#fff}
+#recipe-mode[hidden]{display:none}
 .header-actions{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
 .scrim{position:fixed;inset:0;background:rgba(44,36,22,.4);opacity:0;visibility:hidden;transition:opacity .25s ease-out,visibility .25s ease-out;z-index:30}
 .scrim.open{opacity:1;visibility:visible}
@@ -889,6 +894,7 @@ const JS = `
   var WEEKDAY_NAMES = ${JSON.stringify(Object.fromEntries(WEEKDAYS))};
   var SCHEMA = ${JSON.stringify(SETTINGS_SCHEMA.map(f => ({ key: f.key, type: f.type, def: f.default })))};
   var SETTINGS_KEY = ${JSON.stringify(SETTINGS_KEY)};
+  var COOK_KEY = ${JSON.stringify(COOK_KEY)};
   var cycleLen = ${scaffold.defaults.cycle_length_days};
 
   // ---------------------------------------------------------------- settings
@@ -1168,6 +1174,67 @@ const JS = `
     });
   });
 
+  // ------------------------------------------------------------ recipe mode
+  // The screen dying halfway through a method, with my hands covered in flour,
+  // is the worst thing about cooking off a phone. Wake Lock fixes it. Two
+  // things to know: it needs HTTPS, which Pages gives me, and the browser drops
+  // the lock every time the page is hidden - so I re-take it on the way back
+  // rather than trusting it survived.
+  var cookBtn = document.getElementById('recipe-mode');
+
+  if ('wakeLock' in navigator) {
+    var lock = null;
+    var wantLock = false;
+    try { wantLock = !!store && store.getItem(COOK_KEY) === '1'; } catch(err){}
+
+    function paintCook(){
+      cookBtn.classList.toggle('on', wantLock);
+      cookBtn.setAttribute('aria-pressed', wantLock ? 'true' : 'false');
+      var label = wantLock ? 'Recipe mode on - the screen stays awake'
+                           : 'Recipe mode - keep the screen awake';
+      cookBtn.setAttribute('aria-label', label);
+      cookBtn.title = label;
+    }
+
+    function takeLock(){
+      if (!wantLock || lock) return;
+      navigator.wakeLock.request('screen').then(function(l){
+        lock = l;
+        l.addEventListener('release', function(){ lock = null; });
+      }).catch(function(){
+        // Battery saver refuses, and so does a tab that is not on screen.
+        // Neither is worth an error at the user - the mode stays on and the
+        // next time the page is visible we try again.
+        lock = null;
+      });
+    }
+
+    function dropLock(){
+      if (!lock) return;
+      var l = lock;
+      lock = null;
+      l.release().catch(function(){});
+    }
+
+    cookBtn.hidden = false;
+    cookBtn.addEventListener('click', function(){
+      wantLock = !wantLock;
+      try { if (store) store.setItem(COOK_KEY, wantLock ? '1' : '0'); } catch(err){}
+      paintCook();
+      if (wantLock) takeLock(); else dropLock();
+    });
+
+    document.addEventListener('visibilitychange', function(){
+      if (document.visibilityState === 'visible') takeLock();
+      else lock = null;      // already released for us, just stop pointing at it
+    });
+
+    paintCook();
+    takeLock();
+  }
+  // No Wake Lock in this browser: the button stays hidden. Better nothing than
+  // a button that promises to do something it cannot.
+
   applySettings();
 })();
 `;
@@ -1248,6 +1315,11 @@ const html = `<!DOCTYPE html>
   <h1>Family Food Diary<span class="sub">Friday to Thursday, four week rotation</span></h1>
   <div class="header-actions">
   <button id="today" type="button">Today</button>
+  <button id="recipe-mode" type="button" hidden aria-pressed="false" aria-label="Recipe mode - keep the screen awake" title="Recipe mode - keep the screen awake">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3Zm0-11a1 1 0 0 1 1 1v1.5a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1Zm0 13a1 1 0 0 1 1 1v1.5a1 1 0 0 1-2 0V18a1 1 0 0 1 1-1ZM4 11h1.5a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2Zm14.5 0H20a1 1 0 0 1 0 2h-1.5a1 1 0 0 1 0-2ZM6.3 5.7a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1-1.4 1.4L6.3 7.1a1 1 0 0 1 0-1.4Zm9 9a1 1 0 0 1 1.4 0l1 1.1a1 1 0 0 1-1.4 1.4l-1-1.1a1 1 0 0 1 0-1.4Zm2.4-9a1 1 0 0 1 0 1.4l-1 1.1a1 1 0 1 1-1.4-1.4l1-1.1a1 1 0 0 1 1.4 0Zm-9 9a1 1 0 0 1 0 1.4l-1.1 1.1a1 1 0 0 1-1.4-1.4l1.1-1.1a1 1 0 0 1 1.4 0Z"/>
+    </svg>
+  </button>
   <button id="settings-open" type="button" aria-label="Settings" title="Settings">
     <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
       <path fill="currentColor" d="M12 15.5A3.5 3.5 0 1 1 15.5 12 3.5 3.5 0 0 1 12 15.5Zm7.4-2.1a7.6 7.6 0 0 0 0-2.8l2-1.5a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.3.9a7.3 7.3 0 0 0-2.4-1.4l-.4-2.5a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.5a7.3 7.3 0 0 0-2.4 1.4l-2.3-.9a.5.5 0 0 0-.6.2L1.5 8.5a.5.5 0 0 0 .1.6l2 1.5a7.6 7.6 0 0 0 0 2.8l-2 1.5a.5.5 0 0 0-.1.6l1.9 3.3a.5.5 0 0 0 .6.2l2.3-.9a7.3 7.3 0 0 0 2.4 1.4l.4 2.5a.5.5 0 0 0 .5.4h3.8a.5.5 0 0 0 .5-.4l.4-2.5a7.3 7.3 0 0 0 2.4-1.4l2.3.9a.5.5 0 0 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6Z"/>
