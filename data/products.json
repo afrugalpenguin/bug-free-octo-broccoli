@@ -88,6 +88,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "frozen_onion": {
+    "per_100g": {
+      "kcal": 39,
+      "protein": 1.3,
+      "carbs": 7.3,
+      "fat": 0.5,
+      "fibre": 1.9
+    },
+    "source": "pack",
+    "note": "200g bag, diced. Fat is declared <0.5g - I take the bound, same as the M&W rebuild does."
+  },
   "harissa": {
     "per_100g": {
       "kcal": 180,
