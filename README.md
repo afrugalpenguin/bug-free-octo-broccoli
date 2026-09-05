@@ -4,8 +4,7 @@ A four-week dinner rotation for a family of four, generated from JSON into
 a single phone-friendly page. One prep session on Saturday night produces almost
 everything for the week.
 
-The week runs **Friday to Thursday**, anchored to delivery day. Get that wrong and
-the whole system is offset.
+The week runs **Friday to Thursday**, anchored to delivery day.
 
 ## Layout
 
