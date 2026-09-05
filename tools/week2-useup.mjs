@@ -242,7 +242,7 @@ const line = (food, grams) => {
   return { q: String(n), label: n === 1 ? c[1] : c[2] };
 };
 
-function recipeCard(id, heading = null) {
+function recipeCard(id, heading = null, note = null) {
   const r = R(id);
   if (!r) return '';
   const ings = (r.ingredients ?? []).filter(i => i.display);
@@ -253,12 +253,128 @@ function recipeCard(id, heading = null) {
   const m = macroLine(id);
   return `<article class="card">
   <h4>${esc(heading ?? r.name)}${r.serves ? ` <span class="serves">Serves ${r.serves}</span>` : ''}</h4>
+  ${note ? `<p class="callout">${esc(note)}</p>` : ''}
   ${r.notes ? `<p class="card-notes">${esc(r.notes)}</p>` : ''}
   ${ings.length || from ? `<ul class="ingredients">${from}${ings.map(i => `<li${i.basketOnly ? ' class="basket-only"' : ''}>${esc(i.display)}</li>`).join('')}</ul>` : ''}
   ${(r.method ?? []).length ? `<ol class="method">${r.method.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
   ${r.serving_suggestion ? `<p class="serving">${esc(r.serving_suggestion)}</p>` : ''}
   ${m ? `<p class="macro">${esc(m)}</p>` : ''}
 </article>`;
+}
+
+// -------------------------------------------------- Saturday cook-through
+
+// Ported from build.mjs's saturdayPanel and rewired to read through R(), so the
+// running order I cook from shows the freezer swaps rather than the real week.
+// Same one-off rule as the rest of this file: it goes when the week goes.
+
+const WEEKDAYS = [['mon', 'Monday'], ['tue', 'Tuesday'], ['wed', 'Wednesday'],
+                  ['thu', 'Thursday'], ['fri', 'Friday'], ['sat', 'Saturday'], ['sun', 'Sunday']];
+const WEEKDAY_ID = WEEKDAYS.map(([id]) => id);
+const WEEKDAY_LABEL = Object.fromEntries(WEEKDAYS);
+
+// There is no settings panel on this page, so unlike the main site the day
+// names are baked in at the default delivery day and cannot move.
+const weekdayAtOffset = n =>
+  WEEKDAY_ID[(((WEEKDAY_ID.indexOf(scaffold.defaults.delivery_day) + n) % 7) + 7) % 7];
+const slotLabel = slot => WEEKDAY_LABEL[weekdayAtOffset(DAYS.indexOf(slot))];
+const fillTpl = (text, ownSlot = null) => text
+  .split('{{day}}').join(ownSlot ? slotLabel(ownSlot) : '')
+  .replace(/\{\{d\+(-?\d+)\}\}/g, (_, n) => WEEKDAY_LABEL[weekdayAtOffset(parseInt(n, 10))]);
+
+// One line of "not made tonight" is wrong for this week - the prawns are
+// frozen, so they need a night's defrosting rather than a pack opening.
+const NOT_MADE_OVERRIDES = {
+  "Thursday's lunch box prawns - straight from the pack on the day.":
+    "Thursday's lunch box prawns - out of the freezer Wednesday night, in on the day.",
+};
+
+function cookStep(n, title, detail, body) {
+  return `<section class="step">
+  <h3><span class="step-n">${n}</span>${esc(title)}</h3>
+  ${detail ? `<p class="step-detail">${esc(fillTpl(detail))}</p>` : ''}
+  ${body}
+</section>`;
+}
+
+const inlineRecipe = (id, heading = null, note = null) => recipeCard(id, heading, note);
+
+function saturdayPanel() {
+  const order = scaffold.cook_order;
+  const bags = CYCLE === 1 ? scaffold.freezer_bank.cycle_1.weekly_bags
+                           : scaffold.freezer_bank.cycle_2_onwards.weekly_bags;
+  const steps = [];
+  let n = 0;
+  const step = (title, detail, body) => steps.push(cookStep(++n, title, detail, body));
+  const extraFor = id => (w.saturday_extras ?? []).find(e => e.recipe === id)?.note ?? null;
+
+  step(order[0].step, order[0].detail, inlineRecipe(w.flapjack));
+  step(order[1].step, order[1].detail, inlineRecipe(w.lunchbox_veg_tray));
+  step(order[2].step, order[2].detail, inlineRecipe(w.lunchbox_protein, null, extraFor(w.lunchbox_protein)));
+  step(order[3].step, `${order[3].detail} This is what you are all eating tonight.`, inlineRecipe(w.traybake));
+
+  const pots = [w.batch_pot, w.extra_pot].filter(Boolean);
+  step(order[4].step, order[4].detail, pots.map(p => inlineRecipe(p)).join(''));
+
+  step(order[5].step, `${order[5].detail} ${scaffold.boiled_eggs.usage}.`, inlineRecipe('boiled_eggs'));
+
+  const coldExtras = (w.saturday_extras ?? []).filter(e => e.recipe !== w.lunchbox_protein);
+  const bagHeading = `${R(w.freezer_bag).name}${bags > 1 ? `, make ${bags}` : ''}`;
+  const bagNote = bags > 1
+    ? 'Cycle 1: make two of these. One is Thursday, one goes straight into the bank.'
+    : 'Cycle 2 onwards: one bag. That is Thursday.';
+  const cold = [
+    inlineRecipe(w.freezer_bag, bagHeading, bagNote),
+    inlineRecipe(scaffold.breakfast_bags.recipe, `Breakfast bags, make ${scaffold.breakfast_bags.count}`,
+      scaffold.breakfast_bags.notes),
+    inlineRecipe(w.lunchbox_dressing),
+    inlineRecipe('quick_pickled_red_onions', null, scaffold.pickled_onions.frequency),
+    inlineRecipe('tuna_pasta_salad'),
+    ...coldExtras.map(e => inlineRecipe(e.recipe, `${R(e.recipe).name}, Saturday's part`, e.note)),
+  ].join('');
+  step(order[6].step, order[6].detail, cold);
+
+  const finishers = WEEKDAY_ID.filter(d => FINISHER_OVERRIDES[d] ?? w.lunchbox_finishers[d]).map(d =>
+    `<li><strong>${esc(DAY_NAME[d])}</strong> ${esc(FINISHER_OVERRIDES[d] ?? w.lunchbox_finishers[d])}${
+      FINISHER_OVERRIDES[d] ? ' <b>(swapped)</b>' : ''}</li>`).join('');
+  step(order[7].step, `${order[7].detail} ${scaffold.lunch_boxes.build_notes}`,
+    `${inlineRecipe(w.lunchbox, `${R(w.lunchbox).name}, build ${scaffold.lunch_boxes.total}`)}
+     <div class="finishers"><h4>Finishers, added on the day</h4><ul>${finishers}</ul></div>`);
+
+  // Where everything goes, read straight off the splits in the data.
+  const dests = [];
+  for (const { id } of basketPlan()) {
+    const r = R(id);
+    if (!r.splits) continue;
+    const label = r.name.toUpperCase().split(',')[0];
+    const parts = Object.entries(r.splits).map(([k, v]) => {
+      const dest = k === 'freezer' ? `bag for the freezer, labelled ${label} + the month`
+        : k === 'fridge' ? 'tub for the fridge'
+        : k === 'lunchbox' ? 'set aside for the lunch boxes'
+        : `tub for ${DAY_NAME[k] ?? k}`;
+      return `<li>${v} portions to a ${esc(dest)}</li>`;
+    }).join('');
+    dests.push(`<div class="split"><h4>${esc(r.name)}</h4><ul>${parts}</ul></div>`);
+  }
+  step(order[8].step, order[8].detail, dests.join('') || '<p class="card-notes">Nothing to divide this week.</p>');
+
+  const nightBefore = R(w.roast)?.night_before;
+  if (nightBefore && order[9]) {
+    step(order[9].step, order[9].detail,
+      `<article class="card"><h4>${esc(R(w.roast).name)}</h4>
+        <p class="callout">${esc(nightBefore)}</p></article>`);
+  }
+
+  const notMade = scaffold.not_made_saturday.map(x =>
+    `<li>${esc(fillTpl(NOT_MADE_OVERRIDES[x.what] ?? x.what, x.day))}</li>`).join('');
+
+  return `<div class="cook-through">
+  <p class="lede">Top to bottom, in order. Everything you need is on this page, freezer swaps included, so you should never have to leave it.</p>
+  ${steps.join('')}
+  <section class="step not-made"><h3>Not made tonight</h3>
+    <p class="step-detail">Still to do during the week.</p>
+    <ul>${notMade}</ul></section>
+</div>`;
 }
 
 const w = rotation.weeks[WEEK];
@@ -272,8 +388,7 @@ const dayCards = displayOrder.map(day => {
   return `<div class="day-group"><h3 class="day-head">${esc(DAY_NAME[day])}</h3>${inner}</div>`;
 }).join('');
 
-const support = [w.batch_pot, w.extra_pot, w.lunchbox_protein, w.lunchbox_veg_tray,
-                 w.lunchbox_dressing, w.lunchbox, w.flapjack].filter(Boolean).map(id => recipeCard(id)).join('');
+const cookThrough = saturdayPanel();
 
 const onTheDay = Object.values(scaffold.lunch_boxes.protein_schedule)
   .filter(d => d.recipe !== 'week').map(d => recipeCard(d.recipe)).join('');
@@ -400,6 +515,17 @@ h2 .n{color:var(--accent);font-family:'DM Sans',sans-serif;font-size:.72rem;font
 .leave{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none}
 .leave li{background:var(--accent-light);border:1px solid var(--border);border-radius:999px;padding:.3rem .8rem;font-size:.85rem}
 .callout{background:var(--accent-light);border-left:3px solid var(--accent);padding:.6rem .8rem;border-radius:0 6px 6px 0;margin:.6rem 0 0;font-size:.85rem}
+.cook-through .step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.step h3{display:flex;align-items:center;gap:.6rem;font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem;font-weight:400}
+.step-n{flex:0 0 1.9rem;height:1.9rem;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700}
+.step-detail{color:var(--text-light);font-size:.9rem;margin:.4rem 0 .75rem}
+.step .card{background:var(--bg);box-shadow:none}
+.finishers,.split{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.8rem;margin-top:.6rem}
+.finishers h4,.split h4{font-family:'DM Serif Display',Georgia,serif;font-size:1rem;font-weight:400;margin-bottom:.35rem}
+.finishers ul,.split ul{list-style:none;display:grid;gap:.3rem;font-size:.88rem}
+.not-made ul{list-style:none;display:grid;gap:.35rem;font-size:.9rem}
+.not-made li{padding-left:1rem;position:relative}
+.not-made li:before{content:"x";position:absolute;left:0;color:var(--accent);font-weight:700}
 footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-light)}
 @media(min-width:600px){.container{padding:1.5rem}header h1{font-size:1.45rem}}
 </style>
@@ -415,6 +541,7 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 <nav class="jump">
   <a href="#changes">What is different</a>
   <a href="#week">The week</a>
+  <a href="#saturday">Saturday</a>
   <a href="#lunches">Lunches</a>
   <a href="#basket">Basket</a>
   <a href="#later">Later</a>
@@ -431,8 +558,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
   <h3 class="section-head" id="week">The week</h3>
   ${dayCards}
 
-  <h3 class="section-head">Made on Saturday</h3>
-  ${support}
+  <h3 class="section-head" id="saturday">Saturday cook-through</h3>
+  ${cookThrough}
 
   <h3 class="section-head">Into the boxes on the day</h3>
   ${onTheDay}
