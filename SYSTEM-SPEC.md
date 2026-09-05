@@ -115,7 +115,7 @@ A flat object keyed by recipe ID. Every recipe that the system uses — dinners,
       { "food": "chopped_tomatoes",   "grams": 800,  "display": "2 tins chopped tomatoes",          "aisle": "tinned" },
       { "food": "kidney_beans",       "grams": 480,  "display": "2 tins kidney beans, drained",     "aisle": "tinned" },
       { "food": "red_lentils",        "grams": 150,  "display": "150g red lentils",                 "aisle": "cupboard" },
-      { "food": "beef_stock",         "grams": 600,  "display": "600ml beef stock (2 cubes)",       "aisle": "cupboard" },
+      { "food": "beef_stock",         "grams": 600,  "display": "600ml beef stock",       "aisle": "cupboard" },
       { "food": "worcestershire",     "grams": 15,   "display": "1 tbsp Worcestershire sauce",      "aisle": "cupboard" },
       { "food": "dark_chocolate",     "grams": 15,   "display": "15g dark chocolate (70%+)",        "aisle": "cupboard" }
     ],
@@ -168,6 +168,8 @@ These are load-bearing. A number in this table means nothing without them, and t
 **Bone is never counted as meat.** Either use a key that already prices the bone in (`chicken_thigh_bonein`), or split the ingredient into a `basketOnly` line for what is bought and a `macroOnly` line for what is eaten.
 
 When adding a food, if its basis is not obvious from the name, add the suffix rather than relying on the reader to guess.
+
+**One cube makes 500ml.** `ML_PER_STOCK_CUBE` in `build.mjs` is the only place that ratio is written. Recipes hold the litres — that is what goes in the pot, and what the macros are calculated from — and `build.mjs` derives the cube count and appends it to the displayed line, so `"500ml beef stock"` renders as *500ml beef stock (1 cube)*. Never write a cube count into a made-up stock `display`; it will disagree with every other one, which is exactly what happened before.
 
 ```jsonc
 {
@@ -480,6 +482,8 @@ Group by aisle: Meat & Fish, Dairy, Fruit & Veg, Frozen, Tinned, Cupboard.
 
 Annotate each item with its downstream uses (which recipes need it, how much for each). Use `basket_notes` from recipes where provided, otherwise auto-generate from recipe names.
 
+**Made-up stock is bought as cubes.** A recipe asking for 1.2L of vegetable stock reaches the basket as 2 vegetable stock cubes, because the litres are mostly tap water and a shopping list cannot buy them. They land on the same line as the cubes crumbled in dry, so a week says one number per stock. `beef_stock_cube` exists in `products.json` for that line alone — no recipe eats a dry beef cube.
+
 ### 3. Generate the Saturday cook-through
 For each week, produce an ordered sequence of steps for the Saturday session. The order is:
 1. Flapjacks (first in the oven, 180°C)
@@ -515,7 +519,7 @@ Uses the anchor date and cycle length to calculate which rotation week and which
 ### Batch pots
 
 **Week 1 — Mild Chilli (double batch, 12 portions)**
-1kg 5% fat beef mince · 2 onions diced · 4 cloves garlic crushed · 1 red pepper diced · 1 large carrot grated · 2 tsp smoked paprika · 2 tsp ground cumin · 1 tsp ground coriander · 1 tsp oregano · 2 tbsp tomato puree · 2 tins chopped tomatoes · 2 tins kidney beans drained · 150g red lentils · 600ml beef stock (2 cubes) · 1 tbsp Worcestershire sauce · 15g dark chocolate (70%+)
+1kg 5% fat beef mince · 2 onions diced · 4 cloves garlic crushed · 1 red pepper diced · 1 large carrot grated · 2 tsp smoked paprika · 2 tsp ground cumin · 1 tsp ground coriander · 1 tsp oregano · 2 tbsp tomato puree · 2 tins chopped tomatoes · 2 tins kidney beans drained · 150g red lentils · 600ml beef stock · 1 tbsp Worcestershire sauce · 15g dark chocolate (70%+)
 Method: Brown mince, drain fat. Onion/garlic/pepper/carrot 5 mins. Spices and puree 1 min. Everything else in except chocolate. Simmer 50-60 mins lid half off. Chocolate at the end, stir until melted. Split: tub for Tue, tub for Wed, 1 bag frozen labelled CHILLI + month.
 
 **Week 2 — Dal (8 portions)**
@@ -527,7 +531,7 @@ Method: Onion, garlic and ginger in oil 3 mins. Turmeric and cumin 1 min. Lentil
 Method: Onion and garlic 5 mins. Spices 1 min. Sweet potato, chickpeas, tomatoes, stock in. Simmer 25-30 mins until sweet potato is soft. Spinach last 5 mins. Honey and lemon at the end. Salt. Harissa stirred into adults' bowls. Serve with couscous. Split: tub for Tue, 1 bag frozen labelled CHICKPEA STEW + month.
 
 **Week 4 — Beef Ragù (double batch, ~12 portions)**
-1kg 5% fat beef mince · 2 onions finely diced · 2 carrots finely diced · 2 celery sticks finely diced · 4 cloves garlic crushed · 200ml red wine (or 2 tbsp balsamic + extra stock for alcohol-free months) · 2 tins chopped tomatoes · 500g passata · 2 tbsp tomato puree · 500ml beef stock (2 cubes) · 1 tsp oregano · 2 bay leaves · parmesan rind if available
+1kg 5% fat beef mince · 2 onions finely diced · 2 carrots finely diced · 2 celery sticks finely diced · 4 cloves garlic crushed · 200ml red wine (or 2 tbsp balsamic + extra stock for alcohol-free months) · 2 tins chopped tomatoes · 500g passata · 2 tbsp tomato puree · 500ml beef stock · 1 tsp oregano · 2 bay leaves · parmesan rind if available
 Method: Brown mince in batches, set aside. Soffritto (onion, carrot, celery) in the same pot 8-10 mins — low heat, don't brown, just sweat. Garlic 1 min. Wine in, reduce 3-4 mins. Mince back. Tomatoes, passata, puree, stock, herbs in. Simmer 1.5-2 hours lid off, stirring occasionally. Should be thick enough that a spoon leaves a trail. Remove bay leaves and parmesan rind. Split: tub for Tue (pasta), assembled lasagne for Mon (ragù + white sauce + pasta sheets + cheese, fridge raw), 1 bag frozen labelled RAGÙ + month.
 
 **Week 4 — Minestrone (8 portions, also made Saturday)**

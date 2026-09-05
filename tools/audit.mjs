@@ -4,6 +4,9 @@
 // FAIL means something is broken and I should fix it. WARN needs my judgement -
 // mostly a quantity named in one recipe's prose that belongs to another, which
 // is legitimate and which this cannot tell apart from a number I left stale.
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { recipes, foods, rotation, scaffold } from './calc.mjs';
 
 let problems = 0;
@@ -120,7 +123,25 @@ if (!sc) say('ok  ', 'every scaffold recipe reference resolves');
 
 // ------------------------------------------------------------ 6. dead data
 head('6. dead keys');
-const usedFoods = new Set();
+
+// build.mjs keeps a COUNTED table saying which foods I buy by the unit and
+// what one unit weighs. A key in there that names no food is silent: the
+// basket just falls back to weight and asks me for "40g chicken stock cubes"
+// instead of 4 of them. That is what a rename did to `stock_cube`, and it went
+// unnoticed for months. So I read the table out of build.mjs by text - the
+// same trick test-recipe-mode.mjs uses on the built page - rather than
+// importing it, because importing build.mjs would rebuild the site.
+const buildSrc = readFileSync(join(dirname(fileURLToPath(import.meta.url)), 'build.mjs'), 'utf8');
+const countedBlock = buildSrc.match(/const COUNTED = \{([\s\S]*?)\n\};/);
+const counted = new Set();
+if (!countedBlock) say('FAIL', 'could not find COUNTED in build.mjs - has it been renamed?');
+else for (const [, k] of countedBlock[1].matchAll(/^\s{2}(\w+):\s*\[/gm)) counted.add(k);
+const orphanCounted = [...counted].filter(k => !foods[k]);
+orphanCounted.length
+  ? say('FAIL', `COUNTED names foods that do not exist: ${orphanCounted.join(', ')}`)
+  : say('ok  ', `all ${counted.size} COUNTED keys name a real food`);
+
+const usedFoods = new Set(counted);   // a counted food is bought even if nothing eats it
 for (const [, r] of R) { for (const i of r.ingredients ?? []) usedFoods.add(i.food);
   for (const f of Object.values(r.finishers ?? {})) Object.keys(f).forEach(k => usedFoods.add(k)); }
 const deadFoods = Object.keys(foods).filter(k => !k.startsWith('_') && !usedFoods.has(k));

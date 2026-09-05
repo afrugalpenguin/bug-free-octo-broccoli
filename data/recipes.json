@@ -111,7 +111,7 @@
       {
         "food": "beef_stock",
         "grams": 600,
-        "display": "600ml beef stock (2 cubes)",
+        "display": "600ml beef stock",
         "aisle": "cupboard"
       },
       {
@@ -455,7 +455,7 @@
       {
         "food": "beef_stock",
         "grams": 500,
-        "display": "500ml beef stock (2 cubes)",
+        "display": "500ml beef stock",
         "aisle": "cupboard"
       },
       {
@@ -4848,7 +4848,7 @@
       {
         "food": "beef_stock",
         "grams": 500,
-        "display": "500ml beef stock (2 stock pots)",
+        "display": "500ml beef stock",
         "aisle": "cupboard"
       }
     ],
@@ -6100,7 +6100,7 @@
       {
         "food": "vegetable_stock",
         "grams": 1000,
-        "display": "1L stock (2 vegetable or chicken stock cubes)",
+        "display": "1L vegetable or chicken stock",
         "aisle": "cupboard"
       },
       {

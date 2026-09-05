@@ -88,6 +88,32 @@ function macroEl(id) {
   return `<div class="macro" data-macro="${esc(id)}">${esc(line)} <em>per portion</em></div>`;
 }
 
+// One cube per 500ml, written down once, and every stock line on the site
+// reads off it. Before this I had three recipes stating a cube count and all
+// three disagreeing - 300ml a cube, 250ml, 500ml - and seven more saying only
+// the litres, which is no use to me standing at the hob with a jug. The
+// recipes hold the litres, because that is what goes in the pot; the cube
+// count is derived here so it cannot drift again.
+const ML_PER_STOCK_CUBE = 500;
+const STOCK_CUBE_G = 10;
+const STOCK_CUBE_FOR = {
+  beef_stock:      'beef_stock_cube',
+  chicken_stock:   'chicken_stock_cube',
+  vegetable_stock: 'vegetable_stock_cube',
+};
+
+// Nearest whole cube, never none. 600ml is one cube and 1.4L is three. I round
+// rather than round up because stock is seasoning, not a measurement, and I
+// would sooner be slightly under than drop a whole extra cube in for 100ml.
+const stockCubes = ml => Math.max(1, Math.round(ml / ML_PER_STOCK_CUBE));
+
+// The recipe says the litres, I add the cubes.
+function ingDisplay(ing) {
+  if (!STOCK_CUBE_FOR[ing.food]) return ing.display;
+  const n = stockCubes(ing.grams);
+  return `${ing.display} (${n} cube${n === 1 ? '' : 's'})`;
+}
+
 function ingredientList(id) {
   const r = recipes[id];
   const ings = (r.ingredients ?? []).filter(i => i.display);
@@ -102,7 +128,7 @@ function ingredientList(id) {
 
   const lines = ings.map(i => {
     const cls = i.basketOnly ? ' class="basket-only"' : i.macroOnly ? ' class="macro-only"' : '';
-    return `<li${cls}>${esc(i.display)}</li>`;
+    return `<li${cls}>${esc(ingDisplay(i))}</li>`;
   }).join('');
 
   return `<ul class="ingredients">${fromLines}${lines}</ul>`;
@@ -155,7 +181,7 @@ function previewLine(id) {
       const s = recipes[src];
       return n === s.serves ? `the whole ${s.name.toLowerCase()}` : `${n} portions of ${s.name.toLowerCase()}`;
     }),
-    ...(r.ingredients ?? []).filter(i => i.display).map(i => i.display),
+    ...(r.ingredients ?? []).filter(i => i.display).map(ingDisplay),
   ];
   if (!bits.length) return '';
   const more = bits.length > 5 ? ` +${bits.length - 5} more` : '';
@@ -252,15 +278,22 @@ function buildBasket(week, cycle) {
     const r = recipes[id];
     for (const ing of r.ingredients ?? []) {
       if (ing.macroOnly) continue;           // bought under another recipe
-      const cur = items.get(ing.food) ?? { food: ing.food, aisle: ing.aisle, grams: 0, uses: [] };
-      cur.grams += ing.grams * n;
+      // Made-up stock goes in the basket as cubes, not as litres. The litres
+      // are mostly tap water and I cannot buy them; the cubes are the thing I
+      // have to remember. They land on the same line as the cubes I crumble in
+      // dry, so a week says one number per stock.
+      const cube = STOCK_CUBE_FOR[ing.food];
+      const food = cube ?? ing.food;
+      const grams = cube ? stockCubes(ing.grams) * STOCK_CUBE_G : ing.grams;
+      const cur = items.get(food) ?? { food, aisle: ing.aisle, grams: 0, uses: [] };
+      cur.grams += grams * n;
       cur.uses.push({
         recipe: r.name,
-        display: ing.display,
+        display: ingDisplay(ing),
         n,
         note: r.basket_notes?.[ing.food] ?? null,
       });
-      items.set(ing.food, cur);
+      items.set(food, cur);
     }
   }
   return items;
@@ -268,9 +301,10 @@ function buildBasket(week, cycle) {
 
 // foods.json has always said "per 100g, or per 100ml for liquids", so my data
 // knew which of these I pour rather than weigh. The basket did not, and asked
-// me for 600g of beef stock.
+// me for 600g of beef stock. The made-up stocks have since left this list
+// altogether - they reach the basket as cubes now, not as anything poured.
 const LIQUID = new Set([
-  'beef_stock', 'chicken_stock', 'vegetable_stock', 'gravy_made',
+  'gravy_made',
   'olive_oil', 'sesame_oil', 'chilli_oil',
   'red_wine_vinegar', 'white_wine_vinegar', 'cider_vinegar', 'rice_vinegar', 'balsamic',
   'soy_sauce', 'worcestershire', 'mirin', 'red_wine', 'passata',
@@ -297,8 +331,14 @@ const COUNTED = {
   banana:            [100, 'banana', 'bananas'],
   tortilla_wrap:     [30,  'tortilla wrap', 'tortilla wraps'],
   yorkshire_pudding: [20,  'Yorkshire pudding', 'Yorkshire puddings'],
-  stock_cube:        [10,  'stock cube', 'stock cubes'],
   lemon_juice:       [30,  'lemon', 'lemons'],
+
+  // Stock cubes, whether I crumble them in dry or make them up into a jug.
+  // These used to be one `stock_cube` entry pointing at a food key that no
+  // longer existed, so a week's cubes came out as "40g chicken stock cubes".
+  beef_stock_cube:      [STOCK_CUBE_G, 'beef stock cube',      'beef stock cubes'],
+  chicken_stock_cube:   [STOCK_CUBE_G, 'chicken stock cube',   'chicken stock cubes'],
+  vegetable_stock_cube: [STOCK_CUBE_G, 'vegetable stock cube', 'vegetable stock cubes'],
 
   // Tins and pouches. I take the sizes from what the recipes state - "400g = 1
   // tin chopped tomatoes", "224g = 2 tins tuna", "500g = 2 rice pouches" - so
@@ -306,7 +346,6 @@ const COUNTED = {
   grain_pouch:          [250, 'rice pouch', 'rice pouches'],
   chopped_tomatoes:     [400, 'tin chopped tomatoes', 'tins chopped tomatoes'],
   coconut_milk_light:   [400, 'tin light coconut milk', 'tins light coconut milk'],
-  coconut_milk:         [400, 'tin coconut milk', 'tins coconut milk'],
   chickpeas_drained:    [240, 'tin chickpeas', 'tins chickpeas'],
   kidney_beans_drained: [240, 'tin kidney beans', 'tins kidney beans'],
   butter_beans_drained: [240, 'tin butter beans', 'tins butter beans'],
@@ -352,11 +391,6 @@ const FOOD_LABEL = {
   white_wine_vinegar:   'white wine vinegar',
   fajita_spice:         'fajita spice',
   tandoori_spice:       'tandoori spice',
-  beef_stock:           'beef stock - made up from cubes',
-  chicken_stock:        'chicken stock - made up from cubes',
-  vegetable_stock:      'vegetable stock - made up from cubes',
-  chicken_stock_cube:   'chicken stock cubes',
-  vegetable_stock_cube: 'vegetable stock cubes',
   gravy_made:           'gravy - made up',
   mustard:              'Dijon mustard',
   mozzarella:           'mozzarella balls',
