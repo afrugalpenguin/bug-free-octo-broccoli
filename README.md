@@ -25,8 +25,10 @@ SYSTEM-SPEC.md    the specification this was built from
 ## Working on it
 
 ```sh
-node tools/calc.mjs     # print the macro table for every recipe
-node tools/build.mjs    # regenerate docs/index.html
+node tools/calc.mjs             # print the macro table for every recipe
+node tools/build.mjs            # regenerate docs/index.html
+node tools/audit.mjs            # check the data against itself
+node tools/test-recipe-mode.mjs # test the wake lock, after a build
 ```
 
 Change a recipe, re-run the build, and the page catches up. Nothing on the page is
