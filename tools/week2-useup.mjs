@@ -316,7 +316,7 @@ function saturdayPanel() {
   const pots = [w.batch_pot, w.extra_pot].filter(Boolean);
   step(order[4].step, order[4].detail, pots.map(p => inlineRecipe(p)).join(''));
 
-  step(order[5].step, `${order[5].detail} ${scaffold.boiled_eggs.usage}.`, inlineRecipe('boiled_eggs'));
+  step(order[5].step, order[5].detail, inlineRecipe('boiled_eggs'));
 
   const coldExtras = (w.saturday_extras ?? []).filter(e => e.recipe !== w.lunchbox_protein);
   const bagHeading = `${R(w.freezer_bag).name}${bags > 1 ? `, make ${bags}` : ''}`;
@@ -325,10 +325,9 @@ function saturdayPanel() {
     : 'Cycle 2 onwards: one bag. That is Thursday.';
   const cold = [
     inlineRecipe(w.freezer_bag, bagHeading, bagNote),
-    inlineRecipe(scaffold.breakfast_bags.recipe, `Breakfast bags, make ${scaffold.breakfast_bags.count}`,
-      scaffold.breakfast_bags.notes),
+    inlineRecipe(scaffold.breakfast_bags.recipe, `Breakfast bags, make ${scaffold.breakfast_bags.count}`),
     inlineRecipe(w.lunchbox_dressing),
-    inlineRecipe('quick_pickled_red_onions', null, scaffold.pickled_onions.frequency),
+    inlineRecipe('quick_pickled_red_onions'),
     inlineRecipe('tuna_pasta_salad'),
     ...coldExtras.map(e => inlineRecipe(e.recipe, `${R(e.recipe).name}, Saturday's part`, e.note)),
   ].join('');

@@ -575,17 +575,6 @@
     "mw_name": "Raspberries, raw",
     "proxy": "no mixed berry bag in M&W - raspberries as a stand-in"
   },
-  "frozen_onion": {
-    "per_100g": {
-      "kcal": 35,
-      "protein": 1.0,
-      "carbs": 8.0,
-      "fat": 0.1,
-      "fibre": 2.2
-    },
-    "source": "mw:13-499",
-    "mw_name": "Onions, raw"
-  },
   "frozen_peas": {
     "per_100g": {
       "kcal": 68,
