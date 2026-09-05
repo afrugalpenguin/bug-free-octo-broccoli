@@ -61,10 +61,12 @@
   "breakfast_bags": {
     "count": 10,
     "recipe": "overnight_oats_bag",
-    "per_bag_frozen": {
+    "per_bag_dry": {
       "oats": 40,
       "chia_seeds": 12,
-      "protein_powder": 25,
+      "protein_powder": 25
+    },
+    "added_evening": {
       "greek_yoghurt_0": 100
     },
     "added_morning": {

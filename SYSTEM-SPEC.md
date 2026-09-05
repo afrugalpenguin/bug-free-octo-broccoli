@@ -382,10 +382,12 @@ Things that happen every single week regardless of which rotation week it is.
   "breakfast_bags": {
     "count": 10,
     "recipe": "overnight_oats_bag",
-    "per_bag_frozen": {
+    "per_bag_dry": {
       "oats": 40,
       "chia_seeds": 12,
-      "protein_powder": 25,
+      "protein_powder": 25
+    },
+    "added_evening": {
       "greek_yoghurt_0": 100
     },
     "added_morning": {
@@ -486,7 +488,7 @@ For each week, produce an ordered sequence of steps for the Saturday session. Th
 4. The traybake — tonight's dinner (200°C, goes in alongside or after the veg)
 5. The batch pot (on the hob, simmering while oven work runs)
 6. Boiled eggs (while the pot simmers)
-7. Cold work: freezer bags assembled, breakfast bags filled, dressings made, pickles done, tuna pasta salad made
+7. Cold work: freezer bags assembled, breakfast bags filled dry, dressings made, pickles done, tuna pasta salad made
 8. Build the lunch boxes (last step, once everything has cooled enough)
 9. Divide and label: which tubs go in the fridge, which bags go in the freezer
 
