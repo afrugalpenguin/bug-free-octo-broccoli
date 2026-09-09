@@ -349,7 +349,7 @@ const COUNTED = {
   chickpeas_drained:    [240, 'tin chickpeas', 'tins chickpeas'],
   kidney_beans_drained: [240, 'tin kidney beans', 'tins kidney beans'],
   butter_beans_drained: [240, 'tin butter beans', 'tins butter beans'],
-  cannellini_drained:   [240, 'tin cannellini', 'tins cannellini'],
+  cannellini_drained:   [235, 'tin cannellini', 'tins cannellini'],
   mixed_beans_drained:  [240, 'tin mixed beans', 'tins mixed beans'],
   sweetcorn_drained:    [260, 'tin sweetcorn', 'tins sweetcorn'],
   tuna_drained:         [112, 'tin tuna', 'tins tuna'],

@@ -55,6 +55,17 @@
     "source": "pack",
     "note": "400g tin, label declared as drained, so it drops straight in against the 240g drained weight the recipes use. Replaces M&W 13-670. Half a can reads 146 kcal against 122 per 100g, which puts the can at 240g drained and confirms the COUNTED figure."
   },
+  "cannellini_drained": {
+    "per_100g": {
+      "kcal": 101,
+      "protein": 7.5,
+      "carbs": 13.3,
+      "fat": 0.6,
+      "fibre": 6.4
+    },
+    "source": "pack",
+    "note": "400g tin, 235g drained, label declared as drained. Replaces M&W 13-666. The drained weight is the thing to notice - I had the tin at 240g, and 235g is what it actually says, so the recipes and the COUNTED entry moved with it."
+  },
   "chia_seeds": {
     "per_100g": {
       "kcal": 486,

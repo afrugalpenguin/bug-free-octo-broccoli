@@ -196,17 +196,6 @@
     "mw_name": "Squash, butternut, raw",
     "note": "fibre N in M&W"
   },
-  "cannellini_drained": {
-    "per_100g": {
-      "kcal": 104,
-      "protein": 7.6,
-      "carbs": 15.9,
-      "fat": 1.6,
-      "fibre": 6.8
-    },
-    "source": "mw:13-666",
-    "mw_name": "Beans, cannellini, canned, re-heated, drained"
-  },
   "carrot": {
     "per_100g": {
       "kcal": 34,
