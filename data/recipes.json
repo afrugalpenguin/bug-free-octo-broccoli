@@ -557,7 +557,7 @@
       },
       {
         "food": "cannellini_drained",
-        "grams": 480,
+        "grams": 470,
         "display": "2 tins cannellini beans, drained",
         "aisle": "tinned"
       },
@@ -1290,7 +1290,7 @@
       },
       {
         "food": "butter_beans_drained",
-        "grams": 480,
+        "grams": 470,
         "display": "2 tins butter beans, drained",
         "aisle": "tinned"
       },
@@ -2948,7 +2948,7 @@
       },
       {
         "food": "cannellini_drained",
-        "grams": 240,
+        "grams": 235,
         "display": "1 tin cannellini, drained",
         "aisle": "tinned"
       },
