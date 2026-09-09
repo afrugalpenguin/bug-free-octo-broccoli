@@ -83,12 +83,31 @@ const die = msg => { console.error(`\n${msg}`); process.exit(1); };
 
 // Tracked modifications only. Untracked files are never staged, so a scratch
 // file in the working tree cannot ride along into a publish.
-function changedFiles() {
-  return gitOut('status', '--porcelain')
+//
+// Porcelain output is column-oriented - two status columns, a space, then the
+// path - so it must not be trimmed as a whole. Trimming stripped the leading
+// space off the first line, which shifted the slice and cut the first character
+// off that path. Every single-file publish was then refused, because
+// "ata/products.json" does not start with "data/". Parsing lives out here as a
+// pure function so a test can hold it to that.
+export function parseStatus(stdout) {
+  return (stdout ?? '')
     .split('\n')
-    .filter(Boolean)
+    .map(l => l.replace(/\r$/, ''))
+    .filter(l => l.length > 3)
     .filter(l => !l.startsWith('??'))
-    .map(l => l.slice(3).trim());
+    // A rename reads "R  old -> new" and it is the new path that matters.
+    .map(l => {
+      const path = l.slice(3);
+      const arrow = path.indexOf(' -> ');
+      return arrow < 0 ? path : path.slice(arrow + 4);
+    })
+    // Paths with spaces or odd characters come back quoted.
+    .map(path => path.replace(/^"|"$/g, ''));
+}
+
+function changedFiles() {
+  return parseStatus(git('status', '--porcelain').stdout);
 }
 
 const ALLOWED = ['data/', 'docs/', 'tools/'];
