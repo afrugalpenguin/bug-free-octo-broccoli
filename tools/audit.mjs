@@ -118,6 +118,12 @@ for (const [k, v] of Object.entries(scaffold)) {
 }
 for (const [d, s] of Object.entries(scaffold.lunch_boxes.protein_schedule))
   if (s.recipe !== 'week' && !recipes[s.recipe]) { say('FAIL', `protein_schedule.${d} -> missing "${s.recipe}"`); sc++; }
+// The weekday macro summary averages breakfast, lunch and dinner over Monday
+// to Friday, and lunchboxDay returns null for a day with no protein_schedule
+// entry. A missing day would not throw - it would just quietly drop a lunch out
+// of the average and leave a number that still looks plausible.
+for (const d of ['mon', 'tue', 'wed', 'thu', 'fri'])
+  if (!scaffold.lunch_boxes.protein_schedule[d]) { say('FAIL', `protein_schedule has no ${d} - the weekday average would silently lose a lunch`); sc++; }
 if (!scaffold.defaults.delivery_days_allowed.includes(scaffold.defaults.delivery_day)) { say('FAIL', 'default delivery_day is not in delivery_days_allowed'); sc++; }
 if (!sc) say('ok  ', 'every scaffold recipe reference resolves');
 

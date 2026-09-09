@@ -83,9 +83,11 @@ header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans
 h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:1.35rem;margin-bottom:.5rem}
 h3{font-size:1.05rem;margin-bottom:.35rem}
 h4{font-size:.98rem;margin-bottom:.35rem}
-.week-head{display:flex;align-items:baseline;gap:.6rem;padding:.9rem 1rem;border-radius:10px;color:#fff;margin-bottom:1rem}
+.week-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;padding:.9rem 1rem;border-radius:10px;color:#fff;margin-bottom:1rem}
 .week-head h2{color:#fff;font-size:1.2rem}
 .week-head span{font-size:.85rem;opacity:.85}
+.week-macro{flex-basis:100%;margin:0;font-size:.85rem;opacity:.85;line-height:1.5}
+.week-macro em{font-style:normal;font-weight:600}
 .week1{background:var(--week1)}.week2{background:var(--week2)}.week3{background:var(--week3)}.week4{background:var(--week4)}
 h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#fff;padding:.5rem .8rem;border-radius:8px}
 .block{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
@@ -279,7 +281,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
     <p>Make the three oil-based dressings in jars on day 1 of the cycle. They keep 3-4 weeks. Mint yoghurt is weekly and only needed in week 2.</p></section>
 </div>
 <div class="panel" data-tab="week-1" data-week="1">
-  <div class="week-head week1"><h2>Week 1</h2><span>Mexican / Chicken</span></div>
+  <div class="week-head week1"><h2>Week 1</h2><span>Mexican / Chicken</span>
+    <p class="week-macro">Average weekday, per adult <em>~1625 kcal · 99g protein · 155g carbs · 69g fat · 28g fibre</em></p></div>
   <div class="subtabs"><button class="subtab active" data-sub="1-menu">Menu</button><button class="subtab" data-sub="1-basket">Basket</button><button class="subtab" data-sub="1-saturday">Saturday</button><button class="subtab" data-sub="1-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="1-menu"><div class="menu">
   <p class="theme">Mexican / Chicken</p>
@@ -1413,7 +1416,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div></div></div>
 </div>
 <div class="panel" data-tab="week-2" data-week="2">
-  <div class="week-head week2"><h2>Week 2</h2><span>Curry / Pork</span></div>
+  <div class="week-head week2"><h2>Week 2</h2><span>Curry / Pork</span>
+    <p class="week-macro">Average weekday, per adult <em>~1405 kcal · 103g protein · 144g carbs · 47g fat · 31g fibre</em></p></div>
   <div class="subtabs"><button class="subtab active" data-sub="2-menu">Menu</button><button class="subtab" data-sub="2-basket">Basket</button><button class="subtab" data-sub="2-saturday">Saturday</button><button class="subtab" data-sub="2-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="2-menu"><div class="menu">
   <p class="theme">Curry / Pork</p>
@@ -2557,7 +2561,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div></div></div>
 </div>
 <div class="panel" data-tab="week-3" data-week="3">
-  <div class="week-head week3"><h2>Week 3</h2><span>North African / Gammon</span></div>
+  <div class="week-head week3"><h2>Week 3</h2><span>North African / Gammon</span>
+    <p class="week-macro">Average weekday, per adult <em>~1595 kcal · 95g protein · 148g carbs · 71g fat · 25g fibre</em></p></div>
   <div class="subtabs"><button class="subtab active" data-sub="3-menu">Menu</button><button class="subtab" data-sub="3-basket">Basket</button><button class="subtab" data-sub="3-saturday">Saturday</button><button class="subtab" data-sub="3-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="3-menu"><div class="menu">
   <p class="theme">North African / Gammon</p>
@@ -3693,7 +3698,8 @@ footer{text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--text-lig
 </article></div></div></div></div>
 </div>
 <div class="panel" data-tab="week-4" data-week="4">
-  <div class="week-head week4"><h2>Week 4</h2><span>Italian / Beef</span></div>
+  <div class="week-head week4"><h2>Week 4</h2><span>Italian / Beef</span>
+    <p class="week-macro">Average weekday, per adult <em>~1585 kcal · 95g protein · 145g carbs · 70g fat · 25g fibre</em></p></div>
   <div class="subtabs"><button class="subtab active" data-sub="4-menu">Menu</button><button class="subtab" data-sub="4-basket">Basket</button><button class="subtab" data-sub="4-saturday">Saturday</button><button class="subtab" data-sub="4-recipes">Recipes</button></div>
   <div class="subpanel active" data-sub="4-menu"><div class="menu">
   <p class="theme">Italian / Beef</p>
