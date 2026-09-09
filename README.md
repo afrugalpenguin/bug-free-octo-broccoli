@@ -30,6 +30,7 @@ node tools/build.mjs            # regenerate docs/index.html
 node tools/audit.mjs            # check the data against itself
 node tools/test-recipe-mode.mjs # test the wake lock, after a build
 node tools/test-week-macros.mjs  # test the weekday macro summary, after a build
+node tools/publish.mjs          # audit, build, test, commit and push - all of it
 ```
 
 Change a recipe, re-run the build, and the page catches up. Nothing on the page is
