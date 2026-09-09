@@ -264,19 +264,6 @@
     "note": "fibre N in M&W",
     "basis": "raw whole bird - the basketOnly/macroOnly pair handles the yield"
   },
-  "chicken_stock": {
-    "per_100g": {
-      "kcal": 0,
-      "protein": 0.5,
-      "carbs": 0.0,
-      "fat": 0.5,
-      "fibre": 0.0
-    },
-    "source": "mw:17-774",
-    "mw_name": "Stock cubes, chicken, made up with water",
-    "note": "kcal N in M&W",
-    "proxy": "made up with water, not the dry cube"
-  },
   "chicken_stock_cube": {
     "per_100g": {
       "kcal": 0,
@@ -1174,18 +1161,6 @@
     "source": "mw:16-356",
     "mw_name": "Salmon, farmed, flesh only, raw"
   },
-  "seeds_nuts": {
-    "per_100g": {
-      "kcal": 576,
-      "protein": 19.8,
-      "carbs": 18.6,
-      "fat": 47.5,
-      "fibre": 0.0
-    },
-    "source": "mw:14-845",
-    "mw_name": "Sunflower seeds",
-    "note": "fibre N in M&W"
-  },
   "sesame_oil": {
     "per_100g": {
       "kcal": 898,
@@ -1425,19 +1400,6 @@
     "source": "mw:13-861",
     "mw_name": "Turmeric, ground",
     "note": "kcal N in M&W, fibre N in M&W"
-  },
-  "vegetable_stock": {
-    "per_100g": {
-      "kcal": 0,
-      "protein": 0.5,
-      "carbs": 0.0,
-      "fat": 0.5,
-      "fibre": 0.0
-    },
-    "source": "mw:17-774",
-    "mw_name": "Stock cubes, chicken, made up with water",
-    "note": "kcal N in M&W",
-    "proxy": "M&W only has chicken stock made up with water; stock is stock at this dilution"
   },
   "vegetable_stock_cube": {
     "per_100g": {

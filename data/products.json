@@ -77,6 +77,28 @@
     "source": "pack",
     "note": "400g tin, 235g drained, label declared as drained. Replaces M&W 13-666. The drained weight is the thing to notice - I had the tin at 240g, and 235g is what it actually says, so the recipes and the COUNTED entry moved with it."
   },
+  "chicken_stock": {
+    "per_100g": {
+      "kcal": 7,
+      "protein": 0.5,
+      "carbs": 0.8,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "pack",
+    "note": "Low salt chicken stock cubes, 6 to a pack, values per 100ml made up. This is the dilution, not the dry cube - chicken_stock_cube is the dry one. Replaces M&W 17-774, which had kcal as N, not determined, so I was carrying stock as zero energy. Fat and protein are declared <0.5g and I take the bound on each. No fibre declared, so it stays zero."
+  },
+  "vegetable_stock": {
+    "per_100g": {
+      "kcal": 9,
+      "protein": 0.5,
+      "carbs": 0.9,
+      "fat": 0.9,
+      "fibre": 0.0
+    },
+    "source": "pack",
+    "note": "Low salt vegetable stock, values per 100ml made up. Replaces the M&W chicken-stock proxy - this now has its own label rather than borrowing chicken's. Protein is declared <0.5g and I take the bound. No fibre declared, so it stays zero."
+  },
   "chia_seeds": {
     "per_100g": {
       "kcal": 486,
@@ -352,6 +374,17 @@
     },
     "source": "pack",
     "note": "500ml bottle, values per 100ml. Replaces M&W 17-339, a generic vinegar, which the balsamic and rice vinegar keys still share. Fat, fibre and protein are all declared <0.5g and I take the bound on each - on a 15g splash of vinegar that is noise, but it is what the bottle says."
+  },
+  "seeds_nuts": {
+    "per_100g": {
+      "kcal": 614,
+      "protein": 26.7,
+      "carbs": 2.3,
+      "fat": 53.0,
+      "fibre": 10.3
+    },
+    "source": "pack",
+    "note": "100g bag of mixed seeds. Replaces M&W 14-845, sunflower seeds, which was standing in for a mixed bag - hence carbohydrate falling from 18.6g to 2.3g and protein rising. M&W had fibre as N, not determined, and I carried it as zero; the bag says 10.3g. The bags are 100g and do not come larger, which matters because a week wants more than one."
   },
   "sun_dried_tomato_paste": {
     "per_100g": {
