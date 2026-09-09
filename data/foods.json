@@ -878,18 +878,6 @@
     "source": "mw:17-038",
     "mw_name": "Oil, olive"
   },
-  "olives_drained": {
-    "per_100g": {
-      "kcal": 103,
-      "protein": 0.9,
-      "carbs": 0.0,
-      "fat": 11.0,
-      "fibre": 0.0
-    },
-    "source": "mw:14-340",
-    "mw_name": "Olives, green, in brine, drained, flesh and skin",
-    "note": "fibre N in M&W"
-  },
   "onion": {
     "per_100g": {
       "kcal": 35,

@@ -287,6 +287,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "olives_drained": {
+    "per_100g": {
+      "kcal": 176,
+      "protein": 1.1,
+      "carbs": 1.4,
+      "fat": 17.7,
+      "fibre": 3.0
+    },
+    "source": "pack",
+    "note": "120g pot, pitted green olives. Replaces M&W 14-340, olives in brine, which read 103 kcal and 11g fat against the pot's 176 and 17.7 - richer olives rather than a better reading of the same ones. M&W had fibre as N, not determined, and I carried that as zero; the pot says 3.0g. A third of a pot reads 70 kcal against 176 per 100g, putting the pot at 120g."
+  },
   "pink_pickled_onions_jar": {
     "per_100g": {
       "kcal": 72,
