@@ -121,6 +121,28 @@
     "source": "pack",
     "note": "200g bag, diced. Fat is declared <0.5g - I take the bound, same as the M&W rebuild does."
   },
+  "frozen_raspberries": {
+    "per_100g": {
+      "kcal": 40,
+      "protein": 1.4,
+      "carbs": 4.6,
+      "fat": 0.5,
+      "fibre": 6.8
+    },
+    "source": "pack",
+    "note": "315g bag. For smoothies. Fat is declared <0.5g - I take the bound. No recipe uses this yet, so nothing buys it and nothing counts it."
+  },
+  "frozen_strawberry_banana": {
+    "per_100g": {
+      "kcal": 54,
+      "protein": 0.8,
+      "carbs": 10.3,
+      "fat": 0.5,
+      "fibre": 3.1
+    },
+    "source": "pack",
+    "note": "450g bag, strawberries and bananas. Fat is declared <0.5g - I take the bound. No recipe uses this yet, so nothing buys it and nothing counts it."
+  },
   "harissa": {
     "per_100g": {
       "kcal": 180,
