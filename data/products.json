@@ -99,6 +99,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "frozen_berries": {
+    "per_100g": {
+      "kcal": 42,
+      "protein": 0.7,
+      "carbs": 7.6,
+      "fat": 0.5,
+      "fibre": 2.6
+    },
+    "source": "pack",
+    "note": "360g bag, strawberries and blueberries. Fat is declared <0.5g - I take the bound, same as frozen_onion. Replaces the M&W raspberry proxy, which read low on energy and high on fibre."
+  },
   "frozen_onion": {
     "per_100g": {
       "kcal": 39,

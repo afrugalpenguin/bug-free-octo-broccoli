@@ -563,18 +563,6 @@
     "source": "mw:11-726",
     "mw_name": "Pasta, egg, fresh, raw"
   },
-  "frozen_berries": {
-    "per_100g": {
-      "kcal": 25,
-      "protein": 0.8,
-      "carbs": 5.1,
-      "fat": 0.3,
-      "fibre": 3.7
-    },
-    "source": "mw:14-375",
-    "mw_name": "Raspberries, raw",
-    "proxy": "no mixed berry bag in M&W - raspberries as a stand-in"
-  },
   "frozen_peas": {
     "per_100g": {
       "kcal": 68,
