@@ -4421,8 +4421,7 @@
         "food": "frozen_berries",
         "grams": 50,
         "display": "50g frozen berries - on top in the morning, not in the bag",
-        "aisle": "frozen",
-        "basketOnly": true
+        "aisle": "frozen"
       },
       {
         "food": "creatine",
