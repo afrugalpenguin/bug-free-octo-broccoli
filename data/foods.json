@@ -172,18 +172,6 @@
     "source": "mw:17-685",
     "mw_name": "Butter, salted"
   },
-  "butter_beans_drained": {
-    "per_100g": {
-      "kcal": 77,
-      "protein": 5.9,
-      "carbs": 13.0,
-      "fat": 0.5,
-      "fibre": 0.0
-    },
-    "source": "mw:13-559",
-    "mw_name": "Beans, butter, canned, re-heated, drained",
-    "note": "fibre N in M&W"
-  },
   "butternut_squash": {
     "per_100g": {
       "kcal": 36,
@@ -195,17 +183,6 @@
     "source": "mw:13-355",
     "mw_name": "Squash, butternut, raw",
     "note": "fibre N in M&W"
-  },
-  "cannellini_drained": {
-    "per_100g": {
-      "kcal": 104,
-      "protein": 7.6,
-      "carbs": 15.9,
-      "fat": 1.6,
-      "fibre": 6.8
-    },
-    "source": "mw:13-666",
-    "mw_name": "Beans, cannellini, canned, re-heated, drained"
   },
   "carrot": {
     "per_100g": {
@@ -287,19 +264,6 @@
     "note": "fibre N in M&W",
     "basis": "raw whole bird - the basketOnly/macroOnly pair handles the yield"
   },
-  "chicken_stock": {
-    "per_100g": {
-      "kcal": 0,
-      "protein": 0.5,
-      "carbs": 0.0,
-      "fat": 0.5,
-      "fibre": 0.0
-    },
-    "source": "mw:17-774",
-    "mw_name": "Stock cubes, chicken, made up with water",
-    "note": "kcal N in M&W",
-    "proxy": "made up with water, not the dry cube"
-  },
   "chicken_stock_cube": {
     "per_100g": {
       "kcal": 0,
@@ -335,17 +299,6 @@
     "source": "mw:18-289",
     "mw_name": "Chicken, dark meat, raw"
   },
-  "chickpeas_drained": {
-    "per_100g": {
-      "kcal": 129,
-      "protein": 8.4,
-      "carbs": 18.3,
-      "fat": 3.0,
-      "fibre": 7.1
-    },
-    "source": "mw:13-670",
-    "mw_name": "Beans, chick peas, canned, re-heated, drained"
-  },
   "chilli_flakes": {
     "per_100g": {
       "kcal": 0,
@@ -369,17 +322,6 @@
     "source": "mw:17-038",
     "mw_name": "Oil, olive",
     "proxy": "no chilli oil in M&W - olive oil, which is what it mostly is"
-  },
-  "chopped_tomatoes": {
-    "per_100g": {
-      "kcal": 19,
-      "protein": 1.1,
-      "carbs": 3.8,
-      "fat": 0.1,
-      "fibre": 0.8
-    },
-    "source": "mw:13-530",
-    "mw_name": "Tomatoes, canned, whole contents"
   },
   "chorizo_cooking": {
     "per_100g": {
@@ -563,18 +505,6 @@
     "source": "mw:11-726",
     "mw_name": "Pasta, egg, fresh, raw"
   },
-  "frozen_berries": {
-    "per_100g": {
-      "kcal": 25,
-      "protein": 0.8,
-      "carbs": 5.1,
-      "fat": 0.3,
-      "fibre": 3.7
-    },
-    "source": "mw:14-375",
-    "mw_name": "Raspberries, raw",
-    "proxy": "no mixed berry bag in M&W - raspberries as a stand-in"
-  },
   "frozen_peas": {
     "per_100g": {
       "kcal": 68,
@@ -655,18 +585,6 @@
     },
     "source": "mw:13-890",
     "mw_name": "Ginger, fresh"
-  },
-  "grain_pouch": {
-    "per_100g": {
-      "kcal": 146,
-      "protein": 3.0,
-      "carbs": 34.7,
-      "fat": 0.4,
-      "fibre": 0.7
-    },
-    "source": "mw:11-864",
-    "mw_name": "Rice, white, long grain, easy cook, boiled in unsalted water",
-    "basis": "bought as a cooked pouch"
   },
   "gravy_made": {
     "per_100g": {
@@ -749,17 +667,6 @@
     "mw_name": "Ham",
     "basis": "bought cooked"
   },
-  "honey": {
-    "per_100g": {
-      "kcal": 288,
-      "protein": 0.4,
-      "carbs": 76.4,
-      "fat": 0.0,
-      "fibre": 0.0
-    },
-    "source": "mw:17-050",
-    "mw_name": "Honey"
-  },
   "hummus": {
     "per_100g": {
       "kcal": 307,
@@ -770,17 +677,6 @@
     },
     "source": "mw:13-556",
     "mw_name": "Houmous"
-  },
-  "kidney_beans_drained": {
-    "per_100g": {
-      "kcal": 100,
-      "protein": 8.6,
-      "carbs": 15.1,
-      "fat": 1.0,
-      "fibre": 6.8
-    },
-    "source": "mw:13-660",
-    "mw_name": "Beans, red kidney, canned in water, re-heated, drained"
   },
   "lasagne_sheets": {
     "per_100g": {
@@ -957,18 +853,6 @@
     },
     "source": "mw:17-038",
     "mw_name": "Oil, olive"
-  },
-  "olives_drained": {
-    "per_100g": {
-      "kcal": 103,
-      "protein": 0.9,
-      "carbs": 0.0,
-      "fat": 11.0,
-      "fibre": 0.0
-    },
-    "source": "mw:14-340",
-    "mw_name": "Olives, green, in brine, drained, flesh and skin",
-    "note": "fibre N in M&W"
   },
   "onion": {
     "per_100g": {
@@ -1220,17 +1104,6 @@
     "source": "mw:17-752",
     "mw_name": "Wine, red"
   },
-  "red_wine_vinegar": {
-    "per_100g": {
-      "kcal": 22,
-      "protein": 0.4,
-      "carbs": 0.6,
-      "fat": 0.0,
-      "fibre": 0.0
-    },
-    "source": "mw:17-339",
-    "mw_name": "Vinegar"
-  },
   "rice_vinegar": {
     "per_100g": {
       "kcal": 22,
@@ -1287,18 +1160,6 @@
     },
     "source": "mw:16-356",
     "mw_name": "Salmon, farmed, flesh only, raw"
-  },
-  "seeds_nuts": {
-    "per_100g": {
-      "kcal": 576,
-      "protein": 19.8,
-      "carbs": 18.6,
-      "fat": 47.5,
-      "fibre": 0.0
-    },
-    "source": "mw:14-845",
-    "mw_name": "Sunflower seeds",
-    "note": "fibre N in M&W"
   },
   "sesame_oil": {
     "per_100g": {
@@ -1539,19 +1400,6 @@
     "source": "mw:13-861",
     "mw_name": "Turmeric, ground",
     "note": "kcal N in M&W, fibre N in M&W"
-  },
-  "vegetable_stock": {
-    "per_100g": {
-      "kcal": 0,
-      "protein": 0.5,
-      "carbs": 0.0,
-      "fat": 0.5,
-      "fibre": 0.0
-    },
-    "source": "mw:17-774",
-    "mw_name": "Stock cubes, chicken, made up with water",
-    "note": "kcal N in M&W",
-    "proxy": "M&W only has chicken stock made up with water; stock is stock at this dilution"
   },
   "vegetable_stock_cube": {
     "per_100g": {

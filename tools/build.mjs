@@ -344,12 +344,13 @@ const COUNTED = {
   // tin chopped tomatoes", "224g = 2 tins tuna", "500g = 2 rice pouches" - so
   // they stay tied to the data rather than to what I assume a tin holds.
   grain_pouch:          [250, 'rice pouch', 'rice pouches'],
+  seeds_nuts:           [100, 'bag of mixed seeds', 'bags of mixed seeds'],
   chopped_tomatoes:     [400, 'tin chopped tomatoes', 'tins chopped tomatoes'],
   coconut_milk_light:   [400, 'tin light coconut milk', 'tins light coconut milk'],
   chickpeas_drained:    [240, 'tin chickpeas', 'tins chickpeas'],
   kidney_beans_drained: [240, 'tin kidney beans', 'tins kidney beans'],
-  butter_beans_drained: [240, 'tin butter beans', 'tins butter beans'],
-  cannellini_drained:   [240, 'tin cannellini', 'tins cannellini'],
+  butter_beans_drained: [235, 'tin butter beans', 'tins butter beans'],
+  cannellini_drained:   [235, 'tin cannellini', 'tins cannellini'],
   mixed_beans_drained:  [240, 'tin mixed beans', 'tins mixed beans'],
   sweetcorn_drained:    [260, 'tin sweetcorn', 'tins sweetcorn'],
   tuna_drained:         [112, 'tin tuna', 'tins tuna'],
