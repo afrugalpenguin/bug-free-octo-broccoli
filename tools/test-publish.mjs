@@ -7,7 +7,7 @@
 //
 //   node tools/test-publish.mjs
 
-import { validateMessage, fallbackMessage, isTimestampOnly } from './publish.mjs';
+import { validateMessage, fallbackMessage, isTimestampOnly, parseStatus } from './publish.mjs';
 
 let pass = 0, fail = 0;
 const check = (name, cond) => { cond ? pass++ : fail++; console.log((cond ? '  ok   ' : '  FAIL ') + name); };
@@ -67,6 +67,35 @@ check('a macro line moved -> not timestamp only', !isTimestampOnly(page(1625), p
 check('a macro moved AND the stamp -> not timestamp only',
       !isTimestampOnly(page(1625), page(1645).replace('19:17', '19:22')));
 check('handles a page with no footer', typeof isTimestampOnly('<h1>a</h1>', '<h1>b</h1>') === 'boolean');
+
+// 4. Porcelain parsing.
+//
+// The first line is the one that matters. Trimming the whole blob ate its
+// leading space, which shifted the slice and cut a character off the path, so
+// every single-file publish was refused with "ata/products.json".
+head('4. status parsing');
+check('single modified file keeps its first character',
+      parseStatus(' M data/products.json\n')[0] === 'data/products.json');
+check('the first of several is not mangled',
+      parseStatus(' M data/foods.json\n M data/products.json\n')[0] === 'data/foods.json');
+check('reads every line', parseStatus(' M data/foods.json\n M docs/index.html\n').length === 2);
+check('staged changes are seen', parseStatus('M  data/foods.json\n')[0] === 'data/foods.json');
+check('added files are seen', parseStatus('A  tools/publish.mjs\n')[0] === 'tools/publish.mjs');
+check('deleted files are seen', parseStatus(' D data/old.json\n')[0] === 'data/old.json');
+check('untracked files are ignored', parseStatus('?? scratch.txt\n').length === 0);
+check('a rename gives the new path',
+      parseStatus('R  data/old.json -> data/new.json\n')[0] === 'data/new.json');
+check('quotes are stripped', parseStatus(' M "data/odd name.json"\n')[0] === 'data/odd name.json');
+check('empty output gives nothing', parseStatus('').length === 0);
+check('undefined gives nothing', parseStatus(undefined).length === 0);
+check('carriage returns are stripped',
+      parseStatus(' M data/foods.json\r\n')[0] === 'data/foods.json');
+
+// The bug in full: a mangled path fails the allowed-prefix check, which is how
+// it surfaced - as a refusal to publish a perfectly ordinary data change.
+const ALLOWED = ['data/', 'docs/', 'tools/'];
+check('a real data change is not treated as stray',
+      parseStatus(' M data/products.json\n').every(f => ALLOWED.some(p => f.startsWith(p))));
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);
