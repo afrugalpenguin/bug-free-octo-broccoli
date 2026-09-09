@@ -172,18 +172,6 @@
     "source": "mw:17-685",
     "mw_name": "Butter, salted"
   },
-  "butter_beans_drained": {
-    "per_100g": {
-      "kcal": 77,
-      "protein": 5.9,
-      "carbs": 13.0,
-      "fat": 0.5,
-      "fibre": 0.0
-    },
-    "source": "mw:13-559",
-    "mw_name": "Beans, butter, canned, re-heated, drained",
-    "note": "fibre N in M&W"
-  },
   "butternut_squash": {
     "per_100g": {
       "kcal": 36,
@@ -611,18 +599,6 @@
     "source": "mw:13-890",
     "mw_name": "Ginger, fresh"
   },
-  "grain_pouch": {
-    "per_100g": {
-      "kcal": 146,
-      "protein": 3.0,
-      "carbs": 34.7,
-      "fat": 0.4,
-      "fibre": 0.7
-    },
-    "source": "mw:11-864",
-    "mw_name": "Rice, white, long grain, easy cook, boiled in unsalted water",
-    "basis": "bought as a cooked pouch"
-  },
   "gravy_made": {
     "per_100g": {
       "kcal": 30,
@@ -725,17 +701,6 @@
     },
     "source": "mw:13-556",
     "mw_name": "Houmous"
-  },
-  "kidney_beans_drained": {
-    "per_100g": {
-      "kcal": 100,
-      "protein": 8.6,
-      "carbs": 15.1,
-      "fat": 1.0,
-      "fibre": 6.8
-    },
-    "source": "mw:13-660",
-    "mw_name": "Beans, red kidney, canned in water, re-heated, drained"
   },
   "lasagne_sheets": {
     "per_100g": {

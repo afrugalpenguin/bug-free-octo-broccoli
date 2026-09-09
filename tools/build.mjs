@@ -348,7 +348,7 @@ const COUNTED = {
   coconut_milk_light:   [400, 'tin light coconut milk', 'tins light coconut milk'],
   chickpeas_drained:    [240, 'tin chickpeas', 'tins chickpeas'],
   kidney_beans_drained: [240, 'tin kidney beans', 'tins kidney beans'],
-  butter_beans_drained: [240, 'tin butter beans', 'tins butter beans'],
+  butter_beans_drained: [235, 'tin butter beans', 'tins butter beans'],
   cannellini_drained:   [235, 'tin cannellini', 'tins cannellini'],
   mixed_beans_drained:  [240, 'tin mixed beans', 'tins mixed beans'],
   sweetcorn_drained:    [260, 'tin sweetcorn', 'tins sweetcorn'],

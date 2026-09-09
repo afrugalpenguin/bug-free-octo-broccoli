@@ -22,6 +22,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "butter_beans_drained": {
+    "per_100g": {
+      "kcal": 108,
+      "protein": 6.9,
+      "carbs": 14.8,
+      "fat": 0.7,
+      "fibre": 7.3
+    },
+    "source": "pack",
+    "note": "400g tin, 235g drained, label declared as drained. Replaces M&W 13-559, which had fibre as N, not determined, and so carried it as zero - the tin says 7.3g. Another 235g tin rather than the 240g I had assumed, so the COUNTED entry and meatball al forno moved with it."
+  },
   "capers": {
     "per_100g": {
       "kcal": 23,
@@ -175,6 +186,29 @@
     },
     "source": "pack",
     "note": "450g bag, strawberries and bananas. Fat is declared <0.5g - I take the bound. No recipe uses this yet, so nothing buys it and nothing counts it."
+  },
+  "grain_pouch": {
+    "per_100g": {
+      "kcal": 133,
+      "protein": 3.2,
+      "carbs": 24.4,
+      "fat": 1.4,
+      "fibre": 5.1
+    },
+    "source": "pack",
+    "note": "Microwave brown rice pouch, values as cooked, which is how I buy it. Replaces M&W 11-864, white long grain boiled - so this is now brown rice throughout, not white. Half a pack reads 167 kcal against 133 per 100g, putting the pouch at 250g and confirming the COUNTED entry.",
+    "basis": "bought as a cooked pouch"
+  },
+  "kidney_beans_drained": {
+    "per_100g": {
+      "kcal": 105,
+      "protein": 8.1,
+      "carbs": 12.8,
+      "fat": 0.6,
+      "fibre": 7.8
+    },
+    "source": "pack",
+    "note": "400g tin, 240g drained, label declared as drained. Replaces M&W 13-660. The 240g confirms the COUNTED entry I had assumed, so nothing else had to move."
   },
   "harissa": {
     "per_100g": {
