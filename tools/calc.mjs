@@ -132,6 +132,66 @@ export function lunchboxDayLine(weekId, day, { separator = ' · ' } = {}) {
   ].join(separator);
 }
 
+// What an average day in a week actually comes to: breakfast bag, lunchbox and
+// dinner, per adult, averaged over Monday to Friday.
+//
+// Five days rather than seven because those are the days the system is built to
+// produce. Saturday lunch is sandwiches, Sunday is the tuna pasta salad, and
+// neither day has a breakfast bag - averaging the weekend in would pull the
+// number down for reasons that have nothing to do with how I am eating.
+//
+// Per adult, because that is what the parts are. Breakfast bags and lunchboxes
+// are both 10 a week, which is 2 adults across 5 weekdays, and dinners come in
+// at one portion each.
+const WEEKDAYS = ['mon', 'tue', 'wed', 'thu', 'fri'];
+
+// Friday is scaffold:pizza, which is three cards - the boys' margherita, that
+// week's adult topping, and a salad. What I eat is the topping and the salad,
+// so that is what counts. macroLine skips pizza night on the menu because the
+// row points at two different people's pizzas, but that is a display problem;
+// the data is there and Friday is my heaviest dinner. Leaving it out would
+// flatter the week.
+function dinnerMacros(weekId, day) {
+  const w = rotation.weeks[weekId];
+  const id = w.dinners[day];
+  if (id !== 'scaffold:pizza') return perPortion(id);
+  const topping = perPortion(w.friday_pizza_topping);
+  const salad = perPortion(w.friday_salad);
+  const out = zero();
+  KEYS.forEach(k => { out[k] = topping[k] + salad[k]; });
+  return out;
+}
+
+export function weekdayAverage(weekId) {
+  const out = zero();
+  for (const day of WEEKDAYS) {
+    // I add breakfast inside the loop even though it is the same bag five times
+    // over. I want smoothies to replace the oat bags, and when they do this
+    // becomes a per-day lookup the way lunch already is - a loop makes that a
+    // swap rather than a rewrite. Not building the schedule before there is a
+    // recipe to put in it.
+    const breakfast = perPortion(scaffold.breakfast_bags.recipe);
+    const lunch = lunchboxDay(weekId, day);
+    const dinner = dinnerMacros(weekId, day);
+    KEYS.forEach(k => {
+      out[k] += breakfast[k] + (lunch ? lunch.macros[k] : 0) + dinner[k];
+    });
+  }
+  KEYS.forEach(k => { out[k] /= WEEKDAYS.length; });
+  return out;
+}
+
+export function weekdayAverageLine(weekId, { separator = ' · ' } = {}) {
+  const m = weekdayAverage(weekId);
+  return [
+    `~${roundKcal(m.kcal)} kcal`,
+    `${roundG(m.protein)}g protein`,
+    `${roundG(m.carbs)}g carbs`,
+    `${roundG(m.fat)}g fat`,
+    `${roundG(m.fibre)}g fibre`,
+  ].join(separator);
+}
+
 // The per-portion figures for one recipe, as strings ready for a card. Recipes
 // in the bank with no ingredients yet return null rather than a row of zeroes.
 export function macrosFor(id) {

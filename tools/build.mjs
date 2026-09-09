@@ -8,7 +8,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import {recipes, rotation, scaffold, macroLine, macrosFor, lunchboxDay, lunchboxDayLine} from './calc.mjs';
+import {recipes, rotation, scaffold, macroLine, macrosFor, lunchboxDay, lunchboxDayLine, weekdayAverageLine} from './calc.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const outDir = join(here, '..', 'docs');
@@ -655,7 +655,8 @@ function weekPanel(week) {
     `<div class="subpanel${i === 0 ? ' active' : ''}" data-sub="${week}-${k}">${body}</div>`).join('');
 
   return `<div class="panel" data-tab="week-${week}" data-week="${week}">
-  <div class="week-head week${week}"><h2>Week ${week}</h2><span>${esc(w.theme)}</span></div>
+  <div class="week-head week${week}"><h2>Week ${week}</h2><span>${esc(w.theme)}</span>
+    <p class="week-macro">Average weekday, per adult <em>${esc(weekdayAverageLine(week))}</em></p></div>
   <div class="subtabs">${bar}</div>
   ${panels}
 </div>`;
@@ -811,9 +812,11 @@ header .sub{font-size:.75rem;opacity:.6;display:block;font-family:'DM Sans',sans
 h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:1.35rem;margin-bottom:.5rem}
 h3{font-size:1.05rem;margin-bottom:.35rem}
 h4{font-size:.98rem;margin-bottom:.35rem}
-.week-head{display:flex;align-items:baseline;gap:.6rem;padding:.9rem 1rem;border-radius:10px;color:#fff;margin-bottom:1rem}
+.week-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;padding:.9rem 1rem;border-radius:10px;color:#fff;margin-bottom:1rem}
 .week-head h2{color:#fff;font-size:1.2rem}
 .week-head span{font-size:.85rem;opacity:.85}
+.week-macro{flex-basis:100%;margin:0;font-size:.85rem;opacity:.85;line-height:1.5}
+.week-macro em{font-style:normal;font-weight:600}
 .week1{background:var(--week1)}.week2{background:var(--week2)}.week3{background:var(--week3)}.week4{background:var(--week4)}
 h3.day-head.week1,h3.day-head.week2,h3.day-head.week3,h3.day-head.week4{color:#fff;padding:.5rem .8rem;border-radius:8px}
 .block{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
