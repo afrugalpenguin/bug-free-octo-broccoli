@@ -22,6 +22,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "butter_beans_drained": {
+    "per_100g": {
+      "kcal": 108,
+      "protein": 6.9,
+      "carbs": 14.8,
+      "fat": 0.7,
+      "fibre": 7.3
+    },
+    "source": "pack",
+    "note": "400g tin, 235g drained, label declared as drained. Replaces M&W 13-559, which had fibre as N, not determined, and so carried it as zero - the tin says 7.3g. Another 235g tin rather than the 240g I had assumed, so the COUNTED entry and meatball al forno moved with it."
+  },
   "capers": {
     "per_100g": {
       "kcal": 23,
@@ -32,6 +43,61 @@
     },
     "source": "estimate",
     "note": "not sourced - replace with pack data"
+  },
+  "chopped_tomatoes": {
+    "per_100g": {
+      "kcal": 24,
+      "protein": 1.2,
+      "carbs": 3.5,
+      "fat": 0.5,
+      "fibre": 0.9
+    },
+    "source": "pack",
+    "note": "Sainsbury's Italian chopped tomatoes in tomato juice. Replaces M&W 13-530, canned whole contents. Fat is declared <0.5g and I take the bound, which reads high next to M&W's measured 0.1g - the bound is the honest thing to carry, but it is a bound, not a measurement."
+  },
+  "chickpeas_drained": {
+    "per_100g": {
+      "kcal": 122,
+      "protein": 7.7,
+      "carbs": 16.5,
+      "fat": 1.4,
+      "fibre": 6.1
+    },
+    "source": "pack",
+    "note": "400g tin, label declared as drained, so it drops straight in against the 240g drained weight the recipes use. Replaces M&W 13-670. Half a can reads 146 kcal against 122 per 100g, which puts the can at 240g drained and confirms the COUNTED figure."
+  },
+  "cannellini_drained": {
+    "per_100g": {
+      "kcal": 101,
+      "protein": 7.5,
+      "carbs": 13.3,
+      "fat": 0.6,
+      "fibre": 6.4
+    },
+    "source": "pack",
+    "note": "400g tin, 235g drained, label declared as drained. Replaces M&W 13-666. The drained weight is the thing to notice - I had the tin at 240g, and 235g is what it actually says, so the recipes and the COUNTED entry moved with it."
+  },
+  "chicken_stock": {
+    "per_100g": {
+      "kcal": 7,
+      "protein": 0.5,
+      "carbs": 0.8,
+      "fat": 0.5,
+      "fibre": 0.0
+    },
+    "source": "pack",
+    "note": "Low salt chicken stock cubes, 6 to a pack, values per 100ml made up. This is the dilution, not the dry cube - chicken_stock_cube is the dry one. Replaces M&W 17-774, which had kcal as N, not determined, so I was carrying stock as zero energy. Fat and protein are declared <0.5g and I take the bound on each. No fibre declared, so it stays zero."
+  },
+  "vegetable_stock": {
+    "per_100g": {
+      "kcal": 9,
+      "protein": 0.5,
+      "carbs": 0.9,
+      "fat": 0.9,
+      "fibre": 0.0
+    },
+    "source": "pack",
+    "note": "Low salt vegetable stock, values per 100ml made up. Replaces the M&W chicken-stock proxy - this now has its own label rather than borrowing chicken's. Protein is declared <0.5g and I take the bound. No fibre declared, so it stays zero."
   },
   "chia_seeds": {
     "per_100g": {
@@ -99,6 +165,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "frozen_berries": {
+    "per_100g": {
+      "kcal": 42,
+      "protein": 0.7,
+      "carbs": 7.6,
+      "fat": 0.5,
+      "fibre": 2.6
+    },
+    "source": "pack",
+    "note": "360g bag, strawberries and blueberries. Fat is declared <0.5g - I take the bound, same as frozen_onion. Replaces the M&W raspberry proxy, which read low on energy and high on fibre."
+  },
   "frozen_onion": {
     "per_100g": {
       "kcal": 39,
@@ -110,6 +187,51 @@
     "source": "pack",
     "note": "200g bag, diced. Fat is declared <0.5g - I take the bound, same as the M&W rebuild does."
   },
+  "frozen_raspberries": {
+    "per_100g": {
+      "kcal": 40,
+      "protein": 1.4,
+      "carbs": 4.6,
+      "fat": 0.5,
+      "fibre": 6.8
+    },
+    "source": "pack",
+    "note": "315g bag. For smoothies. Fat is declared <0.5g - I take the bound. No recipe uses this yet, so nothing buys it and nothing counts it."
+  },
+  "frozen_strawberry_banana": {
+    "per_100g": {
+      "kcal": 54,
+      "protein": 0.8,
+      "carbs": 10.3,
+      "fat": 0.5,
+      "fibre": 3.1
+    },
+    "source": "pack",
+    "note": "450g bag, strawberries and bananas. Fat is declared <0.5g - I take the bound. No recipe uses this yet, so nothing buys it and nothing counts it."
+  },
+  "grain_pouch": {
+    "per_100g": {
+      "kcal": 133,
+      "protein": 3.2,
+      "carbs": 24.4,
+      "fat": 1.4,
+      "fibre": 5.1
+    },
+    "source": "pack",
+    "note": "Microwave brown rice pouch, values as cooked, which is how I buy it. Replaces M&W 11-864, white long grain boiled - so this is now brown rice throughout, not white. Half a pack reads 167 kcal against 133 per 100g, putting the pouch at 250g and confirming the COUNTED entry.",
+    "basis": "bought as a cooked pouch"
+  },
+  "kidney_beans_drained": {
+    "per_100g": {
+      "kcal": 105,
+      "protein": 8.1,
+      "carbs": 12.8,
+      "fat": 0.6,
+      "fibre": 7.8
+    },
+    "source": "pack",
+    "note": "400g tin, 240g drained, label declared as drained. Replaces M&W 13-660. The 240g confirms the COUNTED entry I had assumed, so nothing else had to move."
+  },
   "harissa": {
     "per_100g": {
       "kcal": 180,
@@ -120,6 +242,17 @@
     },
     "source": "estimate",
     "note": "not sourced - replace with pack data"
+  },
+  "honey": {
+    "per_100g": {
+      "kcal": 329,
+      "protein": 0.5,
+      "carbs": 81.5,
+      "fat": 0.5,
+      "fibre": 0.5
+    },
+    "source": "pack",
+    "note": "340g jar. Replaces M&W 17-050. Fat, fibre and protein are all declared <0.5g and I take the bound on each, so the jar shows half a gram of fat that honey does not really have. The jar calls a tablespoon 15g; I keep 21g in the recipes, because 15ml of honey weighs about 21g and a recipe measures a real spoonful, not the pack's nominal serving."
   },
   "jalapeno_brine": {
     "per_100g": {
@@ -187,6 +320,28 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "olives_drained": {
+    "per_100g": {
+      "kcal": 176,
+      "protein": 1.1,
+      "carbs": 1.4,
+      "fat": 17.7,
+      "fibre": 3.0
+    },
+    "source": "pack",
+    "note": "120g pot, pitted green olives. Replaces M&W 14-340, olives in brine, which read 103 kcal and 11g fat against the pot's 176 and 17.7 - richer olives rather than a better reading of the same ones. M&W had fibre as N, not determined, and I carried that as zero; the pot says 3.0g. A third of a pot reads 70 kcal against 176 per 100g, putting the pot at 120g."
+  },
+  "pink_pickled_onions_jar": {
+    "per_100g": {
+      "kcal": 72,
+      "protein": 0.5,
+      "carbs": 16.2,
+      "fat": 0.5,
+      "fibre": 1.5
+    },
+    "source": "pack",
+    "note": "Bought pink pickled onions, PS1.55 a jar, label declared as drained. Fat and protein are both declared <0.5g and I take the bound on each. A third of a jar reads 36 kcal against 72 per 100g, so a jar is about 150g drained. No recipe uses this yet - I make quick_pickled_red_onions instead, and this is here so I can compare."
+  },
   "protein_powder": {
     "per_100g": {
       "kcal": 380,
@@ -208,6 +363,28 @@
     },
     "source": "estimate",
     "note": "not sourced - replace with pack data"
+  },
+  "red_wine_vinegar": {
+    "per_100g": {
+      "kcal": 21,
+      "protein": 0.5,
+      "carbs": 0.7,
+      "fat": 0.5,
+      "fibre": 0.5
+    },
+    "source": "pack",
+    "note": "500ml bottle, values per 100ml. Replaces M&W 17-339, a generic vinegar, which the balsamic and rice vinegar keys still share. Fat, fibre and protein are all declared <0.5g and I take the bound on each - on a 15g splash of vinegar that is noise, but it is what the bottle says."
+  },
+  "seeds_nuts": {
+    "per_100g": {
+      "kcal": 614,
+      "protein": 26.7,
+      "carbs": 2.3,
+      "fat": 53.0,
+      "fibre": 10.3
+    },
+    "source": "pack",
+    "note": "100g bag of mixed seeds. Replaces M&W 14-845, sunflower seeds, which was standing in for a mixed bag - hence carbohydrate falling from 18.6g to 2.3g and protein rising. M&W had fibre as N, not determined, and I carried it as zero; the bag says 10.3g. The bags are 100g and do not come larger, which matters because a week wants more than one."
   },
   "sun_dried_tomato_paste": {
     "per_100g": {
