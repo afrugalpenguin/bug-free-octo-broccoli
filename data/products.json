@@ -221,6 +221,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "honey": {
+    "per_100g": {
+      "kcal": 329,
+      "protein": 0.5,
+      "carbs": 81.5,
+      "fat": 0.5,
+      "fibre": 0.5
+    },
+    "source": "pack",
+    "note": "340g jar. Replaces M&W 17-050. Fat, fibre and protein are all declared <0.5g and I take the bound on each, so the jar shows half a gram of fat that honey does not really have. The jar calls a tablespoon 15g; I keep 21g in the recipes, because 15ml of honey weighs about 21g and a recipe measures a real spoonful, not the pack's nominal serving."
+  },
   "jalapeno_brine": {
     "per_100g": {
       "kcal": 5,
@@ -330,6 +341,17 @@
     },
     "source": "estimate",
     "note": "not sourced - replace with pack data"
+  },
+  "red_wine_vinegar": {
+    "per_100g": {
+      "kcal": 21,
+      "protein": 0.5,
+      "carbs": 0.7,
+      "fat": 0.5,
+      "fibre": 0.5
+    },
+    "source": "pack",
+    "note": "500ml bottle, values per 100ml. Replaces M&W 17-339, a generic vinegar, which the balsamic and rice vinegar keys still share. Fat, fibre and protein are all declared <0.5g and I take the bound on each - on a 15g splash of vinegar that is noise, but it is what the bottle says."
   },
   "sun_dried_tomato_paste": {
     "per_100g": {

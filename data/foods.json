@@ -680,17 +680,6 @@
     "mw_name": "Ham",
     "basis": "bought cooked"
   },
-  "honey": {
-    "per_100g": {
-      "kcal": 288,
-      "protein": 0.4,
-      "carbs": 76.4,
-      "fat": 0.0,
-      "fibre": 0.0
-    },
-    "source": "mw:17-050",
-    "mw_name": "Honey"
-  },
   "hummus": {
     "per_100g": {
       "kcal": 307,
@@ -1127,17 +1116,6 @@
     },
     "source": "mw:17-752",
     "mw_name": "Wine, red"
-  },
-  "red_wine_vinegar": {
-    "per_100g": {
-      "kcal": 22,
-      "protein": 0.4,
-      "carbs": 0.6,
-      "fat": 0.0,
-      "fibre": 0.0
-    },
-    "source": "mw:17-339",
-    "mw_name": "Vinegar"
   },
   "rice_vinegar": {
     "per_100g": {
