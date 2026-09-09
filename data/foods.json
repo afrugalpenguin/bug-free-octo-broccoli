@@ -370,17 +370,6 @@
     "mw_name": "Oil, olive",
     "proxy": "no chilli oil in M&W - olive oil, which is what it mostly is"
   },
-  "chopped_tomatoes": {
-    "per_100g": {
-      "kcal": 19,
-      "protein": 1.1,
-      "carbs": 3.8,
-      "fat": 0.1,
-      "fibre": 0.8
-    },
-    "source": "mw:13-530",
-    "mw_name": "Tomatoes, canned, whole contents"
-  },
   "chorizo_cooking": {
     "per_100g": {
       "kcal": 395,

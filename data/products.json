@@ -33,6 +33,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "chopped_tomatoes": {
+    "per_100g": {
+      "kcal": 24,
+      "protein": 1.2,
+      "carbs": 3.5,
+      "fat": 0.5,
+      "fibre": 0.9
+    },
+    "source": "pack",
+    "note": "Sainsbury's Italian chopped tomatoes in tomato juice. Replaces M&W 13-530, canned whole contents. Fat is declared <0.5g and I take the bound, which reads high next to M&W's measured 0.1g - the bound is the honest thing to carry, but it is a bound, not a measurement."
+  },
   "chia_seeds": {
     "per_100g": {
       "kcal": 486,
