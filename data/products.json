@@ -242,6 +242,17 @@
     "source": "estimate",
     "note": "not sourced - replace with pack data"
   },
+  "pink_pickled_onions_jar": {
+    "per_100g": {
+      "kcal": 72,
+      "protein": 0.5,
+      "carbs": 16.2,
+      "fat": 0.5,
+      "fibre": 1.5
+    },
+    "source": "pack",
+    "note": "Bought pink pickled onions, PS1.55 a jar, label declared as drained. Fat and protein are both declared <0.5g and I take the bound on each. A third of a jar reads 36 kcal against 72 per 100g, so a jar is about 150g drained. No recipe uses this yet - I make quick_pickled_red_onions instead, and this is here so I can compare."
+  },
   "protein_powder": {
     "per_100g": {
       "kcal": 380,
